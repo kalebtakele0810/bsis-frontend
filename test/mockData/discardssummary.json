@@ -1,0 +1,53 @@
+{
+  "discards": [
+    {
+      "donationIdentificationNumber": "112345",
+      "componentType": "Red Cell Concentrate",
+      "createdOn": "09/10/2014",
+      "discardedOn": "10/10/2014",
+      "discardReason": "Reactive TTI"
+    },
+    {
+      "donationIdentificationNumber": "112345",
+      "componentType": "Fresh Frozen Plasma",
+      "createdOn": "09/10/2014",
+      "discardedOn": "10/10/2014",
+      "discardReason": "Reactive TTI"
+    },
+    {
+      "donationIdentificationNumber": "112345",
+      "componentType": "Buffy Coat",
+      "createdOn": "09/10/2014",
+      "discardedOn": "10/10/2014",
+      "discardReason": "Reactive TTI"
+    },
+    {
+      "donationIdentificationNumber": "1233445",
+      "componentType": "Whole Blood",
+      "createdOn": "09/10/2014",
+      "discardedOn": "09/10/2014",
+      "discardReason": "Incomplete Donation"
+    },
+    {
+      "donationIdentificationNumber": "1122334",
+      "componentType": "Red Cell Concentrate",
+      "createdOn": "06/03/2014",
+      "discardedOn": "10/10/2014",
+      "discardReason": "Expired"
+    },
+    {
+      "donationIdentificationNumber": "1122334",
+      "componentType": "Fresh Frozen Plasma",
+      "createdOn": "06/03/2014",
+      "discardedOn": "10/10/2014",
+      "discardReason": "Expired"
+    },
+    {
+      "donationIdentificationNumber": "1123455",
+      "componentType": "Whole Blood",
+      "createdOn": "11/10/2014",
+      "discardedOn": "12/10/2014",
+      "discardReason": "Incomplete Donation"
+    }
+  ]
+}

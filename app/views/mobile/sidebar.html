@@ -1,0 +1,21 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding-top:5px;" ng-controller="MobileSidebarCtrl">
+    <ul class="nav nav-sidebar">
+        <li class="disabled">
+      <span class="icon-sidebar-container">
+        <div class="placeholder">
+            <a href="#mobile">
+                <i class="fa {{icons.MOBILE}}"></i>
+            </a>
+        </div>
+      </span>
+        </li>
+        <li class="disabled"><span class="sidebar-heading" translate>MOBILE CLINIC</span></li>
+        <li ng-class="{current: currentPath === '/lookUp'}"  has-permission="{{permissions.VIEW_DONOR_INFORMATION}}"><a
+                href="#/lookUp" translate>Look Up</a></li>
+        <li ng-class="{current: currentPath === '/mobileDonorCounselling'}"  has-permission="{{permissions.VIEW_DONOR_INFORMATION}}"><a
+                href="#/mobileDonorCounselling" translate>Donor Counselling</a></li>
+        <li ng-class="{current: currentPath === '/mobileClinicExport'}"  has-permission="{{permissions.VIEW_MOBILE_CLINIC_EXPORT}}"><a
+                href="#/mobileClinicExport" translate>Mobile Clinic Export</a></li>
+    </ul>
+    <div ng-include="'views/sidebarFooter.html'"></div>
+</div>

@@ -1,0 +1,239 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Fulfil Order Form</h3>
+
+  <hr />
+
+  <section class="clearfix" ng-hide="editingOrderDetails">
+    <span class="text-muted" translate>Order Date</span> {{orderForm.orderDate | bsisDate}}
+    <span class="text-muted" translate>Order Type</span> {{orderForm.type | titleCase | translate}}
+    <span class="text-muted" translate>Dispatched From</span> {{orderForm.dispatchedFrom.name}}
+    <span class="text-muted" translate>Dispatched To</span> {{orderForm.dispatchedTo.name}}
+    <span ng-hide="orderForm.type !== 'PATIENT_REQUEST'"><br/>
+      <span class="text-muted" translate>Blood Bank</span>
+    <span ng-hide="!isFieldEmpty(orderForm.patient.hospitalBloodBankNumber)" translate> Not Specified</span>
+    <span ng-hide="isFieldEmpty(orderForm.patient.hospitalBloodBankNumber)"> {{orderForm.patient.hospitalBloodBankNumber}}</span>
+    <span class="text-muted" translate>Ward Number</span>
+    <span ng-hide="!isFieldEmpty(orderForm.patient.hospitalWardNumber)" translate> Not Specified</span>
+    <span ng-hide="isFieldEmpty(orderForm.patient.hospitalWardNumber)"> {{orderForm.patient.hospitalWardNumber}}</span>
+    <span class="text-muted" translate>Patient Number</span>
+    <span ng-hide="!isFieldEmpty(orderForm.patient.patientNumber)" translate> Not Specified</span>
+    <span ng-hide="isFieldEmpty(orderForm.patient.patientNumber)"> {{orderForm.patient.patientNumber}}</span>
+    <span class="text-muted" translate>Patient Name</span> {{orderForm.patient.name1}} {{orderForm.patient.name2}}<br/>
+    <span class="text-muted" translate>Blood Group</span>
+    <span ng-hide="!isFieldEmpty(orderForm.patient.bloodGroup)" translate> Not Specified</span>
+    <span ng-hide="isFieldEmpty(orderForm.patient.bloodGroup)"> {{orderForm.patient.bloodGroup}}</span>
+    <span class="text-muted" translate>Gender</span>
+    <span ng-hide="!isFieldEmpty(orderForm.patient.gender)" translate> Not Specified</span>
+    <span ng-hide="isFieldEmpty(orderForm.patient.gender)"> {{orderForm.patient.gender | titleCase | translate}}</span>
+    <span class="text-muted" translate>Date of Birth</span>
+    <span ng-hide="!isFieldEmpty(orderForm.patient.dateOfBirth)" translate> Not Specified</span>
+    <span ng-hide="isFieldEmpty(orderForm.patient.dateOfBirth)"> {{orderForm.patient.dateOfBirth | bsisDate}}</span>
+    </span>
+    <button class="btn btn-primary pull-right" style="margin-top:0;" ng-click="editOrderDetails()" translate>Edit</button>
+  </section>
+
+  <form name="forms.orderDetailsForm" role="form" ng-show="editingOrderDetails" ng-submit="saveOrderDetails();" novalidate>
+
+    <div class="row form-inline form-multiline" style="margin-left:0px;">
+      <div class="form-group">
+        <span class="text-muted" translate>Order Date</span>
+        <div class="input-group" style="width:150px;">
+          <dateselect name="orderDate" ng-model="orderDetailsForm.orderDate" format="format" ng-required="true"></dateselect>
+          <ng-messages for="forms.orderDetailsForm.orderDate.$error" role="alert" ng-show="forms.orderDetailsForm.$submitted">
+            <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <span class="text-muted" translate>Order Type</span>
+        <label class="radio-inline" style="margin-top:0;">
+          <input type="radio" name="transferType" ng-model="orderDetailsForm.type" value="TRANSFER" required><span translate>Transfer</span>
+        </label>
+        <label class="radio-inline">
+          <input type="radio" ng-model="orderDetailsForm.type" value="ISSUE" required><span translate>Issue</span>
+        </label>
+        <label class="radio-inline">
+          <input type="radio" ng-model="orderDetailsForm.type" value="PATIENT_REQUEST" required><span translate>Patient Request</span>
+        </label>
+      </div>
+
+      <div class="form-group" style="margin-left:5px;">
+        <span class="text-muted" for="dispatchedFrom" translate>Dispatched From</span>
+        <select class="form-control" style="width:auto;" name="dispatchedFrom" ng-model="orderDetailsForm.dispatchedFrom" ng-options="item as item.name for item in dispatchFromSites track by item.id"
+          ng-disabled="components.length > 0" required></select>
+      </div>
+
+      <div class="form-group">
+        <span class="text-muted" for="dispatchedTo" translate>Dispatched To</span>
+        <select class="form-control" style="width:auto;" name="dispatchedTo" ng-model="orderDetailsForm.dispatchedTo" ng-options="item as item.name for item in dispatchToSites track by item.id"
+          ng-disabled="!orderDetailsForm.type" required></select>
+      </div>
+
+      <span ng-if="orderDetailsForm.type === 'PATIENT_REQUEST'">
+        <div class="form-group">
+          <span class="text-muted" for="hospitalBloodBankNumber" translate>Blood Bank</span>
+      <input name="hospitalBloodBankNumber" type="text" class="form-control" ng-model="orderDetailsForm.patient.hospitalBloodBankNumber"
+      />
+    </div>
+    <div class="form-group">
+      <span class="text-muted" for="hospitalWardNumber" translate>Ward Number</span>
+      <input name="hospitalWardNumber" type="text" class="form-control" ng-model="orderDetailsForm.patient.hospitalWardNumber"
+      />
+    </div>
+    <div class="form-group">
+      <span class="text-muted" for="patientNumber" translate>Patient Number</span>
+      <input name="patientNumber" type="text" class="form-control" ng-model="orderDetailsForm.patient.patientNumber" />
+    </div>
+    <div class="form-group">
+      <span class="text-muted" for="name" translate>Patient Name</span>
+      <div class="input-group">
+        <input name="name1" type="text" class="form-control" ng-model="orderDetailsForm.patient.name1" required ng-maxlength=20 />
+        <ng-messages for="forms.orderDetailsForm.name1.$error" role="alert" ng-show="forms.orderDetailsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+      <div class="input-group">
+        <input name="name2" type="text" class="form-control" ng-model="orderDetailsForm.patient.name2" required ng-maxlength=20 />
+        <ng-messages for="forms.orderDetailsForm.name2.$error" role="alert" ng-show="forms.orderDetailsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+    <div class="form-group">
+      <span class="text-muted" for="bloodGroup" translate>Blood Group</span>
+      <select name="bloodGroup" class="form-control" ng-options="item for item in bloodGroups" ng-model="orderDetailsForm.patient.bloodGroup">
+            <option value=""></option>
+          </select>
+    </div>
+    <div class="form-group">
+      <span class="text-muted" for="gender" translate>Gender</span>
+      <select name="gender" class="form-control input-sm" ng-options="item.id as (item.name | titleCase | translate) for item in genders" ng-model="orderDetailsForm.patient.gender">
+            <option value=""></option>
+          </select>
+    </div>
+    <div class="form-group">
+      <span class="text-muted" for="dateOfBirth" translate>Date of Birth</span>
+      <dateselect name="dateOfBirth" ng-model="orderDetailsForm.patient.dateOfBirth" format="format" date-time-not-in-future ng-model-options="{ allowInvalid: true }"
+        ng-class="{'has-error' : forms.orderDetailsForm.dateOfBirth.$invalid}" max-date="maxDateOfBirth"></dateselect>
+      <div>
+        <ng-messages for="forms.orderDetailsForm.dateOfBirth.$error" role="alert" ng-show="forms.orderDetailsForm.dateOfBirth.$invalid && forms.orderDetailsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+    </span>
+    <div class="form-group">
+      <button class="btn btn-primary" style="margin-top:0;" type="submit" ng-disabled="savingOrderDetails">{{savingOrderDetails ? 'Saving...' : 'Save' | translate}}</button>
+      <button class="btn btn-primary" style="margin-top:0;" type="reset" ng-disabled="savingOrderDetails" ng-click="clearDetailsForm($event);" translate>Cancel</button>
+    </div>
+</div>
+
+</form>
+
+<hr />
+
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <h4 translate>Units Ordered</h4>
+    <form class="form-inline" name="addOrderItemForm" role="form" style="padding:0 15px;" ng-submit="addOrderItem(addOrderItemForm);"
+      novalidate>
+
+      <div class="form-group">
+        <label for="componentType" style="vertical-align: top" translate>Component Type</label>
+        <div style="display: inline-block">
+          <select class="form-control" style="width:auto;" name="componentType" ng-model="orderItem.componentType" ng-options="item as item.componentTypeName for item in componentTypes track by item.id"
+            required>
+              <option value="" disabled selected translate>Select</option>
+            </select>
+          <ng-messages for="addOrderItemForm.componentType.$error" role="alert" ng-show="addOrderItemForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bloodGroup" style="vertical-align: top" translate>Blood Group</label>
+        <div style="display: inline-block">
+          <select class="form-control" style="width: 200px;" name="bloodGroup" ng-model="orderItem.bloodGroup" ng-options="item for item in bloodGroups"
+            required>
+              <option value="" disabled selected translate>Select</option>
+            </select>
+          <ng-messages for="addOrderItemForm.bloodGroup.$error" role="alert" ng-show="addOrderItemForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="numberOfUnits" style="vertical-align: top" translate>Units</label>
+        <div style="display: inline-block">
+          <input type=number class="form-control" name="numberOfUnits" ng-model="orderItem.numberOfUnits" required min="0">
+          <ng-messages for="addOrderItemForm.numberOfUnits.$error" role="alert" ng-show="addOrderItemForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+
+      <div class="form-group" style="vertical-align: top">
+        <button class="btn btn-primary" type="submit" ng-disabled="addingOrderForm" style="margin-top: 0px" translate>Add to Order</button>
+        <button class="btn btn-primary" type="button" ng-disabled="addingOrderForm" style="margin-top: 0px" ng-click="clearAddOrderItemForm(addOrderItemForm);" translate>Clear</button>
+      </div>
+
+    </form>
+
+    <br />
+
+    <div class="col-sm-12">
+      <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination ui-grid-selection></div>
+    </div>
+
+    <h4 translate>Units Supplied</h4>
+    <form class="form-inline" name="addComponentForm" role="form" style="padding:0 15px;" ng-submit="addComponent(addComponentForm);"
+      novalidate>
+
+      <div class="form-group">
+        <label for="componentType" style="vertical-align: top" translate>DIN</label>
+        <div style="display: inline-block">
+          <input class="form-control" name="din" ng-model="component.din" required>
+          <ng-messages for="addComponentForm.din.$error" role="alert" ng-show="addComponentForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="componentType" style="vertical-align: top" translate>Component Code</label>
+        <div style="display: inline-block">
+          <input class="form-control" name="componentCode" ng-model="component.componentCode" required>
+          <ng-messages for="addComponentForm.din.$error" role="alert" ng-show="addComponentForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+
+      <div class="form-group" style="vertical-align: top">
+        <button class="btn btn-primary" type="submit" ng-disabled="addingComponent" style="margin-top: 0px" translate>Add Pack</button>
+        <button class="btn btn-primary" type="button" ng-disabled="addingComponent" style="margin-top: 0px" ng-click="removeComponent(addComponentForm);" translate>Remove Pack</button>
+        <button class="btn btn-primary" type="button" ng-disabled="addingComponent" style="margin-top: 0px" ng-click="clearAddComponent(addComponentForm);" translate>Clear</button>
+      </div>
+
+    </form>
+
+    <br />
+
+
+    <form class="form-horizontal" name="updateOrderForm" role="form" style="padding:0 15px;" ng-submit="updateOrder();" novalidate>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <button class="btn btn-primary" type="submit" ng-disabled="savingForm">{{savingForm ? 'Saving...' : 'Save' | translate}}</button>
+          <button class="btn btn-primary" type="button" ng-disabled="!areRowsToDelete" ng-click="deleteRows()" translate>Delete Selected Rows</button>
+          <button class="btn btn-primary" type="button" ng-disabled="savingForm" ng-click="cancel();" translate>Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

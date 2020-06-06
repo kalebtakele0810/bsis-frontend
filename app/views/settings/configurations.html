@@ -1,0 +1,41 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>General Configurations</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <em translate translate-params-count="configurationsCount">{{count}} configuration(s) found</em><span
+                        has-permission="{{permissions.MANAGE_GENERAL_CONFIGS}}"> | <em> <a href=""
+                                                                                           ng-click="addNewConfiguration()" translate>Add New Configuration</a></em></span>
+                </p>
+                <table ng-table="configurationsTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="configuration in $data"
+                        ng-click="manageConfiguration(configuration);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': configuration.$selected}">
+                        <td data-title="'Name' | translate" style="width:30%;" header-class="text-left" sortable="'name'">
+                            {{configuration.name}}
+                        </td>
+                        <td data-title="'Description'| translate" header-class="text-left" sortable="''">
+                            {{configuration.description}}
+                        </td>
+                        <td data-title="'Data Type' | translate" header-class="text-left" sortable="''">
+                            {{configuration.dataType.datatype | titleCase | filter}}
+                        </td>
+                        <td data-title="'Value' | translate" header-class="text-left" sortable="''" ng-switch on="configuration.dataType.datatype">
+                            <span ng-switch-when="password">•••••</span>
+                            <span ng-switch-default>
+                                {{configuration.value.substr(0,40)}}
+                                <span ng-show="configuration.value.length > 40">...</span>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

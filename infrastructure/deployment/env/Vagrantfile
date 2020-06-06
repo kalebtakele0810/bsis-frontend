@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+
+  # Forward the default apache port to the host
+  config.vm.network "forwarded_port", guest: 80, host: 8888
+
+  # Increase the amount of memory so build works
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 2048
+  end
+
+  # Provision the box using the shell script
+  # 
+  # N.B.: Since the frontend repository is private it needs to be cloned by an
+  # authenticated user. For now this means that you must ssh into the box and
+  # run the provision script manually. The forward_agent setting below will
+  # enable ssh agent forwarding so that you can access the repository using
+  # your ssh identity on the host machine.
+  #
+  # config.vm.provision "shell", privileged: false, path: "provision.sh"
+  config.ssh.forward_agent = true
+end

@@ -1,0 +1,69 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Returns</h3>
+
+  <hr />
+
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active">
+      <a href="#/manageReturns" translate>Add Return</a>
+    </li>
+    <li>
+      <a href="#/viewReturns" translate>View Returns</a>
+    </li>
+  </ul>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4 translate>Current Returns</h4>
+      <div class="col-sm-12">
+        <div id="grid" class="grid" ui-grid="gridOptions" ui-grid-pagination></div>
+      </div>
+
+      <br/>
+
+      <h4 translate>Add Return</h4>
+      <form class="form-horizontal" name="addReturnForm" role="form" style="padding:0 15px;" ng-submit="addReturn();" novalidate>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="returnDate" translate>Return Date</label>
+          <div class="col-sm-10">
+            <dateselect name="returnDate" ng-model="returnForm.returnDate" format="dateFormat" ng-required="true"></dateselect>
+            <ng-messages for="addReturnForm.returnDate.$error" role="alert" ng-show="addReturnForm.$submitted">
+              <ng-messages-include src="messages.html"></ng-messages-include>
+            </ng-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="returnedFrom" translate>Returned From</label>
+          <div class="col-sm-10">
+            <select class="form-control" style="width:auto; min-width: 250px" name="returnedFrom" ng-model="returnForm.returnedFrom" ng-options="item.id as item.name for item in usageSites track by item.id" required>
+              <option value="" disabled selected translate>Select</option>
+            </select>
+            <ng-messages for="addReturnForm.returnedFrom.$error" role="alert" ng-show="addReturnForm.$submitted">
+              <ng-messages-include src="messages.html"></ng-messages-include>
+            </ng-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="dispatchedTo" translate>Returned To</label>
+          <div class="col-sm-10">
+            <select class="form-control" style="width:auto; min-width: 250px" name="returnedTo" ng-model="returnForm.returnedTo" ng-options="item.id as item.name for item in distributionSites track by item.id" required>
+              <option value="" disabled  selected translate>Select</option>
+            </select>
+            <ng-messages for="addReturnForm.returnedTo.$error" role="alert" ng-show="addReturnForm.$submitted">
+              <ng-messages-include src="messages.html"></ng-messages-include>
+            </ng-messages>
+          </div>
+        </div>
+
+        <div class="col-sm-offset-2">
+          <button class="btn btn-primary" type="submit" ng-disabled="addingReturnForm">{{addingReturnForm ? 'Adding...' : 'Add' | translate}}</button>
+          <button class="btn btn-primary" type="button" ng-disabled="addingReturnForm" ng-click="clearForm();" translate>Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,229 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html> <!--<![endif]-->
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blood Safety Information System">
+    <meta name="author" content="Jembi Health Systems">
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <title>BSIS</title>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
+    <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bsis.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- endbuild -->
+
+</head>
+
+<body ng-cloak style="padding-bottom: 0px;">
+
+<div ng-if="displayHeader">
+    <div ng-include="'views/header.html'"></div>
+</div>
+
+<div id="wrap">
+
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+    <div class="container-fluid" ng-view></div>
+
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-loader/angular-loader.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+<script src="bower_components/angular-ui-select/dist/select.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="bower_components/checklist-model/checklist-model.js"></script>
+<script src="bower_components/CSV-JS/csv.js"></script>
+<script src="bower_components/karma-read-json/karma-read-json.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/ng-table/dist/ng-table.min.js"></script>
+<script src="bower_components/pdfmake/build/pdfmake.js"></script>
+<script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/find.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/services/auth.js"></script>
+<script src="scripts/services/alerting.js"></script>
+<script src="scripts/services/authinterceptor.js"></script>
+<script src="scripts/services/api.js"></script>
+<script src="scripts/services/donors.js"></script>
+<script src="scripts/services/donations.js"></script>
+<script src="scripts/services/components.js"></script>
+<script src="scripts/services/testing.js"></script>
+<script src="scripts/services/inventories.js"></script>
+<script src="scripts/services/labelling.js"></script>
+<script src="scripts/services/reports.js"></script>
+<script src="scripts/services/modals.js"></script>
+<script src="scripts/services/reportsLayout.js"></script>
+<script src="scripts/services/reportGenerator.js"></script>
+<script src="scripts/services/mobile.js"></script>
+<script src="scripts/services/locations.js"></script>
+<script src="scripts/services/configurations.js"></script>
+<script src="scripts/services/users.js"></script>
+<script src="scripts/services/roles.js"></script>
+<script src="scripts/services/packTypes.js"></script>
+<script src="scripts/services/componentTypes.js"></script>
+<script src="scripts/services/componentTypeCombinations.js"></script>
+<script src="scripts/services/bloodTests.js"></script>
+<script src="scripts/services/bloodTestingRules.js"></script>
+<script src="scripts/services/deferralReasons.js"></script>
+<script src="scripts/services/base64.js"></script>
+<script src="scripts/services/discardReasons.js"></script>
+<script src="scripts/services/donationTypes.js"></script>
+<script src="scripts/services/postDonationCounselling.js"></script>
+<script src="scripts/services/adverseEvents.js"></script>
+<script src="scripts/services/transfusionReactionTypes.js"></script>
+<script src="scripts/services/routing.js"></script>
+<script src="scripts/services/componentBatches.js"></script>
+<script src="scripts/services/orderForms.js"></script>
+<script src="scripts/services/returnForms.js"></script>
+<script src="scripts/services/divisions.js"></script>
+<script src="scripts/services/logos.js"></script>
+<script src="scripts/services/dataExport.js"></script>
+<script src="scripts/services/utils.js"></script>
+<script src="scripts/services/transfusions.js"></script>
+<script src="scripts/services/componentValidation.js"></script>
+<script src="scripts/controllers/confirmModal.js"></script>
+<script src="scripts/controllers/errorModal.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/footer.js"></script>
+<script src="scripts/controllers/passwordReset.js"></script>
+<script src="scripts/controllers/forgotPassword.js"></script>
+<script src="scripts/controllers/labelling/sidebar.js"></script>
+<script src="scripts/controllers/labelling/labelComponents.js"></script>
+<script src="scripts/controllers/labelling/findSafeComponents.js"></script>
+<script src="scripts/controllers/reports/aboRhGroupsReport.js"></script>
+<script src="scripts/controllers/reports/donationTypesReport.js"></script>
+<script src="scripts/controllers/reports/ttiPrevalenceReport.js"></script>
+<script src="scripts/controllers/reports/bloodUnitsIssuedReport.js"></script>
+<script src="scripts/controllers/reports/donorsDeferredReport.js"></script>
+<script src="scripts/controllers/reports/unitsDiscardedReport.js"></script>
+<script src="scripts/controllers/reports/componentsProducedReport.js"></script>
+<script src="scripts/controllers/reports/donorsAdverseEventsReport.js"></script>
+<script src="scripts/controllers/reports/transfusionsReport.js"></script>
+<script src="scripts/controllers/reports/donationsummaryReport.js"></script>
+<script src="scripts/controllers/reports/whoGdbsReport.js"></script>
+<script src="scripts/controllers/reports/sidebar.js"></script>
+<script src="scripts/controllers/mobile/mobile.js"></script>
+<script src="scripts/controllers/mobile/donorCounselling.js"></script>
+<script src="scripts/controllers/mobile/mobileClinicExport.js"></script>
+<script src="scripts/controllers/mobile/sidebar.js"></script>
+<script src="scripts/controllers/header.js"></script>
+<script src="scripts/controllers/donors/donorCommunications.js"></script>
+<script src="scripts/controllers/donors/viewDonor.js"></script>
+<script src="scripts/controllers/donors/findDonors.js"></script>
+<script src="scripts/controllers/donors/addDonor.js"></script>
+<script src="scripts/controllers/donors/viewDonationBatch.js"></script>
+<script src="scripts/controllers/donors/donorCounselling.js"></script>
+<script src="scripts/controllers/donors/donorCounsellingDetails.js"></script>
+<script src="scripts/controllers/donors/duplicateDonors.js"></script>
+<script src="scripts/controllers/donors/manageDuplicateDonors.js"></script>
+<script src="scripts/controllers/donors/sidebar.js"></script>
+<script src="scripts/controllers/donors/manageDonationBatches.js"></script>
+<script src="scripts/controllers/testing/reenterTestOutcomes.js"></script>
+<script src="scripts/controllers/testing/sidebar.js"></script>
+<script src="scripts/controllers/testing/resolveAmbiguousABORhOutcomes.js"></script>
+<script src="scripts/controllers/testing/manageTestBatch.js"></script>
+<script src="scripts/controllers/testing/findTestSamples.js"></script>
+<script src="scripts/controllers/testing/viewTestSample.js"></script>
+<script src="scripts/controllers/testing/manageTestBatches.js"></script>
+<script src="scripts/controllers/testing/recordTestOutcomes.js"></script>
+<script src="scripts/controllers/components/sidebar.js"></script>
+<script src="scripts/controllers/components/recordComponents.js"></script>
+<script src="scripts/controllers/components/addComponentBatch.js"></script>
+<script src="scripts/controllers/components/viewComponentBatches.js"></script>
+<script src="scripts/controllers/components/viewComponentBatch.js"></script>
+<script src="scripts/controllers/components/findComponents.js"></script>
+<script src="scripts/controllers/components/discardComponents.js"></script>
+<script src="scripts/controllers/components/findDiscards.js"></script>
+<script src="scripts/controllers/inventory/manageReturns.js"></script>
+<script src="scripts/controllers/inventory/recordReturn.js"></script>
+<script src="scripts/controllers/inventory/viewReturn.js"></script>
+<script src="scripts/controllers/inventory/viewReturns.js"></script>
+<script src="scripts/controllers/inventory/discardComponentsModal.js"></script>
+<script src="scripts/controllers/inventory/manageOrders.js"></script>
+<script src="scripts/controllers/inventory/viewOrders.js"></script>
+<script src="scripts/controllers/inventory/fulfilOrder.js"></script>
+<script src="scripts/controllers/inventory/viewOrder.js"></script>
+<script src="scripts/controllers/inventory/findInventory.js"></script>
+<script src="scripts/controllers/inventory/viewStockLevels.js"></script>
+<script src="scripts/controllers/inventory/recordTransfusions.js"></script>
+<script src="scripts/controllers/inventory/findTransfusion.js"></script>
+<script src="scripts/controllers/inventory/sidebar.js"></script>
+<script src="scripts/controllers/settings/accountSettings.js"></script>
+<script src="scripts/controllers/settings/configurations.js"></script>
+<script src="scripts/controllers/settings/adverseEventTypes.js"></script>
+<script src="scripts/controllers/settings/transfusionReactionTypes.js"></script>
+<script src="scripts/controllers/settings/manageTransfusionReactionType.js"></script>
+<script src="scripts/controllers/settings/addAdverseEventType.js"></script>
+<script src="scripts/controllers/settings/editAdverseEventType.js"></script>
+<script src="scripts/controllers/settings/users.js"></script>
+<script src="scripts/controllers/settings/roles.js"></script>
+<script src="scripts/controllers/settings/deferralReasons.js"></script>
+<script src="scripts/controllers/settings/discardReasons.js"></script>
+<script src="scripts/controllers/settings/donationTypes.js"></script>
+<script src="scripts/controllers/settings/auditLog.js"></script>
+<script src="scripts/controllers/settings/packTypes.js"></script>
+<script src="scripts/controllers/settings/manageLocation.js"></script>
+<script src="scripts/controllers/settings/locations.js"></script>
+<script src="scripts/controllers/settings/divisions.js"></script>
+<script src="scripts/controllers/settings/manageDivision.js"></script>
+<script src="scripts/controllers/settings/componentTypes.js"></script>
+<script src="scripts/controllers/settings/manageComponentType.js"></script>
+<script src="scripts/controllers/settings/manageComponentTypeCombination.js"></script>
+<script src="scripts/controllers/settings/componentTypeCombinations.js"></script>
+<script src="scripts/controllers/settings/bloodTests.js"></script>
+<script src="scripts/controllers/settings/manageBloodTest.js"></script>
+<script src="scripts/controllers/settings/bloodTestingRules.js"></script>
+<script src="scripts/controllers/settings/manageBloodTestingRule.js"></script>
+<script src="scripts/controllers/settings/sidebar.js"></script>
+<script src="scripts/controllers/settings/dataExport.js"></script>
+<script src="scripts/util/constants.js"></script>
+<script src="scripts/util/permissions.js"></script>
+<script src="scripts/util/filters.js"></script>
+<script src="scripts/translations.js"></script>
+
+<!-- endbuild -->
+
+</body>
+</html>

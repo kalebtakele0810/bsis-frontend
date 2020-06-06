@@ -1,0 +1,367 @@
+{
+  "id": 1,
+  "firstName": "Super",
+  "lastName": "User",
+  "isAdmin": true,
+  "userRole": "Super User",
+  "username": "superuser",
+  "emailId": "xxxx@jembi.org",
+  "roles": [
+    {
+      "@id": 1,
+      "id": 1,
+      "name": "Super User",
+      "permissions": [
+        {
+          "id": 41,
+          "name": "Manage Roles"
+        },
+        {
+          "id": 2,
+          "name": "View Donor"
+        },
+        {
+          "id": 11,
+          "name": "Edit Donor Code"
+        },
+        {
+          "id": 32,
+          "name": "Issue Component"
+        },
+        {
+          "id": 56,
+          "name": "Manage Forms"
+        },
+        {
+          "id": 21,
+          "name": "View Component"
+        },
+        {
+          "id": 80,
+          "name": "Void Request"
+        },
+        {
+          "id": 14,
+          "name": "Add Donation"
+        },
+        {
+          "id": 71,
+          "name": "Edit Donation Batch"
+        },
+        {
+          "id": 51,
+          "name": "Manage Deferral Reasons"
+        },
+        {
+          "id": 20,
+          "name": "Add Component"
+        },
+        {
+          "id": 59,
+          "name": "View Donor Information"
+        },
+        {
+          "id": 28,
+          "name": "Edit Blood Typing Outcome"
+        },
+        {
+          "id": 29,
+          "name": "View Blood Typing Outcome"
+        },
+        {
+          "id": 15,
+          "name": "View Donation"
+        },
+        {
+          "id": 7,
+          "name": "Edit Deferral"
+        },
+        {
+          "id": 35,
+          "name": "Reporting - Donations"
+        },
+        {
+          "id": 49,
+          "name": "Manage Blood Bag Types"
+        },
+        {
+          "id": 24,
+          "name": "Add TTI Outcome"
+        },
+        {
+          "id": 42,
+          "name": "Manage Locations"
+        },
+        {
+          "id": 68,
+          "name": "View Admin Information"
+        },
+        {
+          "id": 17,
+          "name": "Void Donation"
+        },
+        {
+          "id": 82,
+          "name": "Manage Tips"
+        },
+        {
+          "id": 8,
+          "name": "Void Deferral"
+        },
+        {
+          "id": 87,
+          "name": "Void Test Batch"
+        },
+        {
+          "id": 58,
+          "name": "Manage Backup Data"
+        },
+        {
+          "id": 5,
+          "name": "Add Deferral"
+        },
+        {
+          "id": 81,
+          "name": "Manage Requests"
+        },
+        {
+          "id": 54,
+          "name": "Manage Lab Setup"
+        },
+        {
+          "id": 53,
+          "name": "Manage Diagnosis Codes"
+        },
+        {
+          "id": 66,
+          "name": "View Discard Information"
+        },
+        {
+          "id": 27,
+          "name": "Add Blood Typing Outcome"
+        },
+        {
+          "id": 75,
+          "name": "Edit Test Outcome"
+        },
+        {
+          "id": 76,
+          "name": "Void Test Outcome"
+        },
+        {
+          "id": 30,
+          "name": "Blood Cross-Match Check"
+        },
+        {
+          "id": 78,
+          "name": "View Request"
+        },
+        {
+          "id": 22,
+          "name": "Edit Component"
+        },
+        {
+          "id": 84,
+          "name": "Add Test Batch"
+        },
+        {
+          "id": 86,
+          "name": "Edit Test Batch"
+        },
+        {
+          "id": 9,
+          "name": "Add Donor Code"
+        },
+        {
+          "id": 44,
+          "name": "Manage Donation Categories"
+        },
+        {
+          "id": 26,
+          "name": "View TTI Outcome"
+        },
+        {
+          "id": 38,
+          "name": "Reporting - Components"
+        },
+        {
+          "id": 48,
+          "name": "Manage Blood Typing Rules"
+        },
+        {
+          "id": 4,
+          "name": "Void Donor"
+        },
+        {
+          "id": 36,
+          "name": "Reporting - Requests"
+        },
+        {
+          "id": 73,
+          "name": "Add Test Outcome"
+        },
+        {
+          "id": 70,
+          "name": "View Donation Batch"
+        },
+        {
+          "id": 16,
+          "name": "Edit Donation"
+        },
+        {
+          "id": 37,
+          "name": "Reporting - TTI Testing"
+        },
+        {
+          "id": 69,
+          "name": "Add Donation Batch"
+        },
+        {
+          "id": 64,
+          "name": "View Blood Bank Information"
+        },
+        {
+          "id": 23,
+          "name": "Void Component"
+        },
+        {
+          "id": 6,
+          "name": "View Deferral"
+        },
+        {
+          "id": 19,
+          "name": "Export Clinic Data"
+        },
+        {
+          "id": 74,
+          "name": "View Test Outcome"
+        },
+        {
+          "id": 67,
+          "name": "View Reporting Information"
+        },
+        {
+          "id": 34,
+          "name": "View Discards"
+        },
+        {
+          "id": 13,
+          "name": "View Donor Code Group"
+        },
+        {
+          "id": 52,
+          "name": "Manage Donor Codes"
+        },
+        {
+          "id": 45,
+          "name": "Manage Component Combinations"
+        },
+        {
+          "id": 79,
+          "name": "Edit Request"
+        },
+        {
+          "id": 57,
+          "name": "Manage Blood Tests"
+        },
+        {
+          "id": 50,
+          "name": "Manage Discard Reasons"
+        },
+        {
+          "id": 72,
+          "name": "Void Donation Batch"
+        },
+        {
+          "id": 63,
+          "name": "View Testing Information"
+        },
+        {
+          "id": 55,
+          "name": "Manage Data Setup"
+        },
+        {
+          "id": 25,
+          "name": "Edit TTI Outcome"
+        },
+        {
+          "id": 33,
+          "name": "Discard Component"
+        },
+        {
+          "id": 1,
+          "name": "Add Donor"
+        },
+        {
+          "id": 83,
+          "name": "Authenticated"
+        },
+        {
+          "id": 60,
+          "name": "View Donation Information"
+        },
+        {
+          "id": 85,
+          "name": "View Test Batch"
+        },
+        {
+          "id": 77,
+          "name": "Add Request"
+        },
+        {
+          "id": 43,
+          "name": "Manage Donation Types"
+        },
+        {
+          "id": 10,
+          "name": "View Donor Code"
+        },
+        {
+          "id": 12,
+          "name": "Void Donor Code"
+        },
+        {
+          "id": 47,
+          "name": "Manage Blood Tests"
+        },
+        {
+          "id": 61,
+          "name": "View Mobile Clinic Information"
+        },
+        {
+          "id": 46,
+          "name": "Manage Cross Match Types"
+        },
+        {
+          "id": 65,
+          "name": "View Inventory Information"
+        },
+        {
+          "id": 40,
+          "name": "Manage Users"
+        },
+        {
+          "id": 39,
+          "name": "Reporting - Discards"
+        },
+        {
+          "id": 62,
+          "name": "View Component Information"
+        },
+        {
+          "id": 18,
+          "name": "Import Clinic Data"
+        },
+        {
+          "id": 3,
+          "name": "Edit Donor"
+        },
+        {
+          "id": 31,
+          "name": "Label Component"
+        }
+      ],
+      "description": "Super User"
+    }
+  ]
+}

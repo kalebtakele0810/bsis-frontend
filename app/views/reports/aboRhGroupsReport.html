@@ -1,0 +1,49 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/reports/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <span class="h3 page-header" translate>ABO Rh Blood Grouping Report</span>
+
+  <hr style="margin-top:5px;"/>
+
+  <form class="form-horizontal" role="form"  name="selectPeriodForm" style="padding:10px 0;" ng-submit="getReport(selectPeriodForm)" novalidate>
+    <div class="clearfix form-group">
+        <label class="col-sm-2 control-label" translate>Period</label>
+        <div class="form-inline col-sm-10">
+            <div>
+                <dateselect name="startDate" ng-model="search.startDate" format="dateFormat" ng-class="{'has-error' : (selectPeriodForm.startDate.$invalid)}" ng-required="true" ui-date-end="{{search.endDate | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="endDate" ng-model="search.endDate" format="dateFormat" ng-class="{'has-error' : (selectPeriodForm.endDate.$invalid)}" ng-required="true" ui-date-start="{{search.startDate |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }" ui-date-range min-date="search.startDate"></dateselect-end>
+            </div>
+            <div>
+              <ng-messages for="selectPeriodForm.startDate.$error" role="alert" ng-show="selectPeriodForm.$submitted">
+                <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+              <ng-messages for="selectPeriodForm.endDate.$error" role="alert" ng-show="selectPeriodForm.$submitted && !selectPeriodForm.startDate.$invalid">
+                <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-offset-2 ">
+          <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." :
+              "Search" | translate}}
+          </button>
+          <button class="btn btn-primary" type="button" ng-click="clearSearch(selectPeriodForm)" translate>Clear</button>
+      </div>
+  </form>
+
+  <div class="col-sm-12">
+      <div class="panel panel-default" ng-if="submitted">
+          <div class="panel-body">
+              <p>
+                  <em translate translate-params-count="venuesNumber">{{count}} venue(s) found</em> |
+                  <em translate>Data Export</em>
+
+                  <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+                  <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+              </p>
+              <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+          </div>
+      </div>
+  </div>
+</div>

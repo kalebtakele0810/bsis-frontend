@@ -1,0 +1,27 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding-top:5px;" ng-controller="InventorySidebarCtrl">
+    <ul class="nav nav-sidebar">
+        <li class="disabled">
+      <span class="icon-sidebar-container">
+        <div class="placeholder">
+            <a href="#inventory">
+                <i class="fa {{icons.INVENTORY}}"></i>
+            </a>
+        </div>
+      </span>
+        </li>
+        <li class="disabled" has-permission="{{permissions.VIEW_COMPONENT}}"><span class="sidebar-heading" translate>MANAGE INVENTORY</span></li>
+        <li ng-class="{current: currentPath === '/findInventory'}" has-permission="{{permissions.VIEW_INVENTORY_INFORMATION}}"><a
+                href="#/findInventory" translate>Find Inventory</a></li>
+        <li ng-class="{current: currentPath === '/viewStockLevels'}" has-permission="{{permissions.VIEW_INVENTORY_INFORMATION}}"><a
+                href="#/viewStockLevels" translate>View Stock Levels</a></li>
+        <li ng-class="{current: currentPath === '/manageOrders'}" has-permission="{{permissions.ISSUE_COMPONENT}}"><a
+                href="#/manageOrders" translate>Manage Orders</a></li>
+        <li ng-class="{current: currentPath === '/manageReturns'}" has-permission="{{permissions.ISSUE_COMPONENT}}"><a
+                href="#/manageReturns" translate>Manage Returns</a></li>
+         <li ng-class="{current: currentPath === '/recordTransfusions'}" has-permission="{{permissions.ADD_TRANSFUSION_DATA}}"><a
+                href="#/recordTransfusions" translate>Record Transfusions</a></li>
+        <li ng-class="{current: currentPath === '/findTransfusion'}" has-permission="{{permissions.VIEW_TRANSFUSION_DATA}}"><a
+        href="#/findTransfusion" translate>Find Transfusions</a></li>
+    </ul>
+    <div ng-include="'views/sidebarFooter.html'"></div>
+</div>

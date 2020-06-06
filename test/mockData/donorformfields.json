@@ -1,0 +1,697 @@
+{
+  "addressTypes": [
+    {
+      "id": 1,
+      "preferredAddressType": "Home Address"
+    },
+    {
+      "id": 2,
+      "preferredAddressType": "Work Address"
+    },
+    {
+      "id": 3,
+      "preferredAddressType": "Postal Address"
+    }
+  ],
+  "languages": [
+    {
+      "id": 1,
+      "preferredLanguage": "English"
+    },
+    {
+      "id": 2,
+      "preferredLanguage": "French"
+    },
+    {
+      "id": 3,
+      "preferredLanguage": "Portuguese"
+    },
+    {
+      "id": 4,
+      "preferredLanguage": "Spanish"
+    },
+    {
+      "id": 5,
+      "preferredLanguage": "Arabic"
+    },
+    {
+      "id": 6,
+      "preferredLanguage": "Berber"
+    },
+    {
+      "id": 7,
+      "preferredLanguage": "Amharic"
+    },
+    {
+      "id": 8,
+      "preferredLanguage": "Tigrinya"
+    },
+    {
+      "id": 9,
+      "preferredLanguage": "Setswana"
+    },
+    {
+      "id": 10,
+      "preferredLanguage": "Swahili"
+    },
+    {
+      "id": 11,
+      "preferredLanguage": "Comorian"
+    },
+    {
+      "id": 12,
+      "preferredLanguage": "Chichewa"
+    },
+    {
+      "id": 13,
+      "preferredLanguage": "Kinyarwanda"
+    },
+    {
+      "id": 14,
+      "preferredLanguage": "Kirundi"
+    },
+    {
+      "id": 15,
+      "preferredLanguage": "Sango"
+    },
+    {
+      "id": 16,
+      "preferredLanguage": "Swati"
+    },
+    {
+      "id": 17,
+      "preferredLanguage": "Malagasy"
+    },
+    {
+      "id": 18,
+      "preferredLanguage": "Seychellois"
+    },
+    {
+      "id": 19,
+      "preferredLanguage": "Mauritian"
+    },
+    {
+      "id": 20,
+      "preferredLanguage": "Shona"
+    },
+    {
+      "id": 21,
+      "preferredLanguage": "Sesotho"
+    },
+    {
+      "id": 22,
+      "preferredLanguage": "Afrikaans"
+    }
+  ],
+  "donorFields": {
+    "idType": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Id Type",
+      "isAutoGeneratable": false
+    },
+    "bloodGroup": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Blood Group",
+      "isAutoGeneratable": false
+    },
+    "state": {
+      "shortDisplayName": null,
+      "hidden": true,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "State",
+      "isAutoGeneratable": false
+    },
+    "venue": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Venue",
+      "isAutoGeneratable": false
+    },
+    "contactMethodType": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Contact Method Type",
+      "isAutoGeneratable": false
+    },
+    "workNumber": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Work Number",
+      "isAutoGeneratable": false
+    },
+    "preferredLanguage": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Preferred Language",
+      "isAutoGeneratable": false
+    },
+    "city": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "City",
+      "isAutoGeneratable": false
+    },
+    "title": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Title",
+      "isAutoGeneratable": false
+    },
+    "dateOfLastDonation": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Date of last donation",
+      "isAutoGeneratable": false
+    },
+    "phoneNumber": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Phone number",
+      "isAutoGeneratable": false
+    },
+    "homeAddress": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Home Address",
+      "isAutoGeneratable": false
+    },
+    "birthDateEstimated": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Estimated",
+      "isAutoGeneratable": false
+    },
+    "age": {
+      "shortDisplayName": null,
+      "hidden": true,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Age",
+      "isAutoGeneratable": false
+    },
+    "province": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Province",
+      "isAutoGeneratable": false
+    },
+    "gender": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Gender M or F",
+      "isAutoGeneratable": false
+    },
+    "birthDate": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Birth Date",
+      "isAutoGeneratable": false
+    },
+    "firstName": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "First Name",
+      "isAutoGeneratable": false
+    },
+    "district": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "District",
+      "isAutoGeneratable": false
+    },
+    "createdDate": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Created on",
+      "isAutoGeneratable": false
+    },
+    "idNumber": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "ID Number",
+      "isAutoGeneratable": false
+    },
+    "middleName": {
+      "shortDisplayName": null,
+      "hidden": true,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Middle Name",
+      "isAutoGeneratable": false
+    },
+    "lastName": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Last Name",
+      "isAutoGeneratable": false
+    },
+    "nationalID": {
+      "shortDisplayName": null,
+      "hidden": true,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "National ID",
+      "isAutoGeneratable": false
+    },
+    "donorStatus": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Donor status",
+      "isAutoGeneratable": false
+    },
+    "zipcode": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Zip Code",
+      "isAutoGeneratable": false
+    },
+    "callingName": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Calling Name",
+      "isAutoGeneratable": false
+    },
+    "donorNumber": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": true,
+      "defaultValue": "",
+      "displayName": "Donor Number",
+      "isAutoGeneratable": true
+    },
+    "workAddress": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Work Address",
+      "isAutoGeneratable": false
+    },
+    "addressLine2": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Address Line2",
+      "isAutoGeneratable": false
+    },
+    "addressLine1": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Address Line1",
+      "isAutoGeneratable": false
+    },
+    "dateOfFirstDonation": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Date of First Donation",
+      "isAutoGeneratable": false
+    },
+    "country": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Country",
+      "isAutoGeneratable": false
+    },
+    "otherPhoneNumber": {
+      "shortDisplayName": null,
+      "hidden": true,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Other phone number",
+      "isAutoGeneratable": false
+    },
+    "homeNumber": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Home Number",
+      "isAutoGeneratable": false
+    },
+    "createdBy": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Created by",
+      "isAutoGeneratable": false
+    },
+    "email": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Email",
+      "isAutoGeneratable": false
+    },
+    "lastUpdatedTime": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Last modified on",
+      "isAutoGeneratable": false
+    },
+    "address": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Postal Address",
+      "isAutoGeneratable": false
+    },
+    "lastUpdatedBy": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Last modified by",
+      "isAutoGeneratable": false
+    },
+    "postalAddress": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Postal Address",
+      "isAutoGeneratable": false
+    },
+    "preferredAddressType": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Preferred Address Type",
+      "isAutoGeneratable": false
+    },
+    "preferredContactMethod": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Preferred contact method",
+      "isAutoGeneratable": false
+    },
+    "mobileNumber": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Mobile Number",
+      "isAutoGeneratable": false
+    },
+    "notes": {
+      "shortDisplayName": null,
+      "hidden": false,
+      "useCurrentTime": false,
+      "isTimeField": false,
+      "autoGenerate": false,
+      "defaultValue": "",
+      "displayName": "Notes",
+      "isAutoGeneratable": false
+    }
+  },
+  "idTypes": [
+    {
+      "id": 1,
+      "idType": "National Id",
+      "regExp": null
+    },
+    {
+      "id": 2,
+      "idType": "Passport Number",
+      "regExp": null
+    },
+    {
+      "id": 3,
+      "idType": "License Number",
+      "regExp": null
+    }
+  ],
+  "preferredContactMethods": [
+    {
+      "id": 1,
+      "contactMethodType": "None",
+      "isDeleted": false
+    },
+    {
+      "id": 2,
+      "contactMethodType": "Phone",
+      "isDeleted": false
+    },
+    {
+      "id": 3,
+      "contactMethodType": "SMS",
+      "isDeleted": false
+    },
+    {
+      "id": 4,
+      "contactMethodType": "Email",
+      "isDeleted": false
+    },
+    {
+      "id": 5,
+      "contactMethodType": "Mail",
+      "isDeleted": false
+    },
+    {
+      "id": 6,
+      "contactMethodType": "Do not contact",
+      "isDeleted": false
+    }
+  ],
+  "venues": [
+    {
+      "id": 3,
+      "name": "Maseru",
+      "isUsageSite": true,
+      "isMobileSite": false,
+      "isVenue": true,
+      "isDeleted": false,
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "name": "Mohale's Hoek",
+      "isUsageSite": false,
+      "isMobileSite": false,
+      "isVenue": true,
+      "isDeleted": false,
+      "notes": ""
+    },
+    {
+      "id": 7,
+      "name": "Leribe",
+      "isUsageSite": true,
+      "isMobileSite": false,
+      "isVenue": true,
+      "isDeleted": false,
+      "notes": ""
+    }
+  ],
+  "addDonorForm": {
+    "birthDate": "",
+    "year": null,
+    "month": null,
+    "dayOfMonth": null,
+    "ageFormatCorrect": null,
+    "dateOfFirstDonation": "",
+    "id": null,
+    "homeAddressLine1": null,
+    "homeAddressCity": null,
+    "homeAddressCountry": null,
+    "donorNumber": null,
+    "firstName": null,
+    "lastName": null,
+    "gender": null,
+    "notes": null,
+    "isDeleted": null,
+    "bloodAbo": "",
+    "bloodRh": "",
+    "createdDate": null,
+    "title": null,
+    "middleName": null,
+    "birthDateEstimated": null,
+    "callingName": null,
+    "preferredLanguage": null,
+    "lastUpdated": null,
+    "venue": null,
+    "age": null,
+    "idNumber": null,
+    "idType": null,
+    "preferredAddressType": null,
+    "homeAddressLine2": null,
+    "homeAddressProvince": null,
+    "homeAddressDistrict": null,
+    "homeAddressState": null,
+    "homeAddressZipcode": null,
+    "workAddressLine1": null,
+    "workAddressLine2": null,
+    "workAddressCity": null,
+    "workAddressProvince": null,
+    "workAddressDistrict": null,
+    "workAddressState": null,
+    "workAddressCountry": null,
+    "workAddressZipcode": null,
+    "postalAddressLine1": null,
+    "postalAddressLine2": null,
+    "postalAddressCity": null,
+    "postalAddressProvince": null,
+    "postalAddressState": null,
+    "postalAddressDistrict": null,
+    "postalAddressCountry": null,
+    "postalAddressZipcode": null,
+    "mobileNumber": null,
+    "homeNumber": null,
+    "workNumber": null,
+    "email": null,
+    "preferredContactMethod": null,
+    "contactId": "",
+    "addressId": ""
+  },
+  "firstTimeRender": true
+}

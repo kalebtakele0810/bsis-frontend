@@ -1,0 +1,31 @@
+{
+  "venues": [
+    {
+      "id": 3,
+      "name": "Maseru",
+      "isUsageSite": true,
+      "isMobileSite": false,
+      "isVenue": true,
+      "isDeleted": false,
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "name": "Mohale's Hoek",
+      "isUsageSite": false,
+      "isMobileSite": false,
+      "isVenue": true,
+      "isDeleted": false,
+      "notes": ""
+    },
+    {
+      "id": 7,
+      "name": "Leribe",
+      "isUsageSite": true,
+      "isMobileSite": false,
+      "isVenue": true,
+      "isDeleted": false,
+      "notes": ""
+    }
+  ]
+}

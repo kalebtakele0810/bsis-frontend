@@ -1,0 +1,36 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Audit Log</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom:10px;"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="form-group form-inline" style="padding-bottom:10px;">
+                    <label translate>Date Range</label>
+                    <dateselect ng-model="dateRange.startDate" format="dateFormat"></dateselect>
+                    <span><em><span translate>To</span></em></span>
+                    <dateselect-end ng-model="dateRange.endDate" format="dateFormat"></dateselect-end>
+                </div>
+
+                <table class="table" style="text-align:center;" ng-table="tableParams" show-filter="true">
+                    <tr ng-repeat="revision in $data">
+                        <td data-title="'Date' | translate" sortable="'revisionDate'">{{revision.revisionDate | bsisDateTime}}</td>
+                        <td data-title="'User' | translate" sortable="'user.firstName'" filter="{user: 'text'}">
+                            {{revision.user.firstName}} {{revision.user.lastName}}
+                        </td>
+                        <td data-title="'Revision type' | translate" sortable="'revisionType'" filter="{revisionType: 'select'}"
+                            filter-data="getRevisionTypes()">{{revision.revisionType | revisionType | translate}}
+                        </td>
+                        <td data-title="'Entity' | translate" sortable="'entityName'" filter="{entityName: 'text'}">
+                            {{revision.entityName}}
+                        </td>
+                        <td data-title="'Number of entities' | translate" sortable="'count'">{{revision.count}}</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

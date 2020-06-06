@@ -1,0 +1,50 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/mobile/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Look Up</h3>
+
+    <form name="mobileClinicLookUpForm" class="form-horizontal" style="padding:10px 0;" ng-submit="onSearch(mobileClinicLookUpForm)" novalidate>
+
+        <div class="clearfix form-group">
+            <label class="col-sm-2 control-label" translate>Venue</label>
+            <div class="form-inline col-sm-10">
+                <select name="venue" class="form-control input-sm"
+                        ng-model="search.venue"
+                        ng-options="item.id as item.name disable when (item.disabled || item.isDeleted) for item in venues"
+                        required>
+                    <option value="" ng-disabled="true"></option>
+                </select>
+                <ng-messages for="mobileClinicLookUpForm.venue.$error" role="alert" ng-show="mobileClinicLookUpForm.$submitted">
+                    <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+            </div>
+        </div>
+
+        <div class="clearfix form-group">
+            <label class="col-sm-2 control-label" translate>Clinic Date</label>
+            <div class="form-inline col-sm-10">
+                <div>
+                    <dateselect name="clinicDate" ng-model="search.clinicDate" format="dateFormat" ng-required="true"></dateselect>
+                </div>
+                <ng-messages for="mobileClinicLookUpForm.clinicDate.$error" role="alert" ng-show="mobileClinicLookUpForm.$submitted">
+                    <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+            </div>
+        </div>
+
+        <div class="col-sm-offset-2">
+            <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+            </button>
+            <button class="btn btn-primary" type="reset" ng-click="onClear(mobileClinicLookUpForm)" translate>Clear</button>
+        </div>
+    </form>
+
+    <div class="panel panel-default" ng-if="currentSearch && !searching">
+        <div class="panel-body">
+            <p>
+                <em translate translate-params-count="gridOptions.data.length">{{count}} donor(s) found</em>&nbsp;|&nbsp;<span translate translate-params-number-eligible-donors="numberEligibleDonors" translate-params-total-donors="gridOptions.data.length" translate-params-percentage="percentageEligibleDonor">Eligible Donors: {{numberEligibleDonors}} out of {{totalDonors}} ({{percentage}}%)</span>&nbsp;|&nbsp;<em translate>Data Export</em>
+                <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+            </p>
+            <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+        </div>
+    </div>
+</div>

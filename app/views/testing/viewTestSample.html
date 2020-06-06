@@ -1,0 +1,126 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/testing/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>View Test Sample</h3>
+
+  <form class="form-horizontal col-sm-12" role="form" name="viewTestSampleForm" ng-submit="findTestSample()" novalidate>
+      <div class="form-group">
+          <label for="name" class="col-sm-1 control-label" translate>DIN</label>
+          <div class="col-sm-11">
+              <div class="form-inline">
+                  <input size="15" type="donationIdentificationNumber" name="donationIdentificationNumber"
+                         class="form-control input-sm" placeholder=""
+                         ng-model="search.donationIdentificationNumber"
+                         required>
+              </div>
+              <div>
+                  <ng-messages for="viewTestSampleForm.donationIdentificationNumber.$error" role="alert" ng-show="viewTestSampleForm.$submitted">
+                    <ng-messages-include src="messages.html"></ng-messages-include>
+                  </ng-messages>
+              </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-3">
+              <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+              </button>
+              <button class="btn btn-primary" type="reset" ng-click="clear()" translate>Clear</button>
+          </div>
+      </div>
+  </form>
+
+  <div ng-show="viewTestSampleForm.$submitted && !searching && !viewTestSampleForm.$invalid" ng-switch="testSample != null" class="col-sm-12">
+      <div style="padding-bottom: 10px"></div>
+      <div ng-switch-when="true">
+          <div class="panel panel-default">
+              <div class="panel-body">
+
+                  <span class="h3">
+                    <small><em><span translate>DIN</span>:</em></small> {{testSample.din}}
+                  </span>
+                  <span class="h4">
+                    &nbsp;|&nbsp;
+                    <small><em><span translate>Venue</span>:</em></small> {{testSample.venue}}
+                    &nbsp;|&nbsp;
+                    <small><em><span translate>Date</span>: </em></small> {{testSample.donationDate | bsisDate}}
+                    &nbsp;|&nbsp;
+                    <small><em><span translate>Blood Group</span>:</em></small>
+                    <span ng-if="testSample.bloodGroup !== ''">{{testSample.bloodGroup}}</span>
+                    <span ng-if="testSample.bloodGroup == ''" translate translate-comment="Unknown Blood Group">Unknown</span>
+                    &nbsp;|&nbsp;
+                    <small><em><span translate>Pack Type</span>:</em></small> {{testSample.packType}}
+                  </span>
+                  <hr/>
+                  <span class="h4">
+                    <small><em><span translate>Testing Site</span>:</em></small> {{testSample.testingSite}}
+                    &nbsp;|&nbsp;
+                    <small><em><span translate>Testing Date</span>:</em></small> {{testSample.testingDate | bsisDate}}
+                  </span>
+                  <hr/>
+                  <span class="h4">
+                    <small><em><span translate>TTI Status</span>:</em></small> {{testSample.ttiStatus | titleCase | translate}}
+                    <br/>
+                    <small><em><span translate>Blood Group Serology Status</span>:</em></small> {{testSample.bloodTypingStatus | titleCase | translate}} - {{testSample.bloodTypingMatchStatus | titleCase | translate}}
+                  </span>
+
+                  <hr/>
+
+                  <div class="form-horizontal col-sm-12">
+                    <div class="row">
+                      <span class="col-sm-6">
+                          <span class="h4" translate>TTI Outcomes</span>
+                          <hr style="margin-top:10px; margin-bottom:5px;"/>
+                          <table class="dash-table" style="width:80%;">
+                              <thead>
+                              <tr>
+                                  <th translate>Test</th>
+                                  <th translate>Outcome</th>
+                                  <th translate>Tested On</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr ng-repeat="test in testOutcomes">
+                                  <td ng-if="test.testCategory == 'TTI'" class="value">{{test.testName}}</td>
+                                  <td ng-if="test.testCategory == 'TTI'" class="value">{{test.result}}</td>
+                                  <td ng-if="test.testCategory == 'TTI'" class="value">{{test.testedOn | bsisDate}}</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </span>
+                      <span class="col-sm-6">
+                          <span class="h4" translate>Blood Group Serology Outcomes</span>
+                          <hr style="margin-top:10px; margin-bottom:5px;"/>
+                          <table class="dash-table" style="width:80%;">
+                              <thead>
+                              <tr>
+                                  <th translate>Test</th>
+                                  <th translate>Outcome</th>
+                                  <th translate>Tested On</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr ng-repeat="test in testOutcomes">
+                                  <td ng-if="test.testCategory == 'BLOODTYPING'" class="value">{{test.testName}}
+                                  </td>
+                                  <td ng-if="test.testCategory == 'BLOODTYPING'" class="value">{{test.result}}</td>
+                                  <td ng-if="test.testCategory == 'BLOODTYPING'" class="value">{{test.testedOn | bsisDate}}
+                                  </td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div ng-switch-when="false">
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <p>
+                      <em translate>Not found. Please re-enter DIN.</em>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

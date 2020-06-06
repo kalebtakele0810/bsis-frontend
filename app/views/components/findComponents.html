@@ -1,0 +1,131 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/components/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Find Components</h3>
+
+    <form name="findComponentForm" class="form-horizontal col-sm-12" role="form" ng-submit="findComponents(search)" novalidate>
+        <div class="clearfix form-group">
+          <label for="donationIdentificationNumber" class="col-sm-1 control-label" translate>DIN</label>
+          <div class="form-inline col-sm-11">
+            <div style="display: inline-block; vertical-align: top;">
+              <input name="donationIdentificationNumber" id="donationIdentificationNumber"
+                               class="form-control" placeholder=""
+                               ng-model="search.donationIdentificationNumber"
+                               ng-blur="updateDinSearch()">
+            </div>        
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="locationId" class="col-sm-1 control-label" translate>Site</label>
+          <div class="form-inline col-sm-11">            
+            <select name="locationId" class="form-control" ng-change="updateAllSites()"  ng-disabled="dinSearch" ng-model="search.locationId" ng-options="location.id as location.name for location in locations" style="min-width: 350px;" ng-required="!search.allSites">
+                <option value="" disabled></option>
+            </select>
+            <label>
+              <input type="checkbox" name="allSites" ng-model="search.allSites" ng-click="clearLocations()" ng-disabled="dinSearch" />
+              <span translate>All</span>
+            </label>
+            <div>
+                <ng-messages for="findComponentForm.locationId.$error" role="alert" ng-show="findComponentForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="componentTypes" class="col-sm-1 control-label" translate>Type</label>
+            <div class="form-inline col-sm-11">                
+                <ui-select multiple ng-model="search.componentTypes" theme="bootstrap" style="min-height: 34px; width: 450px;" ng-disabled="dinSearch">
+                    <ui-select-match placeholder="{{'Select' | translate}}">{{$item.componentTypeName}}</ui-select-match>
+                    <ui-select-choices
+                            repeat="componentType.id as componentType in componentTypes | filter:$select.search">
+                        {{componentType.componentTypeName}}
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="statuses" class="col-sm-1 control-label" translate>Status</label>
+            <div class="form-inline col-sm-11">
+                <select name="status" class="form-control" ng-change="updateAllStatuses()" ng-model="search.status" ng-options="status as (status | titleCase | translate) for status in componentStatuses" ng-disabled="dinSearch" style="min-width: 350px;" ng-required="!search.allStatuses" >
+
+                <option value="" disabled></option>
+                </select>
+                <label>
+                <input type="checkbox" name="allStatuses" ng-model="search.allStatuses" ng-click="clearComponentStatuses()" ng-disabled="dinSearch" />
+                <span translate>All</span>
+                </label>
+                <div>
+                    <ng-messages for="findComponentForm.status.$error" role="alert" ng-show="findComponentForm.$submitted">
+                      <ng-messages-include src="messages.html"></ng-messages-include>
+                    </ng-messages>
+                </div>
+           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="donationDate" class="col-sm-1 control-label" translate>Period</label>
+          <div class="col-sm-11">
+            <dateselect name="donationDateFrom" ng-model="search.donationDateFrom" format="format" opened="donationDateFromOpen" cal-icon="icons.CALENDAR" ng-required="!dinSearch" ng-disabled="dinSearch" ui-date-range="1,months" ui-date-end="{{search.donationDateTo | date:'yyyy-MM-dd HH:mm:ss'}}" ng-class="{'has-error' : (findComponentForm.donationDateFrom.$invalid)}" ng-model-options="{ allowInvalid: true }">
+            </dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="donationDateTo" ng-model="search.donationDateTo" format="format" opened="donationDateToOpen" cal-icon="icons.CALENDAR" ng-required="!dinSearch" ng-disabled="dinSearch" ui-date-range="1,months" ui-date-start="{{search.donationDateFrom |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-class="{'has-error' : (findComponentForm.donationDateTo.$invalid)}" ng-model-options="{ allowInvalid: true }">
+            </dateselect-end>
+            <div>
+              <ng-messages for="findComponentForm.donationDateFrom.$error" role="alert" ng-show="findComponentForm.$submitted">
+                <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+                <small class="error" ng-message="datesOutOfRange"><span translate>Select a date range that is less than one month</span></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+              <ng-messages for="findComponentForm.donationDateTo.$error" role="alert" ng-show="findComponentForm.$submitted && !findComponentForm.donationDateFrom.$invalid">
+                <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+        </div>
+
+       <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-3">
+                <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." :
+                    "Search" | translate}}
+                </button>
+                <button class="btn btn-primary" type="button" ng-click="clear()" translate>Clear</button>
+            </div>
+        </div>
+    </form>
+
+    <div ng-switch="searchResults" class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+
+        <div ng-switch-when="true">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div ng-switch on="componentsView">
+                        <div ng-switch-when="viewDonations">
+                            <div ng-include="'views/components/viewDonations.html'"></div>
+                        </div>
+                        <div ng-switch-when="viewComponents">
+                            <div ng-include="'views/components/viewComponents.html'"></div>
+                        </div>
+                        <div ng-switch-default>
+                            <div ng-include="'views/components/viewDonations.html'"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="false">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>
+                        <em><span translate>No components found</span></em>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

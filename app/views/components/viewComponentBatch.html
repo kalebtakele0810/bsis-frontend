@@ -1,0 +1,51 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/components/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Receive Components</h3>
+
+  <ul class="nav nav-tabs nav-justified">
+    <li>
+      <a href="#/addComponentBatch" translate>Add Delivery Form</a>
+    </li>
+    <li class="active">
+      <a href="#/viewComponentBatches" translate>View Delivery Forms</a>
+    </li>
+  </ul>
+
+  <hr />
+
+  <span class="h4" style="float:right; margin-top: -15px; padding-right: 15px; display:inline;">
+    <button class="btn btn-primary" ng-click="printDeliveryNote()" translate>Print Delivery Note</button>
+  </span>
+
+  <section>
+    <h4 translate>Donation Batch Info</h4>
+    <span class="text-muted"><span translate>Date Created</span>:</span> {{componentBatch.donationBatch.donationBatchDate | bsisDate}}
+    <span class="text-muted"><span translate>Venue</span>:</span> {{componentBatch.donationBatch.venue.name}}
+    <span class="text-muted"><span translate>Number of Donations</span>:</span> {{componentBatch.donationBatch.numDonations}}
+    <span class="text-muted"><span translate>Status</span>:</span> {{componentBatch.donationBatch.isClosed ? donationBatchClosed : donationBatchOpen}}
+  </section>
+
+  <hr />
+
+  <section>
+    <span class="text-muted"><span translate>Time of Delivery</span>:</span> {{componentBatch.deliveryDate | bsisTime}}
+    <span class="text-muted"><span translate>Location</span>:</span> {{componentBatch.location.name}}
+    <span class="text-muted"><span translate>Number of Blood Transport Boxes</span>:</span> {{componentBatch.bloodTransportBoxes.length}}
+  </section>
+
+  <hr />
+
+  <section>
+    <div ng-repeat="box in componentBatch.bloodTransportBoxes">
+      <span class="text-muted" translate>Blood Transport Box Temperature</span>:&nbsp;{{box.temperature}} &deg;C
+    </div>
+  </section>
+
+  <hr />
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="grid" ui-grid="gridOptions" ui-grid-exporter></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,424 @@
+{
+  "allPackTypes": [
+    {
+      "isDeleted": false,
+      "packType": "Single",
+      "componentType": {
+        "componentTypeName": "Whole Blood Single Pack - CPDA",
+        "componentTypeNameShort": "0011",
+        "expiresAfterUnits": "DAYS",
+        "expiresAfter": 35,
+        "hasBloodGroup": true,
+        "producedComponentTypeCombinations": [
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Whole Blood - CPDA",
+                "componentTypeNameShort": "1001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 6
+              }
+            ],
+            "combinationName": "Whole Blood",
+            "id": 1
+          }
+        ],
+        "description": "",
+        "id": 1
+      },
+      "countAsDonation": true,
+      "periodBetweenDonations": 90,
+      "canPool": null,
+      "canSplit": null,
+      "id": 1
+    },
+    {
+      "isDeleted": false,
+      "packType": "Double",
+      "componentType": {
+        "componentTypeName": "Whole Blood Double Pack - CPDA",
+        "componentTypeNameShort": "0012",
+        "expiresAfterUnits": "DAYS",
+        "expiresAfter": 35,
+        "hasBloodGroup": true,
+        "producedComponentTypeCombinations": [
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Packed Red Cells - CPDA",
+                "componentTypeNameShort": "2001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 8
+              },
+              {
+                "componentTypeName": "Fresh Frozen Plasma - Whole Blood",
+                "componentTypeNameShort": "3001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 10
+              }
+            ],
+            "combinationName": "PRC-CPDA, FFP",
+            "id": 2
+          },
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Packed Red Cells - CPDA",
+                "componentTypeNameShort": "2001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 8
+              },
+              {
+                "componentTypeName": "Frozen Plasma - Whole Blood",
+                "componentTypeNameShort": "3002",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 11
+              }
+            ],
+            "combinationName": "PRC-CPDA, FP",
+            "id": 3
+          },
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Whole Blood Poor Platelets - CPDA",
+                "componentTypeNameShort": "1005",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 7
+              },
+              {
+                "componentTypeName": "Platelets Concentrate - Whole Blood - 24H",
+                "componentTypeNameShort": "4011",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 1,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 13
+              }
+            ],
+            "combinationName": "WB Poor Platelets, PC-24H",
+            "id": 4
+          }
+        ],
+        "description": "",
+        "id": 2
+      },
+      "countAsDonation": true,
+      "periodBetweenDonations": 90,
+      "canPool": null,
+      "canSplit": null,
+      "id": 2
+    },
+    {
+      "isDeleted": false,
+      "packType": "Triple",
+      "componentType": {
+        "componentTypeName": "Whole Blood Triple Pack - CPDA",
+        "componentTypeNameShort": "0013",
+        "expiresAfterUnits": "DAYS",
+        "expiresAfter": 35,
+        "hasBloodGroup": true,
+        "producedComponentTypeCombinations": [
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Packed Red Cells - SAGM",
+                "componentTypeNameShort": "2011",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 42,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 9
+              },
+              {
+                "componentTypeName": "Fresh Frozen Plasma - Whole Blood",
+                "componentTypeNameShort": "3001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 10
+              },
+              {
+                "componentTypeName": "Platelets Concentrate - Whole Blood",
+                "componentTypeNameShort": "4001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 5,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 12
+              }
+            ],
+            "combinationName": "PRC-SAGM, FFP, PC",
+            "id": 5
+          },
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Packed Red Cells - SAGM",
+                "componentTypeNameShort": "2011",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 42,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 9
+              },
+              {
+                "componentTypeName": "Fresh Frozen Plasma - Whole Blood",
+                "componentTypeNameShort": "3001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 10
+              }
+            ],
+            "combinationName": "PRC-SAGM, FFP",
+            "id": 6
+          },
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Packed Red Cells - SAGM",
+                "componentTypeNameShort": "2011",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 42,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 9
+              },
+              {
+                "componentTypeName": "Frozen Plasma - Whole Blood",
+                "componentTypeNameShort": "3002",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 11
+              }
+            ],
+            "combinationName": "PRC-SAGM, FP",
+            "id": 7
+          }
+        ],
+        "description": "",
+        "id": 3
+      },
+      "countAsDonation": true,
+      "periodBetweenDonations": 90,
+      "canPool": null,
+      "canSplit": null,
+      "id": 3
+    },
+    {
+      "isDeleted": false,
+      "packType": "Quad",
+      "componentType": {
+        "componentTypeName": "Whole Blood Quad Pack - CPDA",
+        "componentTypeNameShort": "0014",
+        "expiresAfterUnits": "DAYS",
+        "expiresAfter": 35,
+        "hasBloodGroup": true,
+        "producedComponentTypeCombinations": [
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Packed Red Cells - Paediatric - CPDA",
+                "componentTypeNameShort": "2101",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 14
+              },
+              {
+                "componentTypeName": "Packed Red Cells - Paediatric - CPDA",
+                "componentTypeNameShort": "2101",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 14
+              },
+              {
+                "componentTypeName": "Packed Red Cells - Paediatric - CPDA",
+                "componentTypeNameShort": "2101",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 35,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 14
+              },
+              {
+                "componentTypeName": "Fresh Frozen Plasma - Whole Blood",
+                "componentTypeNameShort": "3001",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 10
+              }
+            ],
+            "combinationName": "3 X PRC-Paed-CPDA, FFP",
+            "id": 8
+          }
+        ],
+        "description": "",
+        "id": 4
+      },
+      "countAsDonation": true,
+      "periodBetweenDonations": 90,
+      "canPool": null,
+      "canSplit": null,
+      "id": 4
+    },
+    {
+      "isDeleted": false,
+      "packType": "Apheresis",
+      "componentType": {
+        "componentTypeName": "Apheresis",
+        "componentTypeNameShort": "0021",
+        "expiresAfterUnits": "DAYS",
+        "expiresAfter": 5,
+        "hasBloodGroup": true,
+        "producedComponentTypeCombinations": [
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Fresh Frozen Plasma - Apheresis",
+                "componentTypeNameShort": "3011",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 15
+              },
+              {
+                "componentTypeName": "Platelets Concentrate - Apheresis",
+                "componentTypeNameShort": "4021",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 5,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 16
+              }
+            ],
+            "combinationName": "FFP-Apheresis, PC-Apheresis",
+            "id": 9
+          },
+          {
+            "componentTypes": [
+              {
+                "componentTypeName": "Fresh Frozen Plasma - Apheresis",
+                "componentTypeNameShort": "3011",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 365,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 15
+              },
+              {
+                "componentTypeName": "Platelets Concentrate - Apheresis",
+                "componentTypeNameShort": "4021",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 5,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 16
+              },
+              {
+                "componentTypeName": "Platelets Concentrate - Apheresis",
+                "componentTypeNameShort": "4021",
+                "expiresAfterUnits": "DAYS",
+                "expiresAfter": 5,
+                "hasBloodGroup": true,
+                "producedComponentTypeCombinations": [],
+                "description": "",
+                "id": 16
+              }
+            ],
+            "combinationName": "FFP Apheresis, 2 X PC-Apheresis",
+            "id": 10
+          }
+        ],
+        "description": "",
+        "id": 5
+      },
+      "countAsDonation": true,
+      "periodBetweenDonations": 30,
+      "canPool": null,
+      "canSplit": null,
+      "id": 5
+    },
+    {
+      "isDeleted": false,
+      "packType": "Dry Pack",
+      "componentType": null,
+      "countAsDonation": false,
+      "periodBetweenDonations": 0,
+      "canPool": null,
+      "canSplit": null,
+      "id": 6
+    },
+    {
+      "isDeleted": false,
+      "packType": "Test Only",
+      "componentType": null,
+      "countAsDonation": false,
+      "periodBetweenDonations": 0,
+      "canPool": null,
+      "canSplit": null,
+      "id": 7
+    },
+    {
+      "isDeleted": false,
+      "packType": "Did Not Bleed",
+      "componentType": null,
+      "countAsDonation": false,
+      "periodBetweenDonations": 0,
+      "canPool": null,
+      "canSplit": null,
+      "id": 8
+    }
+  ]
+}

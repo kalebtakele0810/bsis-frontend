@@ -1,0 +1,338 @@
+<span class="h4" translate>Add Donation</span>
+<hr style="margin-top:8px;"/>
+
+<div ng-if="$parent.addDonationSuccess === false" ng-hide="$parent.addDonationSuccess !== false"
+     style="padding-top:10px;">
+    <uib-alert type="danger" close="">
+        <span translate>Please provide valid inputs</span>
+        <ul>
+            <li ng-show="invalidDonorError.code === 'donor.invalid' || err.developerMessage === 'Do not bleed donor'" translate>Please supply a valid donor</li>
+            <li ng-show="donationIdentificationNumberError.code === 'donationIdentificationNumber.nonunique'" translate>There is another donation with the same donation identification number</li>
+            <li ng-show="invalidDonorError.code === 'errors.invalid.donationBeforeNextAllowedDate'" translate>Please supply a valid donor</li>
+            <li ng-show="invalidDonorError.code === 'errors.invalid.donorDeferred'" translate>Please supply a valid donor</li>
+        </ul>
+    </uib-alert>
+</div>
+
+<form name="addDonationForm" novalidate class="form-horizontal col-sm-12" role="form"
+      ng-submit="addDonation(donation, bleedStartTime, bleedEndTime, addDonationForm.$valid)">
+
+    <div class="col-md-4">
+
+        <p><em translate>Donation Information</em></p>
+        <hr style="margin-top:8px;"/>
+
+        <div class="form-group">
+            <label for="donorNumber" class="col-sm-3 control-label"><span translate>Donor Number</span></label>
+            <div class="row col-sm-9">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input name="donorNumber" size="15" type="donorNumber" id="donorNumber"
+                           class="form-control input-sm" placeholder="" ng-model="donation.donorNumber" required
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' : (addDonationForm.donorNumber.$invalid && submitted)}">
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.donorNumber.$error.required && (addDonationForm.donorNumber.$dirty || submitted))">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                    <div>
+                        <small class="error" ng-show="(!addDonationForm.donorNumber.$error.required && addDonationForm.donorNumber.$invalid && (addDonationForm.donorNumber.$dirty || submitted))">
+                            <span translate>Invalid input</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-3 control-label"> </label>
+            <div class="row col-sm-9">
+                <div class="form-inline"
+                     style="margin-left:5px; padding:3px 0 3px 8px; font-size:0.9em; height:80px; width:150px; border-radius: 5px; border: 1px solid #ddd;">
+                    <i class="fa fa-spinner fa-spin" ng-show="donorSummaryLoading"></i>
+                    <span class="center-block" ng-hide="donorSummaryLoading">
+                      {{donorSummary.firstName}} {{donorSummary.lastName}}
+                    </span>
+                    <span class="center-block" ng-switch="donorSummary.gender" ng-hide="donorSummaryLoading">
+                      <span ng-switch-when="male">
+                        <i class="fa fa-male"></i>
+                        <span translate>Male</span>
+                      </span>
+                      <span ng-switch-when="female">
+                        <i class="fa fa-female"></i>
+                        <span translate>Female</span>
+                      </span>
+                    </span>
+                    <span class="center-block" ng-hide="donorSummaryLoading">
+                      {{donorSummary.birthDate | bsisDate}}
+                    </span>
+                    <span class="center-block text-danger" ng-hide="donorSummaryLoading || donorSummary.eligible !== false" translate>
+                      Do not bleed donor
+                    </span>
+                    <span class="center-block text-success" ng-hide="donorSummaryLoading || donorSummary.eligible !== true" translate>
+                      Eligible donor
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-3 control-label" translate translate-comment="Donation Identification Number, abbreviation">DIN</label>
+            <div class="row col-sm-9">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input name="din" size="15" type="donationIdentificationNumber" id="donationIdentificationNumber"
+                           class="form-control input-sm" placeholder="" ng-model="donation.donationIdentificationNumber"
+                           ng-maxlength="dinLength"
+                           ng-minlength="dinLength"
+                           required
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 1000, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' : (addDonationForm.din.$invalid && submitted)}" >
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.din.$error.required && (addDonationForm.din.$dirty || submitted))">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                    <div>
+                        <small class="error" ng-show="((addDonationForm.din.$error.maxlength || addDonationForm.din.$error.minlength) && (addDonationForm.din.$dirty || submitted))">
+                            <span translate>DIN should be {{dinLength}} characters</span>
+                        </small>
+                    </div>
+                    <div>
+                        <small class="error" ng-show="(!addDonationForm.din.$error.required && addDonationForm.din.$invalid && (!addDonationForm.din.$error.maxlength && !addDonationForm.din.$error.minlength) && (addDonationForm.din.$dirty || submitted))">
+                            <span translate>Invalid input</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="packType" class="col-sm-3 control-label" translate>Pack</label>
+            <div class="row col-sm-9">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select name="packType" id="packType" class="form-control input-sm" ng-model="donation.packType"
+                            ng-options="item as item.packType for item in packTypes" required
+                            ng-class="{'ng-invalid ng-dirty' : addDonationForm.packType.$invalid && submitted}">
+                        <option value=""></option>
+                    </select>
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.packType.$invalid && (addDonationForm.packType.$dirty || submitted))">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="donationType" class="col-sm-3 control-label" translate>Donation</label>
+            <div class="row col-sm-9">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select name="donationType" id="donationType" class="form-control input-sm"
+                            ng-model="donation.donationType"
+                            ng-options="item as item.type for item in donationTypes" required
+                            ng-class="{'ng-invalid ng-dirty' : addDonationForm.donationType.$invalid && submitted}" >
+                        <option value=""></option>
+                    </select>
+                    <div>
+                        <small class="error" ng-show=" (addDonationForm.donationType.$invalid && (addDonationForm.donationType.$dirty || submitted))">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+
+        <p><em translate>Bleed Times</em></p>
+        <hr style="margin-top:8px;"/>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label" translate>Start</label>
+            <div class="row col-sm-10">
+                <div style="padding-left:5px;">
+                    <uib-timepicker ng-model="bleedStartTime" name="bleedStartTime" show-spinners="false"></uib-timepicker>
+                    <small class="error" ng-show="addDonationForm.bleedStartTime.$error.time">
+                        <span translate>Enter a valid time</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label" translate>End</label>
+            <div class="row col-sm-10">
+                <div style="padding-left:5px;">
+                    <uib-timepicker ng-model="bleedEndTime" name="bleedEndTime" show-spinners="false" ng-required="submitted"></uib-timepicker>
+                    <small class="error" ng-show="addDonationForm.bleedEndTime.$error.time">
+                        <span translate>Enter a valid time</span>
+                    </small>
+                    <small class="error" ng-show="(bleedEndTime < bleedStartTime) && !addDonationForm.bleedStartTime.$error.time && !addDonationForm.bleedEndTime.$error.time">
+                        <span translate>End time should be after Start time</span>
+                    </small>
+                    <small class="error" ng-show="(bleedEndTime < bleedStartTime) && !addDonationForm.bleedStartTime.$error.time && !addDonationForm.bleedEndTime.$error.time">
+                        <span translate>End time should be 12 minute ahead after Start time</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+
+        <p><em translate>Donor Assessment</em></p>
+        <hr style="margin-top:8px;"/>
+
+        <div class="form-group">
+            <label for="donorWeight" class="col-sm-4 control-label" translate>Weight</label>
+            <div class="row col-sm-8">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input name="donorWeight" size="4" type="number" id="donorWeight" class="form-control input-sm"
+                           placeholder="" ng-model="donation.donorWeight"
+                           decimal min={{weightMin}} max={{weightMax}}
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' :  (addDonationForm.donorWeight.$invalid && submitted)}" />
+                    <em> {{weightUnit}} </em>
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.donorWeight.$error.min && (addDonationForm.donorWeight.$dirty || submitted))">
+                            <span translate translate translate-params-min-value="weightMin">Please enter a value above {{minValue}}</span>
+                        </small>
+                        <small class="error" ng-show="(addDonationForm.donorWeight.$error.max && (addDonationForm.donorWeight.$dirty || submitted))">
+                            <span translate translate-params-max-value="weightMax">Please enter a value below {{maxValue}}</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="haemoglobinCount" class="col-sm-4 control-label" translate translate-comment="Haemoglobin, abbreviation">Hb</label>
+            <div class="row col-sm-8">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input ng-show="getBooleanValue('donation.hbNumericValue')" name="hb" size="5" type="number"
+                           id="haemoglobinCount" class="form-control input-sm" placeholder=""
+                           ng-model="donation.haemoglobinCount"
+                           decimal min={{hbMin}} max={{hbMax}}
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' : (addDonationForm.hb.$invalid && submitted)}" />
+                    <em ng-show="getBooleanValue('donation.hbNumericValue')"> {{hbUnit}} </em>
+                    <select ng-show="getBooleanValue('donation.hbQualitativeValue')" class="form-control input-sm"
+                            ng-model="donation.haemoglobinLevel"
+                            ng-options="l.value as (l.label | titleCase | translate) for l in haemoglobinLevels">
+                        <option value="" ng-disabled="true" translate>Level</option>
+                    </select>
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.hb.$error.min && (addDonationForm.hb.$dirty || submitted))">
+                            <span translate translate-params-min-value="hbMin">Please enter a value above {{minValue}}</span>
+                        </small>
+                        <small class="error" ng-show="(addDonationForm.hb.$error.max && (addDonationForm.hb.$dirty || submitted))">
+                            <span translate translate-params-max-value="hbMax">Please enter a value below {{maxValue}}</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bloodPressureSystolic" class="col-sm-4 control-label" translate translate-comment="Blood Pressure, abbreviation">BP</label>
+            <div class="row col-sm-8">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input name="bpSystolic" size="1" type="number" id="bloodPressureSystolic"
+                           class="form-control input-sm" placeholder="" ng-model="donation.bloodPressureSystolic"
+                           integer min={{bpSystolicMin}} max={{bpSystolicMax}}
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' : (addDonationForm.bpSystolic.$invalid && submitted)}" /> /
+                    <input name="bpDiastolic" size="1" type="number" id="bloodPressureDiastolic"
+                           class="form-control input-sm" placeholder="" ng-model="donation.bloodPressureDiastolic"
+                           integer min={{bpDiastolicMin}} max={{bpDiastolicMax}}
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' : (addDonationForm.bpDiastolic.$invalid && submitted)}" />
+                    <em> {{bpUnit}} </em>
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.bpSystolic.$error.min && (addDonationForm.bpSystolic.$dirty || submitted))">
+                            <span translate translate-params-min-value="bpSystolicMin">Please enter a value above {{minValue}}</span><br/>
+                        </small>
+                        <small class="error" ng-show="(addDonationForm.bpSystolic.$error.max && (addDonationForm.bpSystolic.$dirty || submitted))">
+                            <span translate translate-params-max-value="bpDiastolicMax">Please enter a value below {{maxValue}}</span><br/>
+                        </small>
+                        <small class="error" ng-show="(addDonationForm.bpDiastolic.$error.min && (addDonationForm.bpDiastolic.$dirty || submitted))">
+                            <span translate translate-params-min-value="bpSystolicMin">Please enter a value above {{minValue}}</span>
+                        </small>
+                        <small class="error" ng-show="(addDonationForm.bpDiastolic.$error.max && (addDonationForm.bpDiastolic.$dirty || submitted))">
+                            <span translate translate translate-params-max-value="bpDiastolicMax">Please enter a value below {{maxValue}}</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="donorPulse" class="col-sm-4 control-label" translate>Pulse</label>
+            <div class="row col-sm-8">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input name="pulse" size="4" type="number" id="donorPulse" class="form-control input-sm"
+                           placeholder="" ng-model="donation.donorPulse"
+                           integer min={{pulseMin}} max={{pulseMax}}
+                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                           ng-class="{'ng-invalid ng-dirty' : (addDonationForm.pulse.$invalid && submitted) }" />
+                    <em> {{pulseUnit}} </em>
+                    <div>
+                        <small class="error" ng-show="(addDonationForm.pulse.$error.min && (addDonationForm.pulse.$dirty || submitted))">
+                            <span translate translate-params-min-value="pulseMin">Please enter a value above {{minValue}}</span>
+                        </small>
+                        <small class="error" ng-show="(addDonationForm.pulse.$error.max && (addDonationForm.pulse.$dirty || submitted))">
+                            <span translate translate-params-max-value="pulseMax">Please enter a value below {{maxValue}}</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="adverseEventType" class="col-sm-4 control-label" translate>Adverse Event</label>
+            <div class="row col-sm-8">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select class="form-control"
+                            id="adverseEventType"
+                            name="adverseEventType"
+                            ng-model="adverseEvent.type"
+                            ng-change="resetAdverseEventComment()"
+                            ng-options="adverseEventType as adverseEventType.name for adverseEventType in adverseEventTypes">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="adverseEventType" class="col-sm-4 control-label"></label>
+            <div class="row col-sm-8">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input class="form-control"
+                           id="adverseEventComment"
+                           type="text"
+                           name="adverseEventComment"
+                           placeholder="{{'Description' | translate}}"
+                           ng-model="adverseEvent.comment"
+                           ng-disabled="!adverseEvent.type"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-11">
+            <button class="btn btn-primary" type="submit" ng-disabled="addingDonation">{{addingDonation ? "Saving..." :
+                "Save" | translate}}
+            </button>
+            <button class="btn btn-primary" type="button" ng-click="clearForm(addDonationForm); viewDonationBatch()"
+                    ng-disabled="addingDonation" translate>Cancel
+            </button>
+        </div>
+    </div>
+
+
+</form>

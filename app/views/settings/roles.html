@@ -1,0 +1,34 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Manage Roles</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <p>
+                    <em translate translate-params-count="rolesCount">{{count}} role(s) found</em> <span has-permission="{{permissions.MANAGE_ROLES}}"> | <em> <a
+                        href="" ng-click="addNewRole()" translate>Add New Role</a></em> </span>
+                </p>
+
+                <table ng-table="rolesTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="role in $data"
+                        ng-click="manageRole(role);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': role.$selected}"
+                    >
+                        <td data-title="'Name' | translate" style="width:30%;" header-class="text-left" sortable="'name'">
+                            {{role.name}}
+                        </td>
+                        <td data-title="'Description' | translate" header-class="text-left" sortable="'name'">
+                            {{role.description}}
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

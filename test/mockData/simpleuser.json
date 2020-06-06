@@ -1,0 +1,38 @@
+{
+  "id": 2,
+  "firstName": "Simple",
+  "lastName": "User",
+  "isAdmin": false,
+  "userRole": "Simple User",
+  "username": "simpleuser",
+  "roles": [
+    {
+      "@id": 1,
+      "id": 1,
+      "name": "Simple User",
+      "permissions": [
+        {
+          "id": 83,
+          "name": "Authenticated"
+        }
+      ],
+      "description": "Simple User"
+    },
+    {
+      "@id": 2,
+      "id": 2,
+      "name": "Simple User 2",
+      "permissions": [
+        {
+          "id": 15,
+          "name": "View Donation"
+        },
+        {
+          "id": 83,
+          "name": "Authenticated"
+        }
+      ],
+      "description": "Simple User 2"
+    }
+  ]
+}

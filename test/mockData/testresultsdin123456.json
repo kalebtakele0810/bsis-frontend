@@ -1,0 +1,60 @@
+{
+  "donationIdentificationNumber": "12345",
+  "donationBatch": "DB11100002MS",
+  "venue": "Maseru",
+  "donationDate": "08/10/2014",
+  "testBatch": "1000331",
+  "testedOn": "09/10/2014",
+  "donationCreatedBy": "administrator",
+  "packType": "Single",
+  "bloodAbo": "O",
+  "bloodRh": "+",
+  "bloodTypingStatus": "Complete",
+  "ttiStatus": "Complete",
+  "ttiTests": [
+    {
+      "testName": "HIV",
+      "outcome": "NEG",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    },
+    {
+      "testName": "HBV",
+      "outcome": "NEG",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    },
+    {
+      "testName": "HCV",
+      "outcome": "NEG",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    },
+    {
+      "testName": "Syphilis",
+      "outcome": "NEG",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    }
+  ],
+  "bloodGroupingTests": [
+    {
+      "testName": "ABO",
+      "outcome": "O",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    },
+    {
+      "testName": "Rh",
+      "outcome": "+",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    },
+    {
+      "testName": "Du",
+      "outcome": "NEG",
+      "user": "administrator",
+      "dateTested": "09/10/2014"
+    }
+  ]
+}

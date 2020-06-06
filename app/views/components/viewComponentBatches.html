@@ -1,0 +1,54 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/components/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Receive Components</h3>
+
+  <ul class="nav nav-tabs nav-justified">
+    <li>
+      <a href="#/addComponentBatch" translate>Add Delivery Form</a>
+    </li>
+    <li class="active">
+      <a href="#/viewComponentBatches" translate>View Delivery Forms</a>
+    </li>
+  </ul>
+
+  <form class="form-horizontal col-sm-12" name="findComponentBatchesForm" ng-submit="findComponentBatches()">
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label"><span translate>Period</span>:</label>
+      <div class="form-inline col-sm-10">
+        <div>
+          <dateselect name="startDate" ng-model="period.startDate" format="dateFormat" ng-class="{'has-error' : (findComponentBatchesForm.startDate.$invalid)}" ng-required="true" ui-date-range="1,months" ui-date-end="{{period.endDate | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="endDate" ng-model="period.endDate" format="dateFormat" ng-class="{'has-error' : (findComponentBatchesForm.endDate.$invalid)}" ng-required="true" ui-date-range="1,months" ui-date-start="{{period.startDate |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect-end>
+        </div>
+        <div>
+          <ng-messages for="findComponentBatchesForm.startDate.$error" role="alert" ng-show="findComponentBatchesForm.$submitted">
+            <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+            <small class="error" ng-message="datesOutOfRange"><span translate>Select a date range that is less than one month</span></small>
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+          <ng-messages for="findComponentBatchesForm.endDate.$error" role="alert" ng-show="findComponentBatchesForm.$submitted && !findComponentBatchesForm.startDate.$invalid">
+            <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+          </button>
+          <button class="btn btn-primary" type="button" ng-click="init()" translate>Clear</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+  <div class="col-sm-12">
+      <div class="panel panel-default" ng-if="submitted">
+          <div class="panel-body">
+              <p>
+                  <em translate translate-params-form-number="gridOptions.data.length">{{formNumber}} form(s) found</em> | <em><span translate>Data Export</span>: </em>
+
+                  <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+                  <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+              </p>
+              <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+          </div>
+      </div>
+  </div>
+</div>

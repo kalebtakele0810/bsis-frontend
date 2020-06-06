@@ -1,0 +1,37 @@
+<p>
+    <em translate translate-params-count="data.length"> {{count}} component(s) found</em>
+</p>
+<table ng-table="componentsSummaryTableParams" show-filter="false" class="table">
+    <tr ng-repeat="component in $data"
+        ng-mouseenter="this.$selected = true"
+        ng-mouseleave="this.$selected = false"
+        ng-class="{'active': donation.$selected}">
+        <td data-title="'DIN' | translate" header-class="text-left" class="text-center" sortable="'donationIdentificationNumber'">
+            {{component.donationIdentificationNumber}}
+        </td>
+        <td data-title="'Component Code' | translate" header-class="text-left" class="text-center"
+            sortable="'componentCode'">
+            {{component.componentCode}}
+        </td>
+        <td data-title="'Created On' | translate" header-class="text-left" class="text-center" sortable="'createdOn'">
+            {{component.createdOn | bsisDateTime}}
+        </td>
+        <td data-title="'Component Type' | translate" header-class="text-left" sortable="'componentType.componentTypeName'">
+            {{component.componentType.componentTypeName}}
+        </td>
+        <td data-title="'Status' | translate" header-class="text-left" sortable="'status'">
+            {{component.status | titleCase | translate}}
+        </td>
+        <td data-title="'Expiry Status' | translate" header-class="text-left" sortable="'expiresOn'">
+            {{ component.daysToExpire | daysToExpire}}
+        </td>
+        <td data-title="'Location' | translate" header-class="text-left" sortable="'location.name'">
+            {{ component.location.name }}
+        </td>
+        <td data-title="''" style="width:10%;" class="text-center">
+        <span style="font-size: 0.9em;">
+          <em><a ng-click="viewComponents(component.donationIdentificationNumber)" translate>View Summary</a></em>
+        </span>
+        </td>
+    </tr>
+</table>

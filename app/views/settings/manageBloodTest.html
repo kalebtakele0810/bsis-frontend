@@ -1,0 +1,227 @@
+<div class="col-sm-2 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Blood Test</h3>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form name="bloodTestForm" novalidate class="form-horizontal col-sm-12" ng-submit="saveBloodTest()">
+
+        <div class="row form-group col-sm-12">
+          <label for="testName" class="col-sm-2 control-label" translate>Test Name</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <input id="testName" name="testName" class="form-control input-sm" style="width:auto;min-width:350px;"
+                ng-model="bloodTest.testName" required ng-maxlength=40>
+              <div>
+                <ng-messages for="bloodTestForm.testName.$error" ng-show="bloodTestForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="testNameShort" class="col-sm-2 control-label" translate>Test Name (Short)</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <input id="testNameShort" name="testNameShort" class="form-control input-sm" style="width:auto;min-width:350px;" ng-model= "bloodTest.testNameShort" required ng-maxlength=25>
+              <div>
+                <ng-messages for="bloodTestForm.testNameShort.$error" ng-show="bloodTestForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="category" class="col-sm-2 control-label" translate>Category</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="category" ng-model="bloodTest.category" ng-options="c as c for c in categories" required>
+              </select>
+              <div>
+                <ng-messages for="bloodTestForm.category.$error" ng-show="bloodTestForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="rankInCategory" class="col-sm-2 control-label" translate>Rank in Category</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <input class="form-control input-sm" style="width:auto;min-width:350px;" type="number" name="rankInCategory" ng-model="bloodTest.rankInCategory" ng-min="1">
+            </div>
+            <div>
+              <ng-messages for="bloodTestForm.rankInCategory.$error">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="bloodTestType" class="col-sm-2 control-label" translate>Blood Test Type</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="bloodTestType" ng-model="bloodTest.bloodTestType" ng-options="t as t for t in types" required ng-disabled="!bloodTest.category">
+              </select>
+              <div>
+                <ng-messages for="bloodTestForm.bloodTestType.$error" ng-show="bloodTestForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Valid Outcomes -->
+
+        <div class="row form-group col-sm-12">
+          <label for="validOutcomes" class="col-sm-2 control-label" translate>Valid Outcomes</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <input id="validOutcome" name="validOutcome" ng-model="validOutcome" ng-maxlength=10 class="form-control input-sm" style="width:auto;min-width:350px;">
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="addValidOutcome()" translate>Add Outcome</button>
+              <div>
+                <ng-messages for="bloodTestForm.validOutcome.$error" ng-show="addOutcomeClicked">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="removedValidOutcomes" ng-model="removedValidOutcomes" ng-options="t as t for t in bloodTest.validResults" multiple>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="removeValidOutcomes(removedValidOutcomes)" ng-disabled="!removedValidOutcomes || removedValidOutcomes.length===0" translate>Remove Outcome</button>
+              <div>
+                <small class="error" style="display:block;" ng-show="bloodTestForm.removedValidOutcomes.$error.cantremove">
+                  <span translate>Remove from negative or positive outcomes first</span>
+                </small>
+              </div>
+            </div>
+            <div>
+              <ng-messages for="bloodTestForm.removedValidOutcomes.$error">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+        </div>
+
+        <!-- Negative Outcomes -->
+
+        <div class="row form-group col-sm-12">
+          <label for="negativeOutcomes" class="col-sm-2 control-label" translate>Negative Outcomes</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="negativeOutcome" ng-model="negativeOutcome" ng-options="t as t for t in notSelectedResults">
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="addNegativeOutcome()" translate>Add Outcome</button>
+              <div>
+                <ng-messages for="bloodTestForm.negativeOutcome.$error">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="removedNegativeOutcomes" ng-model="removedNegativeOutcomes" ng-options="t as t for t in bloodTest.negativeResults" multiple>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="removeNegativeOutcomes()" ng-disabled="!removedNegativeOutcomes || removedNegativeOutcomes.length===0" translate>Remove Outcome</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Positive Outcomes -->
+
+        <div class="row form-group col-sm-12">
+          <label for="positiveOutcomes" class="col-sm-2 control-label" translate>Positive Outcomes</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="positiveOutcome" ng-model="positiveOutcome" ng-options="t as t for t in notSelectedResults">
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="addPositiveOutcome()" translate>Add Outcome</button>
+              <div>
+                <ng-messages for="bloodTestForm.positiveOutcome.$error">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="removedPositiveOutcomes" ng-model="removedPositiveOutcomes" ng-options="t as t for t in bloodTest.positiveResults" multiple>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="removePositiveOutcomes()" ng-disabled="!removedPositiveOutcomes || removedPositiveOutcomes.length===0" translate>Remove Outcome</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flags -->
+
+        <div class="row form-group col-sm-12">
+          <div class="col-sm-2"></div>
+          <label for="flagComponentsForDiscard" class="col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox" id="flagComponentsForDiscard" name="flagComponentsForDiscard" ng-model="bloodTest.flagComponentsForDiscard"/><b translate>Mark Component as Unsafe for Positive Test Outcomes</b>
+            </div>
+          </label>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <div class="col-sm-2"></div>
+          <label for="flagComponentsContainingPlasmaForDiscard" class="col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox" id="flagComponentsContainingPlasmaForDiscard" name="flagComponentsContainingPlasmaForDiscard" ng-model="bloodTest.flagComponentsContainingPlasmaForDiscard"/><b translate>Mark Component Containing Plasma as Unsafe for Positive Test Outcomes</b>
+            </div>
+          </label>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <div class="col-sm-2"></div>
+          <label for="isActive" class="col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox" id="isActive" name="isActive" ng-model="bloodTest.isActive"/><b translate>In Active Use</b>
+            </div>
+          </label>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <div class="col-sm-2"></div>
+          <label for="isDeleted" class="col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox" id="isDeleted" name="isDeleted" ng-model="bloodTest.isDeleted" ng-true-value="false" ng-false-value="true"/><b translate>Enabled</b>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-6">
+            <button class="btn btn-primary" type="submit" style="margin-top: 2px"
+                ng-disabled="savingBloodTest">{{savingBloodTest ? "Saving..." : "Save" | translate}}
+            </button>
+            <button class="btn btn-primary" type="button" ng-click="cancel()"
+                style="margin-top: 2px" ng-disabled="savingBloodTest" translate>Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

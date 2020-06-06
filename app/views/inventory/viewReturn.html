@@ -1,0 +1,49 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <span class="h3 page-header" translate>Manage Return</span>
+
+  <span class="h4" style="float:right; margin-top: 5px; padding-right: 15px; display:inline;">
+    <span has-permission="{{permissions.EDIT_RETURN_FORM}}" ng-if="returnForm.permissions.canEdit">
+      <em>
+        <button class="btn btn-link" ng-click="edit()" translate>Edit</button>
+      </em>
+    </span>
+    <span style="margin-left: 20px; margin-top: -15px; float:right">
+      <span has-permission="{{permissions.ISSUE_COMPONENT}}" ng-if="returnForm.permissions.canDelete">
+        <button class="btn btn-primary" ng-click="deleteReturn()" ng-disabled="deleting">{{deleting ? 'Voiding...' : 'Void' | translate}}</button>
+      </span>
+      <span has-permission="{{permissions.ISSUE_COMPONENT}}" ng-if="returnForm.permissions.canReturn">
+        <button class="btn btn-primary" ng-click="return()" translate>Return to Stock</button>
+      </span>
+      <span has-permission="{{permissions.ISSUE_COMPONENT}}" ng-if="returnForm.permissions.canDiscard">
+        <button class="btn btn-primary" ng-click="discardStock()" translate>Discard Stock</button>
+      </span>
+      <span has-permission="{{permissions.ISSUE_COMPONENT}}" ng-if="returnForm.status === 'RETURNED'">
+        <button class="btn btn-primary" ng-click="exportReturnNote()" translate>Print Return Note</button>
+      </span>
+    </span>
+  </span>
+
+  <hr style="clear:right;"/>
+  
+  <section>
+    <span class="text-muted" translate>Return Date</span> {{returnForm.returnDate | bsisDate}}
+    <span class="text-muted" translate>Returned From</span> {{returnForm.returnedFrom.name}}
+    <span class="text-muted" translate>Returned To</span> {{returnForm.returnedTo.name}}
+  </section>
+
+  <hr />
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <h4 translate>Units Returned</h4>
+
+      <div class="col-sm-12">
+        <div id="grid" class="grid" ui-grid="gridOptions" ui-grid-pagination ui-grid-exporter></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,79 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Manage Role</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form name="roleForm" novalidate class="form-horizontal col-sm-12" role="form"
+                  ng-submit="saveRole(role, roleForm)">
+
+                <div class="row form-group col-sm-12">
+                    <label for="name" class="col-sm-1 control-label" translate>Name</label>
+                    <div class="col-sm-4">
+                        <div class="form-inline">
+                            <input size="50" id="name" name="name" class="form-control input-sm" ng-model="role.name"
+                                   required
+                                   ng-minlength=1 ng-maxlength=50
+                                   ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                                   ng-class="{'ng-invalid ng-dirty' : (roleForm.name.$invalid && submitted) || nameInvalid }">
+                            <div>
+                                <small class="error" ng-show="err === 'roleName.nonunique'" translate>Role name already exists</small>
+                                <div>
+                                     <ng-messages for="roleForm.name.$error" ng-show="(roleForm.name.$dirty || submitted)">
+                                        <ng-messages-include src="messages.html"></ng-messages-include>
+                                     </ng-messages>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group col-sm-12">
+                    <label for="description" class="col-sm-1 control-label" translate>Description</label>
+                    <div class="col-sm-6">
+                        <div class="form-inline">
+                            <input size="50" id="description" name="description" class="form-control input-sm"
+                                   ng-model="role.description" required ng-minlength=1 ng-maxlength=100
+                                   ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                                   ng-class="{'ng-invalid ng-dirty' : roleForm.description.$invalid && submitted}">
+                            <div>
+                                <div>
+                                   <ng-messages for="roleForm.description.$error" ng-show="(roleForm.description.$dirty || submitted)">
+                                       <ng-messages-include src="messages.html"></ng-messages-include>
+                                     </ng-messages>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="form-group">
+                <label for="permissions" class="col-sm-1 control-label" translate>Permissions</label>
+                <div class="row col-sm-11" style="margin-left: 20px; width: 85%;">
+                    <small class="error" ng-show="permissionsRequired">
+                        <span translate>Please select at least one permission</span>
+                    </small>
+                </div>
+                <div id="permissions" class="row col-sm-11" style="margin-left: 20px; width: 85%;">
+                  <div ng-repeat="entity in permissionList" class="row pull-left" style="width: 175px;" uib-tooltip="{{entity.name}}">
+                        <input id="{{entity.id}}" type="checkbox" checklist-model="role.permissions"
+                               checklist-value="entity"/>
+                        <small style="color: black;"><label
+                                style="display: inline-block; cursor: pointer; cursor: hand; margin: 0px 0px; font-size: 0.8em;"
+                                for="{{entity.id}}">{{entity.name | limitTo: 22}}</label></small>
+                    </div>
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-4">
+                        <button class="btn btn-primary" type="submit" style="margin-top: 2px" ng-disabled="savingRole">
+                            {{savingRole ? "Saving..." : "Save" | translate}}
+                        </button>
+                        <button class="btn btn-primary" type="button" ng-click="cancel(roleForm)" style="margin-top: 2px"
+                                ng-disabled="savingRole" translate>Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

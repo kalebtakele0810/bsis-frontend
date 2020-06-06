@@ -1,0 +1,108 @@
+<p><span translate>Please select the correct donor information below</span>:</p>
+<table ng-table="manageSelectedDuplicateDonorTableParams" show-filter="false" class="table">
+    <tbody>
+    <tr ng-repeat="donor in $data">
+        <td data-title="'Donor Number' | translate" header-class="text-left" class="text-center" sortable="'donorNumber'">
+            {{donor.donorNumber}}
+        </td>
+        <td data-title="'Identifier' | translate" header-class="text-left" sortable="'idNumber'" class="form-inline">
+            <div class="radio" ng-if="donor.idNumber != null && donor.idNumber != ''">
+                <input id="idNumber{{donor.donorNumber}}" type="radio" name="idNumber"
+                       ng-model="mergedDonorData.idNumber" ng-value="donor.id" required>
+                <label for="idNumber{{donor.donorNumber}}">{{donor.idType.idType}}: {{donor.idNumber}}</label>
+            </div>
+        </td>
+        <td data-title="'Title' | translate" header-class="text-left" sortable="'title'" class="form-inline">
+            <div class="radio" ng-if="donor.title != null && donor.title != ''">
+                <input id="title{{donor.donorNumber}}" type="radio" name="title" ng-model="mergedDonorData.title"
+                       ng-value="donor.id" required>
+                <label for="title{{donor.donorNumber}}">{{donor.title | translate}}</label>
+            </div>
+        </td>
+        <td data-title="'Calling Name' | translate" header-class="text-left" sortable="'callingName'" class="form-inline">
+            <div class="radio" ng-if="donor.callingName != null && donor.callingName != ''">
+                <input id="callingName{{donor.donorNumber}}" type="radio" name="callingName"
+                       ng-model="mergedDonorData.callingName" ng-value="donor.id" required>
+                <label for="callingName{{donor.donorNumber}}">{{donor.callingName}}</label>
+            </div>
+        </td>
+        <td data-title="'Preferred Language' | translate" header-class="text-left" sortable="'preferredLanguage'"
+            class="form-inline">
+            <div class="radio" ng-if="donor.preferredLanguage != null && donor.preferredLanguage != ''">
+                <input id="preferredLanguage{{donor.donorNumber}}" type="radio" name="preferredLanguage"
+                       ng-model="mergedDonorData.preferredLanguage" ng-value="donor.id" required>
+                <label for="preferredLanguage{{donor.donorNumber}}">{{donor.preferredLanguage.preferredLanguage}}</label>
+            </div>
+        </td>
+        <td data-title="'Venue' | translate" header-class="text-left" sortable="'venue'" class="form-inline">
+            <div class="radio">
+                <input id="venue{{donor.donorNumber}}" type="radio" name="venue" ng-model="mergedDonorData.venue"
+                       ng-value="donor.id" required>
+                <label for="venue{{donor.donorNumber}}">{{donor.venue.name}}</label>
+            </div>
+        </td>
+        <td data-title="'Donor Notes' | translate" header-class="text-left" sortable="'notes'" class="form-inline">
+            <div class="radio" ng-if="donor.notes != null && donor.notes != ''">
+                <input id="notes{{donor.donorNumber}}" type="checkbox" name="notes"
+                       ng-model="mergedDonorData.noteSelection[donor.id]" ng-value="donor.notes">
+                <label for="notes{{donor.donorNumber}}">{{donor.notes}}</label>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <!-- row for the "None of the Above" radio buttons and error messages -->
+        <td></td>
+        <td>
+            <div class="radio" ng-if="donorFields['idNumber']">
+                <input id="idNumber" type="radio" name="idNumber" ng-model="mergedDonorData.idNumber" value="0"
+                       required>
+                <label for="idNumber" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.idNumber.$invalid && (mergeDonorForm.idNumber.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['title']">
+                <input id="title" type="radio" name="title" ng-model="mergedDonorData.title" value="0" required>
+                <label for="title" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.title.$invalid && (mergeDonorForm.title.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['callingName']">
+                <input id="callingName" type="radio" name="callingName" ng-model="mergedDonorData.callingName" value="0"
+                       required>
+                <label for="callingName" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.callingName.$invalid && (mergeDonorForm.callingName.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div ng-if="donorFields['preferredLanguage']">
+                <small class="error"
+                       ng-show="(mergeDonorForm.preferredLanguage.$invalid && (mergeDonorForm.preferredLanguage.$dirty || invalid))">
+                    <span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div ng-if="donorFields['venue']">
+                <small class="error"
+                       ng-show="(mergeDonorForm.venue.$invalid && (mergeDonorForm.venue.$dirty || invalid))">
+                    <span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td></td>
+    </tr>
+    </tfoot>
+</table>

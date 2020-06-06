@@ -1,0 +1,19 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding-top:5px;" ng-controller="LabellingSidebarCtrl">
+    <ul class="nav nav-sidebar">
+        <li class="disabled">
+      <span class="icon-sidebar-container">
+        <div class="placeholder">
+            <a href="#labelling">
+                <i class="fa {{icons.LABELLING}}"></i>
+            </a>
+        </div>
+      </span>
+        </li>
+        <li class="disabled" has-permission="{{permissions.COMPONENT_LABELLING}}"><span class="sidebar-heading" translate>LABELLING</span></li>
+        <li ng-class="{current: currentPath === '/findSafeComponents'}" has-permission="{{permissions.COMPONENT_LABELLING}}"><a
+                href="#/findSafeComponents" translate>Find Safe Components</a></li>
+        <li ng-class="{current: currentPath === '/labelComponents'}" has-permission="{{permissions.COMPONENT_LABELLING}}"><a
+                href="#/labelComponents" translate>Label Components</a></li>
+    </ul>
+    <div ng-include="'views/sidebarFooter.html'"></div>
+</div>

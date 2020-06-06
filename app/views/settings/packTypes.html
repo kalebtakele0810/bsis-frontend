@@ -1,0 +1,47 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Manage Pack Types</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <p>
+                    <em translate translate-params-count="packTypesCount">{{count}} pack type(s) found</em> <span
+                        has-permission="{{permissions.MANAGE_PACK_TYPES}}"> | <em> <a href="" ng-click="addNewPackType()" translate>Add New Pack Type</a></em> </span>
+                </p>
+
+
+                <table ng-table="packTypesTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="pack in $data"
+                        ng-click="managePackType(pack);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': pack.$selected}">
+                        <td data-title="'Pack Type' | translate" header-class="text-left" class="text-center">
+                            {{pack.packType}}
+                        </td>
+                        <td data-title="'Period between donations' | translate" header-class="text-left" class="text-center">
+                            {{pack.periodBetweenDonations}}
+                        </td>
+                        <td data-title="'Test Sample Produced' | translate" header-class="text-left" class="text-center"
+                            sortable="'testSampleProduced'">
+                            <span ng-if="pack.testSampleProduced"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                            <span ng-if="!pack.testSampleProduced"><i class="fa {{icons.SQUARE}}"></i></span>
+                        </td>
+                        <td data-title="'Components Produced' | translate" header-class="text-left" class="text-center"
+                            sortable="'countAsDonation'">
+                            <span ng-if="pack.countAsDonation == true"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                            <span ng-if="pack.countAsDonation == false"><i class="fa {{icons.SQUARE}}"></i></span>
+                        </td>
+                        <td data-title="'Enabled' | translate" header-class="text-left" class="text-center" sortable="'isDeleted'">
+                            <span ng-if="pack.isDeleted == true"><i class="fa {{icons.SQUARE}}"></i></span>
+                            <span ng-if="pack.isDeleted == false"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<span style="float: right; padding-right: 15px;">
+  <em><a has-permission="{{permissions.ADD_DONATION}}" href="" ng-click="viewAddDonationForm()" translate>Add Donation</a></em>
+</span>
+<table class="dash-table">
+    <tbody>
+    <tr>
+        <td class="icon"><i class="fa {{icons.CALENDAR}}"></i></td>
+        <td class="field"><span translate>Due To Donate</span>:</td>
+        <td class="value">
+          <span ng-if="lastDeferral === null || lastDeferral.deferralReason.durationType === 'TEMPORARY'">{{dueToDonate | bsisDate:'longDate'}}</span>
+          <span ng-if="lastDeferral.deferralReason.durationType === 'PERMANENT'">Not applicable</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+<div ng-switch="donationResults">
+    <div ng-switch-when="true">
+
+        <table ng-table="donationTableParams" class="table">
+            <tr ng-repeat="donation in $data"
+                ng-mouseenter="this.$selected = true"
+                ng-mouseleave="this.$selected = false"
+                ng-class="{'active': donation.$selected}">
+                <td data-title="'Date' | translate" header-class="text-left" class="col-sm-2 text-center" sortable="'donationDate'">
+                    {{donation.donationDate | bsisDate }}
+                </td>
+                <td data-title="'Venue' | translate" header-class="text-left" class="col-sm-2" sortable="'venue'">
+                    {{donation.venue.name}}
+                </td>
+                <td data-title="'Pack Type' | translate" header-class="text-left" class="col-sm-2" sortable="'packType'">
+                    {{donation.packType.packType}}
+                </td>
+                <td data-title="'Wt' | translate" header-class="text-left" class="col-sm-1 text-center" sortable="'donorWeight'">
+                    {{donation.donorWeight}} <span ng-if="donation.donorWeight">{{weightUnit}}</span>
+                </td>
+                <td data-title="'BP' | translate" header-class="text-left" class="col-sm-1 text-center"
+                    sortable="'bloodPressureSystolic'">
+                    <span ng-if="donation.bloodPressureSystolic || donation.bloodPressureDiastolic">
+                    {{donation.bloodPressureSystolic}}/{{donation.bloodPressureDiastolic}} {{bpUnit}}</span>
+                </td>
+                <td data-title="'Hb' | translate" header-class="text-left" class="col-sm-1 text-center"
+                    sortable="'haemoglobinCount'">
+                    <haemoglobin-value haemoglobin-count="donation.haemoglobinCount" haemoglobin-level="donation.haemoglobinLevel"/>
+                </td>
+                <td data-title="'Pulse' | translate" header-class="text-left" class="col-sm-1 text-center" sortable="'donorPulse'">
+                    {{donation.donorPulse}} <span ng-if="donation.donorPulse">{{pulseUnit}}</span>
+                </td>
+                <td data-title="''" class="col-sm-2 text-center">
+            <span ng-hide="confirmDelete">
+              <em>
+                  <button class="btn btn-link btn-sm"
+                          ng-click="viewDonationSummary(donation.donationIdentificationNumber)" translate>View</button>
+              </em>
+              <em>
+                  <button class="btn btn-link btn-sm" ng-click="confirmDelete = true"
+                          ng-disabled="!donation.permissions.canDelete" translate>Void</button>
+              </em>
+            </span>
+            <span ng-show="confirmDelete">
+              <button class="btn btn-link btn-sm text-danger" ng-click="deleteDonation(donation.id)" translate>Void</button>
+              <button class="btn btn-link btn-sm text-muted" ng-click="confirmDelete = false" translate>Cancel</button>
+            </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-switch-when="false">
+        <h4><em translate>No Previous Donations</em></h4>
+    </div>
+</div>
+  

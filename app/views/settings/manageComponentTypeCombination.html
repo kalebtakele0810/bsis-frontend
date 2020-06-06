@@ -1,0 +1,118 @@
+<div class="col-sm-2 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Component Combination</h3>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form name="componentCombinationForm" novalidate class="form-horizontal col-sm-12" ng-submit="saveComponentCombination()">
+
+        <div class="row form-group col-sm-12">
+          <label for="componentCombinationName" class="col-sm-2 control-label" translate>Name</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <input size="40" id="componentCombinationName" name="componentCombinationName" class="form-control input-sm" style="width:auto;min-width:350px;"
+                ng-model= "componentTypeCombination.combinationName" required ng-maxlength=50>
+              <div>
+                <ng-messages for="componentCombinationForm.componentCombinationName.$error" ng-show="componentCombinationForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="sourceComponentOption" class="col-sm-2 control-label" translate>Source Component Option(s)</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="sourceComponentOption" ng-model="userSelection.selectedSourceComponentIndex">
+                <option value=""></option>
+                <option ng-repeat="componentType in sourceComponentTypesDropDown"
+                        value="{{sourceComponentTypesDropDown.indexOf(componentType)}}"
+                        ng-disabled="componentType.disabled">
+                        {{componentType.componentTypeName}}
+                </option>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" 
+                      ng-click="addSourceComponent()" ng-disabled="userSelection.selectedSourceComponentIndex===null" translate>Add Source Component</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="sourceComponentList"
+                ng-model="userSelection.selectedSourceComponentList" multiple>
+                <option ng-repeat="componentType in componentTypeCombination.sourceComponentTypes" value="{{$index}}">
+                  {{componentType.componentTypeName}}
+                </option>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px"
+                ng-click="removeSourceComponent()" ng-disabled="userSelection.selectedSourceComponentList.length===0" translate>Remove Source Component</button>
+              <div>
+                <ng-messages for="componentCombinationForm.sourceComponentList.$error" ng-show="componentCombinationForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="producedComponentOption" class="col-sm-2 control-label" translate>Produced Component(s)</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="producedComponentOption" ng-model="userSelection.selectedProducedComponentIndex">
+                  <option value=""></option>
+                  <option ng-repeat="componentType in producedComponentTypesDropDown"
+                        value="{{producedComponentTypesDropDown.indexOf(componentType)}}">
+                        {{componentType.componentTypeName}}
+                </option>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="addUnit()" 
+              ng-disabled="userSelection.selectedProducedComponentIndex===null" translate>Add Unit</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:350px;" name="producedComponentList"
+                ng-model="userSelection.selectedProducedComponentList" multiple>
+                <option ng-repeat="componentType in componentTypeCombination.componentTypes track by $index" value="{{$index}}">
+                  {{componentType.componentTypeName}}
+                </option>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px" ng-click="removeProducedComponent()" ng-disabled="userSelection.selectedProducedComponentList.length===0" translate>Remove Unit</button>
+              <ng-messages for="componentCombinationForm.producedComponentList.$error" role="alert" ng-show="componentCombinationForm.$submitted">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="isDeleted" class="col-sm-2 control-label" translate>Enabled</label>
+          <div class="col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox" id="isDeleted" name="isDeleted" ng-model="componentTypeCombination.isDeleted" ng-true-value="false" ng-false-value="true"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-6">
+            <button class="btn btn-primary" type="submit" style="margin-top: 2px"
+                ng-disabled="savingComponentCombination">{{savingComponentCombination ? "Saving..." : "Save" | translate}}
+            </button>
+            <button class="btn btn-primary" type="button" ng-click="cancel()"
+                style="margin-top: 2px" ng-disabled="savingComponentCombination" translate>Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

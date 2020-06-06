@@ -1,0 +1,65 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/mobile/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Donor Counselling</h3>
+
+  <form name="donorCounsellingForm" class="form-horizontal" style="padding:10px 0;" ng-submit="getDonorOutcomes()" novalidate>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Venue</label>
+      <div class="form-inline col-sm-10">
+        <select name="venue" class="form-control input-sm" ng-model="search.venueId" ng-options="item.id as item.name for item in venues" required>
+          <option value="" ng-disabled="true"></option>
+        </select>
+        <ng-messages for="donorCounsellingForm.venue.$error" ng-show="donorCounsellingForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Start Date</label>
+      <div class="form-inline col-sm-10">
+        <div>
+          <dateselect name="startDate" ng-model="search.startDate" format="dateFormat" ng-class="{'has-error' : (donorCounsellingForm.startDate.$invalid)}" ng-required="true" ui-date-end="{{search.endDate | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect>
+        </div>
+        <div>
+          <ng-messages for="donorCounsellingForm.startDate.$error" ng-show="donorCounsellingForm.$submitted">
+            <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>End Date</label>
+      <div class="form-inline col-sm-10">
+        <div>
+          <dateselect-end name="endDate" ng-model="search.endDate" format="dateFormat" ng-class="{'has-error' : (donorCounsellingForm.endDate.$invalid)}" ng-required="true" ui-date-start="{{search.startDate |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }" ui-date-range min-date="search.startDate"></dateselect-end>
+        </div>
+        <div>
+          <ng-messages for="donorCounsellingForm.endDate.$error" ng-show="donorCounsellingForm.$submitted">
+            <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-offset-2">
+      <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}</button>
+      <button class="btn btn-primary" type="button" ng-click="clearSearch()" translate>Clear</button>
+    </div>
+  </form>
+
+  <div class="panel panel-default" ng-if="gridOptions.data != null">
+    <div class="panel-body">
+      <div style="margin-bottom:5px;">
+        <em translate translate-params-count="gridOptions.data.length">{{count}} donor(s) found</em> | <em translate>Data Export</em>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+      </div>
+      <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+    </div>
+  </div>
+</div>

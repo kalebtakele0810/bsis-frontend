@@ -1,0 +1,55 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 translate class="page-header" translate>View Stock Levels</h3>
+
+  <form name="searchForm" class="form-horizontal col-sm-12" style="padding:10px 0;" ng-submit="viewStockLevels(searchForm)" novalidate>
+
+    <div class="clearfix form-group" ng-class="{'has-error': searchForm.allSites.$invalid}">
+        <label class="col-sm-2 control-label" translate>Distribution Center</label>
+        <div class="form-inline row col-sm-10">
+          <select name="distributionCenter" class="form-control" ng-model="search.distributionCenter" ng-change="updateAllSites()" style="min-width: 350px;">
+            <option value="" disabled></option>
+            <option ng-repeat="distributionCenter in distributionCenters" value="{{distributionCenter.id}}">
+              {{distributionCenter.name}}
+            </option>
+          </select>
+          <label>
+            <input type="checkbox" name="allSites" ng-model="search.allSites" ng-click="clearDistributionCenter()" ng-required="!search.distributionCenter" />
+            <span translate>All</span>
+          </label>
+          <ng-messages for="searchForm.allSites.$error" role="alert" ng-show="searchForm.allSites.$dirty">
+              <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+    </div>
+
+    <div class="col-sm-offset-2">
+      <label>
+        <input type="radio" name="inventoryStatus" ng-model="search.inventoryStatus" value="IN_STOCK" required />
+        <span translate>In Stock</span>
+      </label>
+      <label>
+        <input type="radio" name="inventoryStatus" ng-model="search.inventoryStatus" value="NOT_IN_STOCK" required />
+        <span translate>Not in Stock</span>
+      </label>
+    </div>
+
+    <div class="col-sm-offset-2">
+      <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+      </button>
+      <button class="btn btn-primary" type="button" ng-click="clearSearch(searchForm)" translate>Clear</button>
+    </div>
+
+  </form>
+
+  <div class="panel panel-default col-sm-12" ng-if="searched">
+    <div class="panel-body">
+      <p><span translate>Data Export</span>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+      </p>
+      <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+    </div>
+  </div>
+
+</div>

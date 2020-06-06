@@ -1,0 +1,108 @@
+<p><span translate>Please select the correct donor information below</span>:</p>
+<table ng-table="manageSelectedDuplicateDonorTableParams" show-filter="false" class="table">
+    <tbody>
+    <tr ng-repeat="donor in $data">
+        <td data-title="'Donor Number' | translate" header-class="text-left" class="text-center" sortable="'donorNumber'"
+            class="form-inline">
+            {{donor.donorNumber}}
+        </td>
+        <td data-title="'Preferred Contact Type' | translate" header-class="text-left" sortable="'contactMethodType'"
+            class="form-inline">
+            <div class="radio" ng-if="donor.contactMethodType != null">
+                <input id="contactMethodType{{donor.donorNumber}}" type="radio" name="contactMethodType"
+                       ng-model="mergedDonorData.contactMethodType" ng-value="donor.id" required>
+                <label for="contactMethodType{{donor.donorNumber}}">{{donor.contactMethodType.contactMethodType}}</label>
+            </div>
+        </td>
+        <td data-title="'Email' | translate" header-class="text-left" sortable="'email'" class="form-inline">
+            <div class="radio" ng-if="donor.contact.email != null && donor.contact.email != ''">
+                <input id="email{{donor.donorNumber}}" type="radio" name="email" ng-model="mergedDonorData.email"
+                       ng-value="donor.id" required>
+                <label for="email{{donor.donorNumber}}">{{donor.contact.email}}</label>
+            </div>
+        </td>
+        <td data-title="'Mobile Number' | translate" header-class="text-left" sortable="'mobileNumber'" class="form-inline">
+            <div class="radio" ng-if="donor.contact.mobileNumber != null && donor.contact.mobileNumber != ''">
+                <input id="mobileNumber{{donor.donorNumber}}" type="radio" name="mobileNumber"
+                       ng-model="mergedDonorData.mobileNumber" ng-value="donor.id" required>
+                <label for="mobileNumber{{donor.donorNumber}}">{{donor.contact.mobileNumber}}</label>
+            </div>
+        </td>
+        <td data-title="'Home' | translate" header-class="text-left" sortable="'homeNumber'" class="form-inline">
+            <div class="radio" ng-if="donor.contact.homeNumber != null && donor.contact.homeNumber != ''">
+                <input id="homeNumber{{donor.donorNumber}}" type="radio" name="homeNumber"
+                       ng-model="mergedDonorData.homeNumber" ng-value="donor.id" required>
+                <label for="homeNumber{{donor.donorNumber}}">{{donor.contact.homeNumber}}</label>
+            </div>
+        </td>
+        <td data-title="'Work' | translate" header-class="text-left" sortable="'workNumber'" class="form-inline">
+            <div class="radio" ng-if="donor.contact.workNumber != null && donor.contact.workNumber != ''">
+                <input id="workNumber{{donor.donorNumber}}" type="radio" name="workNumber"
+                       ng-model="mergedDonorData.workNumber" ng-value="donor.id" required>
+                <label for="workNumber{{donor.donorNumber}}">{{donor.contact.workNumber}}</label>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <!-- row for the "None of the Above" radio buttons and error messages -->
+        <td>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['contactMethodType']">
+                <input id="contactMethodType" type="radio" name="contactMethodType"
+                       ng-model="mergedDonorData.contactMethodType" value="0" required>
+                <label for="contactMethodType" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.contactMethodType.$invalid && (mergeDonorForm.contactMethodType.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['email']">
+                <input id="email" type="radio" name="email" ng-model="mergedDonorData.email" value="0" required>
+                <label for="email" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.email.$invalid && (mergeDonorForm.email.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['mobileNumber']">
+                <input id="mobileNumber" type="radio" name="mobileNumber" ng-model="mergedDonorData.mobileNumber"
+                       value="0" required>
+                <label for="mobileNumber" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.mobileNumber.$invalid && (mergeDonorForm.mobileNumber.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['homeNumber']">
+                <input id="homeNumber" type="radio" name="homeNumber" ng-model="mergedDonorData.homeNumber" value="0"
+                       required>
+                <label for="homeNumber" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.homeNumber.$invalid && (mergeDonorForm.homeNumber.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['workNumber']">
+                <input id="workNumber" type="radio" name="workNumber" ng-model="mergedDonorData.workNumber" value="0"
+                       required>
+                <label for="workNumber" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.workNumber.$invalid && (mergeDonorForm.workNumber.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+    </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,18 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Data Export</h3>
+
+    <form name="dataExportForm" ng-submit="download()" novalidate>
+
+        <h4 translate>Export donors, donations, deferrals, post-donation counselling, test outcomes, and components datasets. The data will be downloaded as a compressed zip file containing a separate CSV file for each dataset.</h4>
+
+        <p translate>This export may take some time and can affect the performance of the system. It is recommended that this process is only run after standard operating hours, to minimise the impact on other activities.</p>
+
+        <div class="">
+            <button class="btn btn-primary" type="submit" ng-disabled="downloading">{{downloading ? "Downloading..." :
+                "Export All Data" | translate}}
+            </button>
+        </div>
+    </form>
+
+</div>

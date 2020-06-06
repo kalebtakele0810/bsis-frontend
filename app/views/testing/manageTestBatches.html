@@ -1,0 +1,221 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/testing/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <span class="h3 page-header" translate>Manage Test Batches</span>
+
+  <hr/>
+
+  <div class="col-sm-12">
+
+      <uib-tabset justified="true">
+          <uib-tab>
+              <uib-tab-heading>
+                  <i class="fa {{icons.BARS}}"></i> <span translate>Open Batches</span>
+              </uib-tab-heading>
+              <div ng-switch="openTestBatches" class="col-sm-12">
+                  <div style="padding-bottom: 10px"></div>
+                  <div class="panel panel-default">
+                      <div class="panel-body">
+                          <div ng-switch-when="true">
+
+
+                              <table ng-table="testBatchTableParams" show-filter="false" class="table">
+                                  <tr ng-repeat="testBatch in $data"
+                                      ng-click="manageTestBatch(testBatch);"
+                                      ng-mouseenter="this.$selected = true"
+                                      ng-mouseleave="this.$selected = false"
+                                      ng-class="{'active': testBatch.$selected}">
+                                      <td data-title="'Created On'| translate" style="width:30%;" header-class="text-left"
+                                          class="text-center" sortable="'testBatchDate'">
+                                          {{testBatch.testBatchDate | bsisDateTime}}
+                                      </td>
+                                      <td data-title="'Test Samples'| translate" style="width:15%;" header-class="text-left"
+                                          class="text-center" sortable="'numSamples'">
+                                          {{testBatch.numSamples}}
+                                      </td>
+                                      <td data-title="'Status'| translate" style="width:20%;" header-class="text-left"
+                                          class="text-center" sortable="'status'">
+                                          {{testBatch.status | titleCase | translate}}
+                                      </td>
+                                      <td data-title="'Location'| translate" style="width:35%;" header-class="text-left"
+                                          class="text-center" sortable="'location'">
+                                          {{testBatch.location.name}}
+                                      </td>
+                                      <td data-title="'Historical' | translate" style="width:15%;" header-class="text-left"
+                                        class="text-center" sortable="'backEntry'">
+                                        <span ng-show="testBatch.backEntry"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                                        <span ng-show="!testBatch.backEntry"><i class="fa {{icons.SQUARE}}"></i></span>
+                                      </td>
+                                  </tr>
+                              </table>
+
+                          </div>
+
+
+                          <div ng-switch-when="false">
+                              <p>
+                                  <em translate>No open test batches.</em>
+                              </p>
+                          </div>
+
+
+                          <div has-permission="{{permissions.ADD_TEST_BATCH}}">
+                              <h4 translate>New Test Batch</h4>
+
+                                <form name="addTestBatchForm" novalidate class="form-horizontal col-sm-12"
+                                      role="form"
+                                      ng-submit="addTestBatch(addTestBatchForm)">
+                                    <div class="form-group">
+                                      <label for="location" class="control-label col-sm-1" translate>Location</label>
+                                      <div class="col-sm-11">
+                                        <select name="location" class="form-control" style="width:auto;" ng-model="testBatch.location" ng-options="site as site.name for site in testingSites track by site.id" required>
+                                          <option disabled selected value="" translate>Select</option>
+                                        </select>
+                                        <ng-messages for="addTestBatchForm.location.$error" ng-show="addTestBatchForm.$submitted">
+                                          <ng-messages-include src="messages.html"></ng-messages-include>
+                                        </ng-messages>
+                                      </div>
+                                    </div>
+
+                                    <!-- Date/time and checkbox -->
+                                    <div class="form-group">
+                                        <label for="testBatchDate" class="control-label col-sm-1" translate>Date</label>
+                                        <div class="col-sm-8">
+                                            <div class="time form-inline" style="width:195px;">
+                                                <dateselect name="testBatchDate" ng-model="testBatchDate.date" format="dateFormat" ng-class="{'has-error': (addTestBatchForm.testBatchDate.$invalid)}" ng-required="testBatch.backEntry && addTestBatchForm.$submitted" max-date="maxDate" date-time-not-in-future ng-model-options="{allowInvalid: true}" ng-disabled="!testBatch.backEntry"></dateselect>
+                                                <ng-messages for="addTestBatchForm.testBatchDate.$error" ng-show="addTestBatchForm.$submitted">
+                                                    <ng-messages-include src="messages.html"></ng-messages-include>
+                                                </ng-messages>
+                                            </div>
+                                            <div class="time form-group" style="width:230px;">
+                                                <label for="testBatchTime" class="control-label col-sm-2" translate>Time</label>
+                                                <div class="col-sm-8">
+                                                    <fieldset ng-disabled="!testBatch.backEntry">
+                                                        <uib-timepicker name="testBatchTime" ng-model="testBatchDate.time" show-spinners="false" ng-class="{'has-error': addTestBatchForm.testBatchTime.$invalid}"></uib-timepicker>
+                                                        <ng-messages for="addTestBatchForm.testBatchTime.$error" ng-show="addTestBatchForm.$submitted">
+                                                            <ng-messages-include src="messages.html"></ng-messages-include>
+                                                        </ng-messages>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-3">
+                                                    <label class="checkbox" >
+                                                        <input type="checkbox" id="backEntry" name="backEntry" ng-change="applyBackEntryChange()" ng-model="testBatch.backEntry"/>
+                                                        <b translate>Historical Data Entry</b>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-1 col-sm-4">
+                                            <button class="btn btn-primary" type="submit"
+                                                    ng-disabled="addingTestBatch">{{addingTestBatch ? "Adding..." : "Add" | translate}}
+                                            </button>
+                                            <button class="btn btn-primary" type="button"
+                                                    ng-click="clearAddTestBatchForm(addTestBatchForm);" translate>Clear</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </uib-tab>
+
+          <uib-tab>
+              <uib-tab-heading>
+                  <i class="fa {{icons.ARCHIVE}}"></i> <span translate>Closed Batches</span>
+              </uib-tab-heading>
+              <form name="closedTestBatchesForm"  class="form-horizontal" style="padding:10px 0;" ng-submit="getClosedTestBatches(closedTestBatchesForm)" novalidate>
+                  <div class="clearfix form-group">
+                      <label class="col-sm-2 control-label" translate>Period</label>
+                      <div class="form-inline col-sm-10">
+                          <div>
+                              <dateselect name="startDate"  ng-model="search.startDate" format="dateFormat"  ng-class="{'has-error' : (closedTestBatchesForm.startDate.$invalid)}" ng-required="true" ui-date-range="1,months" ui-date-end="{{search.endDate | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="endDate"  ng-model="search.endDate" format="dateFormat" ng-class="{'has-error' : (closedTestBatchesForm.endDate.$invalid)}" ng-required="true" ui-date-range="1,months" ui-date-start="{{search.startDate |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect-end>
+                          </div>
+                          <div>
+                            <ng-messages for="closedTestBatchesForm.startDate.$error" role="alert" ng-show="closedTestBatchesForm.$submitted">
+                              <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+                              <small class="error" ng-message="datesOutOfRange"><span translate>Select a date range that is less than one month</span></small>
+                              <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                            <ng-messages for="closedTestBatchesForm.endDate.$error" role="alert" ng-show="closedTestBatchesForm.$submitted && !closedTestBatchesForm.startDate.$invalid">
+                              <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+                              <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="clearfix form-group">
+                    <label class="col-sm-2 control-label" translate>Location</label>
+                    <div class="form-inline col-sm-10">
+                      <select name="location" class="form-control" style="width:auto;" ng-model="search.locationId" ng-options="site.id as site.name for site in testingSites track by site.id" ng-required="!search.allSites" ng-change="search.allSites=false">
+                        <option value="" disabled></option>
+                      </select>
+                      <label>
+                        <input type="checkbox" name="allSites" ng-model="search.allSites" ng-click="clearLocationId()" />
+                        <span translate>All</span>
+                      </label>
+                      <ng-messages for="closedTestBatchesForm.location.$error" ng-show="closedTestBatchesForm.$submitted">
+                        <ng-messages-include src="messages.html"></ng-messages-include>
+                      </ng-messages>
+                    </div>
+                  </div>
+                  <div class="col-sm-offset-2 ">
+                      <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+                      </button>
+                      <button class="btn btn-primary" type="button" ng-click="clearClosedBatchesSearch(closedTestBatchesForm)" translate>Clear</button>
+                  </div>
+              </form>
+              <div ng-switch="closedTestBatches" class="col-sm-12">
+                  <div ng-switch-when="true">
+                      <div style="padding-bottom: 10px"></div>
+                      <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <table ng-table="closedTestBatchesTableParams" show-filter="false" class="table">
+                                  <tr ng-repeat="testBatch in $data"
+                                      ng-click="manageTestBatch(testBatch);"
+                                      ng-mouseenter="this.$selected = true"
+                                      ng-mouseleave="this.$selected = false"
+                                      ng-class="{'active': testBatch.$selected}">
+                                      <td data-title="'Created On' | translate" style="width:20%;" header-class="text-left" class="text-center" sortable="'testBatchDate'">
+                                          {{testBatch.testBatchDate | bsisDateTime}}
+                                      </td>
+                                      <td data-title="'Closed' | translate" style="width:20%;" header-class="text-left" class="text-center" sortable="'date'">
+                                          {{testBatch.lastUpdated | bsisDateTime}}
+                                      </td>
+                                      <td data-title="'Test Samples' | translate" style="width:15%;" header-class="text-left" class="text-center" sortable="'numSamples'">
+                                          {{testBatch.numSamples}}
+                                      </td>
+                                      <td data-title="'Status' | translate" style="width:15%;" header-class="text-left" class="text-center" sortable="'status'">
+                                          {{testBatch.status | titleCase | translate}}
+                                      </td>
+                                      <td data-title="'Location' | translate" style="width:30%;" header-class="text-left" class="text-center" sortable="'location'">
+                                          {{testBatch.location.name}}
+                                      </td>
+                                  </tr>
+                              </table>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div ng-switch-when="false">
+                      <div class="panel panel-default" ng-if="closedTestBatchData">
+                          <div class="panel-body">
+                              <p>
+                                  <em translate>No closed test batches.</em>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </uib-tab>
+
+
+      </uib-tabset>
+</div>

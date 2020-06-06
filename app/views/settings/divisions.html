@@ -1,0 +1,54 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">  
+  <h3 class="page-header" translate>Manage Divisions</h3>
+
+    <div class="pull-right" style="padding-right: 25px;" has-permission="{{permissions.MANAGE_DIVISIONS}}">
+      <a href="#/manageDivision" translate>Add New Division</a>
+    </div>
+
+  <form class="form-horizontal col-sm-12" name="searchForm" ng-submit="findDivisions()" novalidate>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="name" translate>Name</label>
+      <div class="col-sm-10">
+        <div class="form-inline">
+          <input type="text" name="name" class="form-control input-sm" size="40" autofocus="true" ng-model="search.name" required />
+          <input type="checkbox" id="includeSimilarResults" ng-model="search.includeSimilarResults"> <label 
+            style="display: inline-block; cursor: pointer; cursor: hand;" for="includeSimilarResults" translate>Include Similar Results</label>
+          </input>
+          <ng-messages for="searchForm.name.$error" ng-show="searchForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="level" translate>Division Level</label>
+      <div class="col-sm-10">
+        <select class="form-control" style="width:auto;" name="level" ng-model="search.level" ng-options="level.value as level.label for level in divisionLevels">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}</button>
+        <button class="btn btn-primary" type="button" ng-click="clearSearch()" translate>Clear</button>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="col-sm-12">
+    <div class="panel panel-default" ng-if="gridOptions.data">
+      <div class="panel-body">
+        <div style="padding-top:5px;">
+          <em translate translate-params-count="gridOptions.data.length">{{count}} Division(s) found</em>
+        </div>
+        <div class="grid" ui-grid="gridOptions" ui-grid-pagination></div> 
+      </div>
+    </div>
+  </div>
+</div>

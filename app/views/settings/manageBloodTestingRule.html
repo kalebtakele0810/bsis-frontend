@@ -1,0 +1,131 @@
+<div class="col-sm-2 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Blood Testing Rule</h3>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form name="bloodTestingRuleForm" novalidate class="form-horizontal col-sm-12" ng-submit="saveBloodTestingRule()">
+
+
+        <div class="row form-group col-sm-12">
+          <label for="bloodTest" class="col-sm-2 control-label" translate>Blood Test</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:200px;" name="bloodTest" ng-model="bloodTestingRule.bloodTest" ng-change="updateDonationAndTestOutcomeDropDowns()" ng-options="test as test.testName for test in bloodTests track by test.id" required>
+                <option value="" disabled selected></option>
+              </select>
+              <div>
+                <ng-messages for="bloodTestingRuleForm.bloodTest.$error" ng-show="bloodTestingRuleForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="donationFieldChanged" class="col-sm-2 control-label" translate>Donation Field Affected</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:200px;" name="donationFieldChanged" ng-model="bloodTestingRule.donationFieldChanged" ng-disabled="!bloodTestingRule.bloodTest.id"
+              ng-change="updateDonationFieldValuesDropdown()"
+              ng-options="d for d in donationFields" required>
+              </select>
+              <div>
+                <ng-messages for="bloodTestingRuleForm.donationFieldChanged.$error" ng-show="bloodTestingRuleForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="pattern" class="col-sm-2 control-label" translate>Test Outcome</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:200px;" name="pattern" ng-model="bloodTestingRule.pattern" ng-options="p as p for p in testOutcomes" ng-disabled="!bloodTestingRule.bloodTest.id" required>
+              </select>
+              <div>
+                <ng-messages for="bloodTestingRuleForm.pattern.$error" ng-show="bloodTestingRuleForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label for="newInformation" class="col-sm-2 control-label" translate>Donation Field Value</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:200px;" name="newInformation" ng-model="bloodTestingRule.newInformation" ng-options="n as n for n in donationFieldValues" ng-disabled="!bloodTestingRule.donationFieldChanged">
+                <option value="" selected></option>
+              </select>
+              <div>
+                <ng-messages for="bloodTestingRuleForm.newInformation.$error" ng-show="bloodTestingRuleForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Tests -->
+        <div class="row form-group col-sm-12">
+          <label for="pendingTestOption" class="col-sm-2 control-label" translate>Pending Tests</label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:200px;" name="pendingTestOption" ng-model="userSelection.bloodTestToAdd" ng-disabled="!bloodTestingRule.bloodTest" ng-options="test as test.testName disable when isValidPendingTest(test) for test in pendingBloodTests | filter: {category: bloodTestingRule.bloodTest.category}">
+                <option value=""></option>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px"
+                      ng-click="addPendingTest()" ng-disabled="!userSelection.bloodTestToAdd" translate>Add Blood Test
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group col-sm-12">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <div class="form-inline">
+              <select class="form-control" style="width:auto;min-width:200px;" name="pendingTestList"
+                ng-model="userSelection.bloodTestsToRemove" ng-options="test as test.testName for test in bloodTestingRule.pendingTests" multiple>
+              </select>
+              <button class="btn btn-primary" type="button" style="margin-top: 2px"
+                ng-click="removePendingTests()" ng-disabled="userSelection.bloodTestsToRemove.length===0" translate>Remove Blood Test
+              </button>
+              <div>
+                <ng-messages for="bloodTestingRuleForm.pendingTestList.$error" ng-show="bloodTestingRuleForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flags -->
+
+        <div class="row form-group col-sm-12">
+          <div class="col-sm-2"></div>
+          <label for="isDeleted" class="col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox" id="isDeleted" name="isDeleted" ng-model="bloodTestingRule.isDeleted" ng-true-value="false" ng-false-value="true"/><b translate>Enabled</b>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-6">
+            <button class="btn btn-primary" type="submit" style="margin-top: 2px"
+                ng-disabled="savingBloodTestingRule">{{savingBloodTestingRule ? "Saving..." : "Save" |translate}}
+            </button>
+            <button class="btn btn-primary" type="button" ng-click="cancel()"
+                style="margin-top: 2px" ng-disabled="savingBloodTestingRule" translate>Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

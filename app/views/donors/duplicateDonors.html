@@ -1,0 +1,58 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/donors/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+<h3 class="page-header" translate>Duplicate Donors</h3>
+
+<div ng-switch="hasDuplicates" class="col-sm-12">
+    <div style="padding-bottom: 10px"></div>
+
+    <div ng-switch-when="true">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <p>
+                    <em translate>{{duplicateDonorCount}} set(s) of duplicate donors found.</em>
+                </p>
+
+                <table ng-table="duplicateDonorTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="duplicate in $data"
+                        ng-click="viewDuplicates(duplicate);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': duplicate.$selected}">
+                        <td data-title="'Group' | translate" header-class="text-left" sortable="'groupKey'">
+                            {{duplicate.groupKey}}
+                        </td>
+                        <td data-title="'First Name' | translate" header-class="text-left" sortable="'firstName'">
+                            {{duplicate.firstName}}
+                        </td>
+                        <td data-title="'Last Name' | translate" header-class="text-left" sortable="'lastName'">
+                            {{duplicate.lastName}}
+                        </td>
+                        <td data-title="'Gender' | translate" header-class="text-left" class="text-center" sortable="'gender'">
+                            {{duplicate.gender | titleCase | translate}}
+                        </td>
+                        <td data-title="'Birth Date' | translate" header-class="text-left" class="text-center"
+                            sortable="'birthDate'">
+                            {{ (duplicate.birthDate | bsisDate) || '' }}
+                        </td>
+                        <td data-title="'Number of duplicates' | translate" header-class="text-left" class="text-center"
+                            sortable="'count'">
+                            {{duplicate.count}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="false">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <em translate>No duplicate donors found</em>
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Manage Donation Types</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <em translate translate-params-count="donationTypesCount">{{count}} donation type(s) found</em> <span
+                        has-permission="{{permissions.MANAGE_DONATION_TYPES}}"> | <em> <a href=""
+                                                                                          ng-click="addNewDonationType()" translate>Add New Donation Type</a></em> </span>
+                </p>
+                <table ng-table="donationsTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="donationType in donationTypes"
+                        ng-click="manageDonationType(donationType);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': donationType.$selected}">
+                        <td data-title="'Type' | translate" style="width:30%;" header-class="text-left" sortable="'donationType'">
+                            {{donationType.type}}
+                        </td>
+                        <td data-title="'Enabled' | translate" style="width:15%;" header-class="text-left" class="text-center">
+                            <span ng-show="!donationType.isDeleted"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                            <span ng-show="donationType.isDeleted"><i class="fa {{icons.SQUARE}}"></i></span>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

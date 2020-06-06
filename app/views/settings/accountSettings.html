@@ -1,0 +1,142 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Account Settings</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom:10px;"></div>
+        <div class="panel panel-default">
+            <div class="panel-body" ng-controller="AccountSettingsCtrl">
+
+                <form name="userDetailsForm" novalidate class="form-horizontal col-sm-12" role="form"
+                      ng-submit="updateUserDetails();" style="padding-bottom:20px;">
+
+                    <div style="padding-bottom:10px;" ng-show="detailsMessage">
+                        <uib-alert type="danger" ng-if="detailsStyle === 'danger'" close="$parent.detailsMessage = ''">
+                            {{detailsMessage}}
+                        </uib-alert>
+                        <uib-alert type="success" ng-if="detailsStyle === 'success'" close="$parent.detailsMessage = ''">
+                            {{detailsMessage}}
+                        </uib-alert>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-lg-1 control-label" translate>Name</label>
+                        <div class="col-sm-9 col-lg-11 form-inline">
+                            <div class="form-group"
+                                 ng-class="{'has-error': (userDetailsForm.$submitted || userDetailsForm.firstName.$dirty) && userDetailsForm.firstName.$invalid}"
+                                 style="margin-left:0;margin-right:0;">
+                                <input size="15" class="form-control input-sm" style="width:auto;" type="text"
+                                       name="firstName" ng-model="userDetails.firstName"
+                                       ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}"
+                                       placeholder="{{'First' | translate}}" required/>
+                            </div>
+                            <div class="form-group"
+                                 ng-class="{'has-error': (userDetailsForm.$submitted || userDetailsForm.lastName.$dirty) && userDetailsForm.lastName.$invalid}"
+                                 style="margin-left:0;margin-right:0;">
+                                <input size="15" class="form-control input-sm" style="width:auto;" type="text"
+                                       name="lastName" ng-model="userDetails.lastName"
+                                       ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}"
+                                       placeholder="{{'Last' | translate}}" required/>
+                            </div>
+                            <ng-messages
+                                    for="userDetailsForm.firstName.$invalid ? userDetailsForm.firstName.$error : userDetailsForm.lastName.$invalid ? userDetailsForm.lastName.$error : {}"
+                                    role="alert"
+                                    ng-show="userDetailsForm.$submitted || userDetailsForm.firstName.$dirty || userDetailsForm.lastName.$dirty">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error': (userDetailsForm.$submitted || userDetailsForm.emailId.$dirty) && userDetailsForm.emailId.$invalid}">
+                        <label class="col-sm-3 col-lg-1 control-label" style="color:inherit;" for="emailId" translate>Email
+                        </label>
+                        <div class="col-sm-9 col-lg-11">
+                            <input size="34" class="form-control input-sm" style="width:auto;" type="email" name="emailId"
+                                   ng-model="userDetails.emailId"
+                                   ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}"/>
+                            <ng-messages for="userDetailsForm.emailId.$error" role="alert"
+                                         ng-show="userDetailsForm.$submitted || userDetailsForm.emailId.$dirty">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-lg-1 control-label" for="username" translate>Username</label>
+                        <div class="col-sm-9 col-lg-11">
+                            <input size="34" class="form-control input-sm" style="width:auto;" type="text" name="username"
+                                   ng-model="userDetails.username" disabled/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-lg-1 control-label" translate>Password</label>
+                        <div class="col-sm-9 col-lg-11">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="modifyPassword" ng-model="userDetails.modifyPassword"/>
+                                    <span translate>Modify password</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error': (userDetailsForm.$submitted || userDetailsForm.currentPassword.$dirty) && userDetailsForm.currentPassword.$invalid}">
+                        <div class="col-sm-offset-3 col-lg-offset-1 col-sm-9 col-lg-11">
+                            <input size="34" class="form-control input-sm" style="width:auto;" type="password"
+                                   name="currentPassword" ng-model="userDetails.currentPassword"
+                                   ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}"
+                                   ng-disabled="!userDetails.modifyPassword" placeholder="{{'Current password' | translate}}"
+                                   ng-required="userDetails.modifyPassword"/>
+                            <ng-messages for="userDetailsForm.currentPassword.$error" role="alert"
+                                         ng-show="userDetailsForm.$submitted || userDetailsForm.currentPassword.$dirty">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error': (userDetailsForm.$submitted || userDetailsForm.password.$dirty) && userDetailsForm.password.$invalid}">
+                        <div class="col-sm-offset-3 col-lg-offset-1 col-sm-9 col-lg-11">
+                            <input size="34" class="form-control input-sm" style="width:auto;" type="password"
+                                   name="password" ng-model="userDetails.password"
+                                   ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}"
+                                   ng-disabled="!userDetails.modifyPassword" placeholder="{{'New password' | translate}}"
+                                   ng-required="userDetails.modifyPassword"/>
+                            <ng-messages for="userDetailsForm.password.$error" role="alert"
+                                         ng-show="userDetailsForm.$submitted || userDetailsForm.password.$dirty">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{'has-error': (userDetailsForm.$submitted || userDetailsForm.confirmPassword.$dirty) && userDetailsForm.confirmPassword.$invalid}">
+                        <div class="col-sm-offset-3 col-lg-offset-1 col-sm-9 col-lg-11">
+                            <input size="34" class="form-control input-sm" style="width:auto;" type="password"
+                                   name="confirmPassword" ng-model="userDetails.confirmPassword"
+                                   ng-model-options="{updateOn: 'default blur', debounce: {default: 300, blur: 0}}"
+                                   ng-disabled="!userDetails.modifyPassword" placeholder="{{'Confirm password' | translate}}"
+                                   ng-required="userDetails.modifyPassword" compare-to="userDetails.password"/>
+                            <ng-messages for="userDetailsForm.confirmPassword.$error" role="alert"
+                                         ng-show="userDetailsForm.$submitted || userDetailsForm.confirmPassword.$dirty">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                            </ng-messages>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-lg-offset-1 col-sm-9 col-lg-11">
+                            <button class="btn btn-primary" type="submit" ng-disabled="updatingUser">{{updatingUser ?
+                                "Saving..." : "Save" | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

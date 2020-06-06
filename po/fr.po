@@ -1,0 +1,5133 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Percentage, abbreviation (symbol)
+#: app/scripts/controllers/reports/donationTypesReport.js:185
+#: app/scripts/controllers/reports/donationTypesReport.js:64
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:47
+msgid "%"
+msgstr "%"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:132
+msgid "% Issued vs Ordered"
+msgstr "% Distribué vs commandé"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:136
+msgid "% Issued vs Requests"
+msgstr "% Distribué vs demandes"
+
+#: app/views/settings/manageComponentType.html:88
+msgid "(0.001 to 2) with max 3 decimal digits (i.e. 1.004)"
+msgstr ""
+"(0,001 à 2) avec un maximum de 3 chiffres décimaux (c'est-à-dire 1,004 )"
+
+#. Positive, abbreviation (symbol)
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:45
+msgid "+"
+msgstr "+"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:14
+msgid "ABO"
+msgstr "ABO"
+
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:260
+#: app/views/reports/aboRhGroupsReport.html:3 app/views/reports/sidebar.html:13
+msgid "ABO Rh Blood Grouping Report"
+msgstr "Rapport des Groupes sanguins ABO RhD"
+
+#: app/views/donors/donationDetails.html:31
+msgid "ABO/Rh"
+msgstr "ABO/Rh"
+
+#: app/views/testing/manageTestBatch.html:82
+msgid "ABO/Rh Outcomes"
+msgstr "Résultats ABO / Rh"
+
+#: app/views/header.html:43 app/views/settings/accountSettings.html:3
+#: app/views/settings/sidebar.html:13
+msgid "Account Settings"
+msgstr "Gestion des comptes"
+
+#: app/scripts/services/donors.js:414
+#: app/views/testing/manageTestBatch.html:233 app/views/translations.html:11
+msgid "Add"
+msgstr "Ajouter"
+
+#: app/views/settings/addAdverseEventType.html:3
+msgid "Add Adverse Event Type"
+msgstr "Ajouter un effet indésirable"
+
+#: app/views/settings/manageBloodTestingRule.html:81
+msgid "Add Blood Test"
+msgstr "Ajouter un test sanguin"
+
+#: app/views/donors/viewDeferrals.html:2
+msgid "Add Deferral"
+msgstr "Ajouter un report"
+
+#: app/views/components/addComponentBatch.html:16
+#: app/views/components/addComponentBatch.html:7
+#: app/views/components/viewComponentBatch.html:7
+#: app/views/components/viewComponentBatches.html:7
+msgid "Add Delivery Form"
+msgstr "Ajouter un formulaire de livraison"
+
+#: app/views/donors/addDonation.html:1 app/views/donors/addDonorDonation.html:1
+#: app/views/donors/viewDonationBatch.html:4
+#: app/views/donors/viewDonations.html:2
+msgid "Add Donation"
+msgstr "Ajouter un don"
+
+#: app/views/donors/findDonor.html:67
+msgid "Add Donation Batch"
+msgstr "Ajouter un lot de don"
+
+#: app/views/donors/addDonor.html:3
+msgid "Add Donor"
+msgstr "Ajouter un donneur"
+
+#: app/views/settings/adverseEventTypes.html:13
+msgid "Add New Adverse Event Type"
+msgstr "Ajouter un nouveau type d'effet indésirable"
+
+#: app/views/settings/bloodTests.html:10
+msgid "Add New Blood Test"
+msgstr "Ajouter un nouveau test sanguin"
+
+#: app/views/settings/bloodTestingRules.html:10
+msgid "Add New Blood Testing Rule"
+msgstr "Ajouter une nouvelle règle de test sanguin"
+
+#: app/views/settings/componentTypeCombinations.html:10
+msgid "Add New Component Combination"
+msgstr "Ajouter une nouvelle combinaison de composants"
+
+#: app/views/settings/componentTypes.html:10
+msgid "Add New Component Type"
+msgstr "Ajouter un nouveau type de composant"
+
+#: app/views/settings/configurations.html:11
+msgid "Add New Configuration"
+msgstr "Ajouter une nouvelle configuration"
+
+#: app/views/settings/deferralReasons.html:11
+msgid "Add New Deferral Reason"
+msgstr "Ajouter une nouvelle raison d’ajournement"
+
+#: app/views/settings/discardReasons.html:11
+msgid "Add New Discard Reason"
+msgstr "Ajouter une nouvelle raison de rejet"
+
+#: app/views/settings/divisions.html:6
+msgid "Add New Division"
+msgstr "Ajouter une nouvelle division"
+
+#: app/views/settings/donationTypes.html:11
+msgid "Add New Donation Type"
+msgstr "Ajouter un nouveau type de don"
+
+#: app/views/donors/findDonor.html:113 app/views/donors/findDonor.html:63
+msgid "Add New Donor"
+msgstr "Ajouter un nouveau donneur"
+
+#: app/views/settings/locations.html:6
+msgid "Add New Location"
+msgstr "Ajouter un nouvel emplacement"
+
+#: app/views/settings/packTypes.html:12
+msgid "Add New Pack Type"
+msgstr "Ajouter un nouveau type de pack"
+
+#: app/views/settings/roles.html:11
+msgid "Add New Role"
+msgstr "Ajouter un nouveau rôle"
+
+#: app/views/settings/transfusionReactionTypes.html:11
+msgid "Add New Transfusion Reaction Type"
+msgstr "Ajouter un nouveau type de réaction transfusionnelle"
+
+#: app/views/settings/users.html:10
+msgid "Add New User"
+msgstr "Ajouter un nouvel utilisateur"
+
+#: app/views/inventory/manageOrders.html:27
+#: app/views/inventory/manageOrders.html:9
+#: app/views/inventory/viewOrders.html:9
+msgid "Add Order"
+msgstr "Ajouter une commande"
+
+#: app/views/settings/manageBloodTest.html:127
+#: app/views/settings/manageBloodTest.html:156
+#: app/views/settings/manageBloodTest.html:88
+msgid "Add Outcome"
+msgstr "Ajouter un résultat"
+
+#: app/views/inventory/fulfilOrder.html:219
+#: app/views/inventory/recordReturn.html:67
+msgid "Add Pack"
+msgstr "Ajouter un pack"
+
+#: app/views/inventory/manageReturns.html:25
+#: app/views/inventory/manageReturns.html:9
+#: app/views/inventory/viewReturns.html:9
+msgid "Add Return"
+msgstr "Ajouter un retour"
+
+#: app/views/settings/manageComponentTypeCombination.html:35
+msgid "Add Source Component"
+msgstr "Ajouter un composant source"
+
+#: app/views/settings/manageComponentTypeCombination.html:73
+msgid "Add Unit"
+msgstr "Ajouter une unité"
+
+#: app/views/components/addComponentBatch.html:77
+msgid "Add a blood transport box"
+msgstr "Ajouter un récipient de transport de sang"
+
+#: app/views/components/addComponentBatch.html:73
+msgid "Add box"
+msgstr "Ajouter un récipient"
+
+#: app/views/inventory/fulfilOrder.html:182
+msgid "Add to Order"
+msgstr "Ajouter à la commande"
+
+#: app/scripts/controllers/settings/auditLog.js:72
+msgid "Added"
+msgstr "Ajoutée"
+
+#: app/views/translations.html:12
+msgid "Adding..."
+msgstr "Ajout..."
+
+#: app/views/donors/viewDonorDemographics.html:85
+msgid "Address Type"
+msgstr "Type d'adresse"
+
+#: app/views/donors/mergeDonorsReview.html:97
+msgid "Addresses"
+msgstr "Adresses"
+
+#: app/views/donors/addDonation.html:291
+#: app/views/donors/addDonorDonation.html:214
+msgid "Adverse Event"
+msgstr "Effet indésirable"
+
+#: app/views/donors/donationDetails.html:61
+#: app/views/donors/viewDonationSummary.html:206
+msgid "Adverse Event Comment"
+msgstr "Commentaire sur Effet indésirable"
+
+#: app/views/donors/donationDetails.html:57
+#: app/views/donors/viewDonationSummary.html:195
+msgid "Adverse Event Type"
+msgstr "Type d'effet indésirable"
+
+#: app/views/donors/donorCounsellingDetails.html:37
+#: app/views/donors/findDonor.html:93
+#: app/views/donors/manageDuplicateDonors.html:29
+#: app/views/donors/viewDonor.html:102
+msgid "Age"
+msgstr "Age"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:129
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:105
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:115
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:252
+#: app/scripts/controllers/reports/donationTypesReport.js:184
+#: app/scripts/controllers/reports/donationTypesReport.js:51
+#: app/scripts/controllers/reports/donorsDeferredReport.js:201
+#: app/scripts/controllers/reports/donorsDeferredReport.js:42
+#: app/scripts/controllers/reports/donorsDeferredReport.js:70
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:100
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:189
+#: app/views/components/findComponents.html:26
+#: app/views/components/findComponents.html:58
+#: app/views/inventory/findInventory.html:40
+#: app/views/inventory/viewStockLevels.html:18
+#: app/views/labelling/findSafeComponents.html:37
+#: app/views/labelling/findSafeComponents.html:58
+#: app/views/mobile/mobileClinicExport.html:23
+#: app/views/reports/componentsProducedReport.html:17
+#: app/views/reports/donorsAdverseEventsReport.html:17
+#: app/views/reports/transfusionsReport.html:17
+#: app/views/reports/unitsDiscardedReport.html:17
+#: app/views/testing/findTestSamples.html:28
+#: app/views/testing/findTestSamples.html:46
+#: app/views/testing/manageTestBatches.html:161
+msgid "All"
+msgstr "Tous"
+
+#: app/scripts/controllers/reports/componentsProducedReport.js:108
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:150
+msgid "All Processing Sites"
+msgstr "Tous les sites de traitement"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:21
+msgid "All Samples"
+msgstr "Tous les échantillons"
+
+#: app/scripts/controllers/inventory/viewStockLevels.js:59
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:156
+#: app/scripts/controllers/reports/transfusionsReport.js:172
+#: app/scripts/controllers/reports/transfusionsReport.js:40
+msgid "All Sites"
+msgstr "Tous les sites"
+
+#: app/scripts/controllers/reports/donorsDeferredReport.js:68
+msgid "All Venues"
+msgstr "Tous les emplacements"
+
+#: app/views/donors/findDonor.html:38 app/views/settings/locations.html:29
+msgid "All search fields cannot be empty"
+msgstr "Tous les champs de recherche ne peuvent pas être vides"
+
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:103
+#: app/scripts/controllers/reports/donationTypesReport.js:181
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:186
+msgid "All venues"
+msgstr "Tous les emplacements"
+
+#: app/views/testing/manageTestBatch.html:62
+msgid "Already added or invalid DINs entered."
+msgstr "DIN déjà ajoutés ou invalids."
+
+#: app/scripts/util/filters.js:80
+msgid "Already expired"
+msgstr "Déjà expiré"
+
+#. Blood Typing Match Status
+#: app/views/translations.html:59
+msgid "Ambiguous"
+msgstr "Ambigu"
+
+#: app/scripts/controllers/mobile/mobileClinicExport.js:179
+msgid "An error occurred."
+msgstr "Une erreur est survenue."
+
+#: app/scripts/controllers/donors/donorCommunications.js:128
+#: app/scripts/controllers/donors/donorCounselling.js:255
+#: app/views/donors/donorCommunications.html:43
+#: app/views/donors/donorCounselling.html:19
+#: app/views/donors/donorCounselling.html:51
+#: app/views/inventory/findInventory.html:73
+#: app/views/labelling/findSafeComponents.html:79
+msgid "Any"
+msgstr "Tous"
+
+#: app/views/translations.html:103
+msgid "April"
+msgstr "Avril"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:425
+msgid "Are you sure that you want to close this test batch?"
+msgstr "Êtes-vous sûr de vouloir fermer ce lot de test?"
+
+#: app/scripts/services/donors.js:405
+msgid "Are you sure that you want to continue?"
+msgstr "Êtes-vous sûr de vouloir continuer?"
+
+#: app/scripts/controllers/inventory/viewOrder.js:242
+msgid "Are you sure that you want to delete this Order?"
+msgstr "Etes-vous sûr de vouloir supprimer cette commande?"
+
+#: app/scripts/controllers/inventory/viewReturn.js:209
+msgid "Are you sure that you want to delete this Return?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce retour?"
+
+#: app/scripts/controllers/settings/dataExport.js:36
+msgid "Are you sure that you want to export all data?"
+msgstr "Êtes-vous sûr de vouloir exporter toutes les données?"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:443
+msgid "Are you sure that you want to reopen this test batch?"
+msgstr "Êtes-vous sûr de vouloir rouvrir ce lot de test?"
+
+#: app/scripts/controllers/inventory/recordTransfusions.js:180
+msgid "Are you sure that you want to void this Tranfusion?"
+msgstr "Êtes-vous sûr de vouloir annuler cette transfusion?"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:465
+msgid "Are you sure that you want to void this test batch?"
+msgstr "Êtes-vous sûr de vouloir annuler ce lot de test?"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:313
+msgid "Are you sure you want to delete the selected rows?"
+msgstr "Êtes-vous sûr de vouloir supprimer les lignes sélectionnées?"
+
+#: app/views/inventory/discardComponentsModal.html:6
+msgid "Are you sure you want to discard all units in this return?"
+msgstr "Êtes-vous sûr de vouloir éliminer toutes les unités de ce retour?"
+
+#: app/scripts/controllers/components/discardComponents.js:48
+msgid "Are you sure you want to discard these components?"
+msgstr "Êtes-vous sûr de vouloir supprimer ces composants?"
+
+#: app/scripts/controllers/inventory/viewOrder.js:263
+msgid "Are you sure you want to dispatch the order?"
+msgstr "Êtes-vous sûr de vouloir expédier la commande?"
+
+#: app/scripts/controllers/inventory/viewReturn.js:230
+msgid "Are you sure you want to return all units into inventory?"
+msgstr ""
+"Êtes-vous sûr de vouloir retourner toutes les unités dans l'inventaire?"
+
+#: app/scripts/controllers/components/discardComponents.js:82
+msgid "Are you sure you want to undiscard these components?"
+msgstr "Êtes-vous sûr de vouloir supprimer ces composants?"
+
+#: app/scripts/controllers/donors/viewDonor.js:605
+msgid "Are you sure you want to void this deferral?"
+msgstr "Êtes-vous sûr de vouloir annuler ce report?"
+
+#: app/scripts/controllers/donors/viewDonor.js:603
+msgid ""
+"Are you sure you want to void this permanent deferral? The donor may be "
+"eligible to donate as a result of this action."
+msgstr ""
+"Êtes-vous sûr de vouloir annuler ce report permanent? Le donneur peut être "
+"admissible à faire un don du fait de cette action."
+
+#: app/scripts/controllers/donors/viewDonor.js:167
+msgid ""
+"Are you sure you wish to delete the donor \"{{firstName}}, {{lastName}} "
+"{{donorNumber}}\"?"
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer le donneur \"{{firstName}, {{lastName}} "
+"{{donorNumber}}\"?"
+
+#: app/views/testing/manageTestBatch.html:192
+msgid "Assign Sample(s) to Test Batch"
+msgstr "Attribuer un échantillon(s) à un lot de test"
+
+#: app/views/settings/auditLog.html:3
+msgid "Audit Log"
+msgstr "Journal d'audit"
+
+#: app/views/translations.html:107
+msgid "August"
+msgstr "Août"
+
+#. Component Status
+#: app/views/translations.html:46
+msgid "Available"
+msgstr "Disponible"
+
+#. Blood Pressure, abbreviation
+#: app/views/donors/addDonation.html:236
+#: app/views/donors/addDonorDonation.html:170
+#: app/views/donors/donationDetails.html:45
+#: app/views/donors/viewDonationSummary.html:138
+#: app/views/donors/viewDonations.html:41 app/views/donors/viewDonor.html:213
+msgid "BP"
+msgstr "TA"
+
+#: app/views/donors/manageDuplicateDonors.html:65
+msgid "Back"
+msgstr "Retour"
+
+#: app/views/forgotPassword.html:15
+msgid "Back to login"
+msgstr "Retour connexion"
+
+#: app/views/donors/addDonorDonation.html:26
+msgid "Batch"
+msgstr "Lot"
+
+#: app/views/donors/manageDonationBatches.html:124
+msgid "Batch Date"
+msgstr "Date du lot"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:95
+msgid "Batch Status"
+msgstr "Statut du lot"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:11
+#: app/views/donors/duplicateDonors.html:35
+msgid "Birth Date"
+msgstr "Date de naissance"
+
+#: app/views/donors/addDonation.html:149
+#: app/views/donors/addDonorDonation.html:98
+#: app/views/donors/viewDonationSummary.html:33
+msgid "Bleed Times"
+msgstr "Durée de prélèvement"
+
+#: app/scripts/controllers/components/recordComponents.js:105
+msgid ""
+"Bleed time exceeded, the following components will be flagged as unsafe: "
+"{{components}}."
+msgstr ""
+"Si le temps de saignement est dépassé, les composants suivants seront "
+"marqués comme dangereux: {{components}}"
+
+#: app/views/components/recordComponents.html:45
+msgid "Bleed times"
+msgstr "Temps de saignement"
+
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:50
+msgid "Blood ABO"
+msgstr "Sang ABO"
+
+#: app/scripts/controllers/inventory/viewOrder.js:137
+#: app/views/inventory/fulfilOrder.html:13
+#: app/views/inventory/fulfilOrder.html:77
+#: app/views/inventory/manageOrders.html:132
+#: app/views/inventory/recordTransfusions.html:129
+#: app/views/inventory/viewOrder.html:32
+msgid "Blood Bank"
+msgstr "Banque de sang"
+
+#: app/scripts/controllers/donors/donorCommunications.js:94
+#: app/scripts/controllers/donors/donorCounselling.js:174
+#: app/scripts/controllers/inventory/findInventory.js:48
+#: app/scripts/controllers/inventory/fulfilOrder.js:387
+#: app/scripts/controllers/inventory/recordReturn.js:36
+#: app/scripts/controllers/inventory/viewOrder.js:141
+#: app/scripts/controllers/inventory/viewOrder.js:16
+#: app/scripts/controllers/inventory/viewOrder.js:188
+#: app/scripts/controllers/inventory/viewOrder.js:55
+#: app/scripts/controllers/inventory/viewReturn.js:30
+#: app/scripts/controllers/labelling/findSafeComponents.js:86
+#: app/views/donors/mergeDonorsReview.html:19
+#: app/views/donors/mergeDonorsSelection.html:34
+#: app/views/inventory/fulfilOrder.html:106
+#: app/views/inventory/fulfilOrder.html:159
+#: app/views/inventory/fulfilOrder.html:23
+#: app/views/inventory/manageOrders.html:152
+#: app/views/inventory/recordTransfusions.html:166
+#: app/views/inventory/viewOrder.html:42
+#: app/views/testing/viewTestSample.html:46
+msgid "Blood Group"
+msgstr "Groupe sanguin"
+
+#: app/scripts/controllers/testing/findTestSamples.js:52
+#: app/scripts/controllers/testing/manageTestBatch.js:170
+#: app/views/donors/mergeDonorsDonations.html:25
+msgid "Blood Group Serology"
+msgstr "Sérologie de groupe sanguin"
+
+#: app/views/donors/donationDetails.html:110
+#: app/views/donors/viewDonationSummary.html:270
+#: app/views/testing/viewTestSample.html:90
+msgid "Blood Group Serology Outcomes"
+msgstr "Résultats de la sérologie du groupe sanguin"
+
+#: app/views/donors/donationDetails.html:75
+#: app/views/donors/viewDonationSummary.html:237
+#: app/views/testing/recordRepeatABORhOutcomes.html:52
+#: app/views/testing/viewTestSample.html:62
+msgid "Blood Group Serology Status"
+msgstr "Statut sérologique du groupe sanguin"
+
+#: app/scripts/controllers/donors/donorCommunications.js:137
+#: app/views/donors/donorCommunications.html:31
+#: app/views/inventory/findInventory.html:62
+#: app/views/labelling/findSafeComponents.html:69
+msgid "Blood Groups"
+msgstr "Groupe Sanguin"
+
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:53
+msgid "Blood Rh"
+msgstr "Sang Rh"
+
+#: app/scripts/controllers/settings/bloodTestingRules.js:8
+#: app/views/settings/manageBloodTestingRule.html:10
+msgid "Blood Test"
+msgstr "Test sanguin"
+
+#: app/scripts/controllers/settings/bloodTests.js:34
+#: app/views/settings/manageBloodTest.html:67
+msgid "Blood Test Type"
+msgstr "Type de test sanguin"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:85
+#: app/views/components/viewComponentBatch.html:40
+msgid "Blood Transport Box Temperature"
+msgstr "Température de la conteneur de transport de sang"
+
+#: app/views/components/addComponentBatch.html:68
+msgid "Blood Transport box"
+msgstr "Boîte de Transport du Sang"
+
+#: app/scripts/controllers/mobile/mobile.js:55
+#: app/scripts/controllers/mobile/mobileClinicExport.js:64
+msgid "Blood Type"
+msgstr "Groupe sanguin"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:37
+msgid "Blood Typing Issues or Incomplete"
+msgstr "Problèmes de typage sanguin ou incomplets"
+
+#: app/views/testing/recordABORhOutcomes.html:47
+#: app/views/testing/reenterABORhOutcomes.html:47
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:47
+msgid "Blood Typing Status"
+msgstr "Statut hémotypologie"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:174
+#: app/views/reports/bloodUnitsIssuedReport.html:3
+#: app/views/reports/sidebar.html:19
+msgid "Blood Units Issued Summary Report"
+msgstr "Résumé du Rapport des unités de sang distribuées"
+
+#. Data Type
+#: app/views/translations.html:91
+msgid "Boolean"
+msgstr "Booléen"
+
+#. Blood transport box number, abbreviation
+#: app/views/components/addComponentBatch.html:89
+msgid "Box #{{boxNumber}}"
+msgstr "Boîte #{{boxNumber}}"
+
+#: app/views/footer.html:4 app/views/sidebarFooter.html:6
+msgid "Build: {{backendBuildNumber}} / {{frontEndBuildNumber}}"
+msgstr "Création: {{backendBuildNumber}} / {{frontEndBuildNumber}}"
+
+#: app/scripts/controllers/header.js:223 app/scripts/controllers/header.js:31
+#: app/views/home.html:41
+msgid "COMPONENTS"
+msgstr "COMPOSANTS"
+
+#. Comma Separated Values file, abbreviation
+#: app/views/components/viewComponentBatches.html:48
+#: app/views/donors/donorCommunications.html:97
+#: app/views/donors/donorCounselling.html:115
+#: app/views/donors/viewDonationBatch.html:6
+#: app/views/inventory/findInventory.html:105
+#: app/views/inventory/findTransfusion.html:88
+#: app/views/inventory/viewStockLevels.html:49
+#: app/views/labelling/findSafeComponents.html:141
+#: app/views/mobile/donorCounselling.html:60
+#: app/views/mobile/mobileClinicExport.html:58
+#: app/views/reports/aboRhGroupsReport.html:43
+#: app/views/reports/bloodUnitsIssuedReport.html:43
+#: app/views/reports/componentsProducedReport.html:62
+#: app/views/reports/donationTypesReport.html:43
+#: app/views/reports/donorsAdverseEventsReport.html:63
+#: app/views/reports/donorsDeferredReport.html:43
+#: app/views/reports/transfusionsReport.html:63
+#: app/views/reports/ttiPrevalenceReport.html:43
+#: app/views/reports/unitsDiscardedReport.html:63
+#: app/views/testing/manageTestBatch.html:253
+msgid "CSV"
+msgstr "CSV"
+
+#: app/views/donors/addDonor.html:38
+#: app/views/donors/mergeDonorsOverview.html:22
+msgid "Calling Name"
+msgstr "Identifiant"
+
+#: app/scripts/controllers/settings/componentTypes.js:21
+#: app/views/settings/manageComponentType.html:39
+msgid "Can be Issued"
+msgstr "Peut être Distribué"
+
+#: app/views/confirmModal.html:8 app/views/donors/addDonation.html:328
+#: app/views/donors/addDonorDonation.html:251
+#: app/views/donors/donorCounsellingDetails.html:99
+#: app/views/donors/manageClinic.html:41 app/views/donors/manageClinic.html:54
+#: app/views/donors/manageClinic.html:69 app/views/donors/manageClinic.html:83
+#: app/views/donors/manageDeferral.html:82
+#: app/views/donors/manageDuplicateDonors.html:72
+#: app/views/donors/viewDeferrals.html:83
+#: app/views/donors/viewDonationSummary.html:14
+#: app/views/donors/viewDonations.html:66 app/views/donors/viewDonor.html:236
+#: app/views/donors/viewDonor.html:268 app/views/donors/viewDonor.html:92
+#: app/views/donors/viewDonorDemographics.html:11
+#: app/views/inventory/discardComponentsModal.html:26
+#: app/views/inventory/fulfilOrder.html:130
+#: app/views/inventory/fulfilOrder.html:234
+#: app/views/inventory/recordReturn.html:32
+#: app/views/inventory/recordReturn.html:82
+#: app/views/settings/adverseEventTypeForm.html:53
+#: app/views/settings/manageBloodTest.html:220
+#: app/views/settings/manageBloodTestingRule.html:123
+#: app/views/settings/manageComponentType.html:159
+#: app/views/settings/manageComponentTypeCombination.html:111
+#: app/views/settings/manageConfiguration.html:116
+#: app/views/settings/manageDeferralReason.html:77
+#: app/views/settings/manageDiscardReason.html:47
+#: app/views/settings/manageDivision.html:41
+#: app/views/settings/manageDonationType.html:41
+#: app/views/settings/manageLocation.html:112
+#: app/views/settings/managePackType.html:134
+#: app/views/settings/manageRole.html:71
+#: app/views/settings/manageTransfusionReactionType.html:45
+#: app/views/settings/manageUser.html:154 app/views/settings/users.html:32
+#: app/views/testing/manageTestBatch.html:17
+#: app/views/testing/manageTestBatch.html:34
+#: app/views/testing/recordABORhOutcomes.html:92
+#: app/views/testing/recordRepeatABORhOutcomes.html:98
+#: app/views/testing/recordRepeatTTIOutcomes.html:96
+#: app/views/testing/recordTTIOutcomes.html:92
+#: app/views/testing/reenterABORhOutcomes.html:101
+#: app/views/testing/reenterTTIOutcomes.html:101
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:123
+msgid "Cancel"
+msgstr "Annuler"
+
+#: app/views/donors/viewDonor.html:9
+msgid "Cannot be a future date"
+msgstr "Ne peut pas être une date future"
+
+#: app/views/labelling/labelComponents.html:74
+msgid "Cannot print pack or discard labels for component"
+msgstr ""
+"Impossible d'imprimer le pack ou de supprimer les étiquettes pour le "
+"composant"
+
+#: app/scripts/controllers/settings/bloodTestingRules.js:14
+#: app/scripts/controllers/settings/bloodTests.js:20
+#: app/views/settings/manageBloodTest.html:38
+msgid "Category"
+msgstr "Catégorie"
+
+#: app/views/home.html:73
+msgid "Check Components to Print Pack and Discard Labels"
+msgstr ""
+"Vérifier les composants pour imprimer les étiquetes des poches à distribuer "
+"ou à détruire"
+
+#: app/views/components/addComponentBatch.html:98
+#: app/views/components/discardComponents.html:22
+#: app/views/components/discardComponents.html:75
+#: app/views/components/findComponents.html:93
+#: app/views/components/findDiscards.html:57
+#: app/views/components/recordComponents.html:146
+#: app/views/components/recordComponents.html:22
+#: app/views/components/recordComponents.html:71
+#: app/views/components/recordComponents.html:92
+#: app/views/components/viewComponentBatches.html:35
+#: app/views/donors/donorCommunications.html:86
+#: app/views/donors/donorCounselling.html:106
+#: app/views/donors/findDonor.html:47
+#: app/views/donors/manageDonationBatches.html:147
+#: app/views/donors/manageDonationBatches.html:94
+#: app/views/inventory/findInventory.html:94
+#: app/views/inventory/findTransfusion.html:78
+#: app/views/inventory/fulfilOrder.html:183
+#: app/views/inventory/fulfilOrder.html:221
+#: app/views/inventory/manageOrders.html:85
+#: app/views/inventory/manageReturns.html:64
+#: app/views/inventory/recordReturn.html:69
+#: app/views/inventory/recordTransfusions.html:180
+#: app/views/inventory/viewOrders.html:84
+#: app/views/inventory/viewReturns.html:65
+#: app/views/inventory/viewStockLevels.html:40
+#: app/views/labelling/findSafeComponents.html:131
+#: app/views/labelling/labelComponents.html:35
+#: app/views/mobile/donorCounselling.html:51 app/views/mobile/lookUp.html:37
+#: app/views/mobile/mobileClinicExport.html:47
+#: app/views/reports/aboRhGroupsReport.html:31
+#: app/views/reports/bloodUnitsIssuedReport.html:31
+#: app/views/reports/donationTypesReport.html:31
+#: app/views/reports/donorsAdverseEventsReport.html:51
+#: app/views/reports/donorsDeferredReport.html:31
+#: app/views/reports/transfusionsReport.html:51
+#: app/views/reports/ttiPrevalenceReport.html:31
+#: app/views/reports/unitsDiscardedReport.html:51
+#: app/views/settings/divisions.html:38 app/views/settings/locations.html:38
+#: app/views/testing/findTestSamples.html:81
+#: app/views/testing/manageTestBatch.html:234
+#: app/views/testing/manageTestBatches.html:116
+#: app/views/testing/manageTestBatches.html:171
+#: app/views/testing/viewTestSample.html:26
+msgid "Clear"
+msgstr "Effacer"
+
+#: app/scripts/controllers/mobile/mobile.js:104 app/views/mobile/lookUp.html:23
+#: app/views/mobile/mobileClinicExport.html:33
+msgid "Clinic Date"
+msgstr "Date de la Clinique Mobile"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:424
+#: app/views/donors/manageClinic.html:67
+#: app/views/testing/manageTestBatch.html:45
+msgid "Close"
+msgstr "Fermer"
+
+#: app/views/donors/manageClinic.html:63
+msgid "Close Batch"
+msgstr "Fermer le lot"
+
+#. Test Batch Status
+#: app/scripts/controllers/components/viewComponentBatch.js:5
+#: app/scripts/controllers/donors/viewDonationBatch.js:89
+#: app/views/donors/manageDonationBatches.html:167
+#: app/views/testing/manageTestBatches.html:189 app/views/translations.html:76
+msgid "Closed"
+msgstr "Fermé"
+
+#: app/views/donors/manageDonationBatches.html:107
+#: app/views/testing/manageTestBatches.html:131
+msgid "Closed Batches"
+msgstr "Lots fermés"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:37
+#: app/scripts/controllers/testing/findTestSamples.js:33
+msgid "Collection Date"
+msgstr "Date de collecte"
+
+#: app/scripts/services/componentValidation.js:12
+msgid ""
+"Combined weight of components exceeds weight of parent component. Do you "
+"want to continue?"
+msgstr ""
+"Le poids combiné des composants dépasse le poids du composant source. Voulez-"
+"vous continuer?"
+
+#: app/views/donors/mergeDonorsDeferrals.html:24
+#: app/views/donors/viewDeferrals.html:47
+#: app/views/donors/viewDeferrals.html:76
+msgid "Comment"
+msgstr "Commentaire"
+
+#: app/views/components/discardComponents.html:64
+#: app/views/donors/manageDeferral.html:19
+#: app/views/inventory/discardComponentsModal.html:21
+msgid "Comments"
+msgstr "Commentaires"
+
+#. Blood Typing Status
+#: app/views/translations.html:67
+msgid "Complete"
+msgstr "Terminé"
+
+#: app/scripts/controllers/components/discardComponents.js:131
+#: app/scripts/controllers/components/recordComponents.js:384
+#: app/scripts/controllers/inventory/findInventory.js:27
+#: app/scripts/controllers/inventory/findTransfusion.js:49
+#: app/scripts/controllers/inventory/recordReturn.js:22
+#: app/scripts/controllers/inventory/viewReturn.js:16
+#: app/scripts/controllers/labelling/findSafeComponents.js:30
+#: app/scripts/controllers/settings/componentTypes.js:14
+#: app/views/components/viewDonations.html:12
+#: app/views/inventory/findInventory.html:17
+#: app/views/inventory/findTransfusion.html:16
+#: app/views/inventory/fulfilOrder.html:209
+#: app/views/inventory/recordReturn.html:58
+#: app/views/inventory/recordTransfusions.html:24
+#: app/views/labelling/findSafeComponents.html:16
+#: app/views/settings/manageComponentType.html:24
+msgid "Component Code"
+msgstr "Code du Composant"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:112
+msgid "Component Delivery Forms"
+msgstr "Formulaires de livraison de composants"
+
+#: app/views/home.html:43
+msgid "Component Production Laboratory"
+msgstr "Gérer la Production de Composants"
+
+#: app/scripts/controllers/labelling/findSafeComponents.js:51
+msgid "Component Status"
+msgstr "Statut du composant"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:112
+msgid "Component Transfusion Information"
+msgstr "Informations sur la transfusion de composants"
+
+#: app/scripts/controllers/components/discardComponents.js:138
+#: app/scripts/controllers/components/recordComponents.js:391
+#: app/scripts/controllers/inventory/findInventory.js:42
+#: app/scripts/controllers/inventory/findTransfusion.js:132
+#: app/scripts/controllers/inventory/findTransfusion.js:56
+#: app/scripts/controllers/inventory/fulfilOrder.js:382
+#: app/scripts/controllers/inventory/recordReturn.js:29
+#: app/scripts/controllers/inventory/viewOrder.js:11
+#: app/scripts/controllers/inventory/viewOrder.js:187
+#: app/scripts/controllers/inventory/viewOrder.js:50
+#: app/scripts/controllers/inventory/viewReturn.js:23
+#: app/scripts/controllers/inventory/viewStockLevels.js:17
+#: app/scripts/controllers/labelling/findSafeComponents.js:45
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:128
+#: app/scripts/controllers/reports/componentsProducedReport.js:186
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:190
+#: app/views/components/viewComponents.html:15
+#: app/views/components/viewDonations.html:19
+#: app/views/inventory/findInventory.html:50
+#: app/views/inventory/findTransfusion.html:27
+#: app/views/inventory/fulfilOrder.html:146
+#: app/views/inventory/recordTransfusions.html:35
+#: app/views/labelling/findSafeComponents.html:48
+#: app/views/settings/managePackType.html:50
+msgid "Component Type"
+msgstr "Type de composant"
+
+#: app/views/components/recordComponents.html:36
+#: app/views/components/recordComponents.html:79
+msgid "Component Weight"
+msgstr "Poids du composant"
+
+#: app/views/labelling/labelComponents.html:66
+msgid "Component can be discarded"
+msgstr "Le composant peut être éliminée"
+
+#: app/views/labelling/labelComponents.html:51
+msgid "Component has been labelled and verified"
+msgstr "Le composant a été étiqueté et vérifié"
+
+#: app/views/labelling/labelComponents.html:53
+msgid "Component is ready to be labelled"
+msgstr "Le composant est prêt à être étiqueté"
+
+#: app/views/components/recordComponents.html:83
+msgid "Component weight exceeds weight of parent component"
+msgstr "Le poids des composants dépasse le poids du Composant source"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:300
+#: app/scripts/controllers/inventory/recordReturn.js:235
+msgid ""
+"Component with DIN {{DIN}} and ComponentCode {{componentCode}} not found."
+msgstr ""
+"Composant avec DIN {{DIN}} et code de composant {{componentCode}} pas trouvé."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:285
+msgid "Component {{DIN}} ({{componentCode}}) does not match what was ordered."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) ne correspond pas à ce qui a été "
+"commandé."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:263
+msgid ""
+"Component {{DIN}} ({{componentCode}}) has already been added to this Order "
+"Form."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) a déjà été ajouté à ce bon de commande."
+
+#: app/scripts/controllers/inventory/recordReturn.js:223
+msgid ""
+"Component {{DIN}} ({{componentCode}}) has already been added to this Return "
+"Form."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) a déjà été ajouté à ce formulaire de "
+"retour."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:272
+msgid ""
+"Component {{DIN}} ({{componentCode}}) has already been assigned to another "
+"Order Form."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) a déjà été affecté à un autre "
+"formulaire de commande."
+
+#: app/scripts/controllers/inventory/recordReturn.js:216
+msgid "Component {{DIN}} ({{componentCode}}) has not been issued."
+msgstr "Composant {{DIN}} ({{componentCode}}) n'a pas été publié."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:249
+msgid ""
+"Component {{DIN}} ({{componentCode}}) is not currently in stock at "
+"{{location}}."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) n'est pas en stock actuellement  a "
+"{{location}}."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:244
+msgid "Component {{DIN}} ({{componentCode}}) is not currently in stock."
+msgstr "Composant {{DIN}} ({{componentCode}}) n'est pas en stock."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:254
+msgid "Component {{DIN}} ({{componentCode}}) is not suitable for dispatch."
+msgstr "Composant {{DIN}} ({{componentCode}}) ne convient pas à l'expédition."
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:222
+msgid "Component {{DIN}} ({{componentCode}}) was not found in this Order Form."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) n'a pas été trouvé dans ce bon de "
+"commande."
+
+#: app/scripts/controllers/inventory/recordReturn.js:194
+msgid ""
+"Component {{DIN}} ({{componentCode}}) was not found in this Return Form."
+msgstr ""
+"Composant {{DIN}} ({{componentCode}}) n'a pas été trouvé dans ce formulaire "
+"de retour."
+
+#: app/views/settings/manageLocation.html:37
+msgid "Components"
+msgstr "Composants"
+
+#: app/views/settings/managePackType.html:35
+#: app/views/settings/packTypes.html:33
+msgid "Components Produced"
+msgstr "Composant sanguins"
+
+#: app/views/reports/componentsProducedReport.html:3
+#: app/views/reports/sidebar.html:25
+msgid "Components Produced Report"
+msgstr "Rapport des Composants Préparés"
+
+#: app/scripts/controllers/reports/componentsProducedReport.js:227
+msgid "Components Produced Summary Report"
+msgstr "Rapport sommaire des composants produits"
+
+#: app/views/settings/users.html:31
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:423
+msgid "Confirm Close"
+msgstr "Confirmer Fermeture"
+
+#: app/views/passwordReset.html:27
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:495
+msgid "Confirm Release"
+msgstr "Confirmer la sortie"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:441
+msgid "Confirm Reopen"
+msgstr "Confirmer la réouverture"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:463
+msgid "Confirm Void"
+msgstr "Confirmer annulation"
+
+#: app/views/passwordReset.html:32
+msgid "Confirm new password"
+msgstr "Confirmer le nouveau mot de passe"
+
+#: app/views/settings/accountSettings.html:121
+#: app/views/settings/manageUser.html:111
+msgid "Confirm password"
+msgstr "Confirmer le mot de passe"
+
+#: app/views/testing/manageTestBatch.html:120
+msgid "Confirmatory TTI Outcomes"
+msgstr "Résultats de confirmation de l'ITT"
+
+#: app/scripts/controllers/settings/componentTypes.js:31
+#: app/views/settings/manageComponentType.html:48
+msgid "Contains Plasma"
+msgstr "Contient du plasma"
+
+#: app/scripts/controllers/components/discardComponents.js:47
+#: app/scripts/controllers/components/discardComponents.js:81
+#: app/scripts/controllers/components/recordComponents.js:118
+#: app/scripts/controllers/components/recordComponents.js:170
+#: app/scripts/controllers/components/recordComponents.js:179
+#: app/scripts/controllers/components/recordComponents.js:189
+#: app/scripts/controllers/components/recordComponents.js:195
+#: app/scripts/controllers/components/recordComponents.js:210
+#: app/scripts/controllers/components/recordComponents.js:335
+#: app/scripts/controllers/components/recordComponents.js:467
+#: app/scripts/controllers/donors/viewDonationBatch.js:344
+#: app/scripts/controllers/donors/viewDonationBatch.js:356
+#: app/scripts/controllers/donors/viewDonor.js:113
+#: app/scripts/controllers/donors/viewDonor.js:403
+#: app/scripts/controllers/inventory/fulfilOrder.js:312
+#: app/scripts/services/componentValidation.js:11
+msgid "Continue"
+msgstr "Continuer"
+
+#: app/scripts/controllers/donors/donorCounselling.js:203
+msgid "Counselled"
+msgstr "Thérapie"
+
+#: app/views/donors/donorCounsellingDetails.html:55
+msgid "Counselling Date"
+msgstr "Date de thérapie"
+
+#: app/views/donors/donorCounsellingDetails.html:92
+msgid "Counselling Notes"
+msgstr "Notes de thérapie"
+
+#: app/views/donors/donorCounselling.html:68
+#: app/views/donors/donorCounsellingDetails.html:64
+msgid "Counselling Status"
+msgstr "Statut de la Traitement"
+
+#. Order Status
+#. Return Status
+#: app/views/donors/manageDonationBatches.html:163
+#: app/views/donors/manageDonationBatches.html:24
+#: app/views/donors/viewDeferrals.html:28 app/views/translations.html:34
+#: app/views/translations.html:54
+msgid "Created"
+msgstr "Créé"
+
+#: app/scripts/controllers/components/discardComponents.js:155
+#: app/scripts/controllers/components/recordComponents.js:406
+#: app/scripts/controllers/inventory/findInventory.js:34
+#: app/scripts/controllers/inventory/recordReturn.js:51
+#: app/scripts/controllers/inventory/viewReturn.js:45
+#: app/views/components/viewComponents.html:17
+#: app/views/components/viewDonations.html:16
+#: app/views/testing/manageTestBatch.html:146
+#: app/views/testing/manageTestBatches.html:186
+#: app/views/testing/manageTestBatches.html:27
+#: app/views/testing/recordABORhOutcomes.html:8
+#: app/views/testing/recordRepeatABORhOutcomes.html:8
+#: app/views/testing/recordRepeatTTIOutcomes.html:10
+#: app/views/testing/recordTTIOutcomes.html:8
+#: app/views/testing/reenterABORhOutcomes.html:8
+#: app/views/testing/reenterTTIOutcomes.html:8
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:8
+msgid "Created On"
+msgstr "Créé le"
+
+#: app/views/inventory/manageOrders.html:18
+msgid "Current Orders"
+msgstr "Commandes en cours"
+
+#: app/views/inventory/manageReturns.html:18
+msgid "Current Returns"
+msgstr "Retours actuels"
+
+#: app/views/settings/accountSettings.html:91
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+#: app/views/donors/viewDeferrals.html:7 app/views/donors/viewDonor.html:166
+msgid "Currently Deferred"
+msgstr "Actuellement ajourné"
+
+#. Donation Identification Number, abbreviation
+#: app/scripts/controllers/components/viewComponentBatch.js:10
+#: app/scripts/controllers/donors/donorCounselling.js:179
+#: app/scripts/controllers/donors/viewDonationBatch.js:50
+#: app/scripts/controllers/inventory/findInventory.js:20
+#: app/scripts/controllers/inventory/findTransfusion.js:42
+#: app/scripts/controllers/inventory/recordReturn.js:16
+#: app/scripts/controllers/inventory/viewOrder.js:190
+#: app/scripts/controllers/inventory/viewOrder.js:44
+#: app/scripts/controllers/inventory/viewReturn.js:9
+#: app/scripts/controllers/labelling/findSafeComponents.js:23
+#: app/scripts/controllers/mobile/donorCounselling.js:13
+#: app/scripts/controllers/testing/findTestSamples.js:20
+#: app/scripts/controllers/testing/manageTestBatch.js:113
+#: app/views/components/discardComponents.html:7
+#: app/views/components/findComponents.html:7
+#: app/views/components/findDiscards.html:7
+#: app/views/components/recordComponents.html:7
+#: app/views/components/viewComponents.html:6
+#: app/views/components/viewDonations.html:9
+#: app/views/donors/addDonation.html:80
+#: app/views/donors/addDonorDonation.html:44
+#: app/views/donors/donationDetails.html:7 app/views/donors/findDonor.html:28
+#: app/views/donors/mergeDonorsDonations.html:9
+#: app/views/donors/viewDonationSummary.html:21
+#: app/views/inventory/findInventory.html:8
+#: app/views/inventory/findTransfusion.html:8
+#: app/views/inventory/fulfilOrder.html:199
+#: app/views/inventory/recordReturn.html:49
+#: app/views/inventory/recordTransfusions.html:16
+#: app/views/labelling/findSafeComponents.html:8
+#: app/views/labelling/labelComponents.html:20
+#: app/views/labelling/labelComponents.html:84
+#: app/views/testing/findTestSamples.html:8
+#: app/views/testing/recordABORhOutcomes.html:31
+#: app/views/testing/recordRepeatABORhOutcomes.html:32
+#: app/views/testing/recordRepeatTTIOutcomes.html:33
+#: app/views/testing/recordTTIOutcomes.html:31
+#: app/views/testing/reenterABORhOutcomes.html:31
+#: app/views/testing/reenterTTIOutcomes.html:31
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:31
+#: app/views/testing/viewTestSample.html:38
+#: app/views/testing/viewTestSample.html:7
+msgid "DIN"
+msgstr "DIN"
+
+#: app/views/testing/manageTestBatch.html:196
+msgid "DIN From"
+msgstr "DIN  de"
+
+#: app/views/testing/manageTestBatch.html:215
+msgid "DIN To"
+msgstr "DIN à"
+
+#: app/views/components/discardComponents.html:16
+#: app/views/components/recordComponents.html:16
+msgid "DIN cannot be empty"
+msgstr "Le DIN ne peut pas être vide"
+
+#: app/views/donors/addDonation.html:97
+#: app/views/donors/addDonorDonation.html:57
+#: app/views/testing/manageTestBatch.html:206
+#: app/views/testing/manageTestBatch.html:207
+#: app/views/testing/manageTestBatch.html:224
+#: app/views/testing/manageTestBatch.html:225
+msgid "DIN should be {{dinLength}} characters"
+msgstr "Le DIN doit être de {{dinLength}} caractères"
+
+#: app/views/labelling/labelComponents.html:104
+msgid "DINs do not match"
+msgstr "Les DIN ne correspondent pas"
+
+#. Date of Birth, abbreviation
+#: app/views/donors/addDonor.html:67
+msgid "DOB"
+msgstr "DOB"
+
+#: app/views/donors/sidebar.html:17
+msgid "DONOR CLINIC"
+msgstr "CLINIQUE DU DONNEUR"
+
+#: app/views/donors/sidebar.html:24
+msgid "DONOR COMMUNICATIONS"
+msgstr "COMMUNICATIONS AU DONNEUR"
+
+#: app/views/donors/sidebar.html:12
+msgid "DONOR RECORDS"
+msgstr "INFORMATIONS RELATIVES AU DONNEUR"
+
+#: app/scripts/controllers/header.js:221 app/scripts/controllers/header.js:24
+#: app/views/home.html:26
+msgid "DONORS"
+msgstr "DONNEURS"
+
+#: app/scripts/controllers/settings/dataExport.js:34
+#: app/views/components/viewComponentBatches.html:45
+#: app/views/donors/donorCommunications.html:95
+#: app/views/donors/donorCounselling.html:113
+#: app/views/donors/viewDonationBatch.html:4
+#: app/views/inventory/findInventory.html:103
+#: app/views/inventory/findTransfusion.html:86
+#: app/views/inventory/viewStockLevels.html:47
+#: app/views/labelling/findSafeComponents.html:139
+#: app/views/mobile/donorCounselling.html:58 app/views/mobile/lookUp.html:44
+#: app/views/mobile/mobileClinicExport.html:57
+#: app/views/reports/aboRhGroupsReport.html:40
+#: app/views/reports/bloodUnitsIssuedReport.html:40
+#: app/views/reports/donationTypesReport.html:40
+#: app/views/reports/donorsAdverseEventsReport.html:60
+#: app/views/reports/donorsDeferredReport.html:40
+#: app/views/reports/transfusionsReport.html:60
+#: app/views/reports/ttiPrevalenceReport.html:40
+#: app/views/reports/unitsDiscardedReport.html:60
+#: app/views/settings/dataExport.html:3 app/views/settings/sidebar.html:45
+#: app/views/testing/manageTestBatch.html:251
+msgid "Data Export"
+msgstr "Exportation de données"
+
+#: app/views/settings/configurations.html:26
+#: app/views/settings/manageConfiguration.html:49
+msgid "Data Type"
+msgstr "Type de données"
+
+#: app/views/reports/componentsProducedReport.html:60
+msgid "Data export"
+msgstr "Exporter les Données "
+
+#: app/scripts/controllers/donors/donorCounselling.js:211
+#: app/views/donors/donationDetails.html:11
+#: app/views/donors/manageDonationBatches.html:74
+#: app/views/donors/mergeDonorsDonations.html:13
+#: app/views/donors/viewDonations.html:29 app/views/donors/viewDonor.html:208
+#: app/views/settings/auditLog.html:19
+#: app/views/testing/manageTestBatches.html:81
+#: app/views/testing/viewTestSample.html:44
+msgid "Date"
+msgstr "Date"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:124
+#: app/views/donors/viewDonationSummary.html:29
+msgid "Date Bled"
+msgstr "Date de prélèvement"
+
+#: app/scripts/controllers/labelling/findSafeComponents.js:37
+msgid "Date Collected"
+msgstr "Date de collecte"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:43
+#: app/scripts/controllers/donors/viewDonationBatch.js:97
+#: app/views/components/viewComponentBatch.html:22
+#: app/views/donors/manageClinic.html:12
+msgid "Date Created"
+msgstr "Date de Création"
+
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:261
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:175
+#: app/scripts/controllers/reports/componentsProducedReport.js:228
+#: app/scripts/controllers/reports/donationTypesReport.js:173
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:156
+#: app/scripts/controllers/reports/donorsDeferredReport.js:193
+#: app/scripts/controllers/reports/transfusionsReport.js:34
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:178
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:223
+msgid "Date Period: {{fromDate}} to {{toDate}}"
+msgstr "Période de date: {{fromDate }} de {{toDate}}"
+
+#: app/views/settings/auditLog.html:11
+msgid "Date Range"
+msgstr "Période"
+
+#: app/views/inventory/recordTransfusions.html:89
+msgid "Date Transfused"
+msgstr "Date de transfusion"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:101
+#: app/scripts/controllers/components/viewComponentBatches.js:127
+#: app/scripts/controllers/donors/donorCommunications.js:171
+#: app/scripts/controllers/donors/donorCounselling.js:284
+#: app/scripts/controllers/donors/viewDonationBatch.js:119
+#: app/scripts/controllers/inventory/findInventory.js:146
+#: app/scripts/controllers/inventory/findTransfusion.js:148
+#: app/scripts/controllers/inventory/viewReturn.js:127
+#: app/scripts/controllers/inventory/viewStockLevels.js:96
+#: app/scripts/controllers/labelling/findSafeComponents.js:149
+#: app/scripts/controllers/mobile/donorCounselling.js:150
+#: app/scripts/controllers/mobile/mobile.js:130
+#: app/scripts/controllers/testing/manageTestBatch.js:267
+#: app/scripts/services/reportsLayout.js:49
+msgid "Date generated: {{date}}"
+msgstr "Date de création: {{date}}"
+
+#: app/views/components/recordComponents.html:108
+msgid "Date is before collection date. Please re-enter"
+msgstr "La date est antérieure à la date de collecte. veuillez corriger"
+
+#: app/messages.html:23
+msgid "Date must be after component was created"
+msgstr "La date doit être après la création du composant"
+
+#: app/views/donors/manageDonationBatches.html:83
+msgid "Date must be today or before"
+msgstr "La date doit être d’aujourd'hui ou antérieure"
+
+#: app/scripts/controllers/donors/donorCounselling.js:168
+#: app/scripts/controllers/inventory/viewOrder.js:143
+#: app/scripts/controllers/mobile/mobile.js:49
+#: app/scripts/controllers/mobile/mobileClinicExport.js:57
+#: app/views/donors/findDonor.html:97
+#: app/views/donors/mergeDonorsSelection.html:27
+#: app/views/inventory/fulfilOrder.html:118
+#: app/views/inventory/fulfilOrder.html:29
+#: app/views/inventory/manageOrders.html:112
+#: app/views/inventory/recordTransfusions.html:143
+#: app/views/inventory/viewOrder.html:48
+msgid "Date of Birth"
+msgstr "Date de Naissance"
+
+#: app/scripts/controllers/donors/donorCounselling.js:184
+msgid "Date of Donation"
+msgstr "Date de don"
+
+#: app/views/donors/mergeDonorsReview.html:44
+#: app/views/donors/viewDonor.html:201
+msgid "Date of First Donation"
+msgstr "Date du premier don"
+
+#: app/scripts/controllers/donors/donorCommunications.js:144
+#: app/scripts/controllers/donors/donorCommunications.js:89
+#: app/views/donors/mergeDonorsSelection.html:30
+msgid "Date of Last Donation"
+msgstr "Date du dernier don"
+
+#: app/messages.html:15
+msgid "Date or time is in the future: please re-enter"
+msgstr "La date ou l'heure est dans le futur: veuillez corriger"
+
+#: app/views/donors/addDonor.html:77
+msgid "Day"
+msgstr "Jour"
+
+#: app/views/translations.html:111
+msgid "December"
+msgstr "Décembre"
+
+#. Data Type
+#: app/views/translations.html:90
+msgid "Decimal"
+msgstr "Décimal"
+
+#: app/views/settings/deferralReasons.html:23
+#: app/views/settings/manageDeferralReason.html:46
+msgid "Default Duration"
+msgstr "Durée par défaut"
+
+#: app/views/translations.html:127
+msgid "Deferral Reason already exists."
+msgstr "La raison du report existe déjà."
+
+#: app/views/donors/viewDonor.html:329
+msgid "Deferrals"
+msgstr "Reports"
+
+#: app/views/donors/mergeDonorsDeferrals.html:27
+msgid "Deferred By"
+msgstr "Différé par"
+
+#: app/views/donors/mergeDonorsDeferrals.html:9
+msgid "Deferred From"
+msgstr "Différé de"
+
+#: app/views/donors/mergeDonorsDeferrals.html:12
+msgid "Deferred Until"
+msgstr "Différé jusqu'à"
+
+#: app/views/donors/viewDeferrals.html:9 app/views/donors/viewDonor.html:168
+msgid "Deferred Until {{date}}"
+msgstr "Différé jusqu'à {{date}}"
+
+#: app/scripts/controllers/donors/viewDonor.js:166
+msgid "Delete"
+msgstr "Supprimer"
+
+#: app/scripts/controllers/donors/viewDonor.js:165
+msgid "Delete Donor"
+msgstr "Supprimer le donneur"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:311
+msgid "Delete Rows"
+msgstr "Supprimer les lignes"
+
+#: app/views/inventory/fulfilOrder.html:233
+msgid "Delete Selected Rows"
+msgstr "Supprimer les lignes sélectionnées"
+
+#: app/scripts/controllers/settings/auditLog.js:80
+msgid "Deleted"
+msgstr "Supprimée"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:67
+msgid "Delivery Date"
+msgstr "Date de livraison"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:28
+msgid "Delivery Note"
+msgstr "Bon de livraison"
+
+#: app/views/components/addComponentBatch.html:59
+msgid "Delivery Time"
+msgstr "Heure de Livraison"
+
+#: app/views/donors/mergeDonorsReview.html:60
+#: app/views/donors/viewDonor.html:289
+msgid "Demographics"
+msgstr "Contact"
+
+#: app/scripts/controllers/settings/transfusionReactionTypes.js:18
+#: app/views/donors/addDonation.html:314
+#: app/views/donors/addDonorDonation.html:237
+#: app/views/settings/adverseEventTypeForm.html:25
+#: app/views/settings/adverseEventTypes.html:20
+#: app/views/settings/configurations.html:23
+#: app/views/settings/manageConfiguration.html:31
+#: app/views/settings/manageRole.html:30
+#: app/views/settings/manageTransfusionReactionType.html:24
+#: app/views/settings/roles.html:25
+msgid "Description"
+msgstr "La description"
+
+#. Counselling Status
+#: app/views/translations.html:115
+msgid "Did Not Receive Counselling"
+msgstr "N'a pas reçu de thérapie"
+
+#: app/views/translations.html:14
+msgid "Discard"
+msgstr "Supprimer"
+
+#: app/scripts/controllers/components/discardComponents.js:46
+#: app/views/components/discardComponents.html:3
+#: app/views/components/sidebar.html:20
+#: app/views/inventory/discardComponentsModal.html:2
+msgid "Discard Components"
+msgstr "Éliminer les composants"
+
+#: app/views/components/discardComponents.html:59
+#: app/views/inventory/discardComponentsModal.html:8
+msgid "Discard Reason"
+msgstr "Raison du rejet"
+
+#: app/views/translations.html:125
+msgid "Discard Reason already exists."
+msgstr "La raison du rejet existe déjà."
+
+#: app/views/inventory/viewReturn.html:19
+msgid "Discard Stock"
+msgstr "Supprimer le stock"
+
+#. Component Status
+#: app/views/translations.html:51
+msgid "Discarded"
+msgstr "Rejeté"
+
+#: app/views/translations.html:13
+msgid "Discarding..."
+msgstr "Supprimant..."
+
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:221
+#: app/views/reports/sidebar.html:23
+#: app/views/reports/unitsDiscardedReport.html:3
+msgid "Discards Summary Report"
+msgstr "Rapport sommaire des rejets"
+
+#: app/scripts/controllers/inventory/manageOrders.js:132
+#: app/scripts/controllers/inventory/viewOrder.js:131
+#: app/scripts/controllers/inventory/viewOrders.js:18
+msgid "Dispatch From"
+msgstr "Distribué de"
+
+#: app/scripts/controllers/inventory/viewOrder.js:206
+msgid "Dispatch Note"
+msgstr "Bordereau d'envoi"
+
+#: app/scripts/controllers/inventory/viewOrder.js:261
+#: app/scripts/controllers/inventory/viewOrder.js:262
+#: app/views/inventory/viewOrder.html:16
+msgid "Dispatch Order"
+msgstr "Expédition de la commande"
+
+#: app/scripts/controllers/inventory/manageOrders.js:125
+#: app/scripts/controllers/inventory/viewOrders.js:17
+#: app/views/inventory/manageOrders.html:52
+#: app/views/inventory/viewOrders.html:53
+msgid "Dispatch Type"
+msgstr "Type de Distribution"
+
+#. Order Status
+#: app/views/translations.html:35
+msgid "Dispatched"
+msgstr "Envoyé"
+
+#: app/views/inventory/fulfilOrder.html:10
+#: app/views/inventory/fulfilOrder.html:64
+#: app/views/inventory/manageOrders.html:39
+#: app/views/inventory/viewOrder.html:28 app/views/inventory/viewOrders.html:44
+msgid "Dispatched From"
+msgstr "Expédié de"
+
+#: app/scripts/controllers/inventory/manageOrders.js:137
+#: app/scripts/controllers/inventory/viewOrder.js:132
+#: app/scripts/controllers/inventory/viewOrders.js:19
+#: app/views/inventory/fulfilOrder.html:11
+#: app/views/inventory/fulfilOrder.html:70
+#: app/views/inventory/manageOrders.html:71
+#: app/views/inventory/viewOrder.html:29 app/views/inventory/viewOrders.html:71
+msgid "Dispatched To"
+msgstr "Envoyé à"
+
+#: app/scripts/controllers/inventory/viewStockLevels.js:70
+#: app/views/inventory/findInventory.html:29
+#: app/views/inventory/viewStockLevels.html:8
+msgid "Distribution Center"
+msgstr "Centre de distribution"
+
+#. Location Type
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:127
+#: app/views/translations.html:83
+msgid "Distribution Site"
+msgstr "Site de distribution"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:172
+msgid "Distribution Sites"
+msgstr "Sites de distribution"
+
+#: app/scripts/controllers/settings/divisions.js:46
+#: app/views/settings/divisions.html:26
+msgid "Division Level"
+msgstr "Niveau de division"
+
+#: app/views/donors/addDonation.html:69
+#: app/views/donors/addDonorDonation.html:10
+#: app/views/donors/addDonorDonation.html:11
+#: app/views/donors/addDonorDonation.html:12 app/views/donors/viewDonor.html:63
+msgid "Do not bleed donor"
+msgstr "Ne pas préléver le donneur"
+
+#: app/views/donors/addDonation.html:128
+#: app/views/donors/addDonorDonation.html:80
+#: app/views/donors/donationDetails.html:27
+msgid "Donation"
+msgstr "Don"
+
+#: app/views/components/viewComponentBatch.html:21
+msgid "Donation Batch Info"
+msgstr "Information sur les lots de dons"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:103
+msgid "Donation Batch Report"
+msgstr "Rapport de lot de don"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:59
+msgid "Donation Batch Status"
+msgstr "Statut du lot de dons"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:12
+#: app/views/testing/recordABORhOutcomes.html:39
+#: app/views/testing/recordRepeatABORhOutcomes.html:42
+#: app/views/testing/recordRepeatTTIOutcomes.html:41
+#: app/views/testing/recordTTIOutcomes.html:39
+#: app/views/testing/reenterABORhOutcomes.html:39
+#: app/views/testing/reenterTTIOutcomes.html:39
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:39
+msgid "Donation Date"
+msgstr "Date du don"
+
+#: app/scripts/controllers/settings/bloodTestingRules.js:21
+msgid "Donation Field"
+msgstr "Rubrique du Don"
+
+#: app/views/settings/manageBloodTestingRule.html:26
+msgid "Donation Field Affected"
+msgstr "Rubrique du Don"
+
+#: app/scripts/controllers/settings/bloodTestingRules.js:35
+#: app/views/settings/manageBloodTestingRule.html:58
+msgid "Donation Field Value"
+msgstr "Valeur de la Rubrique du Don"
+
+#: app/views/donors/addDonation.html:22
+#: app/views/donors/addDonorDonation.html:22
+msgid "Donation Information"
+msgstr "Informations du Don"
+
+#: app/views/donors/donationDetails.html:53
+#: app/views/donors/viewDonationSummary.html:190
+msgid "Donation Notes"
+msgstr "Notes sur le Don"
+
+#: app/scripts/controllers/donors/donorCounselling.js:262
+#: app/views/donors/donorCounselling.html:31
+#: app/views/settings/managePackType.html:68
+msgid "Donation Period"
+msgstr "Période du Don"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:60
+#: app/views/donors/viewDonationSummary.html:89
+#: app/views/donors/viewDonor.html:210
+msgid "Donation Type"
+msgstr "Type de Don"
+
+#: app/views/reports/sidebar.html:15
+msgid "Donation Types Report"
+msgstr "Rapport des Types de Don"
+
+#: app/views/components/addComponentBatch.html:20
+msgid "Donation batch"
+msgstr "Lot du Don"
+
+#: app/views/translations.html:128
+msgid "Donation type already exists."
+msgstr "Le type de don existe déjà."
+
+#: app/views/donors/viewDonor.html:302
+msgid "Donations"
+msgstr "Dons"
+
+#: app/scripts/controllers/reports/donationTypesReport.js:172
+#: app/views/reports/donationTypesReport.html:3
+msgid "Donations Collected By Type Report"
+msgstr "Rapport des Dons Collectés par Type"
+
+#: app/views/components/viewComponents.html:2
+#: app/views/donors/viewDonationSummary.html:9
+msgid "Done"
+msgstr "Terminé"
+
+#: app/views/donors/manageDuplicateDonors.html:14
+msgid "Donor Address Merge"
+msgstr "Adresse Combinée du Donneur"
+
+#: app/views/donors/addDonation.html:182
+#: app/views/donors/addDonorDonation.html:124
+msgid "Donor Assessment"
+msgstr "Évaluation du Donneur"
+
+#: app/views/settings/manageLocation.html:29
+msgid "Donor Clinic"
+msgstr "Clinique du Donneur"
+
+#: app/views/donors/manageDuplicateDonors.html:13
+msgid "Donor Contact Merge"
+msgstr "Informations de Contact Combinées du Donneur"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:128
+#: app/views/donors/donorCounselling.html:3 app/views/donors/sidebar.html:23
+#: app/views/mobile/donorCounselling.html:3 app/views/mobile/sidebar.html:15
+msgid "Donor Counselling"
+msgstr "Traitement du Donneur"
+
+#: app/views/donors/manageDuplicateDonors.html:15
+msgid "Donor Deferrals Review"
+msgstr "Examen des Reports du Donneur"
+
+#: app/views/donors/manageDuplicateDonors.html:16
+msgid "Donor Donations Review"
+msgstr "Examen des Dons du Donneur"
+
+#: app/views/donors/manageDuplicateDonors.html:5
+msgid "Donor Merging"
+msgstr "Combinaison du Donneur"
+
+#: app/views/donors/mergeDonorsOverview.html:44
+#: app/views/donors/mergeDonorsReview.html:54
+#: app/views/donors/viewDonor.html:257
+msgid "Donor Notes"
+msgstr "Notes sur le Donneur"
+
+#: app/scripts/controllers/donors/donorCommunications.js:74
+#: app/scripts/controllers/donors/donorCounselling.js:146
+#: app/scripts/controllers/donors/viewDonationBatch.js:45
+#: app/scripts/controllers/mobile/donorCounselling.js:7
+#: app/scripts/controllers/mobile/mobile.js:32
+#: app/scripts/controllers/mobile/mobileClinicExport.js:30
+#: app/views/donors/addDonation.html:26
+#: app/views/donors/donorCounsellingDetails.html:40
+#: app/views/donors/findDonor.html:19 app/views/donors/findDonor.html:80
+#: app/views/donors/mergeDonorsAddress.html:5
+#: app/views/donors/mergeDonorsContact.html:5
+#: app/views/donors/mergeDonorsDeferrals.html:6
+#: app/views/donors/mergeDonorsDonations.html:6
+#: app/views/donors/mergeDonorsOverview.html:5
+#: app/views/donors/mergeDonorsSelection.html:12
+#: app/views/donors/viewDonationSummary.html:25
+#: app/views/donors/viewDonor.html:111
+msgid "Donor Number"
+msgstr "Numéro du Donneur"
+
+#: app/views/donors/manageDuplicateDonors.html:12
+msgid "Donor Overview Merge"
+msgstr "Aperçu Combiné du Donneur"
+
+#: app/views/donors/findDonor.html:65
+msgid "Donor Registration Blocked - No Open Donation Batches"
+msgstr "Inscription du Donneur Bloquée - Pas de Lot de Don Disponible"
+
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:155
+#: app/views/reports/donorsAdverseEventsReport.html:3
+#: app/views/reports/sidebar.html:27
+msgid "Donors Adverse Events Summary Report"
+msgstr "Résumé du Rapport d’Effets Indésirables du Don"
+
+#: app/scripts/controllers/reports/donorsDeferredReport.js:192
+#: app/views/reports/donorsDeferredReport.html:3
+#: app/views/reports/sidebar.html:21
+msgid "Donors Deferred Summary Report"
+msgstr "Résumé du Rapport des Donneurs Ajournés"
+
+#: app/scripts/controllers/donors/donorCommunications.js:155
+msgid "Donors List"
+msgstr "Liste de Donneurs"
+
+#: app/views/translations.html:24
+msgid "Downloading..."
+msgstr "Téléchargement..."
+
+#. Personal Title
+#: app/views/translations.html:97
+msgid "Dr"
+msgstr "Dr"
+
+#: app/scripts/controllers/donors/donorCommunications.js:150
+#: app/views/donors/donorCommunications.html:72
+#: app/views/donors/mergeDonorsReview.html:34
+#: app/views/donors/viewDonations.html:8 app/views/donors/viewDonor.html:158
+msgid "Due To Donate"
+msgstr "Donné Le"
+
+#: app/views/inventory/findInventory.html:83
+msgid "Due to Expire By"
+msgstr "Périme le"
+
+#: app/views/donors/duplicateDonors.html:3 app/views/donors/sidebar.html:16
+msgid "Duplicate Donors"
+msgstr "Double Donneurs"
+
+#: app/views/donors/manageClinic.html:49 app/views/donors/viewDeferrals.html:64
+#: app/views/donors/viewDonationSummary.html:7
+#: app/views/donors/viewDonor.html:229 app/views/donors/viewDonor.html:261
+#: app/views/donors/viewDonor.html:85
+#: app/views/donors/viewDonorDemographics.html:5
+#: app/views/inventory/fulfilOrder.html:33
+#: app/views/inventory/recordReturn.html:12
+#: app/views/inventory/viewOrder.html:8 app/views/inventory/viewReturn.html:8
+#: app/views/testing/manageTestBatch.html:24
+msgid "Edit"
+msgstr "Modifier"
+
+#: app/views/settings/editAdverseEventType.html:3
+msgid "Edit Adverse Event Type"
+msgstr "Modifier le Type d’Événement Défavorable"
+
+#: app/scripts/controllers/mobile/mobile.js:59
+#: app/scripts/controllers/mobile/mobileClinicExport.js:70
+msgid "Eligibility"
+msgstr "Éligibilité"
+
+#. Donor Eligibility
+#: app/views/translations.html:122
+msgid "Eligible"
+msgstr "Éligible"
+
+#: app/scripts/controllers/mobile/mobile.js:108 app/views/mobile/lookUp.html:44
+msgid ""
+"Eligible Donors: {{numberEligibleDonors}} out of {{totalDonors}} "
+"({{percentage}}%)"
+msgstr ""
+"Donneurs Éligibles: {{numberEligibleDonors}} sur {{totalDonors}} "
+"({{percentage}}%)"
+
+#: app/views/donors/addDonation.html:72 app/views/donors/viewDonor.html:67
+msgid "Eligible donor"
+msgstr "Donneur éligible"
+
+#: app/views/donors/mergeDonorsContact.html:17
+#: app/views/donors/mergeDonorsReview.html:69
+#: app/views/donors/viewDonorDemographics.html:33
+#: app/views/settings/accountSettings.html:52
+#: app/views/settings/manageUser.html:33
+msgid "Email"
+msgstr "E-mail"
+
+#: app/scripts/controllers/settings/bloodTestingRules.js:42
+#: app/scripts/controllers/settings/bloodTests.js:51
+#: app/scripts/controllers/settings/componentTypeCombinations.js:15
+#: app/scripts/controllers/settings/componentTypes.js:51
+#: app/scripts/controllers/settings/locations.js:20
+#: app/scripts/controllers/settings/transfusionReactionTypes.js:25
+#: app/views/settings/adverseEventTypeForm.html:42
+#: app/views/settings/adverseEventTypes.html:21
+#: app/views/settings/deferralReasons.html:27
+#: app/views/settings/discardReasons.html:23
+#: app/views/settings/donationTypes.html:23
+#: app/views/settings/manageBloodTest.html:210
+#: app/views/settings/manageBloodTestingRule.html:113
+#: app/views/settings/manageComponentType.html:146
+#: app/views/settings/manageComponentTypeCombination.html:98
+#: app/views/settings/manageDeferralReason.html:65
+#: app/views/settings/manageDiscardReason.html:33
+#: app/views/settings/manageDonationType.html:28
+#: app/views/settings/manageLocation.html:98
+#: app/views/settings/managePackType.html:120
+#: app/views/settings/manageTransfusionReactionType.html:35
+#: app/views/settings/packTypes.html:38
+msgid "Enabled"
+msgstr "Activé"
+
+#: app/views/components/recordComponents.html:56
+#: app/views/donors/addDonation.html:165
+#: app/views/donors/addDonorDonation.html:112
+#: app/views/donors/viewDeferrals.html:33
+msgid "End"
+msgstr "Fin"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:137
+#: app/views/donors/manageDeferral.html:55
+#: app/views/mobile/donorCounselling.html:35
+msgid "End Date"
+msgstr "Date de Fin"
+
+#: app/views/donors/viewDeferrals.html:72
+msgid "End Deferral"
+msgstr "Fin du Report"
+
+#: app/views/donors/manageDeferral.html:70
+msgid "End date can't be before deferral date"
+msgstr "La date de fin ne peut pas être située avant la date de report"
+
+#: app/messages.html:13 app/scripts/controllers/donors/viewDonationBatch.js:534
+#: app/scripts/controllers/donors/viewDonor.js:352
+#: app/views/donors/addDonation.html:173
+#: app/views/donors/addDonorDonation.html:117
+msgid "End time should be after Start time"
+msgstr "La date de fin doit être située après la date de Début"
+
+#: app/views/testing/manageTestBatch.html:107
+#: app/views/testing/manageTestBatch.html:121
+#: app/views/testing/manageTestBatch.html:72
+#: app/views/testing/manageTestBatch.html:83
+#: app/views/testing/manageTestBatch.html:96
+msgid "Enter"
+msgstr "Entrer"
+
+#: app/views/components/addComponentBatch.html:82
+msgid "Enter a valid temperature"
+msgstr "Insérer une température valide"
+
+#: app/messages.html:12 app/scripts/controllers/donors/viewDonationBatch.js:518
+#: app/scripts/controllers/donors/viewDonationBatch.js:526
+#: app/scripts/controllers/donors/viewDonor.js:336
+#: app/scripts/controllers/donors/viewDonor.js:344
+#: app/views/donors/addDonation.html:158 app/views/donors/addDonation.html:170
+#: app/views/donors/addDonorDonation.html:106
+#: app/views/donors/addDonorDonation.html:116
+msgid "Enter a valid time"
+msgstr "Entrez une heure valide"
+
+#: app/views/settings/manageUser.html:88
+msgid "Enter password"
+msgstr "Entrez un mot de passe"
+
+#: app/views/settings/auditLog.html:26
+msgid "Entity"
+msgstr "Entité"
+
+#: app/scripts/controllers/donors/manageDuplicateDonors.js:134
+#: app/scripts/controllers/donors/manageDuplicateDonors.js:448
+msgid "Error merging the duplicate Donors."
+msgstr "Erreur lors de la fusion des donneurs doublons."
+
+#. Component Status
+#: app/views/translations.html:47
+msgid "Expired"
+msgstr "Périmé"
+
+#: app/scripts/controllers/settings/componentTypes.js:41
+#: app/views/settings/manageComponentType.html:97
+msgid "Expires After"
+msgstr "Périme après le"
+
+#: app/scripts/controllers/components/discardComponents.js:163
+#: app/scripts/controllers/components/recordComponents.js:414
+#: app/scripts/controllers/inventory/findInventory.js:55
+#: app/scripts/controllers/inventory/recordReturn.js:59
+#: app/scripts/controllers/inventory/viewReturn.js:53
+#: app/scripts/controllers/labelling/findSafeComponents.js:68
+#: app/views/components/viewComponents.html:18
+#: app/views/components/viewDonations.html:25
+msgid "Expiry Status"
+msgstr "Statut de l’Expiration"
+
+#: app/views/translations.html:23
+msgid "Export All Data"
+msgstr "Exporter Toutes les Données"
+
+#: app/scripts/controllers/settings/dataExport.js:35
+msgid "Export Data"
+msgstr "Exporter des Données"
+
+#: app/views/settings/dataExport.html:7
+msgid ""
+"Export donors, donations, deferrals, post-donation counselling, test "
+"outcomes, and components datasets. The data will be downloaded as a "
+"compressed zip file containing a separate CSV file for each dataset."
+msgstr ""
+"Exporte les groupes de données des donneurs, des dons, des ajournements, de "
+"l’assistance post-don, des résultats des tests, et des composants sanguins. "
+"Les données seront téléchargées sous forme de fichier zip compressé "
+"contenant un fichier CSV séparé pour chaque groupe de données"
+
+#. Haemoglobin Level
+#: app/views/translations.html:79
+msgid "Fail"
+msgstr "Échec"
+
+#: app/views/translations.html:101
+msgid "February"
+msgstr "Février"
+
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:100
+#: app/scripts/controllers/reports/donorsDeferredReport.js:68
+#: app/scripts/controllers/reports/donorsDeferredReport.js:69
+#: app/scripts/controllers/reports/donorsDeferredReport.js:89
+#: app/views/donors/addDonation.html:63 app/views/translations.html:3
+msgid "Female"
+msgstr "Féminin"
+
+#: app/views/testing/manageTestBatch.html:244
+msgid "Filter data"
+msgstr "Filtrer les données"
+
+#: app/views/donors/manageDuplicateDonors.html:17
+msgid "Final Review"
+msgstr "Examen Final"
+
+#: app/views/components/findComponents.html:3
+#: app/views/components/sidebar.html:17
+msgid "Find Components"
+msgstr "Trouver des Composants"
+
+#: app/views/components/findDiscards.html:3
+#: app/views/components/sidebar.html:22
+msgid "Find Discards"
+msgstr "Trouver des Rejets"
+
+#: app/views/donors/findDonor.html:3
+msgid "Find Donor"
+msgstr "Trouver un Donneur"
+
+#: app/views/inventory/findInventory.html:3 app/views/inventory/sidebar.html:13
+msgid "Find Inventory"
+msgstr "Trouver l’Inventaire"
+
+#: app/views/labelling/sidebar.html:13
+msgid "Find Safe Components"
+msgstr "Trouver des Composants Sûrs"
+
+#: app/views/labelling/findSafeComponents.html:3
+msgid "Find Safe Components to Label"
+msgstr "Trouver des Composants Sûrs à Étiqueter"
+
+#: app/views/testing/findTestSamples.html:3 app/views/testing/sidebar.html:19
+msgid "Find Test Samples"
+msgstr "Trouver les Echantillons à Tester"
+
+#: app/views/inventory/findTransfusion.html:3
+#: app/views/inventory/sidebar.html:23
+msgid "Find Transfusions"
+msgstr "Trouver des Transfusions"
+
+#: app/views/donors/manageDuplicateDonors.html:70
+msgid "Finish"
+msgstr "Terminer"
+
+#: app/views/donors/addDonor.html:23 app/views/donors/findDonor.html:9
+#: app/views/settings/accountSettings.html:31
+#: app/views/settings/manageUser.html:14
+msgid "First"
+msgstr "Prénom"
+
+#: app/scripts/controllers/donors/donorCommunications.js:78
+#: app/scripts/controllers/donors/donorCounselling.js:151
+#: app/scripts/controllers/mobile/donorCounselling.js:8
+#: app/scripts/controllers/mobile/mobile.js:36
+#: app/scripts/controllers/mobile/mobileClinicExport.js:37
+#: app/views/donors/duplicateDonors.html:26 app/views/donors/findDonor.html:84
+#: app/views/donors/mergeDonorsSelection.html:18
+msgid "First Name"
+msgstr "Prénom"
+
+#: app/views/donors/donorCounselling.html:58
+#: app/views/donors/viewDonor.html:175
+msgid "Flagged for Counselling"
+msgstr "Identifié pour un Traitement"
+
+#: app/views/login.html:17
+msgid "Forgot password"
+msgstr "Mot de passe oublié"
+
+#: app/views/inventory/fulfilOrder.html:3
+msgid "Fulfil Order Form"
+msgstr "Remplir le Formulaire de Commande"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:405
+#: app/scripts/controllers/inventory/viewOrder.js:192
+#: app/scripts/controllers/inventory/viewOrder.js:34
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:131
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:135
+msgid "Gap"
+msgstr "Écart"
+
+#: app/scripts/controllers/donors/donorCounselling.js:161
+#: app/scripts/controllers/inventory/viewOrder.js:142
+#: app/scripts/controllers/mobile/donorCounselling.js:10
+#: app/scripts/controllers/mobile/mobile.js:44
+#: app/scripts/controllers/mobile/mobileClinicExport.js:49
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:220
+#: app/scripts/controllers/reports/donationTypesReport.js:127
+#: app/scripts/controllers/reports/donorsDeferredReport.js:18
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:50
+#: app/views/donors/addDonor.html:134 app/views/donors/duplicateDonors.html:32
+#: app/views/donors/findDonor.html:90
+#: app/views/donors/manageDuplicateDonors.html:26
+#: app/views/donors/mergeDonorsSelection.html:24
+#: app/views/inventory/fulfilOrder.html:112
+#: app/views/inventory/fulfilOrder.html:26
+#: app/views/inventory/manageOrders.html:143
+#: app/views/inventory/recordTransfusions.html:157
+#: app/views/inventory/viewOrder.html:45
+msgid "Gender"
+msgstr "Genre"
+
+#: app/views/settings/configurations.html:3 app/views/settings/sidebar.html:16
+msgid "General Configurations"
+msgstr "Configurations Générales"
+
+#: app/views/donors/duplicateDonors.html:23
+msgid "Group"
+msgstr "Groupe"
+
+#: app/scripts/controllers/header.js:17 app/scripts/controllers/header.js:237
+msgid "HOME"
+msgstr "ACCUEIL"
+
+#. Haemoglobin, abbreviation
+#: app/views/donors/addDonation.html:208
+#: app/views/donors/addDonorDonation.html:146
+#: app/views/donors/donationDetails.html:39
+#: app/views/donors/viewDonationSummary.html:113
+#: app/views/donors/viewDonations.html:46
+msgid "Hb"
+msgstr "Hb"
+
+#: app/views/donors/viewDonationSummary.html:222
+msgid "Hide test outcomes"
+msgstr "Cacher les Résultats des Tests"
+
+#: app/views/donors/manageDonationBatches.html:179
+#: app/views/donors/manageDonationBatches.html:36
+#: app/views/testing/manageTestBatches.html:43
+msgid "Historical"
+msgstr "Historique"
+
+#: app/views/donors/manageDonationBatches.html:79
+#: app/views/testing/manageTestBatches.html:104
+msgid "Historical Data Entry"
+msgstr "Entrée de Données Historiques"
+
+#: app/views/donors/mergeDonorsAddress.html:16
+#: app/views/donors/mergeDonorsContact.html:31
+#: app/views/donors/mergeDonorsReview.html:105
+#: app/views/donors/mergeDonorsReview.html:79
+#: app/views/donors/viewDonorDemographics.html:55
+#: app/views/donors/viewDonorDemographics.html:86
+msgid "Home"
+msgstr "Accueil"
+
+#: app/views/settings/manageLocation.html:49
+msgid "Hospital / Clinic"
+msgstr "Hôpital / Clinique"
+
+#: app/scripts/controllers/header.js:227 app/scripts/controllers/header.js:52
+#: app/views/home.html:90
+msgid "INVENTORY"
+msgstr "INVENTAIRE"
+
+#: app/views/donors/mergeDonorsOverview.html:8
+#: app/views/donors/mergeDonorsReview.html:49
+#: app/views/donors/viewDonor.html:224
+msgid "Identifier"
+msgstr "Identifiant"
+
+#: app/scripts/controllers/settings/bloodTests.js:41
+#: app/views/settings/manageBloodTest.html:201
+msgid "In Active Use"
+msgstr "Sous Utilisation Active"
+
+#. Inventory Status
+#: app/scripts/controllers/inventory/viewStockLevels.js:86
+#: app/views/inventory/viewStockLevels.html:29
+#: app/views/labelling/findSafeComponents.html:116
+#: app/views/translations.html:42
+msgid "In Stock"
+msgstr "En Stock"
+
+#: app/views/donors/donorCounselling.html:83
+msgid "Include Donors That Have Been Referred"
+msgstr "Inclure les Donneurs Ayant Été Ajournés"
+
+#: app/views/donors/donorCounselling.html:96
+msgid "Include Donors That Have Not Been Referred"
+msgstr "Inclure les Donneurs N’Ayant Pas Été Ajournés"
+
+#: app/views/donors/findDonor.html:13 app/views/settings/divisions.html:15
+#: app/views/settings/locations.html:15
+msgid "Include Similar Results"
+msgstr "Inclure les Résultats Similaires"
+
+#. Blood Typing Match Status
+#. TTI Status
+#: app/views/translations.html:63 app/views/translations.html:72
+msgid "Indeterminate"
+msgstr "Indéterminé"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:343
+#: app/scripts/controllers/donors/viewDonor.js:402
+msgid "Ineligible Donor"
+msgstr "Donneur non-éligible"
+
+#. Data Type
+#: app/views/translations.html:89
+msgid "Integer"
+msgstr "Entier"
+
+#: app/messages.html:18
+msgid "Invalid"
+msgstr "Invalide"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:197
+#: app/scripts/controllers/inventory/recordReturn.js:108
+msgid "Invalid Component"
+msgstr "Composant Invalide"
+
+#: app/views/testing/manageTestBatch.html:226
+msgid "Invalid DIN range"
+msgstr "Intervalle DIN invalide"
+
+#: app/scripts/controllers/login.js:35
+msgid "Invalid Username / Password"
+msgstr "Nom d’Utilisateur/Mot de Passe invalide"
+
+#: app/views/settings/manageConfiguration.html:99
+msgid "Invalid boolean value"
+msgstr "Valeur booléenne invalide"
+
+#: app/views/donors/addDonor.html:127
+#: app/views/inventory/recordTransfusions.html:149
+#: app/views/inventory/recordTransfusions.html:95
+msgid "Invalid date"
+msgstr "Date invalide"
+
+#: app/views/settings/manageConfiguration.html:98
+msgid "Invalid decimal value"
+msgstr "Valeur décimale invalide"
+
+#: app/scripts/services/donors.js:413
+msgid "Invalid donor"
+msgstr "Donneur invalide"
+
+#: app/messages.html:6 app/views/donors/viewDonorDemographics.html:43
+msgid "Invalid email address"
+msgstr "Adresse mail invalide"
+
+#: app/views/donors/addDonation.html:102 app/views/donors/addDonation.html:40
+#: app/views/donors/addDonor.html:123 app/views/donors/addDonor.html:59
+msgid "Invalid input"
+msgstr "Entrée invalide"
+
+#: app/views/settings/manageConfiguration.html:97
+msgid "Invalid integer value"
+msgstr "Valeur entière invalide"
+
+#: app/messages.html:16
+msgid "Invalid number of decimal digits"
+msgstr "Nombre de chiffres décimaux invalide"
+
+#: app/views/settings/manageConfiguration.html:100
+msgid "Invalid value"
+msgstr "Valeur invalide"
+
+#: app/scripts/controllers/inventory/findInventory.js:131
+#: app/views/settings/manageLocation.html:45
+msgid "Inventory"
+msgstr "Inventaire"
+
+#: app/scripts/controllers/labelling/findSafeComponents.js:59
+msgid "Inventory Status"
+msgstr "Statut de l’Inventaire"
+
+#. Order Type
+#: app/views/inventory/fulfilOrder.html:56
+#: app/views/inventory/manageOrders.html:60
+#: app/views/inventory/viewOrders.html:61 app/views/translations.html:38
+msgid "Issue"
+msgstr "Délivrance"
+
+#. Component Status
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:130
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:134
+#: app/views/translations.html:48
+msgid "Issued"
+msgstr "Distribué"
+
+#: app/views/translations.html:100
+msgid "January"
+msgstr "Janvier"
+
+#: app/views/translations.html:106
+msgid "July"
+msgstr "Juillet"
+
+#: app/views/translations.html:105
+msgid "June"
+msgstr "Juin"
+
+#: app/scripts/controllers/header.js:229 app/scripts/controllers/header.js:45
+#: app/views/home.html:71 app/views/labelling/sidebar.html:12
+msgid "LABELLING"
+msgstr "ETIQUETAGE"
+
+#: app/views/labelling/labelComponents.html:3
+#: app/views/labelling/sidebar.html:15
+msgid "Label Components"
+msgstr "Etiqueter les Composants"
+
+#: app/views/labelling/labelComponents.html:80
+msgid "Label Verification for {{componentCode}}"
+msgstr "Vérification de l’Étiquette pour {{componentCode}}"
+
+#: app/views/donors/addDonor.html:176
+msgid "Language"
+msgstr "Langue"
+
+#: app/views/donors/addDonor.html:33 app/views/donors/findDonor.html:11
+#: app/views/settings/accountSettings.html:39
+#: app/views/settings/manageUser.html:17
+msgid "Last"
+msgstr "Nom de Famille"
+
+#: app/scripts/controllers/donors/donorCommunications.js:82
+#: app/scripts/controllers/donors/donorCounselling.js:156
+#: app/scripts/controllers/mobile/donorCounselling.js:9
+#: app/scripts/controllers/mobile/mobile.js:40
+#: app/scripts/controllers/mobile/mobileClinicExport.js:43
+#: app/views/donors/duplicateDonors.html:29 app/views/donors/findDonor.html:87
+#: app/views/donors/mergeDonorsSelection.html:21
+msgid "Last Name"
+msgstr "Nom de Famille"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:98
+msgid "Last Updated"
+msgstr "Dernière Mise à Jour"
+
+#: app/views/donors/addDonation.html:221
+#: app/views/donors/addDonorDonation.html:159
+#: app/views/settings/manageDivision.html:19
+msgid "Level"
+msgstr "Niveau"
+
+#: app/scripts/controllers/donors/donorCounselling.js:267
+msgid "List of donors for post donation counselling"
+msgstr "Liste de Donneurs pour le soutien post-don"
+
+#: app/scripts/controllers/settings/accountSettings.js:68
+msgid "Loading details failed. Please try refreshing"
+msgstr "Le chargement des détails a échoué. Veuillez essayer d'actualiser"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:71
+#: app/scripts/controllers/inventory/findInventory.js:66
+#: app/views/components/viewComponentBatch.html:32
+#: app/views/components/viewDonations.html:28
+#: app/views/testing/manageTestBatch.html:155
+#: app/views/testing/manageTestBatches.html:154
+#: app/views/testing/manageTestBatches.html:198
+#: app/views/testing/manageTestBatches.html:39
+#: app/views/testing/manageTestBatches.html:68
+msgid "Location"
+msgstr "Emplacement"
+
+#: app/views/settings/locations.html:23
+#: app/views/settings/manageLocation.html:24
+msgid "Location Type"
+msgstr "Type d'emplacement"
+
+#: app/views/donors/manageDonationBatches.html:66
+msgid ""
+"Location is not a venue or there is already an open donation batch for that "
+"venue"
+msgstr ""
+"L'emplacement n'est pas une salle, ou il y a déjà un lot de dons ouvert pour "
+"cette salle"
+
+#: app/views/settings/manageLocation.html:15
+msgid "Location name already exists"
+msgstr "Le nom de l’emplacement existe déjà"
+
+#: app/views/login.html:13
+msgid "Log in"
+msgstr "Connexion"
+
+#: app/views/header.html:47
+msgid "Log out"
+msgstr "Déconnexion"
+
+#: app/views/mobile/lookUp.html:3 app/views/mobile/sidebar.html:13
+msgid "Look Up"
+msgstr "Rechercher"
+
+#: app/scripts/controllers/components/recordComponents.js:194
+msgid "Low Pack Weight"
+msgstr "Faible Poids de Paquet"
+
+#: app/views/settings/managePackType.html:109
+msgid "Low Volume Weight"
+msgstr "Faible Volume"
+
+#: app/views/components/sidebar.html:12
+msgid "MANAGE COMPONENTS"
+msgstr "GÉRER LES COMPOSANTS"
+
+#: app/views/components/sidebar.html:19
+msgid "MANAGE DISCARDS"
+msgstr "GÉRER LES REJETS"
+
+#: app/views/inventory/sidebar.html:12
+msgid "MANAGE INVENTORY"
+msgstr "GÉRER L’INVENTAIRE"
+
+#: app/views/testing/sidebar.html:13
+msgid "MANAGE TESTING"
+msgstr "GÉRER LES TESTS"
+
+#: app/scripts/controllers/header.js:233 app/scripts/controllers/header.js:66
+#: app/views/home.html:120 app/views/mobile/sidebar.html:12
+msgid "MOBILE CLINIC"
+msgstr "CLINIQUE MOBILE"
+
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:99
+#: app/scripts/controllers/reports/donorsDeferredReport.js:90
+#: app/views/donors/addDonation.html:59 app/views/translations.html:2
+msgid "Male"
+msgstr "Masculin"
+
+#: app/views/home.html:136
+msgid "Manage Account and System Settings"
+msgstr "Gérer les Paramètres du Système"
+
+#: app/views/settings/adverseEventTypes.html:3
+#: app/views/settings/sidebar.html:22
+msgid "Manage Adverse Event Types"
+msgstr "Gérer les Types d’Effets Indésirables du Don"
+
+#: app/views/home.html:92
+msgid "Manage Blood Bank Inventory, Requests, Transfers and Issues"
+msgstr ""
+"Gérer l’Inventaire, les Requêtes, les Transferts et les Livraisons de la "
+"Banque de Sang"
+
+#: app/views/settings/manageBloodTest.html:3
+msgid "Manage Blood Test"
+msgstr "Gérer l’Analyse de Sang"
+
+#: app/views/settings/manageBloodTestingRule.html:3
+msgid "Manage Blood Testing Rule"
+msgstr "Gérer les Règles d’Analyse de Sang"
+
+#: app/views/settings/bloodTestingRules.html:3
+#: app/views/settings/sidebar.html:40
+msgid "Manage Blood Testing Rules"
+msgstr "Gérer les Règles d’Analyse de Sang"
+
+#: app/views/settings/bloodTests.html:3 app/views/settings/sidebar.html:38
+msgid "Manage Blood Tests"
+msgstr "Gérer les Analyses de Sang"
+
+#: app/views/settings/manageComponentTypeCombination.html:3
+msgid "Manage Component Combination"
+msgstr "Gérer la Combinaison de Composants"
+
+#: app/views/settings/componentTypeCombinations.html:3
+#: app/views/settings/sidebar.html:36
+msgid "Manage Component Combinations"
+msgstr "Gérer les Combinaisons de Composants"
+
+#: app/views/settings/manageComponentType.html:3
+msgid "Manage Component Type"
+msgstr "Gérer le Type de Composant"
+
+#: app/views/settings/componentTypes.html:3 app/views/settings/sidebar.html:34
+msgid "Manage Component Types"
+msgstr "Gérer les Types de Composants"
+
+#: app/views/settings/manageConfiguration.html:3
+msgid "Manage Configuration"
+msgstr "Gérer la Configuration"
+
+#: app/views/donors/manageDeferral.html:1
+msgid "Manage Deferral"
+msgstr "Gérer l’Ajournement"
+
+#: app/views/settings/manageDeferralReason.html:3
+msgid "Manage Deferral Reason"
+msgstr "Gérer la Raison de Report"
+
+#: app/views/settings/deferralReasons.html:3 app/views/settings/sidebar.html:26
+msgid "Manage Deferral Reasons"
+msgstr "Gérer les Raisons d’Ajournement"
+
+#: app/views/settings/manageDiscardReason.html:3
+msgid "Manage Discard Reason"
+msgstr "Gérer la Raison de Rejet"
+
+#: app/views/settings/discardReasons.html:3 app/views/settings/sidebar.html:28
+msgid "Manage Discard Reasons"
+msgstr "Gérer les Raisons de Rejet"
+
+#: app/views/settings/manageDivision.html:3
+msgid "Manage Division"
+msgstr "Gérer la Division"
+
+#: app/views/settings/divisions.html:3 app/views/settings/sidebar.html:20
+msgid "Manage Divisions"
+msgstr "Gérer les Divisions"
+
+#: app/views/donors/manageClinic.html:5
+msgid "Manage Donation Batch"
+msgstr "Gérer le Lot de Dons"
+
+#: app/views/donors/manageDonationBatches.html:3
+#: app/views/donors/sidebar.html:19
+msgid "Manage Donation Batches"
+msgstr "Gérer les Lots de Dons"
+
+#: app/views/settings/manageDonationType.html:3
+msgid "Manage Donation Type"
+msgstr "Gérer le Type de Dons"
+
+#: app/views/settings/donationTypes.html:3 app/views/settings/sidebar.html:29
+msgid "Manage Donation Types"
+msgstr "Gérer les Types de Dons"
+
+#: app/views/home.html:28
+msgid "Manage Donor Records, Donation Batches and Donor Communications"
+msgstr ""
+"Gérer les Enregistrements des Donneurs, les Lots de Dons et les "
+"Communications aux Donneurs"
+
+#: app/views/donors/sidebar.html:13
+msgid "Manage Donors"
+msgstr "Gérer les Donneurs"
+
+#: app/views/settings/manageLocation.html:3
+msgid "Manage Location"
+msgstr "Gérer l’Emplacement"
+
+#: app/views/settings/locations.html:3 app/views/settings/sidebar.html:18
+msgid "Manage Locations"
+msgstr "Gérer les Emplacements"
+
+#: app/views/home.html:122
+msgid "Manage Mobile Clinics and Sync Data"
+msgstr "Gérer les Cliniques Mobiles et Synchroniser les Données"
+
+#: app/views/inventory/viewOrder.html:3
+msgid "Manage Order"
+msgstr "Gérer la Commande"
+
+#: app/views/inventory/manageOrders.html:3 app/views/inventory/sidebar.html:17
+#: app/views/inventory/viewOrders.html:3
+msgid "Manage Orders"
+msgstr "Gérer les Commandes"
+
+#: app/views/settings/managePackType.html:4
+msgid "Manage Pack Type"
+msgstr "Gérer le Type de Paquet"
+
+#: app/views/settings/packTypes.html:3 app/views/settings/sidebar.html:31
+msgid "Manage Pack Types"
+msgstr "Gérer les Types de Poches"
+
+#: app/views/inventory/viewReturn.html:3
+msgid "Manage Return"
+msgstr "Gérer le Retour"
+
+#: app/views/inventory/manageReturns.html:3 app/views/inventory/sidebar.html:19
+#: app/views/inventory/viewReturns.html:3
+msgid "Manage Returns"
+msgstr "Gérer les Retours"
+
+#: app/views/settings/manageRole.html:3
+msgid "Manage Role"
+msgstr "Gérer le Rôle"
+
+#: app/views/settings/roles.html:3 app/views/settings/sidebar.html:24
+msgid "Manage Roles"
+msgstr "Gérer les Rôles"
+
+#: app/views/home.html:58
+msgid "Manage TTI and Blood Group Serology Testing"
+msgstr "Gérer les Tests des ITT et de Sérologie des Groupes Sanguins"
+
+#: app/views/testing/manageTestBatch.html:3
+msgid "Manage Test Batch"
+msgstr "Gérer le Lot de Tests"
+
+#: app/views/testing/manageTestBatches.html:3 app/views/testing/sidebar.html:16
+msgid "Manage Test Batches"
+msgstr "Gérer les Lots de Test"
+
+#: app/views/settings/manageTransfusionReactionType.html:3
+msgid "Manage Transfusion Reaction Type"
+msgstr "Gérer le Type de Réactions Post-Transfusion"
+
+#: app/views/settings/sidebar.html:42
+#: app/views/settings/transfusionReactionTypes.html:3
+msgid "Manage Transfusion Reaction Types"
+msgstr "Gérer les Types de Réactions Transfusionnelles"
+
+#: app/views/settings/manageUser.html:3
+msgid "Manage User"
+msgstr "Gérer l’Utilisateur"
+
+#: app/views/settings/sidebar.html:23 app/views/settings/users.html:3
+msgid "Manage Users"
+msgstr "Gérer les Utilisateurs"
+
+#: app/views/translations.html:102
+msgid "March"
+msgstr "Mars"
+
+#: app/views/settings/manageBloodTest.html:192
+msgid "Mark Component Containing Plasma as Unsafe for Positive Test Outcomes"
+msgstr ""
+"Marquer un Composant Contenant du Plasma comme Non Sûr pour des Résultats de "
+"Tests Positifs"
+
+#: app/views/settings/manageBloodTest.html:183
+msgid "Mark Component as Unsafe for Positive Test Outcomes"
+msgstr ""
+"Marquer un Composant comme Non Sûr pour des Résultats de Tests Positifs"
+
+#. Blood Typing Match Status
+#: app/views/translations.html:60
+msgid "Match"
+msgstr "Faire Correspondre"
+
+#: app/views/settings/manageComponentType.html:57
+msgid "Max bleed time"
+msgstr "Temps de saignement"
+
+#: app/views/settings/manageComponentType.html:62
+msgid "Max bleed time should be between 0 and 60 mins"
+msgstr "Le temps de saignement maximum devrait être entre 0 et 60 minutes"
+
+#: app/views/settings/manageComponentType.html:71
+msgid "Max time since donation"
+msgstr "Temps maximal depuis le dernier don"
+
+#: app/views/settings/manageComponentType.html:76
+msgid "Max time since donation should be between 0 and 30 hours"
+msgstr ""
+"Le temps maximum depuis le dernier don devrait être entre 0 et 30 heures"
+
+#: app/views/settings/managePackType.html:97
+msgid "Maximum Weight"
+msgstr "Poids maximum"
+
+#: app/views/translations.html:104
+msgid "May"
+msgstr "Mai"
+
+#: app/views/donors/mergeDonorsSelection.html:40
+msgid "Merge"
+msgstr "Combiner"
+
+#: app/views/donors/addDonor.html:28
+msgid "Middle"
+msgstr "Deuxième Prénom"
+
+#: app/views/settings/managePackType.html:85
+msgid "Minimum Weight"
+msgstr "Poids Minimum"
+
+#: app/views/settings/manageLocation.html:33
+msgid "Mobile Clinic"
+msgstr "Clinique Mobile"
+
+#: app/views/mobile/mobileClinicExport.html:3 app/views/mobile/sidebar.html:17
+msgid "Mobile Clinic Export"
+msgstr "Exporter une Clinique Mobile"
+
+#: app/scripts/controllers/mobile/mobile.js:114
+msgid "Mobile Clinic Look Up"
+msgstr "Rechercher une Clinique Mobile"
+
+#: app/scripts/controllers/donors/donorCommunications.js:85
+#: app/views/donors/mergeDonorsContact.html:24
+#: app/views/donors/mergeDonorsReview.html:74
+#: app/views/donors/viewDonorDemographics.html:49
+msgid "Mobile Number"
+msgstr "Numéro de Mobile"
+
+#: app/scripts/controllers/settings/auditLog.js:76
+msgid "Modified"
+msgstr "Modifié"
+
+#: app/views/settings/accountSettings.html:79
+msgid "Modify password"
+msgstr "Modifier le Mot de Passe"
+
+#: app/views/donors/addDonor.html:90
+msgid "Month"
+msgstr "Mois"
+
+#: app/messages.html:22
+msgid ""
+"More than one component returned for given component Type. Please enter a "
+"component code"
+msgstr ""
+"Plus d’un Composant Renvoyé pour le Type de Composant Donné. Veuillez entrer "
+"un code de Composant"
+
+#. Personal Title
+#: app/views/translations.html:94
+msgid "Mr"
+msgstr "M"
+
+#. Personal Title
+#: app/views/translations.html:95
+msgid "Mrs"
+msgstr "Mme"
+
+#. Personal Title
+#: app/views/translations.html:96
+msgid "Ms"
+msgstr "Melle"
+
+#: app/messages.html:7
+msgid "Must match the previous entry"
+msgstr "Doit Correspondre à l’Entrée Précédente"
+
+#. No, abbreviation
+#: app/scripts/controllers/testing/manageTestBatch.js:151
+#: app/scripts/controllers/testing/manageTestBatch.js:232
+#: app/views/translations.html:118
+msgid "N"
+msgstr "N"
+
+#. No Type Determined, abbreviation
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:229
+#: app/scripts/controllers/reports/componentsProducedReport.js:195
+#: app/views/translations.html:120
+msgid "NTD"
+msgstr "NTD"
+
+#: app/scripts/controllers/settings/bloodTests.js:8
+#: app/scripts/controllers/settings/componentTypeCombinations.js:9
+#: app/scripts/controllers/settings/componentTypes.js:9
+#: app/scripts/controllers/settings/divisions.js:45
+#: app/scripts/controllers/settings/locations.js:14
+#: app/scripts/controllers/settings/transfusionReactionTypes.js:12
+#: app/views/donors/addDonor.html:16 app/views/donors/findDonor.html:6
+#: app/views/donors/manageDuplicateDonors.html:20
+#: app/views/donors/mergeDonorsReview.html:12
+#: app/views/inventory/manageOrders.html:93
+#: app/views/settings/accountSettings.html:23
+#: app/views/settings/adverseEventTypeForm.html:8
+#: app/views/settings/adverseEventTypes.html:19
+#: app/views/settings/configurations.html:20
+#: app/views/settings/divisions.html:11 app/views/settings/locations.html:11
+#: app/views/settings/manageComponentType.html:9
+#: app/views/settings/manageComponentTypeCombination.html:9
+#: app/views/settings/manageConfiguration.html:10
+#: app/views/settings/manageDivision.html:9
+#: app/views/settings/manageLocation.html:10
+#: app/views/settings/manageRole.html:10
+#: app/views/settings/manageTransfusionReactionType.html:9
+#: app/views/settings/manageUser.html:9 app/views/settings/roles.html:22
+#: app/views/settings/users.html:24
+msgid "Name"
+msgstr "Nom"
+
+#: app/views/settings/manageBloodTest.html:122
+msgid "Negative Outcomes"
+msgstr "Résultats Négatifs"
+
+#: app/views/donors/manageDonationBatches.html:52
+msgid "New Donation Batch"
+msgstr "Nouveau Lot de Dons"
+
+#: app/views/passwordReset.html:13
+msgid "New Password"
+msgstr "Nouveau Mot de Passe"
+
+#: app/views/testing/manageTestBatches.html:62
+msgid "New Test Batch"
+msgstr "Nouveau Lot de Tests"
+
+#: app/views/passwordReset.html:17 app/views/settings/accountSettings.html:106
+msgid "New password"
+msgstr "Nouveau Mot de Passe"
+
+#: app/views/donors/manageDuplicateDonors.html:67
+msgid "Next"
+msgstr "Suivant"
+
+#: app/views/donors/mergeDonorsSelection.html:50
+#: app/views/donors/viewDonor.html:180
+msgid "No"
+msgstr "Non"
+
+#: app/views/donors/donorCommunications.html:47
+msgid "No Blood Group"
+msgstr "Aucun Groupe Sanguin"
+
+#: app/views/donors/viewDeferrals.html:108
+msgid "No Deferrals Found"
+msgstr "Aucun Report Trouvé"
+
+#: app/views/donors/mergeDonorsDeferrals.html:34
+msgid "No Deferrals found"
+msgstr "Aucun report trouvé"
+
+#: app/views/donors/mergeDonorsDonations.html:36
+msgid "No Donations found"
+msgstr "Aucun Don trouvé"
+
+#. Blood Typing Match Status
+#: app/views/translations.html:58
+msgid "No Match"
+msgstr "Aucune Correspondance"
+
+#: app/views/donors/viewDonations.html:73
+msgid "No Previous Donations"
+msgstr "Aucun don antérieur"
+
+#. Blood Typing Match Status
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:59
+#: app/views/translations.html:62
+msgid "No Type Determined"
+msgstr "Aucun Type Déterminé"
+
+#: app/views/donors/manageDonationBatches.html:194
+msgid "No closed donation batches"
+msgstr "Aucun Lot de Dons Fermés"
+
+#: app/views/testing/manageTestBatches.html:211
+msgid "No closed test batches."
+msgstr "Aucun lot de tests fermé."
+
+#: app/views/labelling/labelComponents.html:46
+msgid "No components for donation"
+msgstr "Aucun Composant pour le don"
+
+#: app/views/components/findComponents.html:124
+#: app/views/components/findDiscards.html:88
+msgid "No components found"
+msgstr "Aucun Composant trouvé"
+
+#: app/messages.html:21
+msgid ""
+"No components with the specified component type exist for the specified "
+"Donation"
+msgstr "Aucun Composant du type spécifié n'existe pour le don spécifié"
+
+#: app/scripts/controllers/donors/viewDonor.js:510
+#: app/views/donors/viewDeferrals.html:12 app/views/donors/viewDonor.html:171
+msgid "No current deferrals"
+msgstr "Aucun ajournement en cours"
+
+#: app/scripts/services/reportsLayout.js:87
+msgid "No data for date range selected"
+msgstr "Aucune date pour la plage de dates sélectionnée"
+
+#: app/views/donors/findDonor.html:113
+msgid "No donors found"
+msgstr "Aucun Report Trouvé"
+
+#: app/views/donors/duplicateDonors.html:52
+msgid "No duplicate donors found"
+msgstr "Aucun double donneur trouvé"
+
+#: app/views/donors/addDonorDonation.html:29
+#: app/views/donors/manageDonationBatches.html:47
+msgid "No open donation batches"
+msgstr "Aucun lot de dons ouvert"
+
+#: app/views/testing/manageTestBatches.html:56
+msgid "No open test batches."
+msgstr "Aucun lot de tests ouvert."
+
+#: app/scripts/controllers/donors/donorCommunications.js:132
+msgid "None"
+msgstr "Aucun"
+
+#: app/views/donors/mergeDonorsAddress.html:100
+#: app/views/donors/mergeDonorsAddress.html:111
+#: app/views/donors/mergeDonorsAddress.html:122
+#: app/views/donors/mergeDonorsAddress.html:133
+#: app/views/donors/mergeDonorsContact.html:56
+#: app/views/donors/mergeDonorsContact.html:66
+#: app/views/donors/mergeDonorsContact.html:77
+#: app/views/donors/mergeDonorsContact.html:88
+#: app/views/donors/mergeDonorsContact.html:99
+#: app/views/donors/mergeDonorsOverview.html:61
+#: app/views/donors/mergeDonorsOverview.html:71
+#: app/views/donors/mergeDonorsOverview.html:82
+msgid "None of the above"
+msgstr "Aucun de ceux ci-dessus"
+
+#. Blood Typing Match Status
+#. Blood Typing Status
+#. TTI Status
+#: app/views/translations.html:57 app/views/translations.html:65
+#: app/views/translations.html:69
+msgid "Not Done"
+msgstr "Non Terminé"
+
+#. Donor Eligibility
+#: app/views/translations.html:123
+msgid "Not Eligible"
+msgstr "Non éligible"
+
+#. Inventory Status
+#: app/views/translations.html:41
+msgid "Not In Stock"
+msgstr "Pas en Stock"
+
+#: app/scripts/controllers/inventory/viewStockLevels.js:86
+msgid "Not Labelled"
+msgstr "Non Étiqueté"
+
+#: app/scripts/controllers/inventory/viewOrder.js:136
+#: app/views/inventory/fulfilOrder.html:14
+#: app/views/inventory/fulfilOrder.html:17
+#: app/views/inventory/fulfilOrder.html:20
+#: app/views/inventory/fulfilOrder.html:24
+#: app/views/inventory/fulfilOrder.html:27
+#: app/views/inventory/fulfilOrder.html:30
+#: app/views/inventory/viewOrder.html:33 app/views/inventory/viewOrder.html:36
+#: app/views/inventory/viewOrder.html:39 app/views/inventory/viewOrder.html:43
+#: app/views/inventory/viewOrder.html:46 app/views/inventory/viewOrder.html:49
+msgid "Not Specified"
+msgstr "Non Spécifié"
+
+#. Transfusion Outcome
+#: app/views/translations.html:31
+msgid "Not Transfused"
+msgstr "Non Transfusé"
+
+#: app/views/donors/mergeDonorsReview.html:38
+#: app/views/donors/viewDonor.html:161
+msgid "Not applicable"
+msgstr "Non Applicable"
+
+#: app/views/labelling/labelComponents.html:128
+msgid "Not found. Please re-enter DIN or select a different component type"
+msgstr ""
+"Aucun résultat. Veuillez ré-entrer le DIN ou sélectionner un type de "
+"composant différent"
+
+#: app/views/testing/viewTestSample.html:120
+msgid "Not found. Please re-enter DIN."
+msgstr "Aucun résultat. Veuillez ré-entrer le DIN."
+
+#: app/views/inventory/viewStockLevels.html:33
+#: app/views/labelling/findSafeComponents.html:112
+msgid "Not in Stock"
+msgstr "Pas en Stock"
+
+#: app/views/inventory/recordTransfusions.html:84
+msgid "Notes"
+msgstr "Notes"
+
+#: app/views/translations.html:110
+msgid "November"
+msgstr "Novembre"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:75
+msgid "Num Boxes"
+msgstr "Nom. Conteneurs"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:52
+msgid "Num Initial Components"
+msgstr "Nom. Initial de Composants"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:76
+#: app/views/components/viewComponentBatch.html:33
+msgid "Number of Blood Transport Boxes"
+msgstr "Nombre de Conteneurs de Transport de Sang"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:53
+#: app/views/components/viewComponentBatch.html:24
+#: app/views/donors/manageClinic.html:26
+#: app/views/donors/manageDonationBatches.html:175
+#: app/views/donors/manageDonationBatches.html:32
+msgid "Number of Donations"
+msgstr "Nombre de Dons"
+
+#: app/views/testing/manageTestBatch.html:172
+#: app/views/testing/recordABORhOutcomes.html:11
+#: app/views/testing/recordRepeatABORhOutcomes.html:11
+#: app/views/testing/recordRepeatTTIOutcomes.html:13
+#: app/views/testing/recordTTIOutcomes.html:11
+#: app/views/testing/reenterABORhOutcomes.html:11
+#: app/views/testing/reenterTTIOutcomes.html:11
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:11
+msgid "Number of Samples"
+msgstr "Nombre d’Échantillons"
+
+#: app/views/testing/manageTestBatch.html:175
+msgid "Number of Samples Ready for Release"
+msgstr "Nombre d’Échantillons Prêts à Être Utilisés"
+
+#: app/views/testing/manageTestBatch.html:179
+msgid "Number of Samples Released"
+msgstr "Nombre d’Échantillons Utilisés"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:266
+msgid "Number of Samples: {{sampleNumber}}"
+msgstr "Nombre d’Échantillons: {{sampleNumber}}"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:100
+#: app/scripts/controllers/inventory/findInventory.js:145
+#: app/scripts/controllers/inventory/viewReturn.js:126
+#: app/scripts/controllers/labelling/findSafeComponents.js:148
+msgid "Number of components: {{componentNumber}}"
+msgstr "Nombre de Composants: {{componentNumber}}"
+
+#: app/views/donors/duplicateDonors.html:39
+msgid "Number of duplicates"
+msgstr "Nombre de doublons"
+
+#: app/views/settings/auditLog.html:29
+msgid "Number of entities"
+msgstr "Nombre d'entités"
+
+#: app/scripts/controllers/components/viewComponentBatches.js:126
+msgid "Number of forms: {{count}}"
+msgstr "Nombre de formulaires: {{count}}"
+
+#: app/scripts/controllers/reports/componentsProducedReport.js:225
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:219
+msgid "Number of processing sites: {{sitesNumber}}"
+msgstr "Nombre de sites de traitement: {{sitesNumber}}"
+
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:153
+msgid "Number of venues: {{venuesNumber}}"
+msgstr "Nombre de salles: {{venuesNumber}}"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:198
+#: app/scripts/controllers/inventory/recordReturn.js:109
+msgid "OK"
+msgstr "OK"
+
+#: app/views/translations.html:109
+msgid "October"
+msgstr "Octobre"
+
+#. Test Batch Status
+#: app/scripts/controllers/components/viewComponentBatch.js:6
+#: app/scripts/controllers/donors/viewDonationBatch.js:91
+#: app/views/translations.html:74
+msgid "Open"
+msgstr "Ouvert"
+
+#: app/views/donors/manageDonationBatches.html:11
+#: app/views/testing/manageTestBatches.html:12
+msgid "Open Batches"
+msgstr "Lots ouverts"
+
+#: app/scripts/controllers/inventory/manageOrders.js:118
+#: app/scripts/controllers/inventory/viewOrder.js:130
+#: app/scripts/controllers/inventory/viewOrders.js:15
+#: app/views/inventory/fulfilOrder.html:40
+#: app/views/inventory/fulfilOrder.html:8
+#: app/views/inventory/manageOrders.html:29
+#: app/views/inventory/viewOrder.html:27
+msgid "Order Date"
+msgstr "Date de Commande"
+
+#: app/scripts/controllers/inventory/viewOrders.js:16
+msgid "Order Status"
+msgstr "Statut de la Commande"
+
+#: app/scripts/controllers/inventory/viewOrder.js:133
+#: app/views/inventory/fulfilOrder.html:51
+#: app/views/inventory/fulfilOrder.html:9 app/views/inventory/viewOrder.html:30
+msgid "Order Type"
+msgstr "Type de la Commande"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:129
+msgid "Ordered"
+msgstr "Commandé"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:70
+#: app/views/donors/donationDetails.html:119
+#: app/views/donors/donationDetails.html:92
+#: app/views/donors/viewDonationSummary.html:249
+#: app/views/donors/viewDonationSummary.html:276
+#: app/views/testing/viewTestSample.html:76
+#: app/views/testing/viewTestSample.html:96
+msgid "Outcome"
+msgstr "Résultat"
+
+#: app/views/donors/mergeDonorsReview.html:8
+#: app/views/donors/viewDonor.html:147
+msgid "Overview"
+msgstr "Aperçu"
+
+#: app/scripts/services/componentValidation.js:10
+msgid "Overweight Child Packs"
+msgstr "Paquets pour Enfant en Surpoids"
+
+#: app/scripts/controllers/components/recordComponents.js:169
+msgid "Overweight Pack"
+msgstr "Paquet en Surpoids"
+
+#. Portable Document Format file, abbreviation
+#: app/views/components/viewComponentBatches.html:47
+#: app/views/donors/donorCommunications.html:96
+#: app/views/donors/donorCounselling.html:114
+#: app/views/donors/viewDonationBatch.html:5
+#: app/views/inventory/findInventory.html:104
+#: app/views/inventory/findTransfusion.html:87
+#: app/views/inventory/viewStockLevels.html:48
+#: app/views/labelling/findSafeComponents.html:140
+#: app/views/mobile/donorCounselling.html:59 app/views/mobile/lookUp.html:45
+#: app/views/reports/aboRhGroupsReport.html:42
+#: app/views/reports/bloodUnitsIssuedReport.html:42
+#: app/views/reports/componentsProducedReport.html:61
+#: app/views/reports/donationTypesReport.html:42
+#: app/views/reports/donorsAdverseEventsReport.html:62
+#: app/views/reports/donorsDeferredReport.html:42
+#: app/views/reports/transfusionsReport.html:62
+#: app/views/reports/ttiPrevalenceReport.html:42
+#: app/views/reports/unitsDiscardedReport.html:62
+#: app/views/testing/manageTestBatch.html:252
+msgid "PDF"
+msgstr "PDF"
+
+#: app/views/donors/sidebar.html:21
+msgid "POST DONATION"
+msgstr "POST-DON"
+
+#: app/views/donors/addDonation.html:110
+#: app/views/donors/addDonorDonation.html:64
+#: app/views/donors/donationDetails.html:23
+msgid "Pack"
+msgstr "Poche"
+
+#: app/views/labelling/labelComponents.html:97
+msgid "Pack Label DIN"
+msgstr "Étiquette DIN de la poche"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:13
+#: app/scripts/controllers/donors/viewDonationBatch.js:55
+#: app/scripts/controllers/testing/findTestSamples.js:40
+#: app/scripts/controllers/testing/manageTestBatch.js:133
+#: app/views/donors/mergeDonorsDonations.html:19
+#: app/views/donors/viewDonationSummary.html:80
+#: app/views/donors/viewDonations.html:35 app/views/donors/viewDonor.html:211
+#: app/views/settings/managePackType.html:12
+#: app/views/settings/packTypes.html:22
+#: app/views/testing/findTestSamples.html:39
+#: app/views/testing/viewTestSample.html:50
+msgid "Pack Type"
+msgstr "Type de Poche"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:355
+#: app/scripts/controllers/donors/viewDonor.js:112
+msgid "Pack Type Update"
+msgstr "Mise à jour du type de paquet"
+
+#: app/views/translations.html:130
+msgid "Pack Type name already exists."
+msgstr "Ce nom de Type de Paquet existe déjà."
+
+#: app/scripts/controllers/components/recordComponents.js:209
+msgid "Pack Weight Update"
+msgstr "Mise à jour du Poids du paquet"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:102
+#: app/scripts/controllers/components/viewComponentBatches.js:128
+#: app/scripts/controllers/donors/donorCommunications.js:172
+#: app/scripts/controllers/donors/donorCounselling.js:285
+#: app/scripts/controllers/donors/viewDonationBatch.js:120
+#: app/scripts/controllers/inventory/findInventory.js:147
+#: app/scripts/controllers/inventory/findTransfusion.js:149
+#: app/scripts/controllers/inventory/viewReturn.js:128
+#: app/scripts/controllers/inventory/viewStockLevels.js:97
+#: app/scripts/controllers/labelling/findSafeComponents.js:150
+#: app/scripts/controllers/mobile/donorCounselling.js:151
+#: app/scripts/controllers/mobile/mobile.js:131
+#: app/scripts/controllers/testing/manageTestBatch.js:268
+#: app/scripts/services/reportsLayout.js:51
+msgid "Page {{currentPage}} of {{pageCount}}"
+msgstr "Page {{currentPage}} sur {{pageCount}}"
+
+#: app/views/settings/manageDivision.html:30
+msgid "Parent"
+msgstr "Parent"
+
+#: app/scripts/controllers/settings/divisions.js:47
+msgid "Parent Division"
+msgstr "Division Parente"
+
+#: app/views/settings/manageDivision.html:22
+msgid "Parent division levels cannot be changed"
+msgstr "Les niveaux de divisions parentes ne peuvent pas être modifiés"
+
+#. Haemoglobin Level
+#: app/views/translations.html:78
+msgid "Pass"
+msgstr "Passe"
+
+#. Data Type
+#: app/views/login.html:9 app/views/settings/accountSettings.html:74
+#: app/views/settings/manageUser.html:78 app/views/translations.html:92
+msgid "Password"
+msgstr "Mot de passe"
+
+#: app/scripts/controllers/forgotPassword.js:30
+msgid ""
+"Password reset failed. Please make sure that you have entered the correct "
+"username and try again"
+msgstr ""
+"La réinitialisation du mot de passe a échoué. Veuillez vous assurer que vous "
+"avez entré le bon nom d'utilisateur, et recommencez"
+
+#: app/views/inventory/manageOrders.html:89
+msgid "Patient Details"
+msgstr "Informations sur le patient"
+
+#: app/scripts/controllers/inventory/viewOrder.js:140
+#: app/views/inventory/fulfilOrder.html:22
+#: app/views/inventory/fulfilOrder.html:91
+#: app/views/inventory/recordTransfusions.html:103
+#: app/views/inventory/viewOrder.html:41
+msgid "Patient Name"
+msgstr "Nom du patient"
+
+#: app/scripts/controllers/inventory/viewOrder.js:139
+#: app/views/inventory/fulfilOrder.html:19
+#: app/views/inventory/fulfilOrder.html:87
+#: app/views/inventory/manageOrders.html:125
+#: app/views/inventory/recordTransfusions.html:122
+#: app/views/inventory/viewOrder.html:38
+msgid "Patient Number"
+msgstr "Numéro du patient"
+
+#. Order Type
+#: app/views/inventory/fulfilOrder.html:59
+#: app/views/inventory/manageOrders.html:64
+#: app/views/inventory/viewOrders.html:65 app/views/translations.html:39
+msgid "Patient Request"
+msgstr "Requête du patient"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:133
+msgid "Patient Requests"
+msgstr "Requêtes du patient"
+
+#. Blood Typing Status
+#: app/views/settings/manageBloodTestingRule.html:75
+#: app/views/translations.html:66
+msgid "Pending Tests"
+msgstr "Tests en attente"
+
+#: app/views/testing/manageTestBatch.html:58
+msgid "Pending: TTI repeat and/or confirmatory test outcomes."
+msgstr "En attente: Résultats de tests de confirmation et/ou répétés ITT."
+
+#: app/views/testing/manageTestBatch.html:60
+msgid "Pending: ambiguous blood group serology test outcomes."
+msgstr ""
+"En attente: Résultats ambigus de tests de sérologies de groupes sanguins."
+
+#: app/views/testing/manageTestBatch.html:59
+msgid "Pending: blood group serology repeat test outcomes."
+msgstr ""
+"En attente: Résultats de tests répétés de sérologies de groupes sanguins."
+
+#: app/views/components/findComponents.html:69
+#: app/views/components/findDiscards.html:32
+#: app/views/components/viewComponentBatches.html:16
+#: app/views/inventory/findTransfusion.html:54
+#: app/views/inventory/viewOrders.html:24
+#: app/views/inventory/viewReturns.html:24
+#: app/views/labelling/findSafeComponents.html:90
+#: app/views/reports/aboRhGroupsReport.html:9
+#: app/views/reports/bloodUnitsIssuedReport.html:9
+#: app/views/reports/componentsProducedReport.html:29
+#: app/views/reports/donationTypesReport.html:9
+#: app/views/reports/donorsAdverseEventsReport.html:29
+#: app/views/reports/donorsDeferredReport.html:9
+#: app/views/reports/transfusionsReport.html:29
+#: app/views/reports/ttiPrevalenceReport.html:9
+#: app/views/reports/unitsDiscardedReport.html:29
+#: app/views/testing/findTestSamples.html:57
+#: app/views/testing/manageTestBatches.html:135
+msgid "Period"
+msgstr "Période"
+
+#: app/views/settings/packTypes.html:25
+msgid "Period between donations"
+msgstr "Période entre deux dons"
+
+#: app/views/settings/deferralReasons.html:24
+#: app/views/settings/manageDeferralReason.html:33
+msgid "Permanent"
+msgstr "Permanent"
+
+#: app/views/donors/viewDeferrals.html:10 app/views/donors/viewDonor.html:169
+msgid "Permanently deferred"
+msgstr "Reporté de façon permanente"
+
+#: app/views/settings/manageRole.html:49
+msgid "Permissions"
+msgstr "Permissions"
+
+#: app/views/settings/manageLocation.html:57
+msgid "Please choose at least one location type"
+msgstr "Veuillez choisir au moins un type d'emplacement"
+
+#: app/scripts/controllers/settings/accountSettings.js:34
+msgid "Please complete all of the required fields"
+msgstr "Veuillez remplir tous les champs requis"
+
+#: app/scripts/controllers/donors/viewDonor.js:669
+msgid "Please enter a valid identifier"
+msgstr "Veuillez entrer un identifiant valide"
+
+#: app/views/donors/addDonation.html:197 app/views/donors/addDonation.html:225
+#: app/views/donors/addDonation.html:252 app/views/donors/addDonation.html:258
+#: app/views/donors/addDonation.html:280
+#: app/views/donors/addDonorDonation.html:138
+#: app/views/donors/addDonorDonation.html:162
+#: app/views/donors/addDonorDonation.html:186
+#: app/views/donors/addDonorDonation.html:188
+#: app/views/donors/addDonorDonation.html:206
+#: app/views/donors/viewDonationSummary.html:104
+#: app/views/donors/viewDonationSummary.html:129
+#: app/views/donors/viewDonationSummary.html:154
+#: app/views/donors/viewDonationSummary.html:162
+#: app/views/donors/viewDonationSummary.html:181
+msgid "Please enter a value above {{minValue}}"
+msgstr "Veuillez entrer une valeur au-dessus de {{minValue}}"
+
+#: app/views/donors/addDonation.html:200 app/views/donors/addDonation.html:228
+#: app/views/donors/addDonation.html:255 app/views/donors/addDonation.html:261
+#: app/views/donors/addDonation.html:283
+#: app/views/donors/addDonorDonation.html:139
+#: app/views/donors/addDonorDonation.html:163
+#: app/views/donors/addDonorDonation.html:187
+#: app/views/donors/addDonorDonation.html:189
+#: app/views/donors/addDonorDonation.html:207
+#: app/views/donors/viewDonationSummary.html:107
+#: app/views/donors/viewDonationSummary.html:132
+#: app/views/donors/viewDonationSummary.html:157
+#: app/views/donors/viewDonationSummary.html:165
+#: app/views/donors/viewDonationSummary.html:184
+msgid "Please enter a value below {{maxValue}}"
+msgstr "Veuillez entrer une valeur en-dessous de {{maxValue}}"
+
+#: app/views/donors/addDonation.html:7 app/views/donors/addDonor.html:9
+#: app/views/donors/addDonorDonation.html:7 app/views/donors/viewDonor.html:6
+msgid "Please provide valid inputs"
+msgstr "Veuillez entrer des données valides"
+
+#: app/views/testing/reenterABORhOutcomes.html:21
+#: app/views/testing/reenterTTIOutcomes.html:21
+msgid ""
+"Please resolve all discrepancies between initial and re-rentered outcomes "
+"before saving the form."
+msgstr ""
+"Veuillez résoudre toutes les disparités entre les résultats initiaux et re-"
+"rentrés avant d'enregistrer le formulaire."
+
+#: app/views/inventory/manageOrders.html:66
+msgid "Please select a dispatch type"
+msgstr "Veuillez sélectionner un type d'envoi"
+
+#: app/views/settings/manageRole.html:52
+msgid "Please select at least one permission"
+msgstr "Veuillez sélectionner au moins une permission"
+
+#: app/views/settings/manageUser.html:132
+msgid "Please select at least one role"
+msgstr "Veuillez sélectionner au moins un rôle"
+
+#: app/scripts/controllers/donors/manageDuplicateDonors.js:316
+msgid "Please select at least two donors."
+msgstr "Veuillez sélectionner au moins deux donneurs."
+
+#: app/views/donors/mergeDonorsAddress.html:103
+#: app/views/donors/mergeDonorsAddress.html:114
+#: app/views/donors/mergeDonorsAddress.html:125
+#: app/views/donors/mergeDonorsAddress.html:136
+#: app/views/donors/mergeDonorsContact.html:102
+#: app/views/donors/mergeDonorsContact.html:59
+#: app/views/donors/mergeDonorsContact.html:69
+#: app/views/donors/mergeDonorsContact.html:80
+#: app/views/donors/mergeDonorsContact.html:91
+#: app/views/donors/mergeDonorsOverview.html:101
+#: app/views/donors/mergeDonorsOverview.html:64
+#: app/views/donors/mergeDonorsOverview.html:74
+#: app/views/donors/mergeDonorsOverview.html:85
+#: app/views/donors/mergeDonorsOverview.html:93
+msgid "Please select one"
+msgstr "Veuillez en sélectionner un"
+
+#: app/views/donors/mergeDonorsAddress.html:1
+#: app/views/donors/mergeDonorsContact.html:1
+#: app/views/donors/mergeDonorsOverview.html:1
+#: app/views/donors/mergeDonorsSelection.html:2
+msgid "Please select the correct donor information below"
+msgstr "Veuillez sélectionner les bonnes informations de donneurs ci-dessous"
+
+#: app/views/donors/addDonation.html:11 app/views/donors/addDonation.html:12
+#: app/views/donors/addDonation.html:9
+msgid "Please supply a valid donor"
+msgstr "Veuillez entrer un donneur valide"
+
+#: app/scripts/controllers/login.js:45
+msgid "Please supply all fields"
+msgstr "Veuillez remplir tous les champs"
+
+#: app/views/settings/manageBloodTest.html:151
+msgid "Positive Outcomes"
+msgstr "Résultats positifs"
+
+#: app/views/donors/mergeDonorsAddress.html:40
+#: app/views/donors/mergeDonorsReview.html:123
+#: app/views/donors/viewDonorDemographics.html:151
+msgid "Postal"
+msgstr "Boîte Postale"
+
+#: app/scripts/services/reportsLayout.js:59
+msgid "Powered by"
+msgstr "Alimenté Par"
+
+#: app/views/donors/mergeDonorsAddress.html:8
+#: app/views/donors/mergeDonorsReview.html:89
+#: app/views/donors/viewDonorDemographics.html:67
+msgid "Preferred Address Type"
+msgstr "Type d’Adresse Préféré"
+
+#: app/views/donors/mergeDonorsContact.html:9
+#: app/views/donors/mergeDonorsReview.html:64
+#: app/views/donors/viewDonorDemographics.html:22
+msgid "Preferred Contact Type"
+msgstr "Type de Contact Préféré"
+
+#: app/views/donors/donorCounsellingDetails.html:43
+#: app/views/donors/mergeDonorsOverview.html:29
+#: app/views/donors/mergeDonorsReview.html:24
+#: app/views/donors/viewDonor.html:120
+msgid "Preferred Language"
+msgstr "Langue Préférée"
+
+#: app/views/settings/manageComponentType.html:133
+msgid "Preparation Info"
+msgstr "Infos de Préparation"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:182
+msgid "Previous ABO/Rh"
+msgstr "ABO/Rh Précédent"
+
+#: app/views/donors/donorCommunications.html:53
+#: app/views/donors/viewDonor.html:206
+msgid "Previous Donation"
+msgstr "Don Précédent"
+
+#: app/views/components/viewComponentBatch.html:17
+msgid "Print Delivery Note"
+msgstr "Imprimer un bon de Livraison"
+
+#: app/views/labelling/labelComponents.html:67
+msgid "Print Discard Label"
+msgstr "Imprimer une Étiquette de Rejet"
+
+#: app/views/inventory/viewOrder.html:19
+msgid "Print Dispatch Note"
+msgstr "Imprimer un bon de livraison"
+
+#: app/views/donors/viewDonor.html:130
+msgid "Print Donor Barcode"
+msgstr "Imprimer le Code-Barre du Donneur"
+
+#: app/views/labelling/labelComponents.html:54
+msgid "Print Pack Label"
+msgstr "Imprimer l’Étiquette du Paquet"
+
+#: app/views/inventory/viewReturn.html:22
+msgid "Print Return Note"
+msgstr "Imprimer un bon de Retour"
+
+#: app/views/translations.html:19
+msgid "Process"
+msgstr "Préparé"
+
+#: app/views/components/recordComponents.html:125
+msgid "Process Component"
+msgstr "Traiter le Composant"
+
+#: app/scripts/controllers/components/recordComponents.js:466
+msgid "Process labelled component"
+msgstr "Traiter le Composant étiqueté"
+
+#. Component Status
+#: app/views/translations.html:52
+msgid "Processed"
+msgstr "Préparé"
+
+#: app/views/components/recordComponents.html:102
+msgid "Processing Date"
+msgstr "Date de Traitement"
+
+#. Location Type
+#: app/scripts/controllers/components/viewComponentBatches.js:45
+#: app/views/translations.html:82
+msgid "Processing Site"
+msgstr "Site de Préparation"
+
+#: app/views/components/addComponentBatch.html:43
+#: app/views/reports/componentsProducedReport.html:9
+#: app/views/reports/unitsDiscardedReport.html:9
+msgid "Processing site"
+msgstr "Site de Préparation"
+
+#: app/views/translations.html:20
+msgid "Processing..."
+msgstr "Traitement en cours..."
+
+#: app/views/settings/manageComponentTypeCombination.html:63
+msgid "Produced Component(s)"
+msgstr "Composant(s) produit(s)"
+
+#. Personal Title
+#: app/views/translations.html:98
+msgid "Prof"
+msgstr "Prof"
+
+#: app/views/donors/addDonation.html:269
+#: app/views/donors/addDonorDonation.html:196
+#: app/views/donors/donationDetails.html:35
+#: app/views/donors/viewDonationSummary.html:93
+#: app/views/donors/viewDonations.html:50
+msgid "Pulse"
+msgstr "Pouls"
+
+#. Component Status
+#: app/views/translations.html:45
+msgid "Quarantined"
+msgstr "Quarantaine"
+
+#. Refused counselling, abbreviation
+#: app/views/translations.html:119
+msgid "R"
+msgstr "R"
+
+#: app/scripts/controllers/header.js:231 app/scripts/controllers/header.js:59
+#: app/views/home.html:105 app/views/reports/sidebar.html:12
+msgid "REPORTS"
+msgstr "RAPPORTS"
+
+#: app/scripts/controllers/settings/bloodTests.js:27
+#: app/views/settings/manageBloodTest.html:53
+msgid "Rank in Category"
+msgstr "Rang dans la Catégorie"
+
+#: app/views/testing/manageTestBatch.html:109
+#: app/views/testing/manageTestBatch.html:123
+#: app/views/testing/manageTestBatch.html:74
+#: app/views/testing/manageTestBatch.html:84
+#: app/views/testing/manageTestBatch.html:98
+msgid "Re-Enter"
+msgstr "Re-Entrer"
+
+#: app/views/testing/reenterABORhOutcomes.html:3
+msgid "Re-Enter ABO/Rh Outcomes"
+msgstr "Ré-entrez les Résultats ABO/Rh"
+
+#: app/views/testing/reenterTTIOutcomes.html:3
+msgid "Re-Enter TTI Outcomes"
+msgstr "Ré-entrez les Résultats TTI"
+
+#: app/scripts/controllers/testing/reenterTestOutcomes.js:159
+msgid ""
+"Re-entry completed for {{reEntriesConfirmed}} of {{totalReEntries}} outcomes."
+msgstr ""
+"Ré-Entrées terminées pour {{reEntriesConfirmed}} résultats sur "
+"{{totalReEntries}}."
+
+#: app/scripts/controllers/testing/reenterTestOutcomes.js:160
+msgid ""
+"Re-entry required for {{reEntriesNotConfirmed}} of {{totalReEntries}} "
+"outcomes."
+msgstr ""
+"Ré-Entrées requises pour {{reEntriesNotConfirmed}} résultats sur "
+"{{totalReEntries}}."
+
+#: app/views/labelling/labelComponents.html:115
+msgid "Re-scan Pack Label"
+msgstr "Re-scanner une Étiquette de Paquet"
+
+#: app/views/donors/manageDeferral.html:9
+#: app/views/donors/mergeDonorsDeferrals.html:20
+#: app/views/donors/viewDeferrals.html:36
+#: app/views/settings/deferralReasons.html:20
+#: app/views/settings/discardReasons.html:20
+#: app/views/settings/manageDeferralReason.html:10
+#: app/views/settings/manageDiscardReason.html:10
+msgid "Reason"
+msgstr "Raison"
+
+#: app/views/components/addComponentBatch.html:3
+#: app/views/components/sidebar.html:13
+#: app/views/components/viewComponentBatch.html:3
+#: app/views/components/viewComponentBatches.html:3
+msgid "Receive Components"
+msgstr "Réception des Composants"
+
+#. Counselling Status
+#: app/views/translations.html:113
+msgid "Received Counselling"
+msgstr "Thérapie Reçu"
+
+#: app/views/testing/recordABORhOutcomes.html:3
+msgid "Record ABO/Rh Outcomes"
+msgstr "Enregistrement des Résultats ABO/Rh"
+
+#: app/views/components/recordComponents.html:3
+#: app/views/components/sidebar.html:15
+msgid "Record Components"
+msgstr "Enregistrement des Composants"
+
+#: app/views/testing/recordRepeatTTIOutcomes.html:5
+msgid "Record Confirmatory TTI Outcomes"
+msgstr "Enregistrement des Résultats de Confirmation TTI"
+
+#: app/views/testing/recordRepeatABORhOutcomes.html:3
+msgid "Record Repeat ABO/Rh Outcomes"
+msgstr "Enregistrement des Résultats Répétés ABO/Rh"
+
+#: app/views/testing/recordRepeatTTIOutcomes.html:4
+msgid "Record Repeat TTI Outcomes"
+msgstr "Enregistrement des Résultats Répétés TTI"
+
+#: app/views/inventory/recordReturn.html:4
+msgid "Record Return"
+msgstr "Enregistrement des Retours"
+
+#: app/views/testing/recordTTIOutcomes.html:3
+msgid "Record TTI Outcomes"
+msgstr "Enregistrement des Résultats TTI"
+
+#: app/views/inventory/recordTransfusions.html:3
+#: app/views/inventory/sidebar.html:21
+msgid "Record Transfusions"
+msgstr "Enregistrement des Transfusions"
+
+#. Location Type
+#: app/views/donors/donorCounsellingDetails.html:81
+#: app/views/settings/manageLocation.html:53 app/views/translations.html:86
+msgid "Referral Site"
+msgstr "Site de Référence"
+
+#: app/scripts/controllers/donors/donorCounselling.js:195
+#: app/views/donors/donorCounsellingDetails.html:76
+msgid "Referred"
+msgstr "Référence"
+
+#. Counselling Status
+#: app/views/translations.html:114
+msgid "Refused Counselling"
+msgstr "Thérapie Refusé"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:496
+#: app/views/testing/manageTestBatch.html:42
+msgid "Release"
+msgstr "Libération"
+
+#. Test Batch Status
+#: app/scripts/controllers/testing/manageTestBatch.js:148
+#: app/views/translations.html:75
+msgid "Released"
+msgstr "Validé"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:626
+#: app/views/donors/donorCounsellingDetails.html:97
+#: app/views/settings/users.html:35
+msgid "Remove"
+msgstr "Retirer"
+
+#: app/views/settings/manageBloodTestingRule.html:95
+msgid "Remove Blood Test"
+msgstr "Retirer l’Analyse de Sang"
+
+#: app/views/settings/manageBloodTest.html:104
+#: app/views/settings/manageBloodTest.html:143
+#: app/views/settings/manageBloodTest.html:172
+msgid "Remove Outcome"
+msgstr "Retirer un Résultat"
+
+#: app/views/inventory/fulfilOrder.html:220
+#: app/views/inventory/recordReturn.html:68
+msgid "Remove Pack"
+msgstr "Retirer un Paquet"
+
+#: app/views/settings/manageComponentTypeCombination.html:51
+msgid "Remove Source Component"
+msgstr "Retirer un Composant de Source"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:625
+msgid "Remove Test Sample(s)"
+msgstr "Retirer échantillon(s) du Test"
+
+#: app/views/settings/manageComponentTypeCombination.html:89
+msgid "Remove Unit"
+msgstr "Retirer un Composant de Source"
+
+#: app/views/settings/manageBloodTest.html:107
+msgid "Remove from negative or positive outcomes first"
+msgstr "Retirer des résultats positifs ou négatifs en premier"
+
+#. Inventory Status
+#: app/views/translations.html:43
+msgid "Removed"
+msgstr "Retiré"
+
+#: app/views/translations.html:27
+msgid "Removing..."
+msgstr "Retirant..."
+
+#: app/scripts/controllers/testing/manageTestBatch.js:442
+#: app/views/donors/manageClinic.html:81
+#: app/views/testing/manageTestBatch.html:48
+msgid "Reopen"
+msgstr "Ré-ouvrir"
+
+#: app/views/donors/manageClinic.html:77
+msgid "Reopen Batch"
+msgstr "Ré-ouvrir un Lot"
+
+#: app/views/testing/manageTestBatch.html:106
+msgid "Repeat ABO/Rh Outcomes"
+msgstr "Répéter les Résultats ABO/Rh"
+
+#: app/views/testing/manageTestBatch.html:95
+msgid "Repeat TTI Outcomes"
+msgstr "Répéter les Résultats ITT"
+
+#: app/views/settings/manageUser.html:84
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
+
+#: app/views/translations.html:25
+msgid "Reset password"
+msgstr "Réinitialiser le mot de passe"
+
+#: app/views/translations.html:26
+msgid "Resetting..."
+msgstr "Réinitialisation..."
+
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:56
+msgid "Resolve"
+msgstr "Résoudre"
+
+#: app/views/testing/manageTestBatch.html:133
+#: app/views/testing/resolveAmbiguousABORhOutcomes.html:3
+msgid "Resolve Ambiguous ABO/Rh Outcomes"
+msgstr "Résoudre les résultats ambigus d’ABO/Rh"
+
+#. Blood Typing Match Status
+#: app/views/translations.html:61
+msgid "Resolved"
+msgstr "Résolu"
+
+#: app/scripts/controllers/inventory/manageReturns.js:10
+#: app/scripts/controllers/inventory/viewReturn.js:102
+#: app/scripts/controllers/inventory/viewReturns.js:17
+#: app/views/inventory/manageReturns.html:29
+#: app/views/inventory/recordReturn.html:17
+#: app/views/inventory/recordReturn.html:9
+#: app/views/inventory/viewReturn.html:30
+msgid "Return Date"
+msgstr "Date de Retour"
+
+#: app/scripts/controllers/inventory/viewReturn.js:87
+msgid "Return Note"
+msgstr "Bon de Retour"
+
+#: app/scripts/controllers/inventory/viewReturns.js:25
+msgid "Return Status"
+msgstr "Statut de Retour"
+
+#: app/scripts/controllers/inventory/viewReturn.js:228
+#: app/scripts/controllers/inventory/viewReturn.js:229
+#: app/views/inventory/viewReturn.html:16
+msgid "Return to Stock"
+msgstr "Renvoyer au Stock"
+
+#. Return Status
+#: app/views/translations.html:55
+msgid "Returned"
+msgstr "Renvoyé"
+
+#: app/scripts/controllers/inventory/manageReturns.js:19
+#: app/scripts/controllers/inventory/viewReturn.js:107
+#: app/scripts/controllers/inventory/viewReturns.js:33
+#: app/views/inventory/manageReturns.html:39
+#: app/views/inventory/recordReturn.html:10
+#: app/views/inventory/recordReturn.html:21
+#: app/views/inventory/viewReturn.html:31
+#: app/views/inventory/viewReturns.html:44
+msgid "Returned From"
+msgstr "Renvoyé De"
+
+#: app/scripts/controllers/inventory/manageReturns.js:25
+#: app/scripts/controllers/inventory/viewReturn.js:112
+#: app/scripts/controllers/inventory/viewReturns.js:39
+#: app/views/inventory/manageReturns.html:51
+#: app/views/inventory/recordReturn.html:11
+#: app/views/inventory/recordReturn.html:26
+#: app/views/inventory/viewReturn.html:32
+#: app/views/inventory/viewReturns.html:53
+msgid "Returned To"
+msgstr "Renvoyé A"
+
+#: app/views/donors/mergeDonorsDeferrals.html:1
+msgid "Review the deferrals for the merged donor"
+msgstr "Examiner les Reports pour le donneur combiné"
+
+#: app/views/donors/mergeDonorsDonations.html:1
+msgid "Review the donations for the merged donor"
+msgstr "Examiner les dons pour le donneur combiné"
+
+#: app/views/settings/auditLog.html:23
+msgid "Revision type"
+msgstr "Type de révision"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:15
+msgid "Rh"
+msgstr "Rh"
+
+#: app/views/settings/manageRole.html:19
+msgid "Role name already exists"
+msgstr "Le nom du rôle existe déjà"
+
+#: app/views/settings/manageUser.html:129
+msgid "Roles"
+msgstr "Rôles"
+
+#: app/scripts/controllers/header.js:235 app/scripts/controllers/header.js:73
+#: app/views/home.html:134 app/views/settings/sidebar.html:12
+msgid "SETTINGS"
+msgstr "PARAMETRES"
+
+#. TTI Status
+#: app/views/translations.html:70
+msgid "Safe"
+msgstr "Sûr"
+
+#: app/scripts/controllers/labelling/findSafeComponents.js:134
+msgid "Safe components"
+msgstr "Composants Sûrs"
+
+#: app/views/donors/viewDonorDemographics.html:154
+#: app/views/donors/viewDonorDemographics.html:206
+msgid "Same as Home"
+msgstr "De Même qu’à la Maison"
+
+#: app/views/donors/viewDonationSummary.html:233
+msgid "Sample Released"
+msgstr "Échantillon Utilisé"
+
+#: app/scripts/controllers/testing/reenterTestOutcomes.js:158
+#: app/views/donors/manageClinic.html:53 app/views/donors/viewDeferrals.html:79
+#: app/views/donors/viewDonationSummary.html:13
+#: app/views/donors/viewDonor.html:233 app/views/donors/viewDonor.html:265
+#: app/views/donors/viewDonor.html:91
+#: app/views/donors/viewDonorDemographics.html:9
+#: app/views/settings/manageDeferralReason.html:76
+#: app/views/testing/manageTestBatch.html:31 app/views/translations.html:9
+msgid "Save"
+msgstr "Enregistrer"
+
+#: app/scripts/controllers/testing/reenterTestOutcomes.js:157
+msgid "Save test outcomes"
+msgstr "Enregistrer les Résultats des Tests"
+
+#: app/views/translations.html:10
+msgid "Saving..."
+msgstr "Enregistrement..."
+
+#: app/views/translations.html:5
+msgid "Search"
+msgstr "Rechercher"
+
+#: app/views/translations.html:6
+msgid "Searching..."
+msgstr "Recherche..."
+
+#: app/views/components/addComponentBatch.html:24
+#: app/views/components/addComponentBatch.html:47
+#: app/views/components/discardComponents.html:62
+#: app/views/components/findComponents.html:40
+#: app/views/components/findDiscards.html:22
+#: app/views/components/recordComponents.html:131
+#: app/views/donors/donorCommunications.html:16
+#: app/views/donors/donorCommunications.html:35
+#: app/views/donors/donorCounselling.html:11
+#: app/views/donors/manageDeferral.html:16
+#: app/views/donors/manageDeferral.html:42
+#: app/views/donors/manageDonationBatches.html:115
+#: app/views/inventory/discardComponentsModal.html:12
+#: app/views/inventory/findInventory.html:66
+#: app/views/inventory/fulfilOrder.html:150
+#: app/views/inventory/fulfilOrder.html:163
+#: app/views/inventory/manageOrders.html:43
+#: app/views/inventory/manageReturns.html:42
+#: app/views/inventory/manageReturns.html:54
+#: app/views/labelling/findSafeComponents.html:72
+#: app/views/mobile/mobileClinicExport.html:15
+#: app/views/settings/manageConfiguration.html:56
+#: app/views/settings/managePackType.html:58
+#: app/views/testing/manageTestBatches.html:71
+msgid "Select"
+msgstr "Sélectionnez"
+
+#: app/views/donors/manageDuplicateDonors.html:11
+msgid "Select Donors to Merge"
+msgstr "Sélectionnez des Donneurs à Combiner"
+
+#: app/views/components/recordComponents.html:153
+msgid "Select a component to process"
+msgstr "Sélectionnez un Composant à préparer"
+
+#: app/views/components/findComponents.html:77
+#: app/views/components/findDiscards.html:42
+#: app/views/components/viewComponentBatches.html:24
+#: app/views/donors/manageDonationBatches.html:132
+#: app/views/inventory/findTransfusion.html:62
+#: app/views/inventory/viewOrders.html:32
+#: app/views/inventory/viewReturns.html:32
+#: app/views/labelling/findSafeComponents.html:96
+#: app/views/testing/findTestSamples.html:65
+#: app/views/testing/manageTestBatches.html:143
+msgid "Select a date range that is less than one month"
+msgstr "Sélectionnez une plage de dates de moins d'un mois"
+
+#: app/views/components/addComponentBatch.html:35
+msgid "Select a donation batch"
+msgstr "Sélectionnez un lot de dons"
+
+#: app/views/components/addComponentBatch.html:51
+msgid "Select a processing site"
+msgstr "Sélectionnez un site de Préparation"
+
+#: app/views/components/findComponents.html:76
+#: app/views/components/findComponents.html:81
+#: app/views/components/findDiscards.html:41
+#: app/views/components/findDiscards.html:46
+#: app/views/components/viewComponentBatches.html:23
+#: app/views/components/viewComponentBatches.html:28
+#: app/views/donors/donorCounselling.html:38
+#: app/views/donors/donorCounselling.html:44
+#: app/views/donors/manageDonationBatches.html:131
+#: app/views/donors/manageDonationBatches.html:136
+#: app/views/inventory/fulfilOrder.html:44
+#: app/views/inventory/viewOrders.html:31
+#: app/views/inventory/viewOrders.html:36
+#: app/views/inventory/viewReturns.html:31
+#: app/views/inventory/viewReturns.html:36
+#: app/views/labelling/findSafeComponents.html:100
+#: app/views/labelling/findSafeComponents.html:95
+#: app/views/mobile/donorCounselling.html:27
+#: app/views/mobile/donorCounselling.html:42
+#: app/views/reports/aboRhGroupsReport.html:16
+#: app/views/reports/aboRhGroupsReport.html:20
+#: app/views/reports/bloodUnitsIssuedReport.html:16
+#: app/views/reports/bloodUnitsIssuedReport.html:20
+#: app/views/reports/componentsProducedReport.html:36
+#: app/views/reports/componentsProducedReport.html:40
+#: app/views/reports/donationTypesReport.html:16
+#: app/views/reports/donationTypesReport.html:20
+#: app/views/reports/donorsAdverseEventsReport.html:36
+#: app/views/reports/donorsAdverseEventsReport.html:40
+#: app/views/reports/donorsDeferredReport.html:16
+#: app/views/reports/donorsDeferredReport.html:20
+#: app/views/reports/transfusionsReport.html:36
+#: app/views/reports/transfusionsReport.html:40
+#: app/views/reports/ttiPrevalenceReport.html:16
+#: app/views/reports/ttiPrevalenceReport.html:20
+#: app/views/reports/unitsDiscardedReport.html:36
+#: app/views/reports/unitsDiscardedReport.html:40
+#: app/views/testing/findTestSamples.html:64
+#: app/views/testing/findTestSamples.html:69
+#: app/views/testing/manageTestBatches.html:142
+#: app/views/testing/manageTestBatches.html:147
+msgid "Select a valid date"
+msgstr "Sélectionnez une date valide"
+
+#: app/views/components/discardComponents.html:35
+msgid "Select components to discard or undiscard"
+msgstr "Sélectionnez des Composants à rejeter ou récupérer après un rejet"
+
+#: app/messages.html:3
+msgid "Select one or more"
+msgstr "Sélectionnez un ou plusieurs"
+
+#: app/views/components/discardComponents.html:46
+msgid "Selected Component cannot be discarded until component batch received"
+msgstr ""
+"Le composant sélectionné ne peut pas être rejeté avant la réception du lot "
+"de composants"
+
+#: app/views/components/recordComponents.html:159
+msgid "Selected Component cannot be processed until component batch received"
+msgstr ""
+"Le composant sélectionné ne peut pas être traité avant la réception du lot "
+"de composants"
+
+#: app/views/components/discardComponents.html:41
+msgid "Selected component cannot be discarded or undiscarded"
+msgstr "Le composant sélectionné ne peut pas être rejeté ou récupéré"
+
+#: app/views/components/recordComponents.html:165
+msgid "Selected component cannot be processed further"
+msgstr "Le composant sélectionné ne peut pas être encore traité"
+
+#: app/views/translations.html:108
+msgid "September"
+msgstr "Septembre"
+
+#: app/views/passwordReset.html:43
+msgid "Set Password"
+msgstr "Choisir un Mot de Passe"
+
+#: app/views/passwordReset.html:4
+msgid "Set a New Password"
+msgstr "Choisir un nouveau mot de passe"
+
+#: app/scripts/controllers/settings/bloodTests.js:14
+msgid "Short Name"
+msgstr "Nom abrégé"
+
+#: app/views/donors/viewDonationSummary.html:226
+msgid "Show test outcomes"
+msgstr "Afficher les Résultats des Tests"
+
+#: app/scripts/controllers/labelling/findSafeComponents.js:79
+#: app/scripts/controllers/reports/componentsProducedReport.js:185
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:189
+#: app/views/components/findComponents.html:19
+#: app/views/labelling/findSafeComponents.html:27
+msgid "Site"
+msgstr "Site"
+
+#: app/views/settings/manageComponentTypeCombination.html:24
+msgid "Source Component Option(s)"
+msgstr "Option(s) de Sources de Composants"
+
+#: app/views/settings/manageComponentType.html:85
+msgid "Specific Gravity"
+msgstr "Gravité Spécifique"
+
+#: app/views/components/recordComponents.html:45
+#: app/views/donors/addDonation.html:153
+#: app/views/donors/addDonorDonation.html:102
+msgid "Start"
+msgstr "Début"
+
+#: app/scripts/controllers/mobile/donorCounselling.js:136
+#: app/views/mobile/donorCounselling.html:20
+msgid "Start Date"
+msgstr "Date de début"
+
+#: app/messages.html:14
+msgid "Start and end times are the same: please re-enter"
+msgstr "Les dates de début et de fin sont les mêmes: veuillez les ré-entrer"
+
+#: app/messages.html:17
+msgid "Start date must be before the end date"
+msgstr "La date de début doit se situer avant la date de fin"
+
+#: app/scripts/controllers/components/discardComponents.js:145
+#: app/scripts/controllers/components/recordComponents.js:398
+#: app/scripts/controllers/components/viewComponentBatch.js:58
+#: app/scripts/controllers/inventory/recordReturn.js:43
+#: app/scripts/controllers/inventory/viewReturn.js:38
+#: app/views/components/findComponents.html:50
+#: app/views/components/viewComponentBatch.html:25
+#: app/views/components/viewComponents.html:16
+#: app/views/components/viewDonations.html:22
+#: app/views/testing/manageTestBatches.html:195
+#: app/views/testing/manageTestBatches.html:35
+msgid "Status"
+msgstr "Statut"
+
+#: app/views/donors/manageDuplicateDonors.html:11
+#: app/views/donors/manageDuplicateDonors.html:12
+#: app/views/donors/manageDuplicateDonors.html:13
+#: app/views/donors/manageDuplicateDonors.html:14
+#: app/views/donors/manageDuplicateDonors.html:15
+#: app/views/donors/manageDuplicateDonors.html:16
+#: app/views/donors/manageDuplicateDonors.html:17
+msgid "Step {{step}} of {{totalsteps}}"
+msgstr "Étape {{step}} sur {{totalsteps}}"
+
+#: app/scripts/controllers/inventory/viewStockLevels.js:86
+msgid "Stock Levels"
+msgstr "Niveaux de Stock"
+
+#: app/views/settings/manageComponentType.html:109
+msgid "Storage Info"
+msgstr "Informations de Stockage"
+
+#: app/scripts/controllers/header.js:225 app/scripts/controllers/header.js:38
+#: app/views/home.html:56
+msgid "TESTING"
+msgstr "TESTS EN COURS"
+
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:62
+msgid "TTI"
+msgstr "ITT"
+
+#: app/views/donors/donationDetails.html:83
+#: app/views/donors/viewDonationSummary.html:243
+#: app/views/testing/manageTestBatch.html:71
+#: app/views/testing/viewTestSample.html:70
+msgid "TTI Outcomes"
+msgstr "Résultats ITT"
+
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:177
+#: app/views/reports/sidebar.html:17
+#: app/views/reports/ttiPrevalenceReport.html:3
+msgid "TTI Prevalence Report"
+msgstr "Rapport des Prévalences des ITT"
+
+#: app/scripts/controllers/testing/findTestSamples.js:46
+#: app/scripts/controllers/testing/manageTestBatch.js:159
+#: app/views/donors/donationDetails.html:73
+#: app/views/donors/mergeDonorsDonations.html:22
+#: app/views/donors/viewDonationSummary.html:235
+#: app/views/testing/recordTTIOutcomes.html:47
+#: app/views/testing/reenterTTIOutcomes.html:47
+#: app/views/testing/viewTestSample.html:60
+msgid "TTI Status"
+msgstr "Statut ITT"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:29
+msgid "TTI Unsafe or Incomplete"
+msgstr "TTI non sûr ou incomplet"
+
+#: app/views/components/addComponentBatch.html:71
+msgid "Temperature"
+msgstr "Température"
+
+#: app/views/donors/donationDetails.html:118
+#: app/views/donors/donationDetails.html:91
+#: app/views/donors/viewDonationSummary.html:248
+#: app/views/donors/viewDonationSummary.html:275
+#: app/views/testing/viewTestSample.html:75
+#: app/views/testing/viewTestSample.html:95
+msgid "Test"
+msgstr "Test"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:22
+msgid "Test Batch Outcomes Summary Report"
+msgstr "Rapport Résumé des Résultats du Lot de Tests"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:38
+msgid ""
+"Test Batch Outcomes Summary Report - Blood Typing Issues and Tests "
+"Outstanding"
+msgstr ""
+"Rapport Résumé des Résultats du Lot de Tests - Problèmes de Types de Sang et "
+"Tests En Suspens"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:30
+msgid "Test Batch Outcomes Summary Report - TTI Unsafe and Tests Outstanding"
+msgstr ""
+"Rapport Résumé des Résultats du Lot de Tests - TTI Non Sûr et Tests En "
+"Suspens"
+
+#: app/views/settings/manageBloodTest.html:9
+msgid "Test Name"
+msgstr "Nom du Test"
+
+#: app/views/settings/manageBloodTest.html:24
+msgid "Test Name (Short)"
+msgstr "Nom du Test (abrégé)"
+
+#: app/scripts/controllers/settings/bloodTestingRules.js:28
+#: app/views/settings/manageBloodTestingRule.html:43
+msgid "Test Outcome"
+msgstr "Résultat du Test"
+
+#: app/views/settings/managePackType.html:24
+#: app/views/settings/packTypes.html:28
+msgid "Test Sample Produced"
+msgstr "Echantillon pour le Test"
+
+#: app/views/testing/manageTestBatches.html:192
+#: app/views/testing/manageTestBatches.html:31
+msgid "Test Samples"
+msgstr "Échantillons du Test"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:627
+msgid ""
+"Test outcomes have been recorded for one or more samples. Removing these "
+"from the test batch will clear all outcomes for those samples. Are you sure "
+"you want to continue?"
+msgstr ""
+"Les résultats du test ont été réorganisés pour un ou plusieurs échantillons. "
+"Le fait de les retirer du lot de test effacera tous les résultats pour ces "
+"échantillons. Êtes-vous sur de vouloir continuer?"
+
+#: app/views/donors/donationDetails.html:120
+#: app/views/donors/donationDetails.html:93
+#: app/views/donors/viewDonationSummary.html:250
+#: app/views/donors/viewDonationSummary.html:277
+#: app/views/testing/viewTestSample.html:77
+#: app/views/testing/viewTestSample.html:97
+msgid "Tested On"
+msgstr "Testé le"
+
+#: app/views/settings/manageLocation.html:41
+msgid "Testing"
+msgstr "Test en cours"
+
+#: app/views/testing/viewTestSample.html:56
+msgid "Testing Date"
+msgstr "Date de Test"
+
+#. Location Type
+#: app/views/testing/viewTestSample.html:54 app/views/translations.html:85
+msgid "Testing Site"
+msgstr "Site de Test"
+
+#. Data Type
+#: app/views/translations.html:88
+msgid "Text"
+msgstr "Texte"
+
+#: app/views/home.html:11
+msgid ""
+"That page is not accessible - you have been redirected to the home page."
+msgstr ""
+"Cette page n'est pas accessible - vous avez été redirigé vers l’accueil."
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:357
+#: app/scripts/controllers/donors/viewDonor.js:114
+msgid ""
+"The pack type has been updated - this will affect the initial components "
+"created with this donation. Do you want to continue?"
+msgstr ""
+"Le type de paquet a été mis à jour, cela affectera les composants initiaux "
+"créés avec ce don. Voulez-vous continuer?"
+
+#: app/scripts/controllers/components/recordComponents.js:171
+msgid ""
+"The pack weight ({{componentWeight}}g) is above the maximum acceptable range "
+"({{packTypeWeight}}g). Components from this donation will be flagged as "
+"unsafe. Do you want to continue?"
+msgstr ""
+"Le poids du paquet ({{componentWeight}}g) est au-dessus de la plage maximum "
+"acceptable ({{packTypeWeight}}g). Les composants de ce don seront marqués "
+"comme non sûrs. Voulez-vous continuer?"
+
+#: app/scripts/controllers/components/recordComponents.js:180
+#: app/scripts/controllers/components/recordComponents.js:190
+msgid ""
+"The pack weight ({{componentWeight}}g) is below the minimum acceptable range "
+"({{packTypeWeight}}g). Components from this donation will be flagged as "
+"unsafe. Do you want to continue?"
+msgstr ""
+"Le poids du paquet ({componentWeight}}g) est au-dessous de la plage minimum "
+"acceptable ({{packTypeWeight}}g). Les composants de ce don seront marqués "
+"comme non sûrs. Voulez-vous continuer?"
+
+#: app/scripts/controllers/components/recordComponents.js:196
+msgid ""
+"The pack weight ({{componentWeight}}g) is low (below {{packTypeWeight}}g). "
+"All components from this donation containing plasma will be flagged as "
+"Unsafe. Do you want to continue?"
+msgstr ""
+"Le poids du paquet ({{componentWeight}}g) est bas (en-dessous de "
+"{{packTypeWeight}}g). Les composants de ce don contenant du plasma seront "
+"marqués comme non sûrs. Voulez-vous continuer?"
+
+#: app/scripts/controllers/components/recordComponents.js:211
+msgid ""
+"The pack weight has changed from an underweight or overweight value to one "
+"within the acceptable range. Components from this donation will no longer be "
+"flagged as unsafe as a result of the pack weight. Do you want to continue?"
+msgstr ""
+"Le poids du paquet est passé d'une valeur de sous-poids ou de sur-poids à "
+"une valeur acceptable. Les composants de ce don ne seront plus marqués comme "
+"non sûrs à cause d'un poids non acceptable. Voulez-vous continuer?"
+
+#: app/views/labelling/labelComponents.html:105
+msgid "The same barcode has been scanned twice: please re-scan"
+msgstr "Le même code-barre a été scanné deux fois: veuillez re-scanner"
+
+#: app/scripts/controllers/components/recordComponents.js:464
+msgid ""
+"The selected component has already been labelled. Do you want to continue?"
+msgstr "Le composant sélectionné a déjà été étiqueté. Voulez-vous continuer?"
+
+#: app/scripts/controllers/donors/manageDuplicateDonors.js:328
+msgid ""
+"The selected donors do not have the same blood group. If you continue, the "
+"merged donor will not be assigned a blood group, and will be considered a "
+"first time donor."
+msgstr ""
+"Les donneurs sélectionnés ne disposent pas du même groupe sanguin. Si vous "
+"continuez, le donneur combiné n'aura pas de groupe sanguin lui étant "
+"assigné, et sera considéré comme un premier donneur."
+
+#: app/views/donors/addDonation.html:10
+#: app/views/donors/addDonorDonation.html:9
+msgid "There is another donation with the same donation identification number"
+msgstr "Il y a un autre don avec le même DIN"
+
+#: app/messages.html:19
+msgid ""
+"There is no component in ISSUED state for specified DIN and component code"
+msgstr ""
+"Il n’y a pas de composant dans l’état LIVRÉ pour le code de composant et le "
+"DIN spécifiés"
+
+#: app/messages.html:20
+msgid ""
+"There is no component in ISSUED state for specified DIN and component type"
+msgstr ""
+"Il n’y a pas de composant dans l’état LIVRÉ pour le type de composant et le "
+"DIN"
+
+#: app/messages.html:2 app/views/donors/addDonation.html:120
+#: app/views/donors/addDonation.html:139 app/views/donors/addDonation.html:35
+#: app/views/donors/addDonation.html:92 app/views/donors/addDonor.html:113
+#: app/views/donors/addDonor.html:147 app/views/donors/addDonor.html:168
+#: app/views/donors/addDonor.html:190 app/views/donors/addDonor.html:49
+#: app/views/donors/addDonorDonation.html:37
+#: app/views/donors/addDonorDonation.html:54
+#: app/views/donors/addDonorDonation.html:73
+#: app/views/donors/addDonorDonation.html:89
+#: app/views/donors/manageDeferral.html:21
+#: app/views/donors/manageDeferral.html:45
+#: app/views/donors/manageDeferral.html:65
+#: app/views/donors/manageDonationBatches.html:120
+#: app/views/donors/manageDonationBatches.html:65
+#: app/views/donors/manageDonationBatches.html:82
+#: app/views/donors/mergeDonorsSelection.html:54
+#: app/views/donors/viewDonor.html:21 app/views/donors/viewDonor.html:26
+#: app/views/settings/manageConfiguration.html:105
+#: app/views/settings/manageConfiguration.html:24
+#: app/views/settings/manageConfiguration.html:41
+#: app/views/settings/manageConfiguration.html:61
+#: app/views/settings/manageDonationType.html:20
+#: app/views/settings/manageLocation.html:16
+#: app/views/settings/manageLocation.html:68
+#: app/views/settings/manageLocation.html:80
+#: app/views/settings/manageLocation.html:92
+#: app/views/settings/manageUser.html:26 app/views/settings/manageUser.html:68
+#: app/views/settings/manageUser.html:97
+msgid "This cannot be empty"
+msgstr "Ce champ ne peut pas être vide"
+
+#: app/scripts/controllers/labelling/labelComponents.js:85
+msgid ""
+"This component cannot be labelled - please check the status of the donor and "
+"donation"
+msgstr ""
+"Ce Composant ne peut pas être étiqueté - veuillez vérifier le statut du "
+"donneur et du don"
+
+#: app/scripts/services/donors.js:398
+msgid "This donor is below the minimum age of {{minAge}}"
+msgstr "Ce donneur est en-dessous de l’âge minimum de {{minAge}}"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:345
+#: app/scripts/controllers/donors/viewDonor.js:404
+msgid ""
+"This donor is not eligible to donate. Components for this donation will be "
+"flagged as unsafe. Do you want to continue?"
+msgstr ""
+"Ce donneur n’est pas éligible à un don. Les composants de ce don seront "
+"marqués comme non sûrs. Voulez-vous continuer?"
+
+#: app/scripts/services/donors.js:396
+msgid "This donor is over the maximum age of {{maxAge}}"
+msgstr "Ce donneur est au-dessus de l’âge maximum de {{maxAge}}"
+
+#: app/scripts/controllers/settings/dataExport.js:37
+#: app/views/settings/dataExport.html:9
+msgid ""
+"This export may take some time and can affect the performance of the system. "
+"It is recommended that this process is only run after standard operating "
+"hours, to minimise the impact on other activities."
+msgstr ""
+"Cette exportation peut prendre du temps et pourrait affecter les "
+"performances du système. Il est recommandé de lancer ce processus après les "
+"horaires standard d'utilisation, pour minimiser l'impact sur les autres "
+"activités."
+
+#: app/views/mobile/mobileClinicExport.html:42
+msgid ""
+"This export may take some time if run for all venues and can affect the "
+"performance of the system. It is recommended that this export is only run "
+"after standard operating hours, to minimise impact on other activities."
+msgstr ""
+"Cette exportation peut prendre du temps si elle est lancée sur tous les "
+"Postes de Prélèvements et pourrait affecter les performances du système. Il "
+"est recommandé de lancer cette exportation après les horaires standard "
+"d'utilisation, pour minimiser l'impact sur les autres activités."
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:465
+#: app/scripts/controllers/donors/viewDonor.js:681
+msgid "This form is not valid"
+msgstr "Ce formulaire est invalide"
+
+#: app/views/inventory/findTransfusion.html:61
+#: app/views/inventory/findTransfusion.html:66
+msgid "This is required"
+msgstr "Ce champ est requis"
+
+#: app/messages.html:11
+msgid "This must be a number"
+msgstr "Ce champ doit contenir un nombre"
+
+#: app/messages.html:10 app/views/settings/manageConfiguration.html:20
+msgid "This must be unique"
+msgstr "Ce champ doit être unique"
+
+#: app/views/testing/manageTestBatch.html:57
+msgid "This test batch is ready to be closed."
+msgstr "Ce lot de test est prêt à être fermé."
+
+#: app/views/testing/manageTestBatch.html:56
+msgid "This test batch is ready to be released."
+msgstr "Ce lot de test est prêt à être utilisé."
+
+#: app/views/components/recordComponents.html:112
+#: app/views/donors/donationDetails.html:15
+#: app/views/testing/manageTestBatches.html:90
+msgid "Time"
+msgstr "Heure"
+
+#: app/scripts/controllers/components/viewComponentBatch.js:66
+#: app/views/components/viewComponentBatch.html:31
+msgid "Time of Delivery"
+msgstr "Heure de Livraison"
+
+#: app/scripts/controllers/components/recordComponents.js:117
+msgid "Time since Donation or Bleed Time exceeded"
+msgstr "La période depuis le don ou la durée de saignement ont été dépassées"
+
+#: app/scripts/controllers/components/recordComponents.js:82
+msgid ""
+"Time since donation exceeded, the following components will be flagged as "
+"unsafe: {{components}}."
+msgstr ""
+"La période depuis le don a été dépassée, les Composants suivants seront "
+"marqués comme non-sûrs: {{components}}."
+
+#: app/views/donors/addDonor.html:21
+#: app/views/donors/mergeDonorsOverview.html:15
+#: app/views/donors/mergeDonorsSelection.html:15
+msgid "Title"
+msgstr "Titre"
+
+#: app/views/components/findComponents.html:72
+#: app/views/components/findDiscards.html:36
+#: app/views/components/viewComponentBatches.html:19
+#: app/views/donors/donorCommunications.html:61
+#: app/views/donors/donorCounselling.html:34
+#: app/views/donors/manageDonationBatches.html:127
+#: app/views/inventory/findTransfusion.html:57
+#: app/views/inventory/viewOrders.html:27
+#: app/views/inventory/viewReturns.html:27
+#: app/views/labelling/findSafeComponents.html:92
+#: app/views/reports/aboRhGroupsReport.html:12
+#: app/views/reports/bloodUnitsIssuedReport.html:12
+#: app/views/reports/componentsProducedReport.html:32
+#: app/views/reports/donationTypesReport.html:12
+#: app/views/reports/donorsAdverseEventsReport.html:32
+#: app/views/reports/donorsDeferredReport.html:12
+#: app/views/reports/transfusionsReport.html:32
+#: app/views/reports/ttiPrevalenceReport.html:12
+#: app/views/reports/unitsDiscardedReport.html:32
+#: app/views/settings/auditLog.html:13
+#: app/views/testing/findTestSamples.html:60
+#: app/views/testing/manageTestBatches.html:138
+msgid "To"
+msgstr "À"
+
+#: app/views/header.html:5
+msgid "Toggle navigation"
+msgstr "Activer la navigation"
+
+#: app/messages.html:9
+msgid "Too large"
+msgstr "Trop gros"
+
+#: app/messages.html:5
+msgid "Too long"
+msgstr "Trop long"
+
+#: app/messages.html:4
+msgid "Too short"
+msgstr "Trop court"
+
+#: app/messages.html:8
+msgid "Too small"
+msgstr "Trop petit"
+
+#: app/scripts/controllers/inventory/viewStockLevels.js:18
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:230
+#: app/scripts/controllers/reports/componentsProducedReport.js:196
+#: app/scripts/controllers/reports/componentsProducedReport.js:217
+#: app/scripts/controllers/reports/donationTypesReport.js:144
+#: app/scripts/controllers/reports/donorsDeferredReport.js:19
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:60
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:61
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:117
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:131
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:191
+msgid "Total"
+msgstr "Total"
+
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:124
+#: app/views/donors/viewDonor.html:193
+msgid "Total Adverse Events"
+msgstr "Total Effets Indésirables"
+
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:146
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:86
+msgid "Total All Venues"
+msgstr "Total de Salles"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:159
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:65
+msgid "Total Blood Units"
+msgstr "Total d’Unités de Sang"
+
+#: app/views/donors/viewDonor.html:188
+msgid "Total Donations"
+msgstr "Total de Dons"
+
+#: app/scripts/controllers/reports/transfusionsReport.js:103
+msgid "Total Not Transfused"
+msgstr "Total de Non-Transfusés"
+
+#: app/scripts/controllers/reports/transfusionsReport.js:115
+msgid "Total Reactions"
+msgstr "Total de Réactions"
+
+#: app/scripts/controllers/reports/transfusionsReport.js:98
+msgid "Total Transfused Uneventfully"
+msgstr "Total de Transfusés Sans Événements"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:147
+msgid "Total Units: {{total}}"
+msgstr "Total d’Unités: {{total}}"
+
+#: app/scripts/controllers/reports/transfusionsReport.js:120
+msgid "Total Unknown"
+msgstr "Total Inconnu"
+
+#: app/scripts/controllers/donors/viewDonationBatch.js:118
+msgid "Total donations"
+msgstr "Total de dons"
+
+#: app/scripts/controllers/donors/donorCommunications.js:170
+msgid "Total donors"
+msgstr "Total de donneurs"
+
+#: app/scripts/controllers/donors/donorCounselling.js:283
+#: app/scripts/controllers/mobile/donorCounselling.js:149
+#: app/scripts/controllers/mobile/mobile.js:129
+msgid "Total donors: {{total}}"
+msgstr "Total de donneurs: {{total}}"
+
+#: app/scripts/services/reportsLayout.js:47
+msgid "Total {{recordsName}}: {{totalRecords}}"
+msgstr "Total de {{recordsName}}:  {{totalRecords}}"
+
+#. Order Type
+#: app/views/inventory/fulfilOrder.html:53
+#: app/views/inventory/manageOrders.html:56
+#: app/views/inventory/viewOrders.html:57 app/views/translations.html:37
+msgid "Transfer"
+msgstr "Transfert"
+
+#. Component Status
+#: app/views/translations.html:49
+msgid "Transfused"
+msgstr "Transfusé"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:62
+msgid "Transfused On"
+msgstr "Transfusé Le"
+
+#. Transfusion Outcome
+#: app/views/translations.html:29
+msgid "Transfused Uneventfully"
+msgstr "Transfusé sans Accidents"
+
+#: app/views/inventory/recordTransfusions.html:82
+msgid "Transfusion Notes"
+msgstr "Notes de Transfusion"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:136
+#: app/views/inventory/findTransfusion.html:45
+#: app/views/inventory/recordTransfusions.html:59
+msgid "Transfusion Outcome"
+msgstr "Résultat de la Transfusion"
+
+#. Transfusion Outcome
+#: app/views/translations.html:30
+msgid "Transfusion Reaction Occurred"
+msgstr "Réaction Après La Transfusion"
+
+#: app/views/inventory/recordTransfusions.html:70
+msgid "Transfusion Reaction Type"
+msgstr "Type de Réaction À La Transfusion"
+
+#: app/scripts/controllers/inventory/findTransfusion.js:134
+#: app/scripts/controllers/inventory/findTransfusion.js:77
+#: app/views/inventory/findTransfusion.html:36
+#: app/views/inventory/recordTransfusions.html:47
+msgid "Transfusion Site"
+msgstr "Site de Transfusion"
+
+#: app/scripts/controllers/reports/transfusionsReport.js:33
+#: app/views/reports/sidebar.html:29
+#: app/views/reports/transfusionsReport.html:3
+msgid "Transfusions Summary Report"
+msgstr "Résumé du Rapport de Transfusions"
+
+#: app/views/settings/manageComponentType.html:121
+msgid "Transport Info"
+msgstr "Infos de Transport"
+
+#: app/views/components/findComponents.html:37
+#: app/views/components/findDiscards.html:18
+#: app/views/labelling/labelComponents.html:7
+#: app/views/settings/donationTypes.html:20
+#: app/views/settings/manageDonationType.html:10
+msgid "Type"
+msgstr "Type"
+
+#: app/scripts/controllers/login.js:40
+msgid ""
+"Unable to establish a connection. Please report this issue and try again "
+"later"
+msgstr ""
+"Impossible d'établir une connexion.  Veuillez rapporter ce problème et "
+"réessayer plus tard"
+
+#: app/scripts/controllers/components/recordComponents.js:178
+#: app/scripts/controllers/components/recordComponents.js:188
+msgid "Underweight Pack"
+msgstr "Paquet en sous-poids"
+
+#: app/views/translations.html:15
+msgid "Undiscard"
+msgstr "Récupérer"
+
+#: app/scripts/controllers/components/discardComponents.js:80
+msgid "Undiscard Components"
+msgstr "Récupérer les Composants"
+
+#: app/views/translations.html:16
+msgid "Undiscarding..."
+msgstr "Récupération..."
+
+#: app/views/inventory/fulfilOrder.html:172
+msgid "Units"
+msgstr "Unités"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:393
+#: app/scripts/controllers/inventory/viewOrder.js:189
+#: app/scripts/controllers/inventory/viewOrder.js:22
+#: app/views/inventory/fulfilOrder.html:141
+#: app/views/inventory/viewOrder.html:59
+msgid "Units Ordered"
+msgstr "Unités Commandées"
+
+#: app/views/inventory/recordReturn.html:42
+#: app/views/inventory/viewReturn.html:40
+msgid "Units Returned"
+msgstr "Unités Renvoyées"
+
+#: app/scripts/controllers/inventory/fulfilOrder.js:399
+#: app/scripts/controllers/inventory/viewOrder.js:190
+#: app/scripts/controllers/inventory/viewOrder.js:28
+#: app/views/inventory/fulfilOrder.html:194
+#: app/views/inventory/viewOrder.html:65
+msgid "Units Supplied"
+msgstr "Unités Fournies"
+
+#. Transfusion Outcome
+#. Unknown Blood Group
+#: app/views/testing/viewTestSample.html:48 app/views/translations.html:32
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: app/views/translations.html:21
+msgid "Unprocess"
+msgstr "Dé-Traiter"
+
+#: app/scripts/controllers/components/recordComponents.js:334
+msgid "Unprocess Component"
+msgstr "Dé-Traiter un Composant"
+
+#: app/scripts/controllers/components/recordComponents.js:336
+msgid ""
+"Unprocessing this component will cause all components that were produced "
+"from it to be deleted. Do you want to continue?"
+msgstr ""
+"Dé-Traiter ce Composant fera que tous les Composants issus de celui-ci "
+"seront supprimés. Voulez-vous continuer?"
+
+#: app/views/translations.html:22
+msgid "Unprocessing..."
+msgstr "Dé-Traitement..."
+
+#. Component Status
+#. TTI Status
+#: app/views/translations.html:50 app/views/translations.html:71
+msgid "Unsafe"
+msgstr "Non Sûr"
+
+#: app/scripts/controllers/settings/accountSettings.js:51
+msgid "Updating details failed. Please try again"
+msgstr "La mise à jour des détails a échoué. Veuillez réessayer"
+
+#. Location Type
+#: app/scripts/controllers/reports/transfusionsReport.js:92
+#: app/views/reports/transfusionsReport.html:9 app/views/translations.html:84
+msgid "Usage Site"
+msgstr "Site d’Utilisation"
+
+#: app/scripts/controllers/reports/transfusionsReport.js:31
+msgid "Usage Sites: {{count}}"
+msgstr "Sites d’Utilisation: {{count}}"
+
+#: app/views/donors/viewDeferrals.html:53 app/views/settings/auditLog.html:20
+msgid "User"
+msgstr "Utilisateur"
+
+#: app/views/forgotPassword.html:4 app/views/login.html:4
+#: app/views/settings/accountSettings.html:66
+#: app/views/settings/manageUser.html:53 app/views/settings/users.html:20
+msgid "Username"
+msgstr "Nom d’utilisateur"
+
+#: app/views/settings/manageUser.html:64
+msgid "Username already exists"
+msgstr "Ce Nom d’Utilisateur existe déjà"
+
+#: app/views/settings/manageUser.html:65
+msgid ""
+"Username invalid. Use only alphanumeric characters, underscore (_), hyphen "
+"(-), and period (.)"
+msgstr ""
+"Nom d’Utilisateur invalide. Utilisez seulement des caractères "
+"alphanumériques, des tirets bas (_), des traits d'union (-) et des points (.)"
+
+#: app/views/settings/manageBloodTest.html:84
+msgid "Valid Outcomes"
+msgstr "Nom de l’Utilisateur"
+
+#: app/views/settings/configurations.html:29
+#: app/views/settings/manageConfiguration.html:69
+msgid "Value"
+msgstr "Valeur"
+
+#. Location Type
+#: app/scripts/controllers/components/viewComponentBatch.js:48
+#: app/scripts/controllers/donors/donorCommunications.js:98
+#: app/scripts/controllers/donors/donorCounselling.js:190
+#: app/scripts/controllers/donors/donorCounselling.js:255
+#: app/scripts/controllers/donors/viewDonationBatch.js:96
+#: app/scripts/controllers/mobile/donorCounselling.js:135
+#: app/scripts/controllers/mobile/mobile.js:98
+#: app/scripts/controllers/mobile/mobileClinicExport.js:24
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:219
+#: app/scripts/controllers/reports/donationTypesReport.js:123
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:119
+#: app/scripts/controllers/reports/donorsDeferredReport.js:17
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:49
+#: app/scripts/controllers/testing/findTestSamples.js:26
+#: app/scripts/controllers/testing/manageTestBatch.js:141
+#: app/views/components/viewComponentBatch.html:23
+#: app/views/donors/addDonor.html:155 app/views/donors/donationDetails.html:19
+#: app/views/donors/donorCounsellingDetails.html:41
+#: app/views/donors/findDonor.html:101 app/views/donors/manageClinic.html:22
+#: app/views/donors/manageDeferral.html:34
+#: app/views/donors/manageDonationBatches.html:171
+#: app/views/donors/manageDonationBatches.html:28
+#: app/views/donors/manageDonationBatches.html:57
+#: app/views/donors/mergeDonorsDeferrals.html:16
+#: app/views/donors/mergeDonorsDonations.html:16
+#: app/views/donors/mergeDonorsOverview.html:37
+#: app/views/donors/mergeDonorsReview.html:29
+#: app/views/donors/mergeDonorsSelection.html:37
+#: app/views/donors/viewDeferrals.html:50
+#: app/views/donors/viewDonationSummary.html:76
+#: app/views/donors/viewDonations.html:32 app/views/donors/viewDonor.html:114
+#: app/views/donors/viewDonor.html:209 app/views/mobile/donorCounselling.html:8
+#: app/views/mobile/lookUp.html:8 app/views/mobile/mobileClinicExport.html:12
+#: app/views/reports/donorsAdverseEventsReport.html:9
+#: app/views/testing/findTestSamples.html:21
+#: app/views/testing/viewTestSample.html:42 app/views/translations.html:81
+msgid "Venue"
+msgstr "Poste de Prélèvement"
+
+#: app/scripts/controllers/donors/donorCommunications.js:136
+#: app/views/donors/donorCommunications.html:13
+#: app/views/donors/donorCounselling.html:8
+#: app/views/donors/manageDonationBatches.html:111
+msgid "Venues"
+msgstr "Postes de Prélèvements"
+
+#: app/views/translations.html:17
+msgid "Verify"
+msgstr "Vérifier"
+
+#: app/views/translations.html:18
+msgid "Verifying..."
+msgstr "Vérification..."
+
+#: app/views/footer.html:4 app/views/sidebarFooter.html:5
+msgid "Version: {{backendVersion}} / {{frontEndVersion}}"
+msgstr "Version: {{backendVersion}} / {{frontEndVersion}}"
+
+#: app/views/donors/viewDonations.html:56 app/views/donors/viewDonor.html:178
+#: app/views/donors/viewDonor.html:183
+msgid "View"
+msgstr "Afficher"
+
+#: app/views/donors/donorCommunications.html:3 app/views/donors/sidebar.html:25
+msgid "View / Export Donor List"
+msgstr "Afficher / Exporter la Liste de Donneurs"
+
+#: app/views/settings/sidebar.html:43
+msgid "View Audit Log"
+msgstr "Afficher le Journal d’Audit"
+
+#: app/views/home.html:107
+msgid "View Charts and Export Reports"
+msgstr "Afficher les Graphiques et Exporter les Rapports"
+
+#: app/views/components/addComponentBatch.html:10
+#: app/views/components/viewComponentBatch.html:10
+#: app/views/components/viewComponentBatches.html:10
+msgid "View Delivery Forms"
+msgstr "Afficher les Formulaires de Livraison"
+
+#: app/views/inventory/manageOrders.html:12
+#: app/views/inventory/viewOrders.html:12
+#: app/views/inventory/viewOrders.html:19
+msgid "View Orders"
+msgstr "Afficher les Commandes"
+
+#: app/views/inventory/manageReturns.html:12
+#: app/views/inventory/viewReturns.html:12
+#: app/views/inventory/viewReturns.html:19
+msgid "View Returns"
+msgstr "Afficher les Retours"
+
+#: app/views/inventory/sidebar.html:15
+#: app/views/inventory/viewStockLevels.html:3
+msgid "View Stock Levels"
+msgstr "Afficher les Niveaux de Stock"
+
+#: app/views/components/viewDonations.html:33
+msgid "View Summary"
+msgstr "Afficher un Résumé"
+
+#: app/views/testing/sidebar.html:22 app/views/testing/viewTestSample.html:3
+msgid "View Test Sample"
+msgstr "Afficher les Échantillons à tester"
+
+#: app/scripts/controllers/donors/viewDonor.js:610
+#: app/scripts/controllers/inventory/recordTransfusions.js:179
+#: app/scripts/controllers/inventory/viewOrder.js:241
+#: app/scripts/controllers/inventory/viewReturn.js:208
+#: app/scripts/controllers/testing/manageTestBatch.js:464
+#: app/views/donors/manageClinic.html:35 app/views/donors/manageClinic.html:39
+#: app/views/donors/viewDonations.html:60
+#: app/views/donors/viewDonations.html:65 app/views/donors/viewDonor.html:76
+#: app/views/inventory/recordTransfusions.html:8
+#: app/views/testing/manageTestBatch.html:14
+#: app/views/testing/manageTestBatch.html:8 app/views/translations.html:7
+msgid "Void"
+msgstr "Supprimer"
+
+#: app/scripts/controllers/donors/viewDonor.js:609
+msgid "Void Deferral"
+msgstr "Annuler un Report"
+
+#: app/scripts/controllers/inventory/viewOrder.js:240
+msgid "Void Order"
+msgstr "Annuler une Commande"
+
+#: app/scripts/controllers/inventory/viewReturn.js:207
+msgid "Void Return"
+msgstr "Annuler un Retour"
+
+#: app/scripts/controllers/inventory/recordTransfusions.js:178
+msgid "Void Tranfusion"
+msgstr "Annuler une Transfusion"
+
+#: app/views/translations.html:8
+msgid "Voiding..."
+msgstr "Annulation..."
+
+#: app/scripts/controllers/inventory/viewOrder.js:138
+#: app/views/inventory/fulfilOrder.html:16
+#: app/views/inventory/fulfilOrder.html:82
+#: app/views/inventory/manageOrders.html:161
+#: app/views/inventory/recordTransfusions.html:136
+#: app/views/inventory/viewOrder.html:35
+msgid "Ward Number"
+msgstr "Numéro du Service"
+
+#: app/scripts/controllers/components/discardComponents.js:171
+#: app/scripts/controllers/components/recordComponents.js:425
+#: app/views/components/viewComponents.html:19
+#: app/views/donors/addDonation.html:186
+#: app/views/donors/addDonorDonation.html:128
+#: app/views/donors/donationDetails.html:49
+#: app/views/donors/viewDonationSummary.html:171
+msgid "Weight"
+msgstr "Poids"
+
+#: app/views/home.html:5
+msgid "Welcome to BSIS - The Blood Safety Information System"
+msgstr "Bienvenue sur BSIS - Le Système d’Information de Sécurité du Sang"
+
+#: app/views/donors/mergeDonorsAddress.html:65
+#: app/views/donors/mergeDonorsContact.html:38
+#: app/views/donors/mergeDonorsReview.html:141
+#: app/views/donors/mergeDonorsReview.html:84
+#: app/views/donors/viewDonorDemographics.html:203
+#: app/views/donors/viewDonorDemographics.html:61
+msgid "Work"
+msgstr "Travail"
+
+#. Weight, abbreviation
+#: app/views/donors/mergeDonorsDonations.html:29
+#: app/views/donors/viewDonations.html:38 app/views/donors/viewDonor.html:212
+msgid "Wt"
+msgstr "Pds"
+
+#. Yes, abbreviation
+#: app/scripts/controllers/testing/manageTestBatch.js:151
+#: app/scripts/controllers/testing/manageTestBatch.js:232
+#: app/views/translations.html:117
+msgid "Y"
+msgstr "Y"
+
+#: app/views/donors/addDonor.html:99
+msgid "Year"
+msgstr "Année"
+
+#: app/views/donors/mergeDonorsSelection.html:45
+#: app/views/donors/viewDonor.html:176
+msgid "Yes"
+msgstr "Oui"
+
+#: app/views/passwordReset.html:7
+msgid ""
+"You have logged in with a recovery password. Please set a new password "
+"before you continue."
+msgstr ""
+"Vous vous êtes connecté grâce à un mot de passe de récupération. Veuillez "
+"choisir un nouveau mot de passe avant de continuer."
+
+#: app/scripts/controllers/forgotPassword.js:14
+msgid "You need to provide a username"
+msgstr "Vous devez fournir un nom d’utilisateur"
+
+#: app/scripts/controllers/settings/accountSettings.js:44
+msgid "Your details were successfully updated"
+msgstr "Vos détails ont été mis à jour"
+
+#: app/scripts/controllers/forgotPassword.js:26
+msgid ""
+"Your password has been reset. Please check your email for the new password"
+msgstr ""
+"Votre mot de passe a été réinitialisé. Veuillez consulter votre boîte mail "
+"pour obtenir votre nouveau mot de passe"
+
+#: app/views/settings/manageComponentType.html:100
+#: app/views/settings/manageDeferralReason.html:55
+#: app/views/settings/managePackType.html:77
+msgid "days"
+msgstr "jours"
+
+#: app/views/components/addComponentBatch.html:29
+msgid "donations"
+msgstr "dons"
+
+#: app/views/settings/manageConfiguration.html:87
+msgid "false"
+msgstr "faux"
+
+#: app/views/settings/manageComponentType.html:74
+msgid "hours"
+msgstr "heure"
+
+#: app/views/settings/manageComponentType.html:60
+msgid "minutes"
+msgstr "minutes"
+
+#: app/scripts/controllers/reports/bloodUnitsIssuedReport.js:183
+#: app/scripts/controllers/reports/componentsProducedReport.js:235
+#: app/scripts/controllers/reports/transfusionsReport.js:48
+#: app/scripts/controllers/reports/unitsDiscardedReport.js:229
+msgid "sites"
+msgstr "sites"
+
+#: app/scripts/controllers/donors/donorCounselling.js:262
+#: app/views/donors/viewDonationSummary.html:46
+msgid "to"
+msgstr "a"
+
+#: app/views/settings/manageConfiguration.html:86
+msgid "true"
+msgstr "vrai"
+
+#: app/scripts/controllers/reports/aboRhGroupsReport.js:268
+#: app/scripts/controllers/reports/donationTypesReport.js:193
+#: app/scripts/controllers/reports/donorsAdverseEventsReport.js:163
+#: app/scripts/controllers/reports/donorsDeferredReport.js:209
+#: app/scripts/controllers/reports/ttiPrevalenceReport.js:197
+msgid "venues"
+msgstr "salles"
+
+#: app/views/settings/bloodTests.html:9
+msgid "{{count}} Blood Test(s) found"
+msgstr "{{count}} Test(s) sanguin(s) identifié(s)"
+
+#: app/views/settings/bloodTestingRules.html:9
+msgid "{{count}} Blood Testing Rule(s) found"
+msgstr "{{count}} Règle(s) de test sanguin trouvée(s)"
+
+#: app/views/settings/componentTypeCombinations.html:9
+msgid "{{count}} Component Combination(s) found"
+msgstr "{{count}} Différent(s) Composant(s) identifié(s)"
+
+#: app/views/settings/componentTypes.html:9
+msgid "{{count}} Component Type(s) found"
+msgstr "{{count}} Type(s) de composant trouvé(s)"
+
+#: app/views/settings/divisions.html:48
+msgid "{{count}} Division(s) found"
+msgstr "{{count}} Division(s) trouvée(s)"
+
+#: app/views/settings/locations.html:48
+msgid "{{count}} Location(s) found"
+msgstr "{{count}} emplacement(s) trouvé(s)"
+
+#: app/views/settings/adverseEventTypes.html:11
+msgid "{{count}} adverse event type(s) found"
+msgstr "{{count}} Type(s) d’effets secondaires identifié(s)"
+
+#: app/views/components/viewDonations.html:2
+msgid "{{count}} component(s) found"
+msgstr "{{count}} composant(s) trouvé(s)"
+
+#: app/views/settings/configurations.html:10
+msgid "{{count}} configuration(s) found"
+msgstr "{{count}} configuration(s) trouvée(s)"
+
+#: app/views/settings/deferralReasons.html:25
+msgid "{{count}} day(s)"
+msgstr "{{count}} Jour(s)"
+
+#: app/scripts/util/filters.js:80
+msgid "{{count}} day(s) to expire"
+msgstr "{{count}} jour(s) restant avant expiration"
+
+#: app/views/settings/deferralReasons.html:10
+msgid "{{count}} deferral reason(s) found"
+msgstr "{{count}} motif(s) de report identifie(s)"
+
+#: app/views/settings/discardReasons.html:10
+msgid "{{count}} discard reason(s) found"
+msgstr "{{count}} la(les) raison(s) de rejet trouvée(s)"
+
+#: app/views/settings/donationTypes.html:10
+msgid "{{count}} donation type(s) found"
+msgstr "{{count}} type de don(s) identifiés"
+
+#: app/views/donors/donorCommunications.html:95
+#: app/views/donors/donorCounselling.html:113
+#: app/views/donors/findDonor.html:60 app/views/mobile/donorCounselling.html:58
+#: app/views/mobile/lookUp.html:44 app/views/mobile/mobileClinicExport.html:56
+msgid "{{count}} donor(s) found"
+msgstr "{{count}} donneur(s) identifié(s)"
+
+#: app/views/testing/manageTestBatch.html:176
+#: app/views/testing/manageTestBatch.html:180
+msgid "{{count}} of {{total}}"
+msgstr "{{count}} sur {{total}}"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:482
+msgid ""
+"{{count}} of {{total}} samples will be released, the remaining samples "
+"require discrepancies to be resolved. Once you release these samples you "
+"will no longer be able to add DINs to this batch. Are you sure that you want "
+"to release this test batch?"
+msgstr ""
+"{{count}} du {{total}} des échantillons qui seront libérés, les échantillons "
+"restants ont des anomalies à résoudre. Êtes-vous sûr de vouloir libérer ce "
+"lot de test?"
+
+#: app/scripts/controllers/testing/manageTestBatch.js:488
+msgid ""
+"{{count}} of {{total}} samples will be released. Once you release these "
+"samples you will no longer be able to add DINs to this batch. Are you sure "
+"that you want to release this test batch?"
+msgstr ""
+"{{count}} du {{total}} des échantillons qui seront libérés, les échantillons "
+"restants ont des anomalies à résoudre. Êtes-vous sûr de vouloir libérer ce "
+"lot de test?"
+
+#: app/views/settings/packTypes.html:11
+msgid "{{count}} pack type(s) found"
+msgstr "{{count}} types de poche(s) identifiée(s)"
+
+#: app/views/settings/roles.html:11
+msgid "{{count}} role(s) found"
+msgstr "{{count}} rôle(s) identifie(s)"
+
+#: app/views/testing/manageTestBatch.html:244
+msgid "{{count}} sample(s) found"
+msgstr "{{count}} échantillon(s) identifie(s)"
+
+#: app/views/reports/bloodUnitsIssuedReport.html:39
+#: app/views/reports/componentsProducedReport.html:59
+#: app/views/reports/transfusionsReport.html:59
+#: app/views/reports/unitsDiscardedReport.html:59
+msgid "{{count}} site(s) found"
+msgstr "{{count}} site(s) identifié(s)"
+
+#: app/views/settings/transfusionReactionTypes.html:10
+msgid "{{count}} transfusion reaction type(s) found"
+msgstr "{{count}} réaction(s) transfusionnelle(s) trouvée(s)"
+
+#: app/views/settings/users.html:10
+msgid "{{count}} user(s) found"
+msgstr "{{count}} utilisateur(s) identifie(s)"
+
+#: app/views/reports/aboRhGroupsReport.html:39
+#: app/views/reports/donationTypesReport.html:39
+#: app/views/reports/donorsAdverseEventsReport.html:59
+#: app/views/reports/donorsDeferredReport.html:39
+#: app/views/reports/ttiPrevalenceReport.html:39
+msgid "{{count}} venue(s) found"
+msgstr "{{count}} emplacement(s) identifié(s)"
+
+#: app/views/testing/manageTestBatch.html:61
+msgid ""
+"{{dinsAdded}} out of {{dinsToAdd}} sample(s) in the range were added to the "
+"test batch. {{testBatch.dinsInOtherTestBatches.length}} belonged to another "
+"test batch and {{testBatch.dinsWithoutTestSamples.length}} didn't produce "
+"test samples and {{testBatch.dinsInOpenDonationanBatch.length}} belonged to "
+"an open Donation Batch."
+msgstr ""
+"{{dinsAdded}} sur {{dinsToAdd}} échantillon(s) de la séquence était(ent) "
+"ajouté(s) au lot de tests. {{testBatch.dinsInOtherTestBatches.length}} "
+"appartenait(ent) à un autre lot de tests et {{testBatch.dinsWithoutTestSamples.length}} "
+"n’avait(ent) pas d’échantillons de test et "
+"{{testBatch.dinsInOpenDonationanBatch.length}} appartenait(ent) à un lot de "
+"dons ouvert."
+
+#: app/views/donors/mergeDonorsSelection.html:1
+msgid "{{duplicateCount}} possible duplicate donors identified."
+msgstr "{{duplicateCount}} possibles de donneurs en double identifiés."
+
+#: app/views/donors/duplicateDonors.html:14
+msgid "{{duplicateDonorCount}} set(s) of duplicate donors found."
+msgstr "{{duplicateDonorCount}} ensemble(s) de donneurs en double trouvés."
+
+#: app/views/components/viewComponentBatches.html:45
+msgid "{{formNumber}} form(s) found"
+msgstr "{{formNumber}} formulaire(s) trouvé(s)"
+
+#: app/scripts/controllers/donors/donorCommunications.js:144
+msgid "{{fromDate}} to {{toDate}}"
+msgstr "{{fromDate}} à {{toDate}}"
+
+#: app/views/donors/donationDetails.html:16
+msgid "{{startTime}} to {{endTime}}"
+msgstr "{{startTime}} à {{endTime}}"
+
+#: app/views/donors/viewDonationBatch.html:2
+msgid "{{total}} donation(s) in batch"
+msgstr "{{total}} don(s) dans le lot"
+
+#~ msgid "Sample not found and/or cannot be assigned to this test batch"
+#~ msgstr ""
+#~ "Échantillon non trouvé et / ou ne peut pas être attribué à ce lot de test"

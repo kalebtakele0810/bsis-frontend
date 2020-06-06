@@ -1,0 +1,38 @@
+<p><span translate>Review the donations for the merged donor</span>:</p>
+<div ng-switch="donationResults">
+    <div ng-switch-when="true">
+        <table ng-table="manageDuplicateDonorDonationsTableParams" show-filter="false" class="table">
+            <tr ng-repeat="donation in $data">
+                <td data-title="'Donor Number' | translate" header-class="text-left" class="text-center" sortable="'donorNumber'">
+                    {{donation.donorNumber}}
+                </td>
+                <td data-title="'DIN' | translate" header-class="text-left" class="text-center"
+                    sortable="'donationIdentificationNumber'">
+                    {{donation.donationIdentificationNumber}}
+                </td>
+                <td data-title="'Date' | translate" header-class="text-left" class="text-center" sortable="'donationDate'">
+                    {{donation.donationDate | bsisDate}}
+                </td>
+                <td data-title="'Venue' | translate" header-class="text-left" sortable="'venue.name'">
+                    {{donation.venue.name}}
+                </td>
+                <td data-title="'Pack Type' | translate" header-class="text-left" sortable="'packType.packType'">
+                    {{donation.packType.packType}}
+                </td>
+                <td data-title="'TTI Status' | translate" header-class="text-left" sortable="'ttiStatus'">
+                    {{donation.ttistatus | titleCase | translate}}
+                </td>
+                <td data-title="'Blood Group Serology' | translate" header-class="text-left" class="text-center" sortable="'bloodAbo'">
+                    {{donation.bloodTypingStatus | titleCase | translate}} - {{donation.bloodTypingMatchStatus | titleCase | translate}}
+                    <em ng-show="donation.bloodAbo !== '' && donation.bloodRh !== ''"> ({{donation.bloodAbo + donation.bloodRh}})
+                </td>
+                <td data-title="'Wt' | translate" header-class="text-left" class="text-center" sortable="'donorWeight'">
+                    {{donation.donorWeight}} <span ng-if="donation.donorWeight">{{weightUnit}}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-switch-when="false">
+        <p><em translate>No Donations found</em></p>
+    </div>
+</div>

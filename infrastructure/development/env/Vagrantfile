@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+
+  # Forward the frontend port to the host
+  config.vm.network "forwarded_port", guest: 9000, host: 9000
+
+  # Sync the bsis directory to the VM
+  config.vm.synced_folder "../../../", "/opt/bsis-frontend", owner: "vagrant"
+
+  # Increase the amount of memory so build works
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 2048
+  end
+
+  # Provision the box using the shell script
+  config.vm.provision "shell", privileged: false, path: "provision.sh"
+end

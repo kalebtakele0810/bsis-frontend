@@ -1,0 +1,22 @@
+<span class="input-group" style="max-width: 170px">
+  <input
+          type="text"
+          ng-model='ngModel'
+          class="form-control"
+          uib-datepicker-popup="{{format}}"
+          is-open="opened"
+          min-date="minDate"
+          max-date="maxDate"
+          uib-datepicker-options="dateOptions"
+          date-disabled="disabled(date, mode)"
+          ng-required="ngRequired"
+          ng-disabled="ngDisabled"
+          init-date="initDate"
+          close-text="Close"
+  >
+  <span class="input-group-btn">
+    <button class="btn btn-default" ng-click="open($event)" ng-disabled="{{ngDisabled}}"><i class="fa {{calIcon}}"></i>
+    </button>
+  </span>
+
+</span>

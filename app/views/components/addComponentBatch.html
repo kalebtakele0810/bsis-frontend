@@ -1,0 +1,104 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/components/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Receive Components</h3>
+
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active">
+      <a href="#/addComponentBatch" translate>Add Delivery Form</a>
+    </li>
+    <li>
+      <a href="#/viewComponentBatches" translate>View Delivery Forms</a>
+    </li>
+  </ul>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4 translate>Add Delivery Form</h4>
+      <form name="addComponentBatchForm" class="form-horizontal col-sm-12" novalidate ng-submit="addComponentBatch(addComponentBatchForm)">
+
+        <div class="form-group">
+          <label for="donationBatch" class="col-sm-2 control-label" translate>Donation batch</label>
+          <div class="row col-sm-6">
+            <div class="form-inline" style="padding-left:5px;">
+              <select name="donationBatches" class="form-control" ng-model="componentBatch.donationBatch.id" required>
+                <option value="" disabled translate>Select</option>
+                <option ng-repeat="donationBatch in donationBatches" value="{{donationBatch.id}}">
+                  <small>
+                    {{donationBatch.venue.name}} |
+                    {{donationBatch.donationBatchDate | bsisDate}} |
+                    {{donationBatch.numDonations}} {{'donations' | translate}}
+                  </small>
+                </option>
+              </select>
+              <div>
+                <small class="error" ng-show="(addComponentBatchForm.donationBatches.$invalid && addComponentBatchForm.$submitted)">
+                  <span translate>Select a donation batch</span>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" translate>Processing site</label>
+          <div class="row col-sm-6">
+            <div class="form-inline" style="padding-left:5px;">
+              <select name="processingSite" class="form-control" ng-model="componentBatch.location.id" required ng-options="processingSite.id as processingSite.name for processingSite in processingSites">
+                <option value="" disabled translate>Select</option>
+              </select>
+              <div>
+                <small class="error" ng-show="(addComponentBatchForm.processingSite.$invalid && addComponentBatchForm.$submitted)">
+                  <span translate>Select a processing site</span>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="deliveryTime" class="col-sm-2 control-label" style="padding-top:30px;" translate>Delivery Time</label>
+          <div class="row col-sm-6">
+            <div style="padding-left:5px;">
+              <uib-timepicker id="deliveryTime" ng-model="componentBatch.deliveryDate" name="deliveryTime" hour-step="1" minute-step="1"></uib-timepicker>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="temperature" class="col-sm-2 control-label" translate>Blood Transport box</label>
+          <div class="row col-sm-10">
+            <div class="form-inline" style="padding-left:5px;" ng-class="{'has-error': emptyTemperatureSubmitted}">
+              <em><span translate>Temperature</span></em>
+              <input type="number" name="temperature" ng-model="temperature" class="form-control" style="width: 50px;" ng-required="componentBatch.bloodTransportBoxes.length === 0"/>&nbsp;<em>&deg;C</em>
+              <button class="btn btn-primary" ng-click="addBox(temperature);" type="button" style="margin-top:0;" translate>Add box
+              </button>
+              <div>
+                <small class="error" ng-show="(componentBatch.bloodTransportBoxes.length === 0 && addComponentBatchForm.$submitted)">
+                  <span translate>Add a blood transport box</span>
+                </small>
+              </div>
+              <div>
+                <small class="error" ng-show="emptyTemperatureSubmitted">
+                  <span translate>Enter a valid temperature</span>
+                </small>
+              </div>
+            </div>
+            <div>
+              <ul id="boxesList">
+                <li ng-repeat="box in componentBatch.bloodTransportBoxes track by $index">
+                <span translate  translate-params-box-number="$index + 1" translate-comment="Blood transport box number, abbreviation">Box #{{boxNumber}}</span> - {{box.temperature}}<em>&deg;C</em></li>              
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-11">
+            <button class="btn btn-primary" type="submit" ng-disabled="adding">{{adding ? "Saving..." : "Save" | translate}}</button>
+            <button class="btn btn-primary" type="button" ng-disabled="adding" ng-click="clearForm(addComponentBatchForm)" translate>Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<p><em translate>{{duplicateCount}} possible duplicate donors identified.</em></p>
+<p><span translate>Please select the correct donor information below</span>:</p>
+<uib-alert type="danger" close="" ng-show="hasMessage">
+    <span ng-bind-html="message"></span>
+</uib-alert>
+<table ng-table="manageDuplicateDonorTableParams" show-filter="false" class="table">
+    <tr ng-repeat="donor in $data"
+        ng-click="viewDonor(donor);"
+        ng-mouseenter="this.$selected = true"
+        ng-mouseleave="this.$selected = false"
+        ng-class="{'active': donor.$selected}">
+        <td data-title="'Donor Number' | translate" header-class="text-left" class="text-center" sortable="'donorNumber'">
+            {{donor.donorNumber}}
+        </td>
+        <td data-title="'Title' | translate" header-class="text-left" sortable="'title'">
+            {{donor.title ? (donor.title | translate) : ''}}
+        </td>
+        <td data-title="'First Name' | translate" header-class="text-left" sortable="'firstName'">
+            {{donor.firstName}}
+        </td>
+        <td data-title="'Last Name' | translate" header-class="text-left" sortable="'lastName'">
+            {{donor.lastName}}
+        </td>
+        <td data-title="'Gender' | translate" header-class="text-left" sortable="'gender'">
+            {{donor.gender | titleCase | translate}}
+        </td>
+        <td data-title="'Date of Birth' | translate" header-class="text-left" class="text-center" sortable="'birthDate'">
+            {{ (donor.birthDate | bsisDate) || '' }}
+        </td>
+        <td data-title="'Date of Last Donation' | translate" header-class="text-left" class="text-center"
+            sortable="'dateOfLastDonation'">
+            {{ (donor.dateOfLastDonation | bsisDate) || '' }}
+        </td>
+        <td data-title="'Blood Group' | translate" header-class="text-left" sortable="'bloodGroup'">
+            {{donor.bloodGroup}}
+        </td>
+        <td data-title="'Venue' | translate" header-class="text-left" sortable="'venue'">
+            {{donor.venue.name}}
+        </td>
+        <td class="form-inline" data-title="'Merge' | translate" header-class="text-left" class="text-center"
+            ng-click="$event.stopPropagation()">
+            <div class="radio" style="display:inline-block;">
+                <input id="mergeYes{{donor.donorNumber}}" type="radio" name="merge{{donor.donorNumber}}" ng-value="true"
+                       value="true" ng-model="donor.merge" required>
+                <label for="mergeYes{{donor.donorNumber}}" translate>Yes</label>
+            </div>
+            <div class="radio" style="display:inline-block;">
+                <input id="mergeNo{{donor.donorNumber}}" type="radio" name="merge{{donor.donorNumber}}" ng-value="false"
+                       value="false" ng-model="donor.merge" required>
+                <label for="mergeNo{{donor.donorNumber}}" translate>No</label>
+            </div>
+            <small class="error"
+                   ng-show="(mergeDonorForm.merge{{donor.donorNumber}}.$invalid && (mergeDonorForm.merge{{donor.donorNumber}}.$dirty || invalid))">
+                <br/><span translate>This cannot be empty</span>
+            </small>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,49 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding-top:5px;" ng-controller="SettingsSidebarCtrl">
+    <ul class="nav nav-sidebar">
+        <li class="disabled">
+      <span class="icon-sidebar-container">
+        <div class="placeholder">
+            <a href="#settings">
+                <i class="fa {{icons.SETTINGS}}"></i>
+            </a>
+        </div>
+      </span>
+        </li>
+        <li class="disabled" has-permission="{{permissions.AUTHENTICATED}}"><span class="sidebar-heading" translate>SETTINGS</span></li>
+        <li ng-class="{current:  currentPath === '/accountSettings'}" has-permission="{{permissions.AUTHENTICATED}}"><a
+                href="#/accountSettings" translate>Account Settings</a></li>
+        <li ng-class="{current:  currentPath === '/configurations'}" has-permission="{{permissions.MANAGE_GENERAL_CONFIGS}}">
+            <a href="#/configurations" translate>General Configurations</a></li>
+        <li ng-class="{current:  currentPath === '/locations'}" has-permission="{{permissions.MANAGE_LOCATIONS}}">
+            <a href="#/locations" translate>Manage Locations</a></li>
+        <li ng-class="{current:  currentPath === '/divisions'}" has-permission="{{permissions.MANAGE_DIVISIONS}}">
+            <a href="#/divisions" translate>Manage Divisions</a></li>
+        <li ng-class="{current:  currentPath === '/adverseEventTypes'}"
+            has-permission="{{permissions.MANAGE_ADVERSE_EVENTS}}"><a href="#/adverseEventTypes" translate>Manage Adverse Event Types</a></li>
+        <li ng-class="{current: currentPath === '/users'}" has-permission="{{permissions.MANAGE_USERS}}"><a href="#/users" translate>Manage Users</a></li>
+        <li ng-class="{current: currentPath === '/roles'}" has-permission="{{permissions.MANAGE_ROLES}}"><a href="#/roles" translate>Manage Roles</a></li>
+        <li ng-class="{current: currentPath === '/deferralReasons'}"
+            has-permission="{{permissions.MANAGE_DEFERRAL_REASONS}}"><a href="#/deferralReasons" translate>Manage Deferral Reasons</a></li>
+        <li ng-class="{current: currentPath === '/discardReasons'}" has-permission="{{permissions.MANAGE_DISCARD_REASONS}}">
+            <a href="#/discardReasons" translate>Manage Discard Reasons</a></li>
+        <li ng-class="{current: currentPath === '/donationTypes'}" has-permission="{{permissions.MANAGE_DONATION_TYPES}}"><a
+                href="#/donationTypes" translate>Manage Donation Types</a></li>
+        <li ng-class="{current: currentPath === '/packTypes'}" has-permission="{{permissions.MANAGE_PACK_TYPES}}"><a
+                href="#/packTypes" translate>Manage Pack Types</a></li>
+        <li ng-class="{current:  currentPath === '/componentTypes'}" has-permission="{{permissions.MANAGE_COMPONENT_TYPES}}">
+            <a href="#/componentTypes" translate>Manage Component Types</a></li>
+        <li ng-class="{current:  currentPath === '/componentTypeCombinations'}" has-permission="{{permissions.MANAGE_COMPONENT_COMBINATIONS}}">
+            <a href="#/componentTypeCombinations" translate>Manage Component Combinations</a></li>
+        <li ng-class="{current:  currentPath === '/bloodTests'}" has-permission="{{permissions.MANAGE_BLOOD_TESTS}}">
+            <a href="#/bloodTests" translate>Manage Blood Tests</a></li>
+        <li ng-class="{current:  currentPath === '/bloodTestingRules'}" has-permission="{{permissions.MANAGE_BLOOD_TESTING_RULES}}">
+            <a href="#/bloodTestingRules" translate>Manage Blood Testing Rules</a></li>
+        <li ng-class="{current:  currentPath === '/transfusionReactionTypes'}" has-permission="{{permissions.MANAGE_TRANSFUSION_REACTION_TYPES}}">
+            <a href="#/transfusionReactionTypes" translate>Manage Transfusion Reaction Types</a></li>
+        <li ng-class="{current: currentPath === '/auditLog'}" has-permission="{{permissions.VIEW_AUDIT_LOG}}"><a
+                href="#/auditLog" translate>View Audit Log</a></li>
+        <li ng-class="{current: currentPath === '/dataExport'}" has-permission="{{permissions.DATA_EXPORT}}"><a
+                href="#/dataExport" translate>Data Export</a></li>
+    </ul>
+    <div ng-include="'views/sidebarFooter.html'"></div>
+</div>

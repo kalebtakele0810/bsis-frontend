@@ -1,0 +1,76 @@
+{
+  "isDonorCurrentlyDeferred": true,
+  "deferralReasons": [
+    {
+      "id": 1,
+      "reason": "High risk behaviour",
+      "isDeleted": false
+    },
+    {
+      "id": 2,
+      "reason": "Low weight",
+      "isDeleted": false
+    },
+    {
+      "id": 3,
+      "reason": "Low haemoglobin",
+      "isDeleted": false
+    },
+    {
+      "id": 4,
+      "reason": "Other reasons",
+      "isDeleted": false
+    },
+    {
+      "id": 5,
+      "reason": "Other medical conditions",
+      "isDeleted": false
+    },
+    {
+      "id": 6,
+      "reason": "Travel history",
+      "isDeleted": false
+    }
+  ],
+  "allDonorDeferrals": [
+    {
+      "deferredUntil": "12/10/2014",
+      "deferralReasonText": "Not suitable to donate",
+      "deferralReason": {
+        "id": 1,
+        "reason": "High risk behaviour",
+        "isDeleted": false
+      },
+      "deferredOn": "31/08/2014",
+      "voidedDate": "",
+      "deferredBy": "administrator",
+      "id": 1
+    },
+    {
+      "deferredUntil": "15/09/2013",
+      "deferralReasonText": "",
+      "deferralReason": {
+        "id": 2,
+        "reason": "Low weight",
+        "isDeleted": false
+      },
+      "deferredOn": "31/08/2013",
+      "voidedDate": "",
+      "deferredBy": "administrator",
+      "id": 2
+    },
+    {
+      "deferredUntil": "12/10/2012",
+      "deferralReasonText": "Recent weight loss",
+      "deferralReason": {
+        "id": 2,
+        "reason": "Low weight",
+        "isDeleted": false
+      },
+      "deferredOn": "10/05/2012",
+      "voidedDate": "",
+      "deferredBy": "administrator",
+      "id": 3
+    }
+  ]
+}

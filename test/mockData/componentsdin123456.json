@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "id": "111",
+      "donationIdentificationNumber": "123456",
+      "componentType": "Whole Blood",
+      "status": "Processed",
+      "createdOn": "10/10/2014",
+      "expiresOn": "-",
+      "parentComponent": ""
+    },
+    {
+      "id": "112",
+      "donationIdentificationNumber": "123456",
+      "componentType": "Red Cell Concentrate",
+      "status": "Labelled",
+      "createdOn": "10/10/2014",
+      "expiresOn": "15/11/2014",
+      "parentComponent": "111"
+    },
+    {
+      "id": "113",
+      "donationIdentificationNumber": "123456",
+      "componentType": "Fresh Frozen Plasma",
+      "status": "Labelled",
+      "createdOn": "10/10/2014",
+      "expiresOn": "15/11/2014",
+      "parentComponent": "111"
+    },
+    {
+      "id": "114",
+      "donationIdentificationNumber": "123456",
+      "componentType": "Buffy Coat",
+      "status": "Discarded",
+      "createdOn": "10/10/2014",
+      "expiresOn": "-",
+      "parentComponent": "111"
+    }
+  ],
+  "discardReasons": [
+    {
+      "name": "Incomplete Donation"
+    },
+    {
+      "name": "Reactive TTI"
+    },
+    {
+      "name": "Expired"
+    },
+    {
+      "name": "Storage Problems"
+    },
+    {
+      "name": "Transport Problems"
+    },
+    {
+      "name": "Processing Problems"
+    }
+  ]
+}

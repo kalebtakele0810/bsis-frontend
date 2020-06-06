@@ -1,0 +1,101 @@
+{
+    "isWhoGdbs": true,
+    "whoGdbs": [
+      {
+        "id": 1,
+        "reason": "Total number of voluntary non-remunerated donors",
+        "isDeleted": false
+      },
+      {
+        "id": 2,
+        "reason": "Voluntary non-remunerated donations",
+        "isDeleted": false
+      },
+      {
+        "id": 3,
+        "reason": "Number of Permanent deferral",
+        "isDeleted": false
+      },
+      {
+        "id": 4,
+        "reason": "Number of Temporary deferral",
+        "isDeleted": false
+      },
+      {
+        "id": 5,
+        "reason": " Low weight",
+        "isDeleted": false
+      },
+      {
+        "id": 6,
+        "reason": "Low haemoglobin",
+        "isDeleted": false
+      },
+      {
+        "id": 7,
+        "reason": "Other medical conditions",
+        "isDeleted": false
+      },
+      {
+        "id": 8,
+        "reason": "High-risk behaviour",
+        "isDeleted": false
+      },
+      {
+        "id":9,
+        "reason": "Travel history",
+        "isDeleted": false
+      },
+      {
+        "id": 10,
+        "reason": "Test Outcomes",
+        "isDeleted": false
+      },
+      {
+        "id": 11,
+        "reason": "Other reasons",
+        "isDeleted": false
+      },
+      {
+        "id": 12,
+        "reason": "Total number of deferrals",
+        "isDeleted": false
+      },
+      {
+        "id": 13,
+        "reason": " Male donors",
+        "isDeleted": false
+      },
+      {
+        "id": 14,
+        "reason": " Female donors",
+        "isDeleted": false
+      },
+      {
+        "id": 15,
+        "reason": "under 18 years",
+        "isDeleted": false
+      },
+      {
+        "id":16,
+        "reason": "18 to 24 years",
+        "isDeleted": false
+      },
+      {
+        "id": 17,
+        "reason": "25 to 44 years",
+        "isDeleted": false
+      },
+      {
+        "id": 18,
+        "reason": "45 to 64 years",
+        "isDeleted": false
+      },
+      {
+        "id": 19,
+        "reason": " 65 years or older",
+        "isDeleted": false
+      }
+    ]
+
+  }

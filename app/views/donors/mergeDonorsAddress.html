@@ -1,0 +1,142 @@
+<p><span translate>Please select the correct donor information below</span>:</p>
+<table ng-table="manageSelectedDuplicateDonorTableParams" show-filter="false" class="table">
+    <tbody>
+    <tr ng-repeat="donor in $data">
+        <td data-title="'Donor Number' | translate" header-class="text-left" class="text-center" sortable="'donorNumber'">
+            {{donor.donorNumber}}
+        </td>
+        <td data-title="'Preferred Address Type' | translate" header-class="text-left" sortable="'preferredAddressType'"
+            class="form-inline">
+            <div class="radio" ng-if="donor.preferredAddressType != null">
+                <input id="preferredAddressType{{donor.donorNumber}}" type="radio" name="preferredAddressType"
+                       ng-model="mergedDonorData.preferredAddressType" ng-value="donor.id" required>
+                <label for="preferredAddressType{{donor.donorNumber}}">{{donor.preferredAddressType.preferredAddressType}}</label>
+            </div>
+        </td>
+        <td data-title="'Home' | translate" header-class="text-left" sortable="'homeAddress'" class="form-inline">
+            <div class="radio" ng-if="donor.address.homeAddressLine1 != null && donor.address.homeAddressLine1 != ''">
+                <input id="homeAddressLine1{{donor.donorNumber}}" type="radio" name="homeAddress"
+                       ng-model="mergedDonorData.homeAddress" ng-value="donor.id" required>
+                <label for="homeAddressLine1{{donor.donorNumber}}">
+                    <span ng-show="{{ui.ADDRESS.ADDRESS_LINE_1_ENABLED}}"
+                          ng-if="donor.address.homeAddressLine1 != null && donor.address.homeAddressLine1 != ''">{{donor.address.homeAddressLine1}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.ADDRESS_LINE_2_ENABLED}}"
+                          ng-if="donor.address.homeAddressLine2 != null && donor.address.homeAddressLine2 != ''">{{donor.address.homeAddressLine2}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.CITY_ENABLED}}"
+                          ng-if="donor.address.homeAddressCity != null && donor.address.homeAddressCity != ''">{{donor.address.homeAddressCity}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.DISTRICT_REGION_ENABLED}}"
+                          ng-if="donor.address.homeAddressDistrict != null && donor.address.homeAddressDistrict != ''">{{donor.address.homeAddressDistrict}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.STATE_ENABLED}}"
+                          ng-if="donor.address.homeAddressState != null && donor.address.homeAddressState != ''">{{donor.address.homeAddressState}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.PROVINCE_ENABLED}}"
+                          ng-if="donor.address.homeAddressProvince != null && donor.address.homeAddressProvince != ''">{{donor.address.homeAddressProvince}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.COUNTRY_ENABLED}}"
+                          ng-if="donor.address.homeAddressCountry != null && donor.address.homeAddressCountry != ''">{{donor.address.homeAddressCountry}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.POSTAL_CODE_ENABLED}}"
+                          ng-if="donor.address.homeAddressZipcode != null && donor.address.homeAddressZipcode != ''">{{donor.address.homeAddressZipcode}}</span>
+                </label>
+            </div>
+        </td>
+        <td data-title="'Postal' | translate" header-class="text-left" sortable="'postalAddress'" class="form-inline">
+            <div class="radio"
+                 ng-if="donor.address.postalAddressLine1 != null && donor.address.postalAddressLine1 != ''">
+                <input id="postalAddressLine1{{donor.donorNumber}}" type="radio" name="postalAddress"
+                       ng-model="mergedDonorData.postalAddress" ng-value="donor.id" required>
+                <label for="postalAddressLine1{{donor.donorNumber}}">
+                    <span ng-show="{{ui.ADDRESS.ADDRESS_LINE_1_ENABLED}}"
+                          ng-if="donor.address.postalAddressLine1 != null && donor.address.postalAddressLine1 != ''">{{donor.address.postalAddressLine1}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.ADDRESS_LINE_2_ENABLED}}"
+                          ng-if="donor.address.postalAddressLine2 != null && donor.address.postalAddressLine2 != ''">{{donor.address.postalAddressLine2}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.CITY_ENABLED}}"
+                          ng-if="donor.address.postalAddressCity != null && donor.address.postalAddressCity != ''">{{donor.address.postalAddressCity}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.DISTRICT_REGION_ENABLED}}"
+                          ng-if="donor.address.postalAddressDistrict != null && donor.address.postalAddressDistrict != ''">{{donor.address.postalAddressDistrict}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.STATE_ENABLED}}"
+                          ng-if="donor.address.postalAddressState != null && donor.address.postalAddressState != ''">{{donor.address.postalAddressState}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.PROVINCE_ENABLED}}"
+                          ng-if="donor.address.postalAddressProvince != null && donor.address.postalAddressProvince != ''">{{donor.address.postalAddressProvince}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.COUNTRY_ENABLED}}"
+                          ng-if="donor.address.postalAddressCountry != null && donor.address.postalAddressCountry != ''">{{donor.address.postalAddressCountry}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.POSTAL_CODE_ENABLED}}"
+                          ng-if="donor.address.postalAddressZipcode != null && donor.address.postalAddressZipcode != ''">{{donor.address.postalAddressZipcode}}</span>
+                </label>
+            </div>
+        </td>
+        <td data-title="'Work' | translate" header-class="text-left" sortable="'workAddress'" class="form-inline">
+            <div class="radio" ng-if="donor.address.workAddressLine1 != null && donor.address.workAddressLine1 != ''">
+                <input id="workAddressLine1{{donor.donorNumber}}" type="radio" name="workAddress"
+                       ng-model="mergedDonorData.workAddress" ng-value="donor.id" required>
+                <label for="workAddressLine1{{donor.donorNumber}}">
+                    <span ng-show="{{ui.ADDRESS.ADDRESS_LINE_1_ENABLED}}"
+                          ng-if="donor.address.workAddressLine1 != null && donor.address.workAddressLine1 != ''">{{donor.address.workAddressLine1}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.ADDRESS_LINE_2_ENABLED}}"
+                          ng-if="donor.address.workAddressLine2 != null && donor.address.workAddressLine2 != ''">{{donor.address.workAddressLine2}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.CITY_ENABLED}}"
+                          ng-if="donor.address.workAddressCity != null && donor.address.workAddressCity != ''">{{donor.address.workAddressCity}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.DISTRICT_REGION_ENABLED}}"
+                          ng-if="donor.address.workAddressDistrict != null && donor.address.workAddressDistrict != ''">{{donor.address.workAddressDistrict}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.STATE_ENABLED}}"
+                          ng-if="donor.address.workAddressState != null && donor.address.workAddressState != ''">{{donor.address.workAddressState}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.PROVINCE_ENABLED}}"
+                          ng-if="donor.address.workAddressProvince != null && donor.address.workAddressProvince != ''">{{donor.address.workAddressProvince}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.COUNTRY_ENABLED}}"
+                          ng-if="donor.address.workAddressCountry != null && donor.address.workAddressCountry != ''">{{donor.address.workAddressCountry}} <br/></span>
+                    <span ng-show="{{ui.ADDRESS.POSTAL_CODE_ENABLED}}"
+                          ng-if="donor.address.workAddressZipcode != null && donor.address.workAddressZipcode != ''">{{donor.address.workAddressZipcode}}</span>
+                </label>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <!-- row for the "None of the Above" radio buttons and error messages -->
+        <td>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['preferredAddressType']">
+                <input id="preferredAddressType" type="radio" name="preferredAddressType"
+                       ng-model="mergedDonorData.preferredAddressType" value="0" required>
+                <label for="preferredAddressType" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.preferredAddressType.$invalid && (mergeDonorForm.preferredAddressType.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['homeAddress']">
+                <input id="homeAddress" type="radio" name="homeAddress" ng-model="mergedDonorData.homeAddress" value="0"
+                       required>
+                <label for="homeAddress" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.homeAddress.$invalid && (mergeDonorForm.homeAddress.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['postalAddress']">
+                <input id="postalAddress" type="radio" name="postalAddress" ng-model="mergedDonorData.postalAddress"
+                       value="0" required>
+                <label for="postalAddress" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.postalAddress.$invalid && (mergeDonorForm.postalAddress.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+        <td>
+            <div class="radio" ng-if="donorFields['workAddress']">
+                <input id="workAddress" type="radio" name="workAddress" ng-model="mergedDonorData.workAddress" value="0"
+                       required>
+                <label for="workAddress" translate>None of the above</label>
+                <small class="error"
+                       ng-show="(mergeDonorForm.workAddress.$invalid && (mergeDonorForm.workAddress.$dirty || invalid))">
+                    <br/><span translate>Please select one</span>
+                </small>
+            </div>
+        </td>
+    </tr>
+    </tfoot>
+</table>

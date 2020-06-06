@@ -1,0 +1,819 @@
+.pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+
+#footer {
+  background-color: #f5f5f5;
+}
+
+/* duplicate dashboard.css declarations (used to resolve css issues after compiling with 'grunt -v') */
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+
+.main {
+  padding: 20px 0px 0px 0px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.main .page-header {
+  margin-top: 0;
+}
+
+/* END duplicate dashboard.css declarations */
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 768px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: #eee;
+}
+
+@media (min-width: 1200px) {
+  .home-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.dropdown-ext {
+  width: 100%;
+}
+
+.navbar-sub {
+  text-align: center;
+}
+
+.hr-top {
+  margin: 8px 0;
+}
+
+.hr-info {
+  margin: 10px auto;
+  width: 50%;
+}
+
+.hr-navside {
+  margin: 2px auto;
+  width: 80%;
+}
+
+.navbar {
+  /*background-color: #242424;*/
+  background: -webkit-linear-gradient(30deg, #202020, #303030); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(30deg, #202020, #303030); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(30deg, #202020, #303030); /* For Firefox 3.6 to 15 */
+  /* background: linear-gradient(30deg, #202020, #303030); /* Standard syntax */
+  background: linear-gradient(30deg, #202020, #332525);
+  font-size: 1.7rem;
+  font-style: normal;
+}
+
+.navbar-inverse .navbar-nav li a {
+  padding: 10px;
+}
+
+.placeholders a {
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  padding: 0 auto;
+}
+
+.home-page a {
+  margin: 1em;
+}
+
+.main-page a {
+  margin: 0em;
+}
+
+.menue {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #fff;
+  line-height: 100px;
+  text-align: center;
+  text-decoration: none;
+  background: #000;
+}
+
+.menue:hover {
+  color: #ccc;
+  text-decoration: none;
+  background: #333
+}
+
+.placeholder a, .placeholder button {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50%;
+  height: 11rem;
+  width: 11rem;
+  margin: 0 auto;
+  font-size: 6rem;
+  /*background-color: #242424;*/
+  background: -webkit-linear-gradient(30deg, #202020, #353535); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(30deg, #202020, #353535); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(30deg, #202020, #353535); /* For Firefox 3.6 to 15 */
+  /* background: linear-gradient(30deg, #202020, #353535); /* Standard syntax */
+  background: linear-gradient(30deg, #202020, #332525); /* Standard syntax */
+}
+
+.placeholder i {
+  height: 11rem;
+  width: 11rem;
+  text-align: center;
+  font-size: 6rem;
+  border-radius: 50%;
+  color: #f5f5f5;
+}
+
+.placeholder a:hover, .placeholder button:hover {
+  background: -webkit-linear-gradient(10deg, rgba(36, 36, 36, 0.85), rgba(40, 40, 40, 0.85)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(10deg, rgba(36, 36, 36, 0.85), rgba(40, 40, 40, 0.85)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(10deg, rgba(36, 36, 36, 0.85), rgba(40, 40, 40, 0.85)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(10deg, rgba(40, 30, 30, 0.85), rgba(40, 40, 40, 0.85)); /* Standard syntax */
+}
+
+.icon-container {
+  padding: 5px 0 15px 0;
+}
+
+.icon-sidebar-container {
+  margin-bottom: 0 !important;
+  padding: 5px 0 0px 0 !important;
+}
+
+.placeholder .fa {
+  padding-top: 25px;
+}
+
+@font-face {
+  font-family: 'istok_webregular';
+  src: url('../fonts/istokweb-regular-webfont.eot');
+  src: url('../fonts/istokweb-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/istokweb-regular-webfont.woff2') format('woff2'),
+  url('../fonts/istokweb-regular-webfont.woff') format('woff'),
+  url('../fonts/istokweb-regular-webfont.ttf') format('truetype'),
+  url('../fonts/istokweb-regular-webfont.svg#istok_webregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body {
+  font-family: 'istok_webregular', Helvetica, Arial, sans-serif;
+}
+
+h1 h2 h3 h4 {
+  font-family: 'istok_webregular', Helvetica, Arial, sans-serif;
+}
+
+.placeholder h3 {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  font-size: 2rem;
+}
+
+.placeholder p {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  font-size: 1.1rem;
+}
+
+#footer {
+  color: #aaa;
+  text-align: center;
+  background-color: #eee;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.disabled a {
+  font-size: 1.23rem;
+  color: #242424 !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.control-label {
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.navbar-nav .dropdown-toggle {
+  color: #e7e7e7 !important;
+}
+
+.navbar-nav .dropdown-toggle a:hover, a:visited, a:link, a:active {
+  text-decoration: none !important;
+}
+
+.nav-sidebar a {
+  font-size: 1.3rem;
+}
+
+.nav-sidebar .current a {
+  background-color: #eee !important;
+  color: #242424 !important;
+  font-weight: normal !important;
+}
+
+.nav-sidebar li {
+  border-bottom: 2px solid #eee;
+
+}
+
+.nav-sidebar span.sidebar-heading {
+  position: relative;
+  display: block;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding: 10px 15px;
+  text-align: -webkit-match-parent;
+  font-size: 1.23rem;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Removes padding from i18n transalation spans */
+.nav-sidebar span.ng-scope {
+    padding: 0;
+}
+
+/* login form css */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+img.main {
+  width: 100%;
+  padding: 0px;
+}
+
+/* --> login form css */
+
+/* angular-ui tabs - custom css */
+.nav-tabs.nav-justified > li.active > a {
+  background-color: #eee !important;
+  color: #242424 !important;
+  border: none;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-radius: 0;
+}
+
+.nav-tabs.nav-justified > li.active > a:link,
+.nav-tabs.nav-justified > li.active > a:visited,
+.nav-tabs.nav-justified > li.active > a:hover {
+  background-color: #eee !important;
+  color: #242424 !important;
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-radius: 0;
+}
+
+.nav-tabs.nav-justified {
+  margin-bottom: 15px;
+}
+
+.nav-tabs.nav-justified li:not(.active) {
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+.nav-tabs.nav-justified > li > a {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 0;
+}
+
+.nav-tabs.nav-justified > li > a:hover {
+  background-color: #eee;
+  border: none;
+  border-radius: 0;
+}
+
+/* --> angular-ui tabs - custom css */
+
+/* general css */
+
+.main .page-header {
+  margin-bottom: 0px;
+}
+
+.input-sm {
+  height: 30px;
+  padding: 0px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.ng-table th.filter .input-filter {
+  height: 30px;
+  padding: 0px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.ng-table {
+  border-radius: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.ng-table thead tr {
+  border-bottom: 2px solid #ccc;
+}
+
+.ng-table tbody tr {
+  background-color: #fff;
+}
+
+.ng-table tbody {
+  cursor: pointer !important;
+}
+
+.ng-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+table.ng-table tr td {
+  padding: 5px;
+!important;
+}
+
+.ng-table .pagination {
+  margin: 10px 0;
+}
+
+.dash-table th.center {
+  text-align: center;
+}
+
+.dash-table th {
+  padding: 4px;
+}
+
+.dash-table td {
+  padding: 4px;
+}
+
+.dash-table td.icon {
+  vertical-align: center;
+  color: #999;
+}
+
+.dash-table td.field {
+  font-style: italic;
+  vertical-align: center;
+  color: #555;
+}
+
+.dash-table td.center {
+  text-align: center;
+}
+
+.dash-table td.value {
+  font-size: 1.1em;
+}
+
+.dash-table td.valuesml {
+  font-size: 0.9em;
+}
+
+.dash-table td.green {
+  color: #3c763d;
+}
+
+.dash-table td.red {
+  color: #a94442;
+}
+
+.dash-table-sml {
+  font-size: 0.85em;
+}
+
+.dash-table-sml > th {
+  padding: 2px;
+}
+
+.dash-table-sml > td {
+  padding: 2px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-multiline .form-group {
+    margin-bottom: 10px;
+    margin-right: 30px;
+}
+
+.btn-primary {
+  padding: 4px 5px;
+  margin-top: 10px;
+}
+
+/* css hack to get input-groups to display inline */
+.input-group {
+  display: inline-table !important;
+  vertical-align: middle;
+
+.input-group-addon,
+.input-group-btn,
+.form-control {
+  width: auto !important;
+}
+
+}
+
+/* css hack to get cols with equal heights */
+.row.equal [class*="col-"] {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.row.equal {
+  overflow: hidden;
+}
+
+.form-group .row {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.row .main-page {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.row .home-page {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+dob {
+  display: inline;
+}
+
+.dob * {
+  display: inline-block;
+}
+
+label {
+  margin-top: 8px;
+}
+
+.panel {
+  padding: 0;
+}
+
+small {
+  color: #888;
+}
+
+.ui-select-bootstrap .ui-select-choices-row.active > a > small {
+  color: #fff;
+}
+
+/* Form Validation inputs and error messages  */
+input.ng-invalid.ng-dirty {
+  border: 1px solid #B52E31;
+}
+
+form.ng-submitted div.ng-invalid-ui-select-required  {
+  border: 1px solid #B52E31;
+}
+
+select.ng-invalid.ng-dirty {
+  border: 1px solid #B52E31;
+}
+
+form.ng-submitted input.ng-invalid, form.ng-submitted select.ng-invalid {
+  border: 1px solid #B52E31;
+}
+
+.error {
+  color: #B52E31;
+}
+
+/* Hide number input spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* css for xeditable fields */
+.xeditable {
+  font-size: 0.9em;
+  height: 1.5em;
+  padding: 3px 3px;
+}
+
+.xeditable.name {
+  width: 120px;
+}
+
+.xeditable.title {
+  width: 75px;
+}
+
+.xeditable.venue {
+  width: 160px;
+}
+
+.xeditable.notes {
+  width: 350px;
+}
+
+.xeditable.language {
+  width: 140px;
+}
+
+.xeditable.result {
+  width: 60px;
+}
+
+.xeditable.w50 {
+  width: 50px;
+}
+
+/* --> css for x-editable fields */
+
+div .alert {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+div .alert.inline {
+  display: inline-block;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+a.btn.btn-link {
+  padding: 3px 12px 0px 12px;
+}
+
+/* Use default pointer cursor for disabled input fields */
+input[disabled] {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* --> general css */
+
+.bleed-times .editable-bstime .well {
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+}
+
+.btn-link {
+  padding: 0px 5px;
+  font-size: 0.9em;
+}
+
+.btn-link.text-danger {
+  color: #A94442;
+}
+
+.btn-link.text-muted {
+  color: #777;
+}
+
+.btn-link.text-success {
+  color: #3C763D;
+}
+
+/* 
+bootstrap.min.css sets .dropdown-menu min-width to 160px by default 
+- override default to inherit value from containing element
+*/
+.ui-select-bootstrap .dropdown-menu {
+  min-width: inherit !important;
+}
+
+/* ui-grid custom data export button styling */
+.btn-ui-grid-export {
+  margin-top: 0px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+}
+
+.ui-grid-row:nth-child(odd):hover .ui-grid-cell-clickable {
+  cursor: pointer;
+  background: #eee
+}
+
+.ui-grid-row:nth-child(even):hover .ui-grid-cell-clickable {
+  cursor: pointer;
+  background: #eee
+}
+
+.checkbox-inline {
+  display: inline-block;
+  margin-top: 0;
+}
+
+a[disabled] {
+  cursor: default;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.labelDisabled {
+  color: #888 !important;
+}
+
+.panel-confirm {
+  border-color:red;
+}
+
+.time {
+  width: 50%;  
+  float: left;
+}
+
+.ui-grid-header-cell-label {
+  display:inline-block;
+  white-space:initial;
+}
+
+/*----------------------------------------------
+
+SPACERS
+
+-----------------------------------------------*/
+
+.margin-t-0 {
+  margin-top: 0px;
+}
+
+.margin-t-3 {
+  margin-top: 3px;
+}
+
+.pad-t-10 {
+  padding-top:10px;
+}
+
+.pad-t-30 {
+  padding-top: 30px;
+}
+
+.pad-l-5 {
+  padding-left: 5px;
+}
+
+.pad-l-10 {
+  padding-left: 10px;
+}
+
+.vert-align-03 {
+  vertical-align: 0.3em;
+}
+
+
+/*----------------------------------------------
+
+UTILITY
+
+-----------------------------------------------*/
+
+.display-block {
+  display:block;
+}

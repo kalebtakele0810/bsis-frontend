@@ -1,0 +1,173 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Orders</h3>
+
+  <hr />
+
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active">
+      <a href="#/manageOrders" translate>Add Order</a>
+    </li>
+    <li>
+      <a href="#/viewOrders" translate>View Orders</a>
+    </li>
+  </ul>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4 translate>Current Orders</h4>
+      <div class="col-sm-12">
+        <div id="grid" class="grid" ui-grid="gridOptions" ui-grid-pagination></div>
+      </div>
+
+      <br/>
+
+      <form class="form-horizontal" name="addOrderForm" role="form" style="padding:0 15px;" ng-submit="addOrder();" novalidate>
+        <div class="col-sm-5">
+          <h4 translate>Add Order</h4>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="orderDate" translate>Order Date</label>
+            <div class="col-sm-9">
+              <dateselect name="orderDate" ng-model="orderForm.orderDate" ng-required="true" format="dateFormat"></dateselect>
+              <ng-messages for="addOrderForm.orderDate.$error" role="alert" ng-show="addOrderForm.$submitted">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="dispatchedFrom" translate>Dispatched From</label>
+            <div class="col-sm-9">
+              <select class="form-control" style="width:auto;" name="dispatchedFrom" ng-model="orderForm.dispatchedFrom" ng-options="item.id as item.name for item in dispatchFromSites track by item.id"
+                required>
+                <option value="" disabled selected translate>Select</option>
+              </select>
+              <ng-messages for="addOrderForm.dispatchedFrom.$error" role="alert" ng-show="addOrderForm.$submitted">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" translate>Dispatch Type</label>
+            <div class="col-sm-9">
+              <label class="radio-inline">
+                <input type="radio" name="transferType" ng-model="orderForm.type" value="TRANSFER" required>
+                <span translate>Transfer</span>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" ng-model="orderForm.type" value="ISSUE" required>
+                <span translate>Issue</span>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" ng-model="orderForm.type" value="PATIENT_REQUEST" required>
+                <span translate>Patient Request</span>
+              </label>
+              <small class="error" style="display:block;" ng-show="addOrderForm.$submitted && !orderForm.type"><translate>Please select a dispatch type</translate></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="dispatchedTo" translate>Dispatched To</label>
+            <div class="col-sm-9">
+              <select class="form-control" style="width:auto;" name="dispatchedTo" ng-model="orderForm.dispatchedTo" ng-options="item.id as item.name for item in dispatchToSites track by item.id"
+                ng-disabled="!orderForm.type" required>
+                <option value="" selected></option>
+              </select>
+              <ng-messages for="addOrderForm.dispatchedTo.$error" role="alert" ng-show="addOrderForm.$submitted">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+
+          <div class="col-sm-offset-2">
+            <button class="btn btn-primary" type="submit" ng-disabled="addingOrderForm">{{addingOrderForm ? 'Adding...' : 'Add' | translate}}</button>
+            <button class="btn btn-primary" type="button" ng-disabled="addingOrderForm" ng-click="clearForm();" translate>Clear</button>
+          </div>
+        </div>
+        <div class="col-sm-7" ng-if="orderForm.type==='PATIENT_REQUEST'">
+          <h4 translate>Patient Details</h4>
+
+          <div class="form-group col-sm-12">
+            <div class="row">
+              <label class="col-sm-2 control-label" for="name1" translate>Name</label>
+              <div class="col-sm-5">
+                <input name="name1" type="text" class="form-control" ng-model="orderForm.patient.name1" ng-maxlength=20 required/>
+                <ng-messages for="addOrderForm.name1.$error" role="alert" ng-show="addOrderForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+
+              <div class="col-sm-5">
+                <input name="name2" type="text" class="form-control" ng-model="orderForm.patient.name2" ng-maxlength=20 required/>
+                <ng-messages for="addOrderForm.name2.$error" role="alert" ng-show="addOrderForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+                </ng-messages>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-4 control-label" translate>Date of Birth</label>
+                <div class="col-sm-8">
+                  <dateselect name="dateOfBirth" ng-model="orderForm.patient.dateOfBirth" format="dateFormat" date-time-not-in-future ng-model-options="{ allowInvalid: true }"
+                    ng-class="{'has-error' : addOrderForm.dateOfBirth.$invalid}" max-date="maxDateOfBirth"></dateselect>
+                  <div>
+                    <ng-messages for="addOrderForm.dateOfBirth.$error" role="alert" ng-show="addOrderForm.dateOfBirth.$invalid && addOrderForm.$submitted">
+                      <ng-messages-include src="messages.html"></ng-messages-include>
+                    </ng-messages>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" translate>Patient Number</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="orderForm.patient.patientNumber" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" translate>Blood Bank</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" ng-model="orderForm.patient.hospitalBloodBankNumber" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" translate>Gender</label>
+              <div class="col-sm-8">
+                <select name="gender" class="form-control input-sm" ng-options="item.id as (item.name | titleCase | translate) for item in genders" ng-model="orderForm.patient.gender">
+                  <option value=""></option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" translate>Blood Group</label>
+              <div class="col-sm-8">
+                <select name="bloodGroup" class="form-control" ng-options="item for item in bloodGroups" ng-model="orderForm.patient.bloodGroup">
+                   <option value=""></option>
+                 </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" translate>Ward Number</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="orderForm.patient.hospitalWardNumber" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

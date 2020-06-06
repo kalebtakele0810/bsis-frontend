@@ -1,0 +1,37 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding-top:5px;" ng-controller="ReportsSidebarCtrl">
+    <ul class="nav nav-sidebar">
+        <li class="disabled">
+      <span class="icon-sidebar-container">
+        <div class="placeholder">
+            <a href="#reports">
+                <i class="fa {{icons.REPORTS}}"></i>
+            </a>
+        </div>
+      </span>
+        </li>
+        <li class="disabled"><span class="sidebar-heading" translate>REPORTS</span></li>
+        <li ng-class="{current: currentPath === '/aboRhGroupsReport'}" has-permission="{{permissions.DONATIONS_REPORTING}}"><a
+                href="#/aboRhGroupsReport" translate>ABO Rh Blood Grouping Report</a></li>
+        <li ng-class="{current: currentPath === '/donationTypesReport'}" has-permission="{{permissions.DONATIONS_REPORTING}}"><a
+                href="#/donationTypesReport" translate>Donation Types Report</a></li>
+        <li ng-class="{current: currentPath === '/ttiPrevalenceReport'}" has-permission="{{permissions.TTI_REPORTING}}"><a
+                href="#/ttiPrevalenceReport" translate>TTI Prevalence Report</a></li>
+        <li ng-class="{current: currentPath === '/bloodUnitsIssuedReport'}" has-permission="{{permissions.COMPONENTS_REPORTING}}"><a
+                href="#/bloodUnitsIssuedReport" translate>Blood Units Issued Summary Report</a></li>
+        <li ng-class="{current: currentPath === '/donorsDeferredReport'}" has-permission="{{permissions.DONORS_REPORTING}}"><a
+                href="#/donorsDeferredReport" translate>Donors Deferred Summary Report</a></li>
+        <li ng-class="{current: currentPath === '/unitsDiscardedReport'}" has-permission="{{permissions.COMPONENTS_REPORTING}}"><a
+                href="#/unitsDiscardedReport" translate>Discards Summary Report</a></li>
+        <li ng-class="{current: currentPath === '/componentsProducedReport'}" has-permission="{{permissions.COMPONENTS_REPORTING}}"><a
+                href="#/componentsProducedReport" translate>Components Produced Report</a></li>
+        <li ng-class="{current: currentPath === '/donorsAdverseEventsReport'}" has-permission="{{permissions.DONATIONS_REPORTING}}"><a
+                href="#/donorsAdverseEventsReport" translate>Donors Adverse Events Summary Report</a></li>
+        <li ng-class="{current: currentPath === '/transfusionsReport'}" has-permission="{{permissions.TRANSFUSIONS_REPORTING}}"><a
+                href="#/transfusionsReport" translate>Transfusions Summary Report</a></li>
+        <li ng-class="{current: currentPath === '/whoGdbsReport'}" has-permission="{{permissions.DONATIONS_REPORTING}}"><a
+                        href="#/whoGdbsReport">WHO GDBS Report</a></li>
+        <li ng-class="{current: currentPath === '/donationSummaryReport'}" has-permission="{{permissions.DONATIONS_REPORTING}}"><a
+                href="#/donationSummaryReport">Donation Summary Report</a></li>
+    </ul>
+    <div ng-include="'views/sidebarFooter.html'"></div>
+</div>

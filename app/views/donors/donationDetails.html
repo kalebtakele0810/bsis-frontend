@@ -1,0 +1,142 @@
+<div class="row equal">
+    <div class="col-sm-5" style="height:100%; border-right: 2px solid #f5f5f5; ">
+
+        <table class="dash-table">
+            <tbody>
+            <tr>
+                <td class="field"><span translate translate-comment="Donation Identification Number, abbreviation">DIN</span>:</td>
+                <td class="value">{{donation.donationIdentificationNumber}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Date</span>:</td>
+                <td class="value">{{donation.donationDate | bsisDate }}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Time</span>:</td>
+                <td class="value" translate translate-params-start-time="donation.bleedStartTime | bsisTime" translate-params-end-time="donation.bleedEndTime | bsisTime">{{startTime}} to {{endTime}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Venue</span>:</td>
+                <td class="value">{{donation.venue.name}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Pack</span>:</td>
+                <td class="value">{{donation.packType.packType}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Donation</span>:</td>
+                <td class="value">{{donation.donationType.type}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>ABO/Rh</span>:</td>
+                <td class="value">{{donation.bloodAbo}}{{donation.bloodRh}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Pulse</span>:</td>
+                <td class="value">{{donation.donorPulse}} {{pulseUnit}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Hb</span>:</td>
+                <td class="value">
+                    <haemoglobin-value haemoglobin-count="donation.haemoglobinCount" haemoglobin-level="donation.haemoglobinLevel"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>BP</span>:</td>
+                <td class="value">{{donation.bloodPressureSystolic}}/{{donation.bloodPressureDiastolic}} {{bpUnit}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Weight</span>:</td>
+                <td class="value">{{donation.donorWeight}} {{weightUnit}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Donation Notes</span>:</td>
+                <td class="valuesml">{{donation.notes}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Adverse Event Type</span>:</td>
+                <td class="value">{{donation.adverseEvent.type.name}}</td>
+            </tr>
+            <tr>
+                <td class="field"><span translate>Adverse Event Comment</span>:</td>
+                <td class="value">{{donation.adverseEvent.comment}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div has-permission="{{permissions.VIEW_TEST_OUTCOME}}"
+    class="col-sm-7" style="height:100%; " ng-show="donation.packType.testSampleProduced">
+
+
+    <span>
+      <small><em><span translate>TTI Status</span>:</em></small> {{donation.ttistatus | titleCase | translate}}
+      <br/>
+      <small><em><span translate>Blood Group Serology Status</span>:</em></small> {{donation.bloodTypingStatus | titleCase | translate}} - {{donation.bloodTypingMatchStatus | titleCase | translate}}
+    </span>
+
+        <hr style="margin-top:0px;"/>
+
+        <div class="form-horizontal col-sm-12">
+            <div class="row">
+      <span class="col-sm-6">
+        <span class="h5" translate>TTI Outcomes</span>
+        <hr style="margin-top:10px; margin-bottom:5px;"/>
+        <table class="dash-table">
+            <thead>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th translate>Test</th>
+                <th translate>Outcome</th>
+                <th translate>Tested On</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+            </tr>
+            <tr ng-repeat="test in testResults">
+                <td ng-if="test.bloodTest.category == 'TTI'" class="value">{{test.bloodTest.testNameShort}}
+                </td>
+                <td ng-if="test.bloodTest.category == 'TTI'" class="value">{{test.result}}</td>
+                <td ng-if="test.bloodTest.category == 'TTI'" class="value">{{test.testedOn | bsisDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+      </span>
+      <span class="col-sm-6">
+        <span class="h5" translate>Blood Group Serology Outcomes</span>
+        <hr style="margin-top:10px; margin-bottom:5px;"/>
+        <table class="dash-table">
+            <thead>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th translate>Test</th>
+                <th translate>Outcome</th>
+                <th translate>Tested On</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+            </tr>
+            <tr ng-repeat="test in testResults">
+                <td ng-if="test.bloodTest.category == 'BLOODTYPING'" class="value">
+                    {{test.bloodTest.testNameShort}}
+                </td>
+                <td ng-if="test.bloodTest.category == 'BLOODTYPING'" class="value">{{test.result}}</td>
+                <td ng-if="test.bloodTest.category == 'BLOODTYPING'" class="value">{{test.testedOn |
+                    bsisDate}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+      </span>
+            </div>
+        </div>
+    </div>
+    </div>

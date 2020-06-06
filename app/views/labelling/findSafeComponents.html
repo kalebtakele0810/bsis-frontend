@@ -1,0 +1,146 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/labelling/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Find Safe Components to Label</h3>
+
+  <form class="form-horizontal col-sm-12" name="findSafeComponentsForm" ng-submit="findSafeComponents(searchParams)" novalidate>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>DIN</label>
+      <div class="form-inline col-sm-10">
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="donationIdentificationNumber" ng-model="searchParams.donationIdentificationNumber" ng-required="searchParams.componentCode" ng-blur="updateDinSearch()">
+          <ng-messages for="findSafeComponentsForm.donationIdentificationNumber.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+        <label class="control-label" translate>Component Code</label>
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="componentCode" ng-model="searchParams.componentCode" size="8">
+          <ng-messages for="findSafeComponentsForm.componentCode.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Site</label>
+      <div class="form-inline col-sm-10">
+        <select name="location" class="form-control" ng-model="searchParams.locationId" ng-change="updateAllSites()" ng-required="!searchParams.allSites" ng-disabled="dinSearch" style="min-width: 350px;">
+          <option value="" disabled></option>
+          <option ng-repeat="location in locations" value="{{location.id}}">
+            {{location.name}}
+          </option>
+        </select>
+        <label>
+          <input type="checkbox" name="allSites" ng-model="searchParams.allSites" ng-click="clearLocationId()" ng-disabled="dinSearch" />
+          <span translate>All</span>
+        </label>
+        <div>
+          <ng-messages for="findSafeComponentsForm.location.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Component Type</label>
+      <div class="form-inline col-sm-10">
+        <select name="componentType" class="form-control" ng-model="searchParams.componentTypeId" ng-change="updateAllComponentTypes()" ng-required="!searchParams.allComponentTypes" ng-disabled="dinSearch" style="min-width: 350px;">
+          <option value="" disabled></option>
+          <option ng-repeat="componentType in componentTypes" value="{{componentType.id}}">
+            {{componentType.componentTypeName}}
+          </option>
+        </select>
+        <label>
+          <input type="checkbox" name="allComponentTypes" ng-model="searchParams.allComponentTypes" ng-click="clearComponentTypeId()" ng-disabled="dinSearch"/>
+          <span translate>All</span>
+        </label>
+        <div>
+          <ng-messages for="findSafeComponentsForm.componentType.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label" translate>Blood Groups</label>
+        <div class="form-inline col-sm-10" ng-if="bloodGroups.length > 0">
+            <ui-select multiple name="bloodGroups" ng-model="searchParams.bloodGroups" ng-change="updateAnyBloodGroup()" ui-select-required="!searchParams.anyBloodGroup" ng-disabled="dinSearch" style="height: 34px; min-width: 350px;">
+                <ui-select-match placeholder="{{'Select' | translate}}">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="bloodGroup in bloodGroups | filter:$select.search">
+                    {{bloodGroup}}
+                </ui-select-choices>
+            </ui-select>
+            <label>
+                <input type="checkbox" name="anyBloodGroup" ng-model="searchParams.anyBloodGroup" ng-click="clearBloodGroups()" ng-disabled="dinSearch" />
+                <span translate>Any</span>
+            </label>
+            <div>
+              <ng-messages for="findSafeComponentsForm.bloodGroups.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Period</label>
+      <div class="col-sm-10">
+          <dateselect name="startDate" ng-model="searchParams.startDate" format="dateFormat" ng-class="{'has-error' : (findSafeComponentsForm.startDate.$invalid)}" ng-required="!dinSearch" ui-date-range="1,months" ui-date-end="{{searchParams.endDate | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }" ng-disabled="dinSearch"></dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="endDate" ng-model="searchParams.endDate" format="dateFormat" ng-class="{'has-error' : (findSafeComponentsForm.endDate.$invalid)}" ng-required="!dinSearch" ui-date-start="{{searchParams.startDate |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }" min-date="searchParams.startDate" ng-disabled="dinSearch"></dateselect-end>
+          <div>
+            <ng-messages for="findSafeComponentsForm.startDate.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+              <small class="error" ng-message="required"><span  translate>Select a valid date</span></small>
+              <small class="error" ng-message="datesOutOfRange"><span  translate>Select a date range that is less than one month</span></small>
+              <ng-messages-include src="messages.html"></ng-messages-include>
+            </ng-messages>
+            <ng-messages for="findSafeComponentsForm.endDate.$error" role="alert" ng-show="findSafeComponentsForm.$submitted && !findSafeComponentsForm.startDate.$invalid">
+              <small class="error" ng-message="required"><span translate>Select a valid date</span></small>
+              <ng-messages-include src="messages.html"></ng-messages-include>
+            </ng-messages>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <label>
+          <input type="radio" name="inventoryStatus" ng-model="searchParams.inventoryStatus" value="NOT_IN_STOCK" ng-required="!dinSearch" ng-disabled="dinSearch" />
+          <span translate>Not in Stock</span>
+        </label>
+        <label>
+          <input type="radio" name="inventoryStatus" ng-model="searchParams.inventoryStatus" value="IN_STOCK" ng-required="!dinSearch" ng-disabled="dinSearch"/>
+          <span translate>In Stock</span>
+        </label>
+        <div>
+          <ng-messages for="findSafeComponentsForm.inventoryStatus.$error" role="alert" ng-show="findSafeComponentsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="clearSearch(findSafeComponentsForm)" translate>Clear</button>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="panel panel-default col-sm-12" ng-if="submitted">
+    <div class="panel-body">
+      <p><span translate>Data Export</span>:
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+      </p>
+      <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+    </div>
+  </div>
+</div>

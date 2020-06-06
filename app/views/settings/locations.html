@@ -1,0 +1,55 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Locations</h3>
+
+    <div class="pull-right" style="padding-right: 25px;">
+      <a href="#/manageLocation" translate>Add New Location</a>
+    </div>
+
+  <form class="form-horizontal col-sm-12" name="findLocationForm" ng-submit="findLocations()" novalidate>
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="name" translate>Name</label>
+        <div class="col-sm-10">
+            <div class="form-inline">
+              <input type="name" id="name" class="form-control input-sm" size="40" autofocus="true" ng-model="locationSearch.name" ng-required="!locationSearch.locationType || locationSearch.locationType.length < 1"/>
+              <input type="checkbox" id="includeSimilarResults" ng-model="locationSearch.includeSimilarResults"> <label
+                  style="display: inline-block; cursor: pointer; cursor: hand;" for="includeSimilarResults" translate>Include Similar Results</label>
+              </input>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Location Type</label>
+      <div class="col-sm-10">
+        <select class="form-control" style="width:auto;" name="locationType" ng-model="locationSearch.locationType" ng-options="item as (item | titleCase | translate) for item in locationType" ng-required="!locationSearch.name || locationSearch.name.length < 1">
+          <option value="" selected></option>
+        </select>
+        <ng-messages for="findLocationForm.locationType.$error" role="alert" ng-show="findLocationForm.$submitted">
+          <small class="error" ng-message="required"><span translate>All search fields cannot be empty</span></small>
+        </ng-messages>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}</button>
+        <button class="btn btn-primary" type="button" ng-click="clear()" translate>Clear</button>
+      </div>
+    </div>
+
+  </form>
+  
+  <div class="col-sm-12">
+    <div class="panel panel-default" ng-if="searched">
+      <div class="panel-body">
+        <p>
+          <em translate translate-params-count="gridOptions.data.length">{{count}} Location(s) found</em>
+        </p>
+        <div class="grid" ui-grid="gridOptions" ui-grid-pagination></div> 
+      <div>
+    </div>
+  </div>
+
+</div>

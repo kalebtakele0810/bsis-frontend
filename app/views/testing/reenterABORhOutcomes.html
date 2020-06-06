@@ -1,0 +1,110 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/testing/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <span class="h3 page-header" translate>Re-Enter ABO/Rh Outcomes</span>
+
+  <hr/>
+
+  <div class="h4">
+      <small><em><span translate>Created On</span>: </em></small>
+      {{ testBatchCreatedDate | bsisDateTime}}
+      |
+      <small><em><span translate>Number of Samples</span>: </em></small>
+      {{ numberOfDonations }}
+  </div>
+
+  <hr/>
+  <div style="padding-bottom: 5px"></div>
+
+  <div class="col-sm-12">
+      <div class="panel panel-default">
+          <div class="panel-body">
+              <uib-alert ng-show="showAlert" type="danger" translate>Please resolve all discrepancies between initial and re-rentered outcomes before saving the form.</uib-alert>
+              <form ng-submit="validateSaveTestOutcomesForm()" novalidate>
+                  <table ng-table="testOutcomesTableParams" show-filter="false" class="table">
+                      <thead>
+                      <th class="text-left sortable"
+                          ng-class="{
+                            'sort-asc': testOutcomesTableParams.isSortBy('donation.donationIdentificationNumber', 'asc'),
+                            'sort-desc': testOutcomesTableParams.isSortBy('donation.donationIdentificationNumber', 'desc')
+                          }"
+                          ng-click="testOutcomesTableParams.sorting('donation.donationIdentificationNumber', testOutcomesTableParams.isSortBy('donation.donationIdentificationNumber', 'asc') ? 'desc' : 'asc')">
+                          <div><span translate>DIN</span> <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator=='span'}" class="ng-binding sort-indicator"></span></div>
+                      </th>
+                      <th class="text-center sortable"
+                          ng-class="{
+                            'sort-asc': testOutcomesTableParams.isSortBy('donation.donationDate', 'asc'),
+                            'sort-desc': testOutcomesTableParams.isSortBy('donation.donationDate', 'desc')
+                          }"
+                          ng-click="testOutcomesTableParams.sorting('donation.donationDate', testOutcomesTableParams.isSortBy('donation.donationDate', 'asc') ? 'desc' : 'asc')">
+                          <div><span translate>Donation Date</span> <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator=='span'}" class="ng-binding sort-indicator"></span></div>
+                      </th>
+                      <th class="text-center sortable" style="width:25%;"
+                          ng-class="{
+                            'sort-asc': testOutcomesTableParams.isSortBy('bloodTypingMatchStatus', 'asc'),
+                            'sort-desc': testOutcomesTableParams.isSortBy('bloodTypingMatchStatus', 'desc')
+                          }"
+                          ng-click="testOutcomesTableParams.sorting('bloodTypingMatchStatus', testOutcomesTableParams.isSortBy('bloodTypingMatchStatus', 'asc') ? 'desc' : 'asc')">
+                          <div><span translate>Blood Typing Status</span> <span ng-bind="$column.title(this)" ng-class="{'sort-indicator': params.settings().sortingIndicator=='span'}" class="ng-binding sort-indicator"></span></div>
+                      </th>
+                      <th ng-repeat="column in testNames" ng-show="true"
+                          class="text-center" ng-class=""
+                          ng-click="">
+                          <div>{{column.testNameShort}}</div>
+                      </th>
+                      </thead>
+                      <tbody>
+                      <tr ng-repeat="sample in $data"
+                          ng-click=""
+                          ng-mouseenter="this.$selected = true"
+                          ng-mouseleave="this.$selected = false"
+                          ng-class="{'active': sample.$selected}">
+                          <td class="text-center">
+                              {{sample.donation.donationIdentificationNumber}}
+                          </td>
+                          <td class="text-center">
+                              {{sample.donation.donationDate | bsisDate}}
+                          </td>
+                          <td class="text-center">
+                            {{sample.bloodTypingStatus | titleCase | translate }} - {{sample.bloodTypingMatchStatus | titleCase | translate}}
+                          </td>
+                          <td align="center" ng-repeat="test in testNames">
+                            <span ng-show="sample.recentTestResults[test.id] != null" style="display: flex; justify-content: center;">
+                              <div ng-class="{'panel panel-confirm' : (reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id] != sample.recentTestResults[test.id].result) && reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id] && !reEntryConfirmations[sample.donation.donationIdentificationNumber][test.id]}" style="width:90px;">
+                                  <ui-select
+                                          ng-model="reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id]"
+                                          ng-disabled="!sample.recentTestResults[test.id].reEntryRequired"
+                                          on-select="resetPreviousConfirmations(sample.donation.donationIdentificationNumber, test.id, sample.recentTestResults[test.id].result)">
+                                      <ui-select-match placeholder="">{{$select.selected}}</ui-select-match>
+                                      <ui-select-choices
+                                              repeat="result in test.validResults  | filter: {$: $select.search}">
+                                          <div ng-bind-html="result | highlight: $select.search"></div>
+                                      </ui-select-choices>
+                                  </ui-select>
+                              </div>
+                              <div style="width: 10px; padding: 5px;" class="check-element animate-show" ng-show="(reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id] != sample.recentTestResults[test.id].result) && reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id]">
+                                  <small>
+                                      <input ng-model="reEntryConfirmations[sample.donation.donationIdentificationNumber][test.id]" type="checkbox" id="confirmChange" value="true"  name="confirmChange" ng-required="(reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id] != sample.recentTestResults[test.id].result) && reEnteredTestOutcomes[sample.donation.donationIdentificationNumber].testResults[test.id]"
+                                      ng-click=""/>
+                                  </small>
+                              </div>
+                          </td>
+                        </span>
+                      </tr>
+                      </tbody>
+                  </table>
+
+                  <div class="form-group">
+                      <div class="col-sm-3">
+                          <button class="btn btn-primary" type="submit" ng-disabled="savingTestOutcomes">
+                              {{savingTestOutcomes ? "Saving..." : "Save" | translate}}
+                          </button>
+                          <button class="btn btn-primary" type="button" ng-click="go('/manageTestBatch')"
+                                  ng-disabled="savingTestOutcomes" translate>Cancel</button>
+                      </div>
+                  </div>
+
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

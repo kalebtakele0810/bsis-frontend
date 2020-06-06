@@ -1,0 +1,210 @@
+{
+  "batchNumber": "1000334",
+  "createdOn": "09/10/2014",
+  "numSamples": "10",
+  "status": "Complete",
+  "ttiStatus": "Complete",
+  "bloodTypingStatus": "Complete",
+  "samples": [
+    {
+      "donationIdentificationNumber": "D12345670MS",
+      "donationBatch": "DB11100002MS",
+      "venue": "Maseru",
+      "donationDate": "08/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345671MS",
+      "donationBatch": "DB11100002MS",
+      "venue": "Maseru",
+      "donationDate": "08/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "A",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345672MS",
+      "donationBatch": "DB11100002MS",
+      "venue": "Maseru",
+      "donationDate": "08/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345673MS",
+      "donationBatch": "DB11100002MS",
+      "venue": "Maseru",
+      "donationDate": "08/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345674MS",
+      "donationBatch": "DB11100003MS",
+      "venue": "Mohale's Hoek",
+      "donationDate": "09/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345675MS",
+      "donationBatch": "DB11100003MS",
+      "venue": "Mohale's Hoek",
+      "donationDate": "09/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345676MS",
+      "donationBatch": "DB11100003MS",
+      "venue": "Mohale's Hoek",
+      "donationDate": "09/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345677MS",
+      "donationBatch": "DB11100003MS",
+      "venue": "Mohale's Hoek",
+      "donationDate": "09/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345678MS",
+      "donationBatch": "DB11100003MS",
+      "venue": "Mohale's Hoek",
+      "donationDate": "09/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    },
+    {
+      "donationIdentificationNumber": "D12345679MS",
+      "donationBatch": "DB11100003MS",
+      "venue": "Mohale's Hoek",
+      "donationDate": "09/10/2014",
+      "donationCreatedBy": "administrator",
+      "packType": "Single",
+      "bloodAbo": "O",
+      "bloodRh": "+",
+      "bloodTypingStatus": "Complete",
+      "ttiStatus": "Complete",
+      "ttiOutcomes": [
+        {
+          "HIV": "NEG",
+          "HBV": "NEG",
+          "HCV": "NEG",
+          "Syphilis": "NEG"
+        }
+      ]
+    }
+  ]
+}

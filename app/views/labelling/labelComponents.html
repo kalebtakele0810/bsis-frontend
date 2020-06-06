@@ -1,0 +1,133 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/labelling/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Label Components</h3>
+
+  <form class="form-horizontal col-sm-12" role="form" name="labellingForm" ng-submit="getComponents(labellingForm)" novalidate>
+      <div class="form-group">
+        <label for="componentType" class="col-sm-1 control-label" translate>Type</label>
+        <div class="col-sm-11">
+          <select name="componentType" class="form-control" ng-model="search.componentType" ng-options="type.id as type.componentTypeName for type in componentTypes" required style="width:auto;">
+            <option value="" disabled></option>
+          </select>
+        </div>
+        <div class="col-sm-offset-1" style="padding-left:15px;">
+          <ng-messages for="labellingForm.componentType.$error" role="alert" ng-show="labellingForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="name" class="col-sm-1 control-label" translate>DIN</label>
+          <div class="col-sm-11">
+            <input size="15" type="donationIdentificationNumber" name="donationIdentificationNumber" class="form-control input-sm" placeholder="" ng-model="search.donationIdentificationNumber" style="width:auto;" required ng-click="onTextClick($event)">
+          </div>
+          <div class="col-sm-offset-1" style="padding-left:15px;">
+              <ng-messages for="labellingForm.donationIdentificationNumber.$error" role="alert" ng-show="labellingForm.$submitted">
+                  <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-3">
+              <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." :
+                  "Search" | translate}}
+              </button>
+              <button class="btn btn-primary" type="button" ng-click="clear(labellingForm)" translate>Clear</button>
+          </div>
+      </div>
+  </form>
+
+  <div ng-switch="searchResults" class="col-sm-12">
+      <div style="padding-bottom: 10px"></div>
+
+      <div ng-switch-when="true">
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <em ng-if="!components || components.length === 0"><span translate>No components for donation</span>.</em>
+                  <div ng-if="components && components.length > 0" ng-repeat="component in components">
+                      <div ng-if="component.permissions.canPrintPackLabel && component.hasComponentBatch">
+                          {{component.componentCode}} ({{component.componentName}}) -
+                          <span ng-switch on="component.verificationStatus">
+                            <span ng-switch-when="verified"><em translate>Component has been labelled and verified</em>.</span>
+                            <span ng-switch-default>
+                              <em><span translate>Component is ready to be labelled</span>.</em>
+                              <button style="margin:0;" class="btn btn-primary" type="button"
+                                      ng-click="printPackLabel(component)" ng-disabled="verifyComponent" translate>Print Pack Label
+                              </button>
+                            </span>
+                          </span>
+                          <span ng-if="serverErrorMessage" class="error">
+                              {{serverErrorMessage}}
+                          </span>
+                      </div>
+                      <div ng-if="component.permissions.canPrintDiscardLabel && 
+                      component.hasComponentBatch">
+                          {{component.componentCode}} ({{component.componentName}}) -
+                          <em><span translate>Component can be discarded</span>.</em>
+                          <button style="margin:0;" class="btn btn-primary" type="button"
+                                  ng-click="printDiscardLabel(component.id)"  ng-disabled="verifyComponent" translate>Print Discard Label
+                          </button>
+                      </div>
+                      <div ng-if="(!component.permissions.canPrintPackLabel && !component.permissions.canPrintDiscardLabel) || 
+                      !component.hasComponentBatch"  ng-disabled="verifyComponent">
+                          {{component.componentCode}} ({{component.componentName}}) -
+                          <em><span translate>Cannot print pack or discard labels for component</span>.</em>
+                      </div>
+                      <div style="margin-top:8px;"></div>
+                  </div>
+
+                  <div ng-if="verifyComponent">
+                    <h4 class="page-header" translate translate-params-component-code="verifyComponent.componentCode">Label Verification for {{componentCode}}</h4>
+                    <br/>
+                    <form class="form-horizontal col-sm-12" role="form" name="labellingVerificationForm" ng-submit="verifyPackLabel(verifyComponent, labellingVerificationForm)" novalidate>
+                      <div class="row form-group col-sm-12">
+                        <label for="prePrintedDIN" class="col-sm-2 control-label" translate>DIN</label>
+                        <div class="col-sm-10">
+                          <div class="form-inline">
+                            <input id="prePrintedDIN" name="prePrintedDIN" ng-model="verificationParams.prePrintedDIN" class="form-control input-sm" style="width:auto;" required autofocus ng-disabled="verifying || rescanning">
+                            <div>
+                              <ng-messages for="labellingVerificationForm.prePrintedDIN.$error" ng-show="labellingVerificationForm.$submitted">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                              </ng-messages>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row form-group col-sm-12">
+                        <label for="packLabelDIN" class="col-sm-2 control-label" translate>Pack Label DIN</label>
+                        <div class="col-sm-10">
+                          <div class="form-inline">
+                            <input id="packLabelDIN" name="packLabelDIN" ng-model="verificationParams.packLabelDIN" class="form-control input-sm" style="width:auto;" required ng-disabled="verifying || rescanning">
+                            <div>
+                              <ng-messages for="labellingVerificationForm.packLabelDIN.$error" ng-show="labellingVerificationForm.$submitted">
+                                <ng-messages-include src="messages.html"></ng-messages-include>
+                                <small class="error" ng-message="notVerified"><span translate>DINs do not match</span>.</small>
+                                <small class="error" ng-message="sameDinScanned"><span translate>The same barcode has been scanned twice: please re-scan</span>.</small>
+                              </ng-messages>                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-sm-12">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-primary" type="submit" ng-disabled="verifying || rescanning">{{verifying ? "Verifying..." : "Verify" | translate}}
+                            </button>
+                            <button class="btn btn-primary" ng-show="rescanning" type="button" ng-click="rescanPackLabel(labellingVerificationForm)" translate>
+                              Re-scan Pack Label
+                            </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div ng-switch-when="false">
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <em><span translate>Not found. Please re-enter DIN or select a different component type</span>.</em>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

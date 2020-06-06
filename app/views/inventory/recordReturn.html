@@ -1,0 +1,90 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'">
+</div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Record Return</h3>
+
+  <hr />
+
+  <section class="clearfix" ng-hide="editingReturnDetails">
+    <span class="text-muted" translate>Return Date</span> {{returnForm.returnDate | bsisDate}}
+    <span class="text-muted" translate>Returned From</span> {{returnForm.returnedFrom.name}}
+    <span class="text-muted" translate>Returned To</span> {{returnForm.returnedTo.name}}
+    <button class="btn btn-primary pull-right" style="margin-top:0;" ng-click="editReturnDetails()" translate>Edit</button>
+  </section>
+  <form class="row" name="forms.returnDetailsForm" role="form" ng-show="editingReturnDetails" ng-submit="saveReturnDetails();"
+    novalidate>
+    <div class="form-group col-sm-2 override-dateselect-width">
+      <span class="text-muted" translate>Return Date</span>
+      <dateselect name="returnDate" ng-model="returnDetailsForm.returnDate" format="dateFormat" is-open="selectingDate" required></dateselect>
+    </div>
+    <div class="form-group col-sm-3">
+      <span class="text-muted" for="dispatchedFrom" translate>Returned From</span>
+      <select class="form-control" name="returnedFrom" ng-model="returnDetailsForm.returnedFrom" ng-options="item as item.name for item in returnedFromSites track by item.id"
+        required></select>
+    </div>
+    <div class="form-group col-sm-4">
+      <span class="text-muted" for="dispatchedTo" translate>Returned To</span>
+      <select class="form-control" name="returnedTo" ng-model="returnDetailsForm.returnedTo" ng-options="item as item.name for item in returnedToSites track by item.id"
+        required></select>
+    </div>
+    <div class="col-sm-3 text-right pad-t-10">
+      <button class="btn btn-primary" type="submit" ng-disabled="savingReturnDetails">{{savingReturnDetails ? 'Saving...' : 'Save' | translate}}</button>
+      <button class="btn btn-primary" type="reset" ng-disabled="savingReturnDetails" ng-click="clearDetailsForm($event);" translate>Cancel</button>
+    </div>
+  </form>
+
+  <hr />
+
+  <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4 translate>Units Returned</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <form class="form-inline" name="addComponentForm" role="form" ng-submit="addComponent(addComponentForm);" novalidate>
+              <div class="form-group">
+                <label for="componentType" style="vertical-align: top" translate>DIN</label>
+                <div style="display: inline-block">
+                  <input class="form-control" name="din" ng-model="component.din" required>
+                  <ng-messages for="addComponentForm.din.$error" role="alert" ng-show="addComponentForm.$submitted">
+                    <ng-messages-include src="messages.html"></ng-messages-include>
+                  </ng-messages>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="componentType" style="vertical-align: top" translate>Component Code</label>
+                <div style="display: inline-block">
+                  <input class="form-control" name="componentCode" ng-model="component.componentCode" required>
+                  <ng-messages for="addComponentForm.componentCode.$error" role="alert" ng-show="addComponentForm.$submitted">
+                    <ng-messages-include src="messages.html"></ng-messages-include>
+                  </ng-messages>
+                </div>
+              </div>
+              <div class="form-group" style="vertical-align: top">
+                <button class="btn btn-primary" type="submit" ng-disabled="addingComponent" style="margin-top: 0px" translate>Add Pack</button>
+                <button class="btn btn-primary" type="button" ng-disabled="addingComponent" style="margin-top: 0px" ng-click="removeComponent(addComponentForm);" translate>Remove Pack</button>
+                <button class="btn btn-primary" type="button" ng-disabled="addingComponent" style="margin-top: 0px" ng-click="clearAddComponent(addComponentForm);" translate>Clear</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+            <form class="form-horizontal" name="updateReturnForm" role="form" ng-submit="updateReturn();" novalidate>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button class="btn btn-primary" type="submit" ng-disabled="savingForm">{{savingForm ? 'Saving...' : 'Save' | translate}}</button>
+                  <button class="btn btn-primary" type="button" ng-disabled="savingForm" ng-click="cancel();" translate>Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

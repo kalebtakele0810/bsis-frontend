@@ -1,0 +1,17 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Blood Tests</h3>
+
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>
+          <em translate translate-params-count="gridOptions.data.length">{{count}} Blood Test(s) found</em> | 
+          <a href="#/manageBloodTest" translate>Add New Blood Test</a>
+        </p>
+        <div class="grid" ui-grid="gridOptions" ui-grid-pagination></div> 
+      <div>
+    </div>
+  </div>
+
+</div>

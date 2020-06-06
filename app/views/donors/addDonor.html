@@ -1,0 +1,179 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/donors/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Add Donor</h3>
+
+    <form class="form-horizontal col-sm-12" role="form" name="addDonorForm" novalidate
+        ng-submit="addDonor(donor, dob, addDonorForm.$valid)">
+
+        <uib-alert type="danger" close="" ng-show="err.userMessage">
+            <span translate>Please provide valid inputs</span>
+            <ul>
+                <li ng-show="err['donor.birthDate'][0].code === 'date.futureDate'">Cannot be a future date</li>
+            </ul>
+        </uib-alert>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-1 control-label" translate>Name</label>
+            <div class="row col-sm-11">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select class="form-control input-sm" ng-model="donor.title"
+                        ng-options="item as (item | titleCase | translate) for item in title">
+                        <option value="" ng-disabled="true" translate>Title</option>
+                    </select>
+                    <input size="15" id="firstName" name="firstName" class="form-control input-sm"
+                        placeholder="{{'Name' | translate}}" ng-model="donor.firstName" required ng-minlength=1
+                        ng-maxlength=20
+                        ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                        ng-class="{'ng-invalid ng-dirty' : addDonorForm.firstName.$invalid && submitted}">
+                    <input size="15" id="middleName" name="middleName" class="form-control input-sm"
+                        placeholder="{{'Middle Name' | translate}}" ng-model="donor.middleName" ng-maxlength=20
+                        ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                        ng-class="{'ng-invalid ng-dirty' : addDonorForm.middleName.$invalid && submitted}">
+                    <input size="15" id="lastName" name="lastName" class="form-control input-sm"
+                        placeholder="{{'Last Name' | translate}}" ng-model="donor.lastName" required ng-minlength=1
+                        ng-maxlength=20
+                        ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                        ng-class="{'ng-invalid ng-dirty' : addDonorForm.lastName.$invalid && submitted}">
+                    <input size="15" id="callingName" name="callingName" class="form-control input-sm"
+                        placeholder="{{'Calling Name' | translate}}" ng-model="donor.callingName" ng-maxlength=20
+                        ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                        ng-class="{'ng-invalid ng-dirty' : addDonorForm.callingName.$invalid && submitted}">
+                    <div>
+                        <small class="error" ng-show="
+              (addDonorForm.firstName.$error.required && (addDonorForm.firstName.$dirty || submitted)) ||
+              (addDonorForm.lastName.$error.required  && (addDonorForm.lastName.$dirty  || submitted))
+            ">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                    <div>
+                        <small class="error" ng-show="
+              (!addDonorForm.firstName.$error.required && addDonorForm.firstName.$invalid && (addDonorForm.firstName.$dirty || submitted)) ||
+              (!addDonorForm.lastName.$error.required && addDonorForm.lastName.$invalid && (addDonorForm.lastName.$dirty  || submitted)) ||
+              (addDonorForm.callingName.$invalid && (addDonorForm.callingName.$dirty  || submitted))
+            ">
+                            <span translate>Invalid input</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-1 control-label" translate
+                translate-comment="Date of Birth, abbreviation">DOB</label>
+            <div class="row col-sm-11">
+                <div class="form-inline" style="padding-left:5px;">
+                    <input name="dayOfMonth" size="2" style="width:3em;" type="number" id="day"
+                        class="form-control input-sm" placeholder="{{'Day' | translate}}" ng-model="dob.dayOfMonth"
+                        required min="1" max="31" integer
+                        ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                        ng-class="{'ng-invalid ng-dirty' : (addDonorForm.dayOfMonth.$invalid && submitted) || dobValid === false}">
+                    <select name="month" class="form-control input-sm" ng-model="dob.month"
+                        ng-options="item.id as (item.name | titleCase | translate) for item in month" required
+                        ng-class="{'ng-invalid ng-dirty' : (addDonorForm.month.$invalid && submitted) || dobValid === false}">
+                        <option value="" ng-disabled="true" translate>Month</option>
+                    </select>
+                    <input name="year" size="4" style="width:4em;" type="number" id="year" class="form-control input-sm"
+                        placeholder="{{'Year' | translate}}" ng-model="dob.year" required integer
+                        ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                        ng-class="{'ng-invalid ng-dirty' : (addDonorForm.year.$invalid && submitted) || dobValid === false }">
+                    <div>
+                        <small class="error" ng-show="
+              (addDonorForm.dayOfMonth.$error.required && (addDonorForm.dayOfMonth.$dirty || submitted)) ||
+              (addDonorForm.month.$error.required && (addDonorForm.month.$dirty  || submitted)) ||
+              (addDonorForm.year.$error.required && (addDonorForm.year.$dirty  || submitted))
+            ">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                    <div>
+                        <small class="error" ng-show="
+              (!addDonorForm.dayOfMonth.$error.required && addDonorForm.dayOfMonth.$invalid && (addDonorForm.dayOfMonth.$dirty || submitted)) ||
+              (!addDonorForm.month.$error.required && addDonorForm.month.$invalid && (addDonorForm.month.$dirty || submitted)) ||
+              (!addDonorForm.year.$error.required && addDonorForm.year.$invalid && (addDonorForm.year.$dirty || submitted))
+            ">
+                            <span translate>Invalid input</span>
+                        </small>
+                    </div>
+                    <div>
+                        <small class="error" ng-show="dobValid === false"><span translate>Invalid date</span></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-1 control-label" translate>Gender</label>
+            <div class="row col-sm-11">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select name="gender" class="form-control input-sm" ng-model="donor.gender"
+                        ng-options="item.id as (item.name | titleCase | translate)  for item in gender" required
+                        ng-class="{'ng-invalid ng-dirty' : addDonorForm.gender.$invalid && submitted}">
+                        <option value="" ng-disabled="true"></option>
+                    </select>
+                    <div>
+                        <small class="error" ng-show="
+              (addDonorForm.gender.$invalid && (addDonorForm.gender.$dirty || submitted))
+            ">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-1 control-label" translate>Venue</label>
+            <div class="row col-sm-11">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select name="venue" class="form-control input-sm" ng-model="donor.venue"
+                        ng-options="item as item.name for item in venues" required
+                        ng-class="{'ng-invalid ng-dirty' : addDonorForm.venue.$invalid && submitted}">
+                        <option value="" ng-disabled="true"></option>
+                    </select>
+                    <div>
+                        <small class="error" ng-show="
+              (addDonorForm.venue.$invalid && (addDonorForm.venue.$dirty || submitted))
+            ">
+                            <span translate>This cannot be empty</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-sm-1 control-label" translate>Languages</label>
+            <div class="row col-sm-11">
+                <div class="form-inline" style="padding-left:5px;">
+                    <select name="preferredLanguage" class="form-control input-sm" ng-model="donor.preferredLanguage"
+                            ng-options="item as item.preferredLanguage for item in languages"
+                            ng-model="userSelect">
+                            <option value=""></option>
+                    </select>
+
+                    <div>
+                        <!-- <small class="error"
+                            ng-class="{'ng-invalid ng-dirty' : addDonorForm.preferredLanguage.$invalid && submitted}"
+                           ng-show="
+                            (addDonorForm.preferredLanguage.$invalid && (addDonorForm.preferredLanguage.$dirty || submitted))
+                                 ">
+                             <span translate>This cannot be empty</translate>
+                         </small> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-4">
+                <button class="btn btn-primary" type="submit" ng-disabled="addingDonor">{{addingDonor ? "Adding..." : "Add"
+                 | translate}}
+                </button>
+                <!-- <button class="btn btn-primary" type="submit">Save and Add Another Donor</button> -->
+            </div>
+        </div>
+
+    </form>
+</div>

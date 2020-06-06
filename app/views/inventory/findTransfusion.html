@@ -1,0 +1,94 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Find Transfusions</h3>
+
+  <form class="form-horizontal col-sm-12" name="searchForm" ng-submit="findTransfusion(searchForm)" novalidate>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>DIN</label>
+      <div class="form-inline col-sm-10">
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="donationIdentificationNumber" ng-model="searchParams.donationIdentificationNumber" ng-change="clearFields()" ng-required="searchParams.componentCode">
+          <ng-messages for="searchForm.donationIdentificationNumber.$error" role="alert" ng-show="searchForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+        <label class="control-label" translate>Component Code</label>
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="componentCode" ng-model="searchParams.componentCode" size="8" ng-change="setComponentType(searchParams.componentCode)" ng-required="searchParams.donationIdentificationNumber">
+          <ng-messages for="searchForm.componentCode.$error" role="alert" ng-show="searchForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Component Type</label>
+      <div class="form-inline col-sm-10">
+        <select name="componentType" class="form-control" ng-model="searchParams.componentTypeId" style="min-width: 350px;" ng-disabled="searchParams.donationIdentificationNumber || searchParams.componentCode" ng-options="componentType.id as componentType.componentTypeName for componentType in componentTypes">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Transfusion Site</label>
+      <div class="form-inline col-sm-10">
+        <select name="receivedFrom" class="form-control" ng-model="searchParams.receivedFromId" style="min-width: 350px;" ng-disabled="searchParams.donationIdentificationNumber" ng-options="transfusionSite.id as transfusionSite.name for transfusionSite in transfusionSites">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Transfusion Outcome</label>
+      <div class="form-inline col-sm-10">
+        <select name="transfusionOutcome" ng-model="searchParams.transfusionOutcome" class="form-control" ng-options="outcome as (outcome | titleCase | translate) for outcome in transfusionOutcomes" style="min-width: 350px;" ng-disabled="searchParams.donationIdentificationNumber">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="clearfix form-group">
+        <label class="col-sm-2 control-label" translate>Period</label>
+        <div class="form-inline col-sm-10">
+            <div>
+                <dateselect name="startDate" ng-model="searchParams.startDate" format="dateFormat" ng-class="{'has-error' : (searchForm.startDate.$invalid)}" ng-required="!searchParams.donationIdentificationNumber" ui-date-range="1,months" ui-date-end="{{searchParams.endDate | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }" ng-disabled="searchParams.donationIdentificationNumber"></dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="endDate" ng-model="searchParams.endDate" format="dateFormat" ng-class="{'has-error' : (searchForm.endDate.$invalid)}" ng-required="!searchParams.donationIdentificationNumber" ui-date-range="1,months" ui-date-start="{{searchParams.startDate |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }" min-date="search.startDate" ng-disabled="searchParams.donationIdentificationNumber"></dateselect-end>
+            </div>
+            <div>
+              <ng-messages for="searchForm.startDate.$error" role="alert" ng-show="searchForm.$submitted">
+                <small class="error" ng-message="required"><span translate>This is required</span></small>
+                <small class="error" ng-message="datesOutOfRange"><span translate>Select a date range that is less than one month</span></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+              <ng-messages for="searchForm.endDate.$error" role="alert" ng-show="searchForm.$submitted && !searchForm.startDate.$invalid">
+                <small class="error" ng-message="required"><span translate>This is required</span></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="clearSearch(searchForm)" translate>Clear</button>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="panel panel-default col-sm-12" ng-if="submitted">
+    <div class="panel-body">
+      <p><span translate>Data Export</span>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+        <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+      </p>
+      <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+    </div>
+  </div>
+
+</div>

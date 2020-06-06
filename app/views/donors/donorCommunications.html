@@ -1,0 +1,102 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/donors/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+<h3 class="page-header" translate>View / Export Donor List</h3>
+
+<form name="donorCommunicationsForm" class="form-horizontal" role="form" ng-submit="onSearch(donorCommunicationsForm)"
+      novalidate>
+
+    <div ng-show="error.message">
+        <uib-alert type="danger" close="error.message = null">{{error.message}}</uib-alert>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': donorCommunicationsForm.$submitted && search.venues.length === 0}">
+        <label class="col-sm-2 control-label" translate>Venues</label>
+        <div class="col-sm-10" ng-if="venues.length > 0">
+            <ui-select multiple ng-model="search.venues" style="max-width:470px;width:100%;">
+                <ui-select-match placeholder="{{'Select' | translate}}">{{$item.name}}</ui-select-match>
+                <ui-select-choices repeat="venue in venues | filter:$select.search track by venue.id">
+                    {{venue.name}}
+                </ui-select-choices>
+            </ui-select>
+
+            <select name="venues" ng-model="search.venues" ng-show="false" multiple required></select>
+            <ng-messages for="donorCommunicationsForm.venues.$error" role="alert"
+                         ng-show="donorCommunicationsForm.$submitted || donorCommunicationsForm.venues.$dirty">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+            </ng-messages>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" translate>Blood Groups</label>
+        <div class="col-sm-10" ng-if="bloodGroups.length > 0">
+            <ui-select multiple ng-model="search.bloodGroups" style="display:inline-block;max-width:470px;width:100%;"
+                       on-select="onBloodGroupSelect();">
+                <ui-select-match placeholder="{{'Select' | translate}}">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="bloodGroup in bloodGroups | filter:$select.search">
+                    {{bloodGroup}}
+                </ui-select-choices>
+            </ui-select>
+            <div class="checkbox" style="display:inline-block;">
+                <input id="anyBloodGroup" type="checkbox" ng-model="search.anyBloodGroup"
+                       ng-change="onAnyBloodGroupChange();">
+                <label for="anyBloodGroup" translate>Any</label>
+            </div>
+            <div class="checkbox" style="display:inline-block;">
+                <input id="noBloodGroup" type="checkbox" ng-model="search.noBloodGroup">
+                <label for="noBloodGroup" translate>No Blood Group</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" translate>Previous Donation</label>
+        <div class="col-sm-10">
+            <dateselect name="lastDonationFromDate"
+                        ng-class="{'has-error': donorCommunicationsForm.$submitted && donorCommunicationsForm.lastDonationFromDate.$invalid}"
+                        ng-model="search.lastDonationFromDate"
+                        ng-required="search.lastDonationToDate"
+                        format="dateFormat">
+            </dateselect>
+            <span translate>To</span>
+            <dateselect-end name="lastDonationToDate"
+                            ng-class="{'has-error': donorCommunicationsForm.$submitted && donorCommunicationsForm.lastDonationToDate.$invalid}"
+                            ng-model="search.lastDonationToDate"
+                            ng-required="search.lastDonationFromDate"
+                            format="dateFormat">
+            </dateselect-end>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" translate>Due To Donate</label>
+        <div class="col-sm-10">
+            <dateselect name="clinicDate"
+                        ng-class="{'has-error': donorCommunicationsForm.$submitted && donorCommunicationsForm.clinicDate.$invalid}"
+                        ng-model="search.clinicDate"
+                        format="dateFormat">
+            </dateselect>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+            </button>
+            <button type="button" class="btn btn-primary" ng-click="onClear(donorCommunicationsForm);" translate>Clear</button>
+        </div>
+    </div>
+
+</form>
+
+<div class="panel panel-default" ng-if="currentSearch">
+    <div class="panel-body">
+        <p>
+            <em translate translate-params-count="gridOptions.data.length">{{count}} donor(s) found</em> | <em><span translate>Data Export</span>:</em> 
+            <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate translate-comment="Portable Document Format file, abbreviation">PDF</button>
+            <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate translate-comment="Comma Separated Values file, abbreviation">CSV</button>
+        </p>
+        <div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>
+    </div>
+</div>
+</div>

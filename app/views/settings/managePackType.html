@@ -1,0 +1,143 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <div class="row  main-page" ng-controller="ManagePackTypesCtrl">
+        <h3 class="page-header" translate>Manage Pack Type</h3>
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <form name="packTypeForm" novalidate class="form-horizontal col-sm-12" role="form"
+                      ng-submit="savePackType(packType,packTypeForm)">
+                    <div>
+                        <div class="row form-group col-sm-12">
+                            <label for="packType" class="col-sm-2 control-label" translate>Pack Type</label>
+                            <div class="col-sm-8">
+                                <div class="form-inline">
+                                    <input class="form-control" name="packType" ng-model="packType.packType" required>
+                                    <ng-messages for="packTypeForm.packType.$error" role="alert" ng-show="packTypeForm.$submitted">
+                                        <ng-messages-include src="messages.html"></ng-messages-include>
+                                    </ng-messages>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group col-sm-12">
+                            <label for="testSampleProduced" class="col-sm-2 control-label" translate>Test Sample Produced</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="testSampleProduced" name="testSampleProduced"
+                                           ng-model="packType.testSampleProduced"
+                                           ng-change="handleTestSampleProducedToggle()"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group col-sm-12">
+                            <label for="countAsDonation" class="col-sm-2 control-label" translate>Components Produced</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox">
+                                    <input type="checkbox"
+                                           id="countAsDonation"
+                                           name="countAsDonation"
+                                           ng-model="packType.countAsDonation"
+                                           ng-change="switchCountAsDonation()"
+                                           ng-disabled="!packType.testSampleProduced"
+                                           ng-class="{'ng-invalid ng-dirty' : packTypeForm.countAsDonation.$invalid && submitted }"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group col-sm-12">
+                            <label for="componentType" class="col-sm-2 control-label" translate>Component Type</label>
+                            <div class="col-sm-6">
+                                <div class="form-inline">
+                                    <select ng-disabled="!packType.countAsDonation" id="componentType" name="componentType"
+                                            class="form-control input-sm" ng-model="packType.componentType"
+                                            ng-options="item as item.componentTypeName for item in componentTypes track by item.id"
+                                            ng-required="packType.countAsDonation"
+                                            ng-class="{'ng-invalid ng-dirty' : packTypeForm.componentType.$invalid && submitted}">
+                                        <option value="" ng-disabled="true" translate>Select</option>
+                                    </select>
+                                </div>
+                                <ng-messages for="packTypeForm.componentType.$error" role="alert" ng-show="packTypeForm.$submitted">
+                                    <ng-messages-include src="messages.html"></ng-messages-include>
+                                </ng-messages>
+                            </div>
+                        </div>
+
+                        <div class="row form-group col-sm-12">
+                            <label for="periodBetweenDonations" class="col-sm-2 control-label" translate>Donation Period</label>
+                            <div class="col-sm-8">
+                                <div class="form-inline">
+                                    <input size="3" style="width:4em;" type="number" id="periodBetweenDonations"
+                                           name="periodBetweenDonations" class="form-control input-sm"
+                                           ng-model="packType.periodBetweenDonations" required
+                                           ng-minlength=1 ng-maxlength=3
+                                           ng-model-options="{ updateOn:'default blur', debounce: { default: 500, blur: 0 } }"
+                                           ng-class="{'ng-invalid ng-dirty' : packTypeForm.periodBetweenDonations.$invalid && submitted}"
+                                    /> <em translate>days</em>
+                                    <ng-messages for="packTypeForm.periodBetweenDonations.$error" role="alert" ng-show="packTypeForm.$submitted">
+                                        <ng-messages-include src="messages.html"></ng-messages-include>
+                                    </ng-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group col-sm-12">
+                            <label for="minWeight" class="col-sm-2 control-label" translate>Minimum Weight</label>
+                            <div class="col-sm-8">
+                                <div class="form-inline">
+                                    <input size="3" style="width:4em;" type="number" id="minWeight" name="minWeight" class="form-control input-sm"
+                                           ng-model="packType.minWeight" ng-required="packType.countAsDonation" ng-minlength=1 ng-maxlength=3 />
+                                    <ng-messages for="packTypeForm.minWeight.$error" role="alert" ng-show="packTypeForm.$submitted">
+                                        <ng-messages-include src="messages.html"></ng-messages-include>
+                                    </ng-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group col-sm-12">
+                            <label for="maxWeight" class="col-sm-2 control-label" translate>Maximum Weight</label>
+                            <div class="col-sm-8">
+                                <div class="form-inline">
+                                    <input size="3" style="width:4em;" type="number" id="maxWeight" name="maxWeight" class="form-control input-sm"
+                                           ng-model="packType.maxWeight" ng-required="packType.countAsDonation" ng-minlength=1 ng-maxlength=3 />
+                                    <ng-messages for="packTypeForm.maxWeight.$error" role="alert" ng-show="packTypeForm.$submitted">
+                                        <ng-messages-include src="messages.html"></ng-messages-include>
+                                    </ng-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group col-sm-12">
+                            <label for="lowVolumeWeight" class="col-sm-2 control-label" translate>Low Volume Weight</label>
+                            <div class="col-sm-8">
+                                <div class="form-inline">
+                                    <input size="3" style="width:4em;" type="number" id="lowVolumeWeight" name="lowVolumeWeight" class="form-control input-sm" ng-required="packType.countAsDonation" ng-model="packType.lowVolumeWeight" ng-minlength=1 ng-maxlength=3 />
+                                    <ng-messages for="packTypeForm.lowVolumeWeight.$error" role="alert" ng-show="packTypeForm.$submitted">
+                                        <ng-messages-include src="messages.html"></ng-messages-include>
+                                    </ng-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group col-sm-12">
+                            <label for="isDeleted" class="col-sm-2 control-label" translate>Enabled</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="isDeleted" name="isDeleted" ng-model="packType.isDeleted"
+                                           ng-true-value="false" ng-false-value="true"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10">
+                            <button class="btn btn-primary" type="submit" ng-disabled="savingPackType">{{savingPackType ?
+                                "Saving..." : "Save" | translate}}
+                            </button>
+                            <button class="btn btn-primary" type="button" ng-click="clear(); go('/packTypes');"
+                                    ng-disabled="savingPackType" translate>Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

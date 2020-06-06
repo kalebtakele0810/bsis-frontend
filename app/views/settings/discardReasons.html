@@ -1,0 +1,33 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Manage Discard Reasons</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <em translate translate-params-count="discardReasonsCount"> {{count}} discard reason(s) found </em> <span
+                        has-permission="{{permissions.MANAGE_DISCARD_REASONS}}"> | <em> <a href=""
+                                                                                           ng-click="addNewDiscardReason()" translate>Add New Discard Reason</a></em> </span>
+                </p>
+                <table ng-table="discardsTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="discard in $data"
+                        ng-click="manageDiscardReason(discard);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': discard.$selected}">
+                        <td data-title="'Reason' | translate" style="width:30%;" header-class="text-left" sortable="'reason'">
+                            {{discard.reason}}
+                        </td>
+                        <td data-title="'Enabled' | translate" style="width:15%;" header-class="text-left" class="text-center">
+                            <span ng-show="!discard.isDeleted"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                            <span ng-show="discard.isDeleted"><i class="fa {{icons.SQUARE}}"></i></span>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

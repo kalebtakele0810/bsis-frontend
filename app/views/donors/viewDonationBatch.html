@@ -1,0 +1,8 @@
+<p>
+    <em translate translate-params-total="donationBatch.numDonations">{{total}} donation(s) in batch</em>
+  <span ng-if="donationBatch.isClosed!=true" has-permission="{{permissions.ADD_DONATION}}"> |
+    <em> <a href="" ng-click="viewAddDonationForm()" translate>Add Donation</a></em> </span> | <em translate>Data Export</em>: 
+    <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate translate-comment="Portable Document Format file, abbreviation">PDF</button>
+    <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate translate-comment="Comma Separated Values file, abbreviation">CSV</button>
+</p>
+<div class="grid" ui-grid="gridOptions" ui-grid-exporter ui-grid-pagination></div>

@@ -1,0 +1,150 @@
+<div class="jumbotron" style="margin:0 0 0 0; padding-top: 20px; padding-bottom: 0px; ">
+
+
+    <div class="container">
+        <div class="navbar-sub" translate>Welcome to BSIS - The Blood Safety Information System</div>
+        <hr class="hr-top">
+
+        <div ng-if="accessDenied === true" ng-hide="accessDenied === false"
+             style="padding-top:10px; width:60%; margin:auto;">
+            <uib-alert type="danger" close="accessDenied = false">
+              <span translate>That page is not accessible - you have been redirected to the home page.</span>
+            </uib-alert>
+        </div>
+
+        <div class="row placeholders home-page">
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#donorsSection')}}">
+                <div class="icon-container">
+                    <button id="donorsSection" style="padding: 0"
+                            has-permission="{{permissions.VIEW_DONOR_INFORMATION}}:{{donorsTabEnabled}}"
+                            ng-click="go('donors');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.DONORS}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>DONORS</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>Manage Donor Records, Donation Batches and Donor Communications</p>
+            </div>
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#componentsSection')}}">
+                <div class="icon-container">
+                    <button id="componentsSection" style="padding: 0"
+                            has-permission="{{permissions.VIEW_COMPONENT_INFORMATION}}:{{componentsTabEnabled}}"
+                            ng-click="go('components');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.COMPONENTS}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>COMPONENTS</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>Component Production Laboratory</p>
+            </div>
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#testingSection')}}">
+                <div class="icon-container">
+                    <button id="testingSection" style="padding: 0"
+                            has-permission="{{permissions.VIEW_TESTING_INFORMATION}}:{{testingTabEnabled}}"
+                            ng-click="go('testing');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.TESTING}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>TESTING</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>Manage TTI and Blood Group Serology Testing</p>
+            </div>
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#labellingSection')}}">
+                <div class="icon-container">
+                    <button id="labellingSection" style="padding: 0"
+                            has-permission="{{permissions.LABEL_COMPONENT}}:{{labellingTabEnabled}}"
+                            ng-click="go('labelling');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.LABELLING}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>LABELLING</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>Check Components to Print Pack and Discard Labels</p>
+            </div>
+
+        </div>
+        <hr style="width:60%; margin: 0px auto;">
+        <div class="row placeholders home-page">
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#inventorySection')}}">
+                <div class="icon-container">
+                    <button id="inventorySection" style="padding: 0"
+                            has-permission="{{permissions.VIEW_INVENTORY_INFORMATION}}:{{inventoryTabEnabled}}"
+                            ng-click="go('inventory');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.INVENTORY}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>INVENTORY</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>Manage Blood Bank Inventory, Requests, Transfers and Issues</p>
+            </div>
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#reportsSection')}}">
+                <div class="icon-container">
+                    <button id="reportsSection" style="padding: 0"
+                            has-permission="{{permissions.VIEW_REPORTING_INFORMATION}}:{{reportsTabEnabled}}"
+                            ng-click="go('reports');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.REPORTS}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>REPORTS</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>View Charts and Export Reports</p>
+            </div>
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#mobileSection')}}">
+                <div class="icon-container">
+                    <button id="mobileSection" style="padding: 0"
+                            has-permission="{{permissions.VIEW_MOBILE_CLINIC_INFORMATION}}:{{mobileClinicTabEnabled}}"
+                            ng-click="go('mobile');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.MOBILE}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>MOBILE CLINIC</h3>
+                <hr class="hr-info">
+                <p class="p-info {{isSectionEnabled('#mobileSection')}}" translate>Manage Mobile Clinics and Sync Data</p>
+            </div>
+
+            <div class="col-lg-3 placeholder {{isSectionEnabled('#settingsSection')}}">
+                <div class="icon-container">
+                    <button id="settingsSection" style="padding: 0" has-permission="{{permissions.AUTHENTICATED}}:true"
+                            ng-click="go('settings');" class="placeholder btn btn-link">
+                        <div>
+                            <i class="fa {{icons.SETTINGS}}"></i>
+                        </div>
+                    </button>
+                </div>
+                <h3 translate>SETTINGS</h3>
+                <hr class="hr-info">
+                <p class="p-info" translate>Manage Account and System Settings</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="footer">
+    <div class="container">
+        <hr/>
+    </div>
+</div>
+<div ng-include="'views/footer.html'"></div>

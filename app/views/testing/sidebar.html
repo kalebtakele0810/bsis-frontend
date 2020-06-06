@@ -1,0 +1,26 @@
+<div class="col-sm-3 col-md-2 sidebar" style="padding-top:5px;" ng-controller="TestingSidebarCtrl">
+  <ul class="nav nav-sidebar">
+    <li class="disabled">
+      <span class="icon-sidebar-container">
+        <div class="placeholder">
+            <a href="#testing">
+              <i class="fa {{icons.TESTING}}"></i>
+            </a>
+        </div>
+      </span>
+    </li>
+    <li class="disabled" has-permission="{{permissions.VIEW_TEST_BATCH}}">
+      <span class="sidebar-heading" translate>MANAGE TESTING</span>
+    </li>
+    <li ng-class="{current: currentPath === '/manageTestBatches'}" has-permission="{{permissions.VIEW_TEST_BATCH}}">
+      <a href="#/manageTestBatches" translate>Manage Test Batches</a>
+    </li>
+    <li ng-class="{current: currentPath === '/findTestSamples'}" has-permission="{{permissions.VIEW_TEST_OUTCOME}}">
+      <a href="#/findTestSamples" translate>Find Test Samples</a>
+    </li>
+    <li ng-class="{current: currentPath === '/viewTestSample'}" has-permission="{{permissions.VIEW_TEST_OUTCOME}}">
+      <a href="#/viewTestSample" translate>View Test Sample</a>
+    </li>
+  </ul>
+  <div ng-include="'views/sidebarFooter.html'"></div>
+</div>

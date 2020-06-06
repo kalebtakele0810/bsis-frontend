@@ -1,0 +1,99 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Manage Orders</h3>
+
+  <hr />
+
+  <ul class="nav nav-tabs nav-justified">
+    <li>
+      <a href="#/manageOrders" translate>Add Order</a>
+    </li>
+    <li class="active">
+      <a href="#/viewOrders" translate>View Orders</a>
+    </li>
+  </ul>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <h4 translate>View Orders</h4>
+
+      <form class="form-horizontal col-sm-12" name="findOrderForm" ng-submit="findOrders(findOrderForm)" novalidate>
+        
+        <div class="clearfix form-group">
+          <label class="col-sm-2 control-label" translate>Period</label>
+          <div class="form-inline col-sm-10">
+            <div>
+              <dateselect name="startDate" ng-model="searchParams.orderDateFrom" format="dateFormat" ng-class="{'has-error' : (findOrderForm.startDate.$invalid)}" ng-required="true" ui-date-range="1,months" ui-date-end="{{searchParams.orderDateTo | date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect><span>&nbsp;<em translate>To</em>&nbsp;</span><dateselect-end name="endDate" ng-model="searchParams.orderDateTo" format="dateFormat" ng-class="{'has-error' : (findOrderForm.endDate.$invalid)}" ng-required="true" ui-date-range="1,months" ui-date-start="{{searchParams.orderDateFrom |  date:'yyyy-MM-dd HH:mm:ss'}}" ng-model-options="{ allowInvalid: true }"></dateselect-end>  
+            </div>
+            <div>
+              <ng-messages for="findOrderForm.startDate.$error" role="alert" ng-show="findOrderForm.$submitted">
+                <small class="error" ng-message="required"><translate>Select a valid date</translate></small>
+                <small class="error" ng-message="datesOutOfRange"><translate>Select a date range that is less than one month</translate></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+              <ng-messages for="findOrderForm.endDate.$error" role="alert" ng-show="findOrderForm.$submitted && !findOrderForm.startDate.$invalid">
+                <small class="error" ng-message="required"><translate>Select a valid date</translate></small>
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" translate>Dispatched From</label>
+          <div class="col-sm-10">
+            <select class="form-control" style="width:auto;" name="dispatchedFrom" ng-model="searchParams.dispatchedFromId" ng-options="item.id as item.name for item in dispatchFromSites track by item.id">
+              <option value="" selected></option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="dispatchedFrom" translate>Dispatch Type</label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+              <input type="radio" name="transferType" ng-model="searchParams.type" value="TRANSFER">
+              <span translate>Transfer</span>
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="transferType" ng-model="searchParams.type" value="ISSUE">
+              <span translate>Issue</span>
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="transferType" ng-model="searchParams.type" value="PATIENT_REQUEST">
+              <span translate>Patient Request</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="dispatchedTo" translate>Dispatched To</label>
+          <div class="col-sm-10">
+            <select class="form-control" style="width:auto;" name="dispatchedTo" ng-model="searchParams.dispatchedToId" ng-options="item.id as item.name for item in dispatchToSites track by item.id" ng-disabled="!searchParams.type">
+              <option value="" selected></option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-10">
+            <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}}
+            </button>
+            <button class="btn btn-primary" type="button" ng-click="init()" translate>Clear</button>
+          </div>
+        </div>
+
+      </form>
+      
+      <div class="col-sm-12">
+          <div class="panel panel-default" ng-if="submitted">
+              <div class="grid" ui-grid="gridOptions" ui-grid-pagination></div> 
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

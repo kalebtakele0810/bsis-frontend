@@ -1,0 +1,259 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/testing/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <span class="h3 page-header" translate>Manage Test Batch</span>
+
+  <span class="h4" style="float:right; margin-top: 5px; padding-right: 15px; display:inline;">
+    <span has-permission="{{permissions.VOID_TEST_BATCH}}" ng-hide="confirmEdit">
+      <em>
+          <button class="btn btn-link" style="padding:0;" ng-click="confirmDelete = true" ng-hide="confirmDelete"
+                  ng-disabled="!testBatch.permissions.canDelete" translate>Void
+          </button>
+      </em>
+      <span ng-show="confirmDelete">
+        <em>
+            <button class="btn btn-link text-danger" style="padding:0;"
+                    ng-click="deleteTestBatch(testBatch.id); confirmDelete = false" translate>Void
+            </button>
+            <button class="btn btn-link text-muted" style="padding:0;" ng-click="confirmDelete = false" translate>Cancel</button>
+        </em>
+      </span>
+    </span>
+    <span has-permission="{{permissions.EDIT_TEST_BATCH}}" ng-hide="confirmDelete">
+      <span ng-hide="confirmEdit">&nbsp;|&nbsp;
+        <em>
+          <button class="btn btn-link" style="padding:0;" ng-click="editableForm.$show(); confirmEdit = true"
+                  ng-disabled="!testBatch.permissions.canEdit" translate>Edit
+          </button>
+        </em>
+      </span>
+      <span ng-show="confirmEdit">
+        <em>
+            <button class="btn btn-link text-muted" style="padding:0;" ng-disabled="editableForm.$waiting"
+                    ng-click="editableForm.$submit();" translate>Save
+            </button>
+            <button class="btn btn-link text-muted" style="padding:0;" ng-disabled="editableForm.$waiting"
+                    ng-click="editableForm.$cancel(); confirmEdit = false" translate>Cancel
+            </button>
+        </em>
+      </span>
+    </span>
+    <span style="margin-left: 20px; margin-top: -15px; float:right">
+      <span has-permission="{{permissions.EDIT_TEST_BATCH}}" ng-if="testBatch.status === 'OPEN'" ng-hide="confirmDelete || confirmEdit">
+        <button class="btn btn-primary" ng-disabled="!testBatch.permissions.canRelease" ng-click="releaseTestBatch(testBatch)" translate>Release</button>
+      </span>
+      <span has-permission="{{permissions.EDIT_TEST_BATCH}}" ng-if="testBatch.status === 'RELEASED'" ng-hide="confirmDelete || confirmEdit">
+        <button class="btn btn-primary" ng-disabled="!testBatch.permissions.canClose" ng-click="closeTestBatch(testBatch)" translate>Close</button>
+      </span>
+      <span has-permission="{{permissions.EDIT_TEST_BATCH}}" ng-if="testBatch.status === 'CLOSED'"  ng-hide="confirmDelete || confirmEdit">
+        <button class="btn btn-primary" ng-click="reopenTestBatch(testBatch)" translate>Reopen</button>
+      </span>
+    </span>
+  </span>
+
+  <hr style="clear:right;"/>
+
+  <div style="padding-bottom: 5px">
+    <uib-alert type="info" ng-if="testBatch.permissions.canRelease"><span translate>This test batch is ready to be released.</span></uib-alert>
+    <uib-alert type="info" ng-if="testBatch.permissions.canClose"><span translate>This test batch is ready to be closed.</span></uib-alert>
+    <uib-alert type="info" ng-if="hasPendingRepeatTTITests || hasPendingConfirmatoryTTITests"><span translate>Pending: TTI repeat and/or confirmatory test outcomes.</span></uib-alert>
+    <uib-alert type="info" ng-if="hasPendingRepeatBloodTypingTests"><span translate>Pending: blood group serology repeat test outcomes.</span></uib-alert>
+    <uib-alert type="info" ng-if="hasPendingBloodTypingConfirmations"><span translate>Pending: ambiguous blood group serology test outcomes.</span></uib-alert>
+    <uib-alert type="info" ng-if="dinsIgnored > 0"><span translate>{{dinsAdded}} out of {{dinsToAdd}} sample(s) in the range were added to the test batch. {{testBatch.dinsInOtherTestBatches.length}} belonged to another test batch and {{testBatch.dinsWithoutTestSamples.length}} didn't produce test samples and {{testBatch.dinsInOpenDonationanBatch.length}} belonged to an open Donation Batch.</span></uib-alert>
+    <uib-alert type="danger" ng-if="dinsIgnored === 0 && dinsToAdd === 0"><span translate>Already added or invalid DINs entered.</span></uib-alert>
+  </div>
+
+  <span ng-if="testBatch.status!='CLOSED'" ng-hide="confirmDelete || confirmEdit" class="h4" style="float: right; vertical-align: center; margin-top: 0px; margin-bottom: 0px; padding-right: 15px; text-align: right;">
+    <table>
+      <tr>
+        <td style="text-align:right;padding-right:10px;">
+          <span has-permission="{{permissions.ADD_TTI_OUTCOME}}" ng-hide="confirmDelete || confirmEdit">
+            <small>
+              <em><span translate>TTI Outcomes</span>:
+                <a ng-href="#/recordTTIOutcomes/{{testBatch.id}}/BASIC_TTI" translate>Enter</a>
+                 &nbsp;|&nbsp;
+                <a ng-href="#/reenterTTIOutcomes/{{testBatch.id}}/BASIC_TTI" ng-disabled="!hasReEntryRequiredTTITests" translate>Re-Enter</a>
+              </em>
+            </small>
+          </span>
+        </td>
+        <td style="text-align:right;">
+          <span has-permission="{{permissions.ADD_BLOOD_TYPING_OUTCOME}}" ng-hide="confirmDelete || confirmEdit">
+            <small>
+              <em><span translate>ABO/Rh Outcomes</span>:
+                <a ng-href="#/recordABORhOutcomes/{{testBatch.id}}/BASIC_BLOODTYPING" translate>Enter</a> &nbsp;|&nbsp;
+                <a ng-href="#/reenterABORhOutcomes/{{testBatch.id}}/BASIC_BLOODTYPING" ng-disabled="!hasReEntryRequiredBloodTypingTests" translate>Re-Enter</a>
+              </em>
+            </small>
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="text-align:right;padding-right:10px;">
+          <span has-permissions="{{permissions.ADD_TTI_OUTCOME}}" ng-hide="testBatch.status=='CLOSED'">
+            <small>
+              <em><span translate>Repeat TTI Outcomes</span>:
+                <a ng-href="#/recordRepeatTTIOutcomes/{{testBatch.id}}/REPEAT_TTI" ng-disabled="!hasRepeatTTITests" translate>Enter</a>
+                &nbsp;|&nbsp;
+                <a ng-href="#/reenterTTIOutcomes/{{testBatch.id}}/REPEAT_TTI" ng-disabled="!hasReEntryRequiredRepeatTTITests" translate>Re-Enter</a>
+              </em>
+            </small>
+          </span>
+        </td>
+        <td style="text-align:right;">
+          <span has-permission="{{permissions.ADD_BLOOD_TYPING_OUTCOME}}" ng-hide="testBatch.status=='CLOSED'">
+            <small>
+              <em><span translate>Repeat ABO/Rh Outcomes</span>:
+                <a ng-href="#/recordRepeatABORhOutcomes/{{testBatch.id}}/REPEAT_BLOODTYPING" ng-disabled="!hasRepeatBloodTypingTests" translate>Enter</a>
+                &nbsp;|&nbsp;
+                <a ng-href="#/reenterABORhOutcomes/{{testBatch.id}}/REPEAT_BLOODTYPING" ng-disabled="!hasReEntryRequiredRepeatBloodTypingTests" translate>Re-Enter</a>
+              </em>
+            </small>
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="text-align:right; padding-right:10px;">
+          <span has-permissions="{{permissions.ADD_TTI_OUTCOME}}" ng-hide="testBatch.status=='CLOSED'">
+            <small>
+              <em><span translate>Confirmatory TTI Outcomes</span>:
+                <a ng-href="#/recordRepeatTTIOutcomes/{{testBatch.id}}/CONFIRMATORY_TTI" ng-disabled="!hasConfirmatoryTTITests" translate>Enter</a>
+                &nbsp;|&nbsp;
+                <a ng-href="#/reenterTTIOutcomes/{{testBatch.id}}/CONFIRMATORY_TTI" ng-disabled="!hasReEntryRequiredConfirmatoryTTITests" translate>Re-Enter</a>
+              </em>
+            </small>
+          </span>
+        </td>
+        <td style="text-align:right;">
+          <span ng-hide="confirmDelete || confirmEdit" class="h4">
+            <span has-permission="{{permissions.ADD_BLOOD_TYPING_OUTCOME}}" ng-hide="testBatch.status=='CLOSED'">
+              <small>
+                <em>
+                  <a ng-href="#/resolveAmbiguousABORhOutcomes/{{testBatch.id}}" ng-disabled="!hasPendingBloodTypingConfirmations" translate>Resolve Ambiguous ABO/Rh Outcomes</a>
+                </em>
+              </small>
+            </span>
+          </span>
+        </td>
+      </tr>
+    </table>
+  </span>
+
+  <form editable-form name="editableForm" onbeforesave="validateForm(editableForm)" onaftersave="updateTestBatch(testBatch)">
+
+      <div class="h4">
+        <small><em><span translate>Created On</span>: </em></small>
+        <span ng-show="!editableForm.$visible">{{ (testBatch.testBatchDate | bsisDateTime) || '' }}</span>
+        <span ng-show="editableForm.$visible" style="display:inline;">
+          <dateselect ng-model="testBatchDate.date" name="testBatchDate" initDate="testBatch.testBatchDate" format="dateFormat" opened="dateToOpen" date-time-not-in-future ng-class="{'has-error' : editableForm.testBatchDate.$invalid || editableForm.testBatchDate.$error.required}" max-date="today"></dateselect>
+          <div style="display: inline-table; vertical-align: middle;">
+            <uib-timepicker ng-model="testBatchDate.time" name="testBatchDateTime" show-spinners="false" ng-required="submitted" ng-change="updateTimeOnTestBatchDate()"></uib-timepicker>
+          </div>
+        </span>
+        &nbsp;|&nbsp;
+        <small><em><span translate>Location</span>: </em></small>
+        <span ng-show="!editableForm.$visible" style="display:inline;">{{testBatch.location.name}}</span>
+        <span ng-show="editableForm.$visible" style="display:inline;">
+          <select class="form-control" style="display:inline; width:auto;" name="location" ng-model="testBatch.location" ng-options="item as item.name for item in locations track by item.id" required></select>
+        </span>
+      </div>
+      <div>
+        <ng-messages for="editableForm.testBatchDate.$error" role="alert" ng-show="editableForm.testBatchDate.$invalid && editableForm.$visible">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+        <ng-messages for="editableForm.testBatchDateTime.$error" role="alert" ng-show="editableForm.testBatchDateTime.$invalid && editableForm.$visible">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+
+      <div class="h4">
+        <span ng-if="testBatch.status !== 'RELEASED' && !testBatch.permissions.canRelease">
+          <small><em><span translate>Number of Samples</span>: </em></small>{{testBatch.numSamples}}
+        </span>
+        <span ng-if="testBatch.status !== 'RELEASED' && testBatch.permissions.canRelease">
+          <small><em><span translate>Number of Samples Ready for Release</span>: </em></small>
+          <span translate translate-params-count="testBatch.readyForReleaseCount" translate-params-total="testBatch.numSamples">{{count}} of {{total}}</span>
+        </span>
+        <span ng-if="testBatch.status === 'RELEASED'">
+          <small><em><span translate>Number of Samples Released</span>: </em></small>
+          <span translate translate-params-count="testBatch.numReleasedSamples" translate-params-total="testBatch.numSamples">{{count}} of {{total}}</span>
+        </span>
+      </div>
+
+  </form>
+
+  <hr style="margin-bottom:5px;"/>
+
+  <form class="form-inline" novalidate name="addDonationToTestBatchForm" ng-submit="addSampleToTestBatch()">
+    <fieldset ng-disabled="!testBatch.permissions.canEditDonations">
+      <div class="col-sm-12" has-permission="{{permissions.ADD_TEST_BATCH}}">
+          <div class="col-sm-3">
+              <h4 translate>Assign Sample(s) to Test Batch</h4>
+          </div>
+          <div class="form-group">
+
+             <div class="input-group"><label for="fromDIN" translate>DIN From</label></div>
+             <div class="input-group">
+                <input name="fromDIN" type="text" size="15" class="form-control"
+                       ng-model="dinRange.fromDIN"
+                       ng-maxlength="dinLength"
+                       ng-minlength="dinLength"
+                       required />
+
+                  <ng-messages for="addDonationToTestBatchForm.fromDIN.$error" role="alert" ng-show="addDonationToTestBatchForm.$submitted">
+                    <div>
+                      <small class="error" ng-message="minlength"><span translate>DIN should be {{dinLength}} characters</span></small>
+                      <small class="error" ng-message="maxlength"><span translate>DIN should be {{dinLength}} characters</span></small>
+                    </div>
+                    <ng-messages-include src="messages.html"></ng-messages-include>
+                  </ng-messages>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group"><label for="fromDIN" translate>DIN To</label></div>
+              <div class="input-group">
+                 <input name="toDIN" type="text" size="15" class="form-control"
+                        ng-model="dinRange.toDIN"
+                        ng-maxlength="dinLength"
+                        ng-minlength="dinLength">
+
+                   <ng-messages for="addDonationToTestBatchForm.toDIN.$error" role="alert" ng-show="addDonationToTestBatchForm.$submitted">
+                     <div>
+                        <small class="error" ng-message="minlength"><span translate>DIN should be {{dinLength}} characters</span></small>
+                        <small class="error" ng-message="maxlength"><span translate>DIN should be {{dinLength}} characters</span></small>
+                        <small class="error" ng-message="invalidDINRange"><span translate>Invalid DIN range</span></small>
+                        <ng-messages-include src="messages.html"></ng-messages-include>
+                     </div>
+                   </ng-messages>
+              </div>
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary" style="margin-top: 0px" translate>Add</button>
+              <button type="button" class="btn btn-primary" style="margin-top: 0px" ng-click="clearAddDonationToTestBatchForm(addDonationToTestBatchForm);" translate>Clear</button>
+          </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="col-sm-12">
+      <div class="panel panel-default">
+          <div class="panel-body">
+              <p>
+                  <em translate translate-params-count="gridOptions.data.length">{{count}} sample(s) found</em>&nbsp;|&nbsp;<span translate>Filter data</span>
+                  <select class="input-sm" ng-model="dataExportType"
+                          ng-options="item as item.value for item in exportOptions" ng-change="filter(dataExportType)">
+                  </select>
+                  <button class="btn btn-primary" style="margin-top: 0px; float: right" ng-click="removeSamplesFromTestBatch()" ng-disabled="!isRemoveSamplesEnabled || removingSamples">{{removingSamples ? "Removing..." : "Remove Test Sample(s)" | translate}}</button>
+                </p>
+                <p>
+                  <span translate>Data Export</span>
+                  <button class="btn btn-primary btn-ui-grid-export" ng-click="export('pdf')" translate>PDF</button>
+                  <button class="btn btn-primary btn-ui-grid-export" ng-click="export('csv')" translate>CSV</button>
+              </p>
+              <div class="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-exporter ui-grid-pagination></div>
+          </div>
+      </div>
+  </div>
+</div>

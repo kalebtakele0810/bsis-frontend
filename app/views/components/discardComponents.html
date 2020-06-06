@@ -1,0 +1,83 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/components/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Discard Components</h3>
+
+  <form class="form-horizontal col-sm-12" name="forms.findComponentsForm" role="form" novalidate ng-submit="getComponentsByDIN();">
+    <div class="form-group">
+      <label for="name" class="col-sm-1 control-label" translate>DIN</label>
+      <div class="row col-sm-11">
+        <div class="form-inline" style="padding-left:5px;">
+          <input size="15" type="donationIdentificationNumber" id="donationIdentificationNumber" class="form-control input-sm" ng-model="componentsSearch.donationIdentificationNumber" required />
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-offset-1">
+      <small class="error" ng-show="(forms.findComponentsForm.$submitted && forms.findComponentsForm.$invalid)">
+        <span translate>DIN cannot be empty</span>
+      </small>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-3">
+        <button class="btn btn-primary" type="submit" ng-disabled="searching">{{searching ? "Searching..." : "Search" | translate}} </button>
+        <button class="btn btn-primary" type="button" ng-click="clearFindComponentsForm();" translate>Clear</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="panel panel-default" style="clear:left;margin-top:10px;" ng-if="gridOptions.data">
+    <div class="panel-body">
+
+      <!-- Components grid -->
+      <div class="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-pagination style="height:{{(gridOptions.minRowsToShow*gridOptions.rowHeight)+gridOptions.headerRowHeight+gridOptions.gridFooterHeight}}px;margin-bottom:10px;"></div>
+
+       <div ng-if="selectedAction === null" style="clear:left;">
+        <strong>
+          <em><span translate>Select components to discard or undiscard</span></em>
+        </strong>
+      </div>
+      <div ng-if="selectedAction === 'NONE'" style="clear:left;">
+        <div ng-if="componentsReceived">
+          <strong>
+            <em><span translate>Selected component cannot be discarded or undiscarded</span></em>
+          </strong>
+        </div>
+        <div ng-if="!componentsReceived">
+          <strong>
+            <em><span translate>Selected Component cannot be discarded until component batch received</span></em>
+          </strong>
+        </div>
+      </div>
+      <div ng-if="selectedAction === 'UNDISCARD'" style="clear:left;">
+        <button class="btn btn-primary" ng-click="undiscardComponents();" >
+            {{undiscarding ? "Undiscarding..." : "Undiscard" | translate}}
+          </button>
+      </div>
+
+      <!-- Discard component form -->
+      <form role="form" name="forms.discardComponentsForm" class="form-horizontal col-sm-12" ng-if="selectedAction === 'DISCARD'" ng-submit="discardComponents()" novalidate>
+        <div class="form-group">
+          <label for="discardReason" class="col-sm-2 control-label" translate>Discard Reason</label>
+          <div class="form-inline" style="padding-left:5px;">
+            <select name="discardReason" class="form-control input-sm" ng-model="discard.discardReason" ng-options="item as item.reason for item in discardReasons"  required >
+                <option value="" ng-disabled="true" translate>Select</option>
+            </select>
+            <input size="35" class="form-control input-sm" placeholder="{{'Comments' | translate}}" ng-model="discard.discardReasonText">  
+            <div class="col-sm-offset-2">
+              <ng-messages for="forms.discardComponentsForm.discardReason.$error" ng-show="forms.discardComponentsForm.$submitted">
+                <ng-messages-include src="messages.html"></ng-messages-include>
+              </ng-messages>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-3 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" ng-disabled="discardingComponent">{{discardingComponent ? "Discarding..." : "Discard" | translate}}</button>
+            <button type="reset" class="btn btn-primary" ng-disabled="discardingComponent" ng-click="clearDiscardComponentsForm();" translate>Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+</div>

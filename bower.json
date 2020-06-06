@@ -1,0 +1,32 @@
+{
+  "name": "bsis",
+  "description": "Blood Safety Information System",
+  "version": "1.4.0",
+  "homepage": "https://github.com/jembi/bsis-frontend",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.8",
+    "angular-bootstrap": "0.14.3",
+    "angular-loader": "1.2.x",
+    "angular-messages": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-route": "1.2.x",
+    "angular-sanitize": "1.4.2",
+    "angular-ui-grid": "~3.1.1",
+    "angular-ui-select": "0.12.1",
+    "angular-xeditable": "0.1.11",
+    "checklist-model": "~0.2.4",
+    "CSV-JS": "csv-js#~1.1.1",
+    "karma-read-json": "~1.1.0",
+    "moment": "2.10.3",
+    "ng-table": "0.5.5",
+    "pdfmake": "~0.1.18",
+    "angular-loading-bar": "^0.9.0",
+    "angular-gettext": "^2.3.9"
+  },
+  "resolutions": {
+    "angular": "1.4.x"
+  }
+}

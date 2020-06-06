@@ -1,0 +1,127 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/donors/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+<form editable-form name="editableForm" onbeforesave="validateDonationBatchEditableForm(editableForm);"
+      onaftersave="updateDonationBatch(donationBatch, confirmReopen); confirmReopen = false; confirmEdit = false">
+  <span class="h3" translate> 
+    Manage Donation Batch
+  </span>
+
+    <hr/>
+
+    <div class="h4">
+        <small><em><span translate>Date Created</span>: </em></small>
+        <span ng-show="!editableForm.$visible">{{ (donationBatch.donationBatchDate | bsisDateTime) || '' }}</span>
+        <span ng-show="editableForm.$visible">
+          <dateselect name="donationBatchDate" ng-model="donationBatchDate.date" initDate="donationBatch.donationBatchDate" format="dateFormat" cal-icon="icons.CALENDAR" ng-disabled="!donationBatch.permissions.canEditDate" required date-time-not-in-future ng-class="{'has-error' : editableForm.donationBatchDate.$invalid || editableForm.donationBatchDate.$error.required}" max-date="today">
+          </dateselect>
+        <div style="display: inline-table; vertical-align: middle;">
+          <uib-timepicker ng-model="donationBatchDate.time" name="donationBatchDateTime" show-spinners="false" ng-required="submitted" ng-change="updateTimeOnDonationBatchDate()"></uib-timepicker>
+        </div>
+        </span>
+        |
+        <small><em><span translate>Venue</span>: </em></small>
+        <span e-class="xeditable venue" editable-select="donationBatch.venue"
+              e-ng-options="item as item.name for item in venues track by item.name" e-name="venue" e-required>{{donationBatch.venue.name}}</span>
+        |
+        <small><em><span translate>Number of Donations</span>: </em></small>
+        {{donationBatch.numDonations}}
+
+
+    <span style="float: right; padding-right: 15px;">
+
+      <!-- Delete donor actions -->
+      <div has-permission="{{permissions.VOID_DONATION_BATCH}}" ng-hide="confirmClose || confirmReopen || confirmEdit"
+           style="display:inline;">
+          <em><a href="" type="button" class="btn btn-link" ng-click="confirmDelete = true" ng-hide="confirmDelete"
+                 ng-disabled="!donationBatch.permissions.canDelete" translate>Void</a></em>
+        <span ng-show="confirmDelete">
+          <em>
+              <a href="" type="button" class="btn btn-link text-danger"
+                 ng-click="deleteDonationBatch(donationBatch.id); confirmDelete = false" translate>Void</a>
+              <a href="" type="button" class="btn btn-link text-muted" ng-click="confirmDelete = false" translate>Cancel</a>
+          </em>
+        </span>
+      </div>
+
+        <!-- Edit donor actions -->
+      <div has-permission="{{permissions.EDIT_DONATION_BATCH}}" ng-hide="confirmDelete || confirmClose || confirmReopen"
+           style="display:inline;">
+          <em><a href="" type="button" class="btn btn-link" ng-click="editableForm.$setPristine(); editableForm.$show(); confirmEdit = true"
+                 ng-hide="confirmEdit" ng-disabled="!donationBatch.permissions.canEdit" translate>Edit</a></em>
+        <span ng-show="confirmEdit">
+          <em>
+              <button type="submit" class="btn btn-link text-success" ng-disabled="editableForm.$waiting" translate>Save</button>
+              <a href="" type="button" class="btn btn-link text-muted" ng-disabled="editableForm.$waiting"
+                 ng-click="cancelDonationBatchEditing(); editableForm.$cancel(); confirmEdit = false;" translate>Cancel</a>
+          </em>
+        </span>
+      </div>
+
+        <!-- Close batch actions -->
+      <div has-permission="{{permissions.EDIT_DONATION_BATCH}}"
+           ng-hide="donationBatch.isClosed === true || confirmDelete || confirmEdit" style="display:inline;">
+          <em><a href="" type="button" class="btn btn-link" ng-click="confirmClose = true" ng-hide="confirmClose"
+                 ng-disabled="!donationBatch.permissions.canClose" translate>Close Batch</a></em>
+        <span ng-show="confirmClose">
+          <em>
+              <a href="" type="submit" class="btn btn-link text-success"
+                 ng-click="closeDonationBatch(donationBatch); confirmClose = false" translate>Close</a>
+              <a href="" type="button" class="btn btn-link text-muted" ng-click="confirmClose = false" translate>Cancel</a>
+          </em>
+        </span>
+      </div>
+
+        <!-- Reopen batch actions -->
+      <div has-permission="{{permissions.EDIT_DONATION_BATCH}}"
+           ng-hide="donationBatch.isClosed === false || confirmDelete || confirmEdit" style="display:inline;">
+          <em><a href="" type="button" class="btn btn-link" ng-click="editableForm.$show(); confirmReopen = true"
+                 ng-hide="confirmReopen" ng-disabled="!donationBatch.permissions.canReopen" translate>Reopen Batch</a></em>
+        <span ng-show="confirmReopen">
+          <em>
+              <button type="submit" class="btn btn-link text-success" ng-disabled="editableForm.$waiting" translate>Reopen
+              </button>
+              <a href="" type="button" class="btn btn-link text-muted" ng-disabled="editableForm.$waiting"
+                 ng-click="editableForm.$cancel(); confirmReopen = false" translate>Cancel</a>
+          </em>
+        </span>
+      </div>
+    </span>
+
+    </div>
+    <div>
+      <ng-messages for="editableForm.donationBatchDate.$error" role="alert" ng-show="(editableForm.donationBatchDate.$error.dateInFuture || editableForm.donationBatchDate.$error.required) && editableForm.$visible">
+        <ng-messages-include src="messages.html"></ng-messages-include>
+      </ng-messages>
+      <ng-messages for="editableForm.donationBatchDateTime.$error" role="alert" ng-show="editableForm.donationBatchDateTime.$invalid && editableForm.$visible">
+        <ng-messages-include src="messages.html"></ng-messages-include>
+      </ng-messages>
+
+    </div>
+</form>
+
+<hr/>
+
+<div style="padding-bottom: 5px"></div>
+
+<div class="col-sm-12">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div ng-switch on="donationBatchView">
+                <div ng-switch-when="viewDonationBatch">
+                    <div ng-include="'views/donors/viewDonationBatch.html'"></div>
+                </div>
+                <div ng-switch-when="addDonation">
+                    <div ng-include="'views/donors/addDonation.html'"></div>
+                </div>
+                <div ng-switch-when="viewDonationSummary">
+                    <div ng-include="'views/donors/viewDonationSummary.html'"></div>
+                </div>
+                <div ng-switch-default>
+                    <div ng-include="'views/donors/viewDonationBatch.html'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

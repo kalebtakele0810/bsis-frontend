@@ -1,0 +1,36 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/settings/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+    <h3 class="page-header" translate>Manage Deferral Reasons</h3>
+
+    <div class="col-sm-12">
+        <div style="padding-bottom: 10px"></div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <em translate translate-params-count="deferralReasonsCount"> {{count}} deferral reason(s) found </em> <span
+                        has-permission="{{permissions.MANAGE_DEFERRAL_REASONS}}"> | <em> <a href=""
+                                                                                            ng-click="addNewDeferralReason()" translate>Add New Deferral Reason</a></em> </span>
+                </p>
+                <table ng-table="deferralsTableParams" show-filter="false" class="table">
+                    <tr ng-repeat="deferral in $data"
+                        ng-click="manageDeferralReason(deferral);"
+                        ng-mouseenter="this.$selected = true"
+                        ng-mouseleave="this.$selected = false"
+                        ng-class="{'active': deferral.$selected}">
+                        <td data-title="'Reason' | translate" sortable="'reason'">
+                            {{deferral.reason}}
+                        </td>
+                        <td data-title="'Default Duration' | translate" sortable="'defaultDuration'" class="text-center">
+                            <span ng-if="deferral.durationType === 'PERMANENT'" translate>Permanent</span> 
+                            <span ng-if="deferral.durationType !== 'PERMANENT' && deferral.defaultDuration !== null" translate translate-params-count="deferral.defaultDuration">{{count}} day(s)</span>
+                        </td>
+                        <td data-title="'Enabled' | translate" class="text-center">
+                            <span ng-show="!deferral.isDeleted"><i class="fa {{icons.SQUARECHECK}}"></i></span>
+                            <span ng-show="deferral.isDeleted"><i class="fa {{icons.SQUARE}}"></i></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

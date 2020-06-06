@@ -1,0 +1,35 @@
+<span style="float: right; padding-right: 15px; font-size: 0.9em">
+  <em><a href="" ng-click="setcomponentsView('viewDonations');" translate>Done</a></em>
+</span>
+
+<span class="h3">
+  <small><em><span translate>DIN</span>:</em></small> {{din}}
+</span>
+
+<table class="dash-table" style="width:100%;">
+    <thead>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <th translate>Component Type</th>
+        <th translate>Status</th>
+        <th class="center" translate>Created On</th>
+        <th class="center" translate>Expiry Status</th>
+        <th class="center" translate>Weight</th>
+        <th class="center" translate>Discard Reason</th>
+        <th style="width:40%;" translate>Comments</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="component in components">
+        <td class="value">{{component.componentType.componentTypeName}}</td>
+        <td class="value">{{component.status  | titleCase | translate}}</td>
+        <td class="value center">{{component.createdOn | bsisDateTime}}</td>
+        <td class="value center">{{component.daysToExpire | daysToExpire}}</td>
+        <td class="value center">{{component.weight}}</td>
+        <td class="value center">{{component.discardReason}}</td>
+        <td class="value">{{component.discardReasonComment}}</td>
+    </tr>
+    </tbody>
+</table>

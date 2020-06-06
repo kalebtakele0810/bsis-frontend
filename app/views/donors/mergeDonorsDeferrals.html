@@ -1,0 +1,36 @@
+<p><span translate>Review the deferrals for the merged donor</span>:</p>
+<div ng-switch="deferralResults">
+    <div ng-switch-when="true">
+        <table ng-table="manageDuplicateDonorDeferralTableParams" show-filter="false" class="table">
+            <tr ng-repeat="deferral in $data">
+                <td data-title="'Donor Number' | translate" header-class="text-left" class="text-center" sortable="'donorNumber'">
+                    {{deferral.donorNumber}}
+                </td>
+                <td data-title="'Deferred From' | translate" header-class="text-left" class="text-center" sortable="'deferralDate'">
+                    {{deferral.deferralDate | bsisDate}}
+                </td>
+                <td data-title="'Deferred Until' | translate" header-class="text-left" class="text-center"
+                    sortable="'deferredUntil'">
+                    {{deferral.deferredUntil | bsisDate}}
+                </td>
+                <td data-title="'Venue' | translate" header-class="text-left" class="text-center"
+                    sortable="'venue'">
+                    {{deferral.venue.name}}
+                </td>
+                <td data-title="'Reason' | translate" style="width:22%;" header-class="text-left"
+                    sortable="'deferralReason.reason'">
+                    {{deferral.deferralReason.reason}}
+                </td>
+                <td data-title="'Comment' | translate" header-class="text-left" sortable="'deferralReasonText'">
+                    {{deferral.deferralReasonText}}
+                </td>
+                <td data-title="'Deferred By' | translate" header-class="text-left" sortable="'createdBy'">
+                    {{deferral.createdBy}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-switch-when="false">
+        <p><em translate>No Deferrals found</em></p>
+    </div>
+</div>

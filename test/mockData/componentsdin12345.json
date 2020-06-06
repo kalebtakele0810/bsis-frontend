@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "id": "111",
+      "donationIdentificationNumber": "12345",
+      "componentType": "Whole Blood",
+      "status": "Quarantined",
+      "createdOn": "10/10/2014",
+      "expiresOn": "15/11/2014",
+      "parentComponent": ""
+    }
+  ],
+  "componentTypes": [
+    {
+      "name": "Red Cell Concentrate"
+    },
+    {
+      "name": "Fresh Frozen Plasma"
+    },
+    {
+      "name": "Buffy Coat"
+    }
+  ]
+}

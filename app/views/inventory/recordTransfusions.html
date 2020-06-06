@@ -1,0 +1,184 @@
+<div class="col-sm-3 col-md-2" ng-include="'views/inventory/sidebar.html'"></div>
+<div class="col-sm-9 col-md-10 main">
+  <h3 class="page-header" translate>Record Transfusions</h3>
+
+  <span class="h4" style="float:right; margin-top: 5px; padding-right: 15px; display:inline;">
+    <span style="margin-left: 20px; margin-top: -15px; float:right">
+      <span has-permission="{{permissions.VOID_TRANSFUSION_DATA}}" ng-if="transfusion.id !== undefined">
+        <button class="btn btn-primary" ng-click="voidTransfusion()" translate>Void</button>
+      </span>
+    </span>
+  </span>
+
+  <form class="form-horizontal col-sm-12" name="recordTransfusionsForm" ng-submit="recordTransfusion()" novalidate>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>DIN</label>
+      <div class="form-inline col-sm-10">
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="donationIdentificationNumber" ng-model="transfusion.donationIdentificationNumber" ng-disabled = "transfusion.id" required>
+          <ng-messages for="recordTransfusionsForm.donationIdentificationNumber.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+        <label class="control-label" translate>Component Code</label>
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="componentCode" size="8" ng-model="transfusion.componentCode" ng-disabled = "(transfusion.componentType.id && !transfusion.componentCode) || transfusion.id" ng-required="!transfusion.componentCode && !transfusion.componentType.id" ng-change="setComponentType(transfusion.componentCode)">
+          <ng-messages for="recordTransfusionsForm.componentCode.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Component Type</label>
+      <div class="form-inline col-sm-10">
+        <select name="componentType" ng-model="transfusion.componentType.id" class="form-control" style="min-width: 350px;" ng-disabled = "transfusion.componentCode || transfusion.id" ng-required="!transfusion.componentCode && !transfusion.componentType.id" ng-options="componentType.id as componentType.componentTypeName for componentType in componentTypes">
+          <option value=""></option>
+        </select>
+        <ng-messages for="recordTransfusionsForm.componentType.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Transfusion Site</label>
+      <div class="form-inline col-sm-10">
+        <select name="usageSite" ng-model="transfusion.receivedFrom.id" class="form-control" ng-options="usageSite.id as usageSite.name for usageSite in locations" style="min-width: 350px;" required>
+          <option value="" disabled></option>
+        </select>
+        <ng-messages for="recordTransfusionsForm.usageSite.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Transfusion Outcome</label>
+      <div class="form-inline col-sm-10">
+        <select name="transfusionOutcomes" ng-model="transfusion.transfusionOutcome" class="form-control" ng-options="outcome as (outcome | titleCase | translate) for outcome in transfusionOutcomes" style="min-width: 350px;" required ng-change="updateReactionType(transfusion.transfusionOutcome)">
+          <option value="" disabled></option>
+        </select>
+        <ng-messages for="recordTransfusionsForm.transfusionOutcomes.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Transfusion Reaction Type</label>
+      <div class="form-inline col-sm-10">
+        <select name="transfusionReactionType" ng-model="transfusion.transfusionReactionType.id" ng-options="reactionType.id as reactionType.name for reactionType in transfusionReactionTypes" class="form-control" style="min-width: 350px;" ng-disabled="transfusion.transfusionOutcome !== 'TRANSFUSION_REACTION_OCCURRED'" ng-required="transfusion.transfusionOutcome === 'TRANSFUSION_REACTION_OCCURRED'">
+          <option value="" disabled></option>
+        </select>
+        <ng-messages for="recordTransfusionsForm.transfusionReactionType.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="notes" class="col-sm-2 control-label" translate>Transfusion Notes</label>
+      <div class="col-xs-4">
+        <input class="form-control col-sm-10" type="comment" id="transfusionNotes" ng-model="transfusion.notes" placeholder="{{'Notes' | translate}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateTransfused" class="col-sm-2 control-label" translate>Date Transfused</label>
+      <div class="col-sm-10">
+        <dateselect name="dateTransfused" ng-model="transfusion.dateTransfused" format="format" max-date="today" date-time-not-in-future ng-class="{'has-error' : (recordTransfusionsForm.dateTransfused.$invalid)}">
+        </dateselect>
+        <div>
+          <ng-messages for="recordTransfusionsForm.dateTransfused.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+            <small class="error" ng-show="recordTransfusionsForm.dateTransfused.$modelValue === undefined"><translate>Invalid date</translate></small>
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>Patient Name</label>
+      <div class="form-inline col-sm-10">
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="name1" ng-model="transfusion.patient.name1" ng-maxlength=20 required>
+          <ng-messages for="recordTransfusionsForm.name1.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+        <label class="control-label"></label>
+        <div style="display: inline-block; vertical-align: top;">
+          <input class="form-control" name="name2" ng-model="transfusion.patient.name2" ng-maxlength=20 required>
+          <ng-messages for="recordTransfusionsForm.name2.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+            <ng-messages-include src="messages.html"></ng-messages-include>
+          </ng-messages>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>Patient Number</label>
+      <div class="form-inline col-sm-10">
+        <input class="form-control" name="patientNumber" ng-model="transfusion.patient.patientNumber">
+      </div>
+    </div>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>Blood Bank</label>
+      <div class="form-inline col-sm-10">
+        <input class="form-control" name="hospitalBloodBankNumber" ng-model="transfusion.patient.hospitalBloodBankNumber">
+      </div>
+    </div>
+
+    <div class="clearfix form-group">
+      <label class="col-sm-2 control-label" translate>Ward Number</label>
+      <div class="form-inline col-sm-10">
+        <input class="form-control" name="hospitalWardNumber" ng-model="transfusion.patient.hospitalWardNumber">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateOfBirth" class="col-sm-2 control-label" translate>Date of Birth</label>
+      <div class="col-sm-10">
+        <dateselect name="dateOfBirth" ng-model="transfusion.patient.dateOfBirth" format="format" max-date="today" date-time-not-in-future ng-model-options="{ allowInvalid: true }" ng-class="{'has-error': (recordTransfusionsForm.dateOfBirth.$invalid)}">
+        </dateselect>
+      <div>
+        <ng-messages for="recordTransfusionsForm.dateOfBirth.$error" role="alert" ng-show="recordTransfusionsForm.$submitted">
+          <small class="error" ng-show="recordTransfusionsForm.dateOfBirth.$modelValue === undefined" translate>Invalid date</small>
+          <ng-messages-include src="messages.html"></ng-messages-include>
+        </ng-messages>
+      </div>
+     </div>
+    </div>
+
+    <div class="form-group">
+      <label for="gender" class="col-sm-2 control-label" translate>Gender</label>
+      <div class="form-inline col-sm-10">
+        <select name="gender" class="form-control input-sm" ng-model="transfusion.patient.gender" ng-options="gender.id as (gender.name | titleCase | translate) for gender in genders">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" translate>Blood Group</label>
+      <div class="form-inline col-sm-10">
+        <select name="bloodGroup" class="form-control input-sm" ng-model="transfusion.patient.bloodGroup" ng-options="bloodGroup for bloodGroup in bloodGroups">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <button class="btn btn-primary" type="submit" ng-disabled="searching">
+          {{savingTransfusionForm ? "Saving..." : "Save" | translate}}
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="clear(recordTransfusionsForm)" translate>Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
